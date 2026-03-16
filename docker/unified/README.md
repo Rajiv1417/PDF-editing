@@ -298,7 +298,7 @@ ports:
 ### MODE=BOTH and MODE=BACKEND
 ```yaml
 healthcheck:
-  test: ["CMD-SHELL", "curl -f http://localhost:8080/api/v1/info/status || exit 1"]
+  test: ["CMD-SHELL", "curl -f http://localhost:$${BACKEND_INTERNAL_PORT:-8080}$${SYSTEM_ROOTURIPATH:-''}/api/v1/info/status || exit 1"]
   interval: 30s
   timeout: 10s
   retries: 3
