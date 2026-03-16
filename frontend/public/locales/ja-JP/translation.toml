@@ -16,13 +16,13 @@ comingSoon = "近日公開"
 confirmClose = "閉じる確認"
 confirmCloseCancel = "キャンセル"
 confirmCloseConfirm = "ファイルを閉じる"
-confirmCloseMessage = "このファイルを閉じてもよろしいですか？"
 confirmCloseDiscard = "変更を破棄して閉じる"
+confirmCloseMessage = "このファイルを閉じてもよろしいですか？"
 confirmCloseSave = "保存して閉じる"
+confirmCloseSaveFailed = "エラーがあります。{{count}} file{{plural}} を保存できませんでした。"
+confirmCloseSaveFailedTitle = "保存に失敗しました"
 confirmCloseUnsaved = "このファイルには未保存の変更があります。"
 confirmCloseUnsavedList = "未保存の変更がある {{count}} file{{plural}} があります。\n\n{{fileList}}"
-confirmCloseSaveFailedTitle = "保存に失敗しました"
-confirmCloseSaveFailed = "エラーがあります。{{count}} file{{plural}} を保存できませんでした。"
 confirmPasswordErrorMessage = "新しいパスワードと新しいパスワードの確認は一致する必要があります。"
 custom = "カスタム..."
 customPosition = "カスタム位置"
@@ -42,11 +42,12 @@ downloadComplete = "ダウンロード完了"
 downloadPdf = "PDFをダウンロード"
 downloadUnavailable = "この項目はダウンロードできません"
 edit = "編集"
+editSecret = "この値を編集"
 editYourNewFiles = "新しいファイルを編集"
 exportAndContinue = "エクスポートして続行"
 false = "偽"
-fileSavedToDisk = "ファイルをディスクに保存しました"
 fileNotSavedToDisk = "ディスクに保存されていません"
+fileSavedToDisk = "ファイルをディスクに保存しました"
 fileSelected = "選択中：{{filename}}"
 filesSelected = "選択されたファイル"
 font = "フォント"
@@ -60,12 +61,15 @@ help = "ヘルプ"
 imgPrompt = "画像を選択"
 incorrectPasswordMessage = "現在のパスワードが正しくありません。"
 info = "情報"
+insufficientCredits = "Insufficient credits. Required: {{requiredCredits}}, Available: {{currentBalance}}, Shortfall: {{shortfall}}"
 invalidPasswordMessage = "パスワードは空にすることはできません。また、先頭・末尾にスペースを含めることもできません。"
 invalidUndoData = "元に戻せません: 無効な操作データです"
 invalidUsernameMessage = "ユーザー名が無効です。ユーザー名には文字、数字、およびそれに続く特殊文字 @._+- のみを含めることができます。または、有効な電子メール アドレスである必要があります。"
 joinDiscord = "Discordサーバーに参加する"
 keepWorking = "作業を続ける"
 loading = "読込中..."
+loadingCredits = "Checking credits..."
+loadingProStatus = "Checking subscription status..."
 logOut = "ログアウト"
 marginTooltip = "ページ番号とページ端との距離。"
 moreOptions = "その他のオプション"
@@ -79,6 +83,7 @@ noFilesToUndo = "元に戻せません: 直前の操作で処理されたファ�
 noOperationToUndo = "元に戻す操作がありません"
 notAuthenticatedMessage = "ユーザーが認証されていません。"
 nothingToUndo = "元に戻す項目はありません"
+noticeTopUpOrPlan = "Not enough credits, please top up or upgrade to a plan"
 noValidFiles = "処理対象の有効なファイルがありません"
 oops = "おっと！"
 openInViewer = "ビューアで開く"
@@ -95,9 +100,9 @@ pendingRedactionsTitle = "未適用の墨消し"
 pin = "ファイルをピン留め（ツール実行後も保持）"
 poweredBy = "提供元"
 pro = "Pro"
-processTimeWarning = "警告:この処理はファイルサイズによって1分程度かかることがあります"
 processingComplete = "ファイルの準備ができました。"
 processingCompleteMultiple = "{{count}} 件のファイルの準備ができました。"
+processTimeWarning = "警告:この処理はファイルサイズによって1分程度かかることがあります"
 property = "プロパティ"
 quickPosition = "クイック位置"
 red = "赤"
@@ -107,7 +112,6 @@ save = "保存"
 saveToBrowser = "ブラウザへ保存"
 saveUnavailable = "この項目は保存できません"
 seeDockerHub = "Docker Hubを見る"
-editSecret = "この値を編集"
 selectFillter = "-- 選択 --"
 size = "サイズ"
 sponsor = "スポンサー"
@@ -845,6 +849,14 @@ title = "API エンドポイント"
 userDefaults = "ユーザー設定の既定値"
 userDefaultsDescription = "ユーザー設定の既定値を設定します。ユーザーは個人設定で上書きできます。"
 
+[admin.settings.endpoints.defaultHideUnavailableConversions]
+description = "無効な変換オプションをグレー表示ではなく一覧から非表示にする"
+label = "利用できない変換をデフォルトで非表示にする"
+
+[admin.settings.endpoints.defaultHideUnavailableTools]
+description = "無効なツールをグレー表示ではなく一覧から非表示にする"
+label = "利用できないツールをデフォルトで非表示にする"
+
 [admin.settings.endpoints.groupsToRemove]
 description = "無効化するエンドポイントグループを選択"
 label = "無効化するエンドポイントグループ"
@@ -852,14 +864,6 @@ label = "無効化するエンドポイントグループ"
 [admin.settings.endpoints.toRemove]
 description = "無効化する個別エンドポイントを選択"
 label = "無効化するエンドポイント"
-
-[admin.settings.endpoints.defaultHideUnavailableTools]
-description = "無効なツールをグレー表示ではなく一覧から非表示にする"
-label = "利用できないツールをデフォルトで非表示にする"
-
-[admin.settings.endpoints.defaultHideUnavailableConversions]
-description = "無効な変換オプションをグレー表示ではなく一覧から非表示にする"
-label = "利用できない変換をデフォルトで非表示にする"
 
 [admin.settings.enterpriseRequired]
 message = "{{featureName}} にアクセスするには Enterprise ライセンスが必要です。現在は参照用のデモデータを表示しています。"
@@ -968,6 +972,10 @@ label = "既定のロケール"
 description = "最大ファイルアップロードサイズ（例: 100MB, 1GB）"
 label = "ファイルアップロード制限"
 
+[admin.settings.general.frontendUrl]
+description = "フロントエンドのベース URL（例: https://pdf.example.com）。メール招待リンクとモバイルの QR コードアップロードで使用します。空欄の場合はバックエンドの URL を使用します。"
+label = "フロントエンド URL"
+
 [admin.settings.general.hideDisabledTools]
 description = "無効なツールをインターフェースから非表示にする"
 label = "無効なツールを非表示"
@@ -979,10 +987,6 @@ label = "Google Drive を非表示"
 [admin.settings.general.hideDisabledTools.mobileScanner]
 description = "有効でない場合はモバイル QR スキャナーのボタンを非表示にする"
 label = "モバイルスキャナーを非表示"
-
-[admin.settings.general.frontendUrl]
-description = "フロントエンドのベース URL（例: https://pdf.example.com）。メール招待リンクとモバイルの QR コードアップロードで使用します。空欄の場合はバックエンドの URL を使用します。"
-label = "フロントエンド URL"
 
 [admin.settings.general.homeDescription]
 description = "ホームページに表示される説明文"
@@ -1163,9 +1167,25 @@ description = "認証、ログイン動作、セキュリティポリシーを�
 title = "セキュリティ"
 
 [admin.settings.security.audit]
+hideDetails = "監査レベルの詳細を非表示"
 label = "監査ログ"
 showDetails = "監査レベルの詳細を表示"
-hideDetails = "監査レベルの詳細を非表示"
+
+[admin.settings.security.audit.advancedOptions]
+description = "以下のオプションは処理時間とメモリ使用量を増加させます。本当に必要な場合のみ有効にしてください。"
+title = "詳細オプション"
+
+[admin.settings.security.audit.captureFileHash]
+description = "アップロードされた PDF ファイルの整合性確認のために SHA-256 ハッシュを抽出します。監査レベルに依存しません。"
+label = "ファイルハッシュを取得（SHA-256）"
+
+[admin.settings.security.audit.captureOperationResults]
+description = "メソッドの戻り値を記録します。非推奨：ログ量とディスク使用量が大幅に増加します。"
+label = "処理結果を取得"
+
+[admin.settings.security.audit.capturePdfAuthor]
+description = "処理中に PDF ドキュメントの作者フィールドを抽出します。PDF の解析が必要で、待ち時間が増加します。監査レベルに依存しません。"
+label = "PDF の作者メタデータを取得"
 
 [admin.settings.security.audit.enabled]
 description = "コンプライアンスとセキュリティ監視のためにユーザー操作とシステムイベントを追跡"
@@ -1176,30 +1196,14 @@ description = "0=OFF, 1=BASIC, 2=STANDARD, 3=VERBOSE"
 label = "監査レベル"
 
 [admin.settings.security.audit.levelDetails]
-off = "監査ログなし（重大なセキュリティイベントを除く）"
 basic = "PDF ファイル操作（圧縮、分割、結合など）と設定変更。記録内容：操作ステータス（成功/失敗）、メソッドのパラメータ、処理時間。最小限のログ量。"
+off = "監査ログなし（重大なセキュリティイベントを除く）"
 standard = "BASIC のイベントに加えて、ユーザーのログイン/ログアウト、アカウント変更、一般的な GET リクエスト。ログノイズを抑えるため、継続的なポーリング呼び出し（/auth/me、/app-config、/health など）は除外。多くの環境で最適。"
 verbose = "STANDARD のイベントに加えて、継続的なポーリング呼び出し、すべての GET リクエスト、詳細なタイミング。注意：ログ量が多く、パフォーマンスに影響。"
 
 [admin.settings.security.audit.retentionDays]
 description = "監査ログを保持する日数"
 label = "監査保管期間（日）"
-
-[admin.settings.security.audit.advancedOptions]
-title = "詳細オプション"
-description = "以下のオプションは処理時間とメモリ使用量を増加させます。本当に必要な場合のみ有効にしてください。"
-
-[admin.settings.security.audit.captureFileHash]
-description = "アップロードされた PDF ファイルの整合性確認のために SHA-256 ハッシュを抽出します。監査レベルに依存しません。"
-label = "ファイルハッシュを取得（SHA-256）"
-
-[admin.settings.security.audit.capturePdfAuthor]
-description = "処理中に PDF ドキュメントの作者フィールドを抽出します。PDF の解析が必要で、待ち時間が増加します。監査レベルに依存しません。"
-label = "PDF の作者メタデータを取得"
-
-[admin.settings.security.audit.captureOperationResults]
-description = "メソッドの戻り値を記録します。非推奨：ログ量とディスク使用量が大幅に増加します。"
-label = "処理結果を取得"
 
 [admin.settings.security.csrfDisabled]
 description = "クロスサイトリクエストフォージェリ保護を無効化（非推奨）"
@@ -1268,6 +1272,14 @@ label = "初期ユーザー名"
 [admin.settings.security.jwt]
 label = "JWT 設定"
 
+[admin.settings.security.jwt.allowedClockSkewSeconds]
+description = "トークン検証時のクライアント/サーバー間の時刻ずれ許容値（既定: 60 秒）"
+label = "時刻ずれ許容値（秒）"
+
+[admin.settings.security.jwt.desktopTokenExpiryMinutes]
+description = "デスクトップ クライアント用のアクセストークン有効期間（分）。デスクトップ アプリは User-Agent により自動判別され、UX 向上のためより長いセッションが付与されます（既定: 43200 = 30 日）"
+label = "デスクトップ トークン有効期限（分）"
+
 [admin.settings.security.jwt.enableKeyCleanup]
 description = "期限切れの JWT キーを自動的に削除"
 label = "キークリーンアップを有効化"
@@ -1276,29 +1288,21 @@ label = "キークリーンアップを有効化"
 description = "JWT 署名キーを定期的に自動ローテーション"
 label = "キーローテーションを有効化"
 
-[admin.settings.security.jwt.tokenExpiryMinutes]
-description = "Web クライアント用のアクセストークン有効期間（分）（既定: 1440 = 24 時間）"
-label = "Web トークン有効期限（分）"
-
-[admin.settings.security.jwt.desktopTokenExpiryMinutes]
-description = "デスクトップ クライアント用のアクセストークン有効期間（分）。デスクトップ アプリは User-Agent により自動判別され、UX 向上のためより長いセッションが付与されます（既定: 43200 = 30 日）"
-label = "デスクトップ トークン有効期限（分）"
-
-[admin.settings.security.jwt.allowedClockSkewSeconds]
-description = "トークン検証時のクライアント/サーバー間の時刻ずれ許容値（既定: 60 秒）"
-label = "時刻ずれ許容値（秒）"
+[admin.settings.security.jwt.persistence]
+description = "サーバー再起動後も維持するよう JWT キーを永続保存"
+label = "キー永続化を有効化"
 
 [admin.settings.security.jwt.refreshGraceMinutes]
 description = "有効期限切れ後、この分数以内のトークン更新を許可します（既定: 15 分、最大 3 回試行）"
 label = "更新猶予期間（分）"
 
-[admin.settings.security.jwt.persistence]
-description = "サーバー再起動後も維持するよう JWT キーを永続保存"
-label = "キー永続化を有効化"
-
 [admin.settings.security.jwt.secureCookie]
 description = "JWT クッキーに HTTPS を必須（本番環境推奨）"
 label = "セキュアクッキー"
+
+[admin.settings.security.jwt.tokenExpiryMinutes]
+description = "Web クライアント用のアクセストークン有効期間（分）（既定: 1440 = 24 時間）"
+label = "Web トークン有効期限（分）"
 
 [admin.settings.security.loginAttemptCount]
 description = "アカウントロックまでの最大失敗回数"
@@ -1586,68 +1590,6 @@ goToSettings = "監査設定へ移動"
 notAvailable = "監査システムは利用できません"
 notAvailableMessage = "監査システムが未設定または利用できません。"
 
-[audit.error]
-title = "監査システムの読み込みエラー"
-
-[audit.export]
-clearFilters = "クリア"
-description = "監査イベントを CSV または JSON 形式でエクスポートします。フィルターを使用してエクスポート対象を絞り込めます。"
-endDate = "終了日"
-error = "データのエクスポートに失敗しました"
-exportButton = "データをエクスポート"
-fieldAuthor = "作者（PDF から）"
-fieldDate = "日付"
-fieldDocumentName = "ドキュメント名"
-fieldFileHash = "ファイルハッシュ（SHA-256）"
-fieldIpAddress = "IP アドレス"
-fieldOperationResults = "処理結果"
-fieldOutcome = "結果（成功/失敗）"
-fieldTool = "ツール"
-fieldUsername = "ユーザー名"
-filterByType = "タイプでフィルタ"
-filterByUser = "ユーザーでフィルタ"
-filters = "フィルター（任意）"
-format = "エクスポート形式"
-selectFields = "含める項目を選択"
-startDate = "開始日"
-title = "監査データのエクスポート"
-verboseRequired = "VERBOSE 監査レベルが必要です"
-
-[audit.systemStatus]
-autoRefresh = "自動更新"
-autoRefreshLabel = "30 秒ごとに自動更新"
-captureBySettings = "設定で有効化"
-capturedFields = "取得項目"
-date = "日付"
-days = "日"
-disabled = "無効"
-documentName = "ドキュメント名"
-enabled = "有効"
-fileHash = "ファイルハッシュ"
-level = "監査レベル"
-pdfAuthor = "PDF の作者"
-retention = "保持期間"
-status = "監査ログ"
-title = "システムステータス"
-tool = "ツール"
-totalEvents = "イベント総数"
-username = "ユーザー名"
-verboseOnly = "VERBOSE のみ"
-
-[audit.stats]
-activeUsers = "アクティブユーザー"
-attention = "要対応"
-avgLatency = "平均レイテンシ"
-error = "統計の読み込みエラー"
-errorLoadingStats = "統計の読み込みに失敗しました"
-excellent = "非常に良い"
-good = "良好"
-noData = "N/A"
-successRate = "成功率"
-title = "サマリー"
-totalEvents = "イベント合計"
-vsLastPeriod = "前期間比"
-
 [audit.charts]
 byTool = "よく使われるツール"
 byType = "タイプ別イベント"
@@ -1660,6 +1602,27 @@ noData = "この期間のデータはありません"
 overTime = "時系列イベント"
 title = "監査ダッシュボード"
 week = "週"
+
+[audit.clearData]
+cancel = "キャンセル"
+codeDoesNotMatch = "コードが一致しません"
+codePlaceholder = "ここにコードを入力"
+confirmationCode = "確認コード"
+confirmationRequired = "すべての監査データを削除"
+confirmMessage = "すべての監査ログが完全に削除されます。続行するには下の確認コードを入力してください。"
+confirmTitle = "削除の実行を確認してください"
+deleteButton = "削除"
+enterCode = "確認コード"
+enterCodeBelow = "上に表示されたとおりに正確にコードを入力してください（大文字・小文字を区別）"
+initiateDelete = "すべてのデータを削除"
+irreversible = "取り消し不可"
+success = "成功"
+successMessage = "すべての監査データを正常に削除しました"
+warning1 = "この操作は元に戻せません"
+warning2 = "監査データを削除すると、セキュリティイベント、ユーザーアクティビティ、ファイル操作を含むすべての過去の監査ログがデータベースから完全に削除されます。"
+
+[audit.error]
+title = "監査システムの読み込みエラー"
 
 [audit.events]
 actions = "操作"
@@ -1687,40 +1650,81 @@ type = "タイプ"
 user = "ユーザー"
 viewDetails = "詳細を表示"
 
+[audit.export]
+clearFilters = "クリア"
+description = "監査イベントを CSV または JSON 形式でエクスポートします。フィルターを使用してエクスポート対象を絞り込めます。"
+endDate = "終了日"
+error = "データのエクスポートに失敗しました"
+exportButton = "データをエクスポート"
+fieldAuthor = "作者（PDF から）"
+fieldDate = "日付"
+fieldDocumentName = "ドキュメント名"
+fieldFileHash = "ファイルハッシュ（SHA-256）"
+fieldIpAddress = "IP アドレス"
+fieldOperationResults = "処理結果"
+fieldOutcome = "結果（成功/失敗）"
+fieldTool = "ツール"
+fieldUsername = "ユーザー名"
+filterByType = "タイプでフィルタ"
+filterByUser = "ユーザーでフィルタ"
+filters = "フィルター（任意）"
+format = "エクスポート形式"
+selectFields = "含める項目を選択"
+startDate = "開始日"
+title = "監査データのエクスポート"
+verboseRequired = "VERBOSE 監査レベルが必要です"
+
 [audit.filters]
 allOutcomes = "すべて"
 failureOnly = "失敗のみ"
-last7Days = "過去 7 日間"
 last30Days = "過去 30 日間"
+last7Days = "過去 7 日間"
 outcomeFilter = "結果"
 quickPresets = "クイックフィルター"
 successOnly = "成功のみ"
 thisMonth = "今月"
 today = "今日"
 
+[audit.stats]
+activeUsers = "アクティブユーザー"
+attention = "要対応"
+avgLatency = "平均レイテンシ"
+error = "統計の読み込みエラー"
+errorLoadingStats = "統計の読み込みに失敗しました"
+excellent = "非常に良い"
+good = "良好"
+noData = "N/A"
+successRate = "成功率"
+title = "サマリー"
+totalEvents = "イベント合計"
+vsLastPeriod = "前期間比"
+
+[audit.systemStatus]
+autoRefresh = "自動更新"
+autoRefreshLabel = "30 秒ごとに自動更新"
+captureBySettings = "設定で有効化"
+capturedFields = "取得項目"
+date = "日付"
+days = "日"
+disabled = "無効"
+documentName = "ドキュメント名"
+enabled = "有効"
+fileHash = "ファイルハッシュ"
+level = "監査レベル"
+pdfAuthor = "PDF の作者"
+retention = "保持期間"
+status = "監査ログ"
+title = "システムステータス"
+tool = "ツール"
+totalEvents = "イベント総数"
+username = "ユーザー名"
+verboseOnly = "VERBOSE のみ"
+
 [audit.tabs]
 clearData = "データを削除"
 dashboard = "ダッシュボード"
 events = "監査イベント"
 export = "エクスポート"
-
-[audit.clearData]
-cancel = "キャンセル"
-codeDoesNotMatch = "コードが一致しません"
-codePlaceholder = "ここにコードを入力"
-confirmationCode = "確認コード"
-confirmationRequired = "すべての監査データを削除"
-confirmMessage = "すべての監査ログが完全に削除されます。続行するには下の確認コードを入力してください。"
-confirmTitle = "削除の実行を確認してください"
-deleteButton = "削除"
-enterCode = "確認コード"
-enterCodeBelow = "上に表示されたとおりに正確にコードを入力してください（大文字・小文字を区別）"
-initiateDelete = "すべてのデータを削除"
-irreversible = "取り消し不可"
-success = "成功"
-successMessage = "すべての監査データを正常に削除しました"
-warning1 = "この操作は元に戻せません"
-warning2 = "監査データを削除すると、セキュリティイベント、ユーザーアクティビティ、ファイル操作を含むすべての過去の監査ログがデータベースから完全に削除されます。"
 
 [auth]
 accessDenied = "アクセス拒否"
@@ -2358,6 +2362,9 @@ title = "権限の変更"
 [changePermissions.tooltip.warning]
 text = "これらの権限を変更不可にするには、パスワード追加ツールでオーナーパスワードを設定してください。"
 
+[cloudBadge]
+tooltip = "この操作はクラウドクレジットを消費します"
+
 [colorPicker]
 title = "色を選択"
 
@@ -2574,10 +2581,48 @@ title = "品質調整"
 [compressPdfs]
 tags = "圧縮,小さく,軽量"
 
+[config]
+plan = "Plan"
+
 [config.account.overview]
+confirmDelete = "Delete My Account"
+deleteAccount = "Delete Account"
+deleteAccountTitle = "Delete Account"
+deleteFailed = "Failed to delete account."
+deleteFailedTitle = "Unable to delete account"
+deleteWarning = "This action is permanent and cannot be undone. All your data will be deleted."
+enterEmailConfirm = "To confirm deletion, please type your email address ({{email}}) below:"
 guestDescription = "現在はゲストとしてサインインしています。上位プランへのアップグレードをご検討ください。"
+label = "Overview"
 manageAccountPreferences = "アカウント設定を管理"
+signedInAs = "Signed in as"
 title = "アカウント設定"
+
+[config.account.profilePicture]
+description = "Upload an image to personalize your account."
+help = "PNG, JPG, or WebP up to 2MB."
+remove = "Remove"
+sizeError = "Please select an image smaller than 2MB."
+switchedToCustom = "Switched to custom picture. You can now upload your own."
+title = "Profile picture"
+upload = "Upload"
+useCustom = "Use custom picture"
+usingProvider = "Using {{provider}} profile picture"
+
+[config.account.profilePicture.cropper]
+cropError = "Failed to crop image. Please try again."
+invalidImage = "Invalid image file. Please select a valid PNG, JPG, or WebP file."
+processing = "Processing crop..."
+save = "Save Cropped Image"
+sizeErrorAfterCrop = "Cropped image is too large. Please zoom out or crop a smaller area."
+title = "Crop Profile Picture"
+zoom = "Zoom"
+
+[config.account.security]
+changePassword = "Change password"
+description = "Manage your password and security settings."
+title = "Passwords & Security"
+update = "Update password"
 
 [config.account.upgrade]
 description = "アカウントを連携すると履歴が保存され、より多くの機能にアクセスできます！"
@@ -2595,6 +2640,7 @@ upgradeButton = "アカウントをアップグレード"
 [config.apiKeys]
 chartAriaLabel = "クレジット使用状況：含まれる分 {{includedUsed}} / {{includedTotal}}、購入分 {{purchasedUsed}} / {{purchasedTotal}}"
 copyKeyAriaLabel = "API キーをコピー"
+creditsRemaining = "Credits Remaining"
 description = "Stirling の PDF ツール群にアクセスするための API キーです。プロジェクトにコピーするか、更新して新しいキーを生成できます。"
 docsDescription = "Stirling PDF との統合について詳しくはこちら:"
 docsLink = "API ドキュメント"
@@ -2651,9 +2697,11 @@ blackwhite = "白黒"
 cbrDpi = "画像レンダリング用 DPI"
 cbrOptions = "CBR オプション"
 cbrOutputOptions = "PDF から CBR へのオプション"
+cbrToPdf = "CBR → PDF"
 cbzDpi = "画像レンダリングの DPI"
 cbzOptions = "CBZ から PDF へのオプション"
 cbzOutputOptions = "PDF から CBZ へのオプション"
+cbzToPdf = "CBZ → PDF"
 color = "色"
 colorType = "色の種類"
 combineImages = "画像を結合"
@@ -2671,13 +2719,16 @@ desc = "異なる形式間でファイルを変換します"
 downloadConverted = "変換後のファイルをダウンロード"
 downloadHtml = "PDF の代わりに中間ファイル（HTML）をダウンロード"
 dpi = "DPI"
+ebookToPdf = "eBook → PDF"
 emailOptions = "メール → PDF オプション"
+emlToPdf = "Email → PDF"
 errorConversion = "ファイルの変換中にエラーが発生しました。"
 errorNoFiles = "変換するファイルを少なくとも 1 つ選択してください。"
 errorNoFormat = "変換元と変換先の両方の形式を選択してください。"
 errorNotSupported = "{{from}} から {{to}} への変換はサポートされていません。"
 fileFormat = "ファイル形式"
 files = "ファイル"
+fileToPdf = "Office/Document → PDF"
 fillPage = "フルページ"
 fitDocumentToPage = "ページに合わせて文書をフィット"
 fitOption = "フィットオプション"
@@ -2705,6 +2756,9 @@ pdfaFormat = "PDF/A 形式"
 pdfaNote = "PDF/A-1b は互換性が高く、PDF/A-2b はより多くの機能をサポートします。"
 pdfaOptions = "PDF/A オプション"
 pdfOptions = "PDF オプション"
+pdfToCbr = "PDF → CBR"
+pdfToCbz = "PDF → CBZ"
+pdfToEpub = "PDF → EPUB"
 pdfxDescription = "PDF/X は、信頼性の高い印刷とグラフィック交換のための ISO 規格の PDF サブセットです。"
 pdfxDigitalSignatureWarning = "PDF にはデジタル署名が含まれています。これは次のステップで削除されます。"
 pptExt = "PowerPoint（.pptx）"
@@ -2719,6 +2773,7 @@ sourceFormatPlaceholder = "変換元形式"
 strictMode = "Strict Mode"
 strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
 svgPdfOptions = "SVG to PDF Options"
+svgToPdf = "SVG → PDF"
 svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
 targetFormatPlaceholder = "変換先形式"
 textRtf = "テキスト/RTF"
@@ -2791,6 +2846,77 @@ description = "これらのCookieはウェブサイトが正常に機能する�
 [cookieBanner.services]
 posthog = "PostHog Analytics"
 scarf = "Scarf Pixel"
+
+[credits]
+enableOverageBilling = "超過課金を有効にする"
+maybeLater = "後で"
+upgrade = "アップグレード"
+
+[credits.insufficient]
+brief = "クレジットが不足しています。必要数は {{required}} ですが、保有数は {{current}} です。"
+freeTier = "Team にアップグレードして、クレジット 10 倍と無制限の超過課金を。"
+managedMember = "サポートが必要な場合はチームリーダーに連絡してください。"
+message = "{{tool}} を実行するのに十分なクレジットがありません。現在の保有数は {{current}} クレジットです。"
+messageWithAmount = "{{tool}} を実行するには {{required}} クレジットが必要ですが、保有数は {{current}} のみです。"
+teamMember = "超過課金を有効にして、クレジット切れを防ぎましょう。"
+title = "クレジット不足"
+
+[credits.modal]
+advancedMonitoring = "高度なモニタリング"
+allInOneWorkspace = "オールインワンの PDF ワークスペース（ビューア、ツール、エージェント）"
+apiSandbox = "API サンドボックス"
+contactSales = "営業に問い合わせ"
+creditsRemaining = "残り {{current}} / {{total}}"
+creditsThisMonth = "今月のクレジット"
+current = "現在のプラン"
+customPricing = "カスタム"
+customSmartFolders = "カスタムスマートフォルダー"
+dedicatedSupportSlas = "専用サポートと SLA"
+enterpriseSubscription = "Enterprise"
+everythingInCredits = "Credits の内容に加えて："
+everythingInFree = "Free の内容に加えて："
+fasterThroughput = "スループット 10 倍"
+forRegularWork = "通常の PDF 作業向け："
+freeTier = "Free ティア"
+fullyPrivateFiles = "完全にプライベートなファイル"
+largeFileProcessing = "大容量ファイルの処理"
+managedMemberMessage = "チームを通じてクレジットに無制限にアクセスできます。サポートが必要な場合はチームリーダーに連絡してください。"
+managedMemberTitle = "無制限のクレジット"
+meteringBillingNote = "超過クレジットは Team サブスクリプションと併せて毎月請求されます。アカウント設定でいつでも利用状況を確認できます。"
+meteringExplanation = "ご利用の Team プランには毎月 {{credits}} クレジットが含まれます。使い切った場合は、超過課金により自動的にクレジットが追加され、作業が中断されることはありません。"
+meteringIncluded = "Team には月 {{credits}} クレジットが含まれます"
+meteringNeverRunOut = "クレジット切れの心配なし"
+meteringNoCommitment = "契約の縛りなし、いつでも解約可能"
+meteringPayAsYouGo = "使った分だけお支払い"
+meteringPrice = "追加クレジットは {{price}}/クレジット"
+meteringTitle = "使った分だけの超過課金"
+monthlyCredits = "月次クレジット"
+orgWideAccess = "組織全体のアクセス制御"
+overage = "超過"
+perMonth = "/月"
+popular = "人気"
+premiumAiModels = "プレミアム AI モデル"
+prioritySupport = "優先サポート"
+privateDocCloud = "プライベートドキュメントクラウド"
+ragFineTuning = "RAG + ファインチューニング"
+secureApiAccess = "セキュアな API アクセス"
+selfHostLink = "ドキュメントとプランを確認"
+selfHostPrompt = "セルフホストしますか？"
+standardThroughput = "標準スループット"
+subtitle = "Team にアップグレードして、クレジット 10 倍と高速処理を。"
+subtitlePro = "自動超過課金を有効にして、クレジット切れを防ぎましょう。"
+teamLeaderOnly = "超過課金を有効にできるのはチームリーダーのみです"
+teamSubscription = "Team"
+titleExhausted = "無料クレジットを使い切りました"
+titleExhaustedPro = "クレジットが不足しています"
+unlimitedApiAccess = "API アクセス無制限"
+unlimitedMonthlyCredits = "サイトライセンス"
+unlimitedSeats = "ユーザー数無制限"
+
+[credits.modal.features]
+everythingInCredits = "Credits の内容に加えて："
+everythingInFree = "Free の内容に加えて："
+forRegularWork = "通常の PDF 作業向け："
 
 [crop]
 autoCrop = "余白を自動トリミング"
@@ -3469,10 +3595,6 @@ desc = "PDF アクションを連結して複数ステップのワークフロ�
 tags = "ワークフロー,シーケンス,自動化"
 title = "自動化"
 
-[home.formFill]
-desc = "ビジュアルエディターで PDF のフォームフィールドを対話的に入力"
-title = "フォーム入力"
-
 [home.autoRename]
 desc = "検出されたヘッダーに基づいて PDF ファイル名を自動変更"
 tags = "自動検出,ヘッダー基準,整理,ラベル変更"
@@ -3567,6 +3689,10 @@ title = "ページの抽出"
 desc = "PDFからインタラクティブな要素とフォームをすべて削除します。"
 tags = "平坦化,削除,インタラクティブ除去"
 title = "平坦化"
+
+[home.formFill]
+desc = "ビジュアルエディターで PDF のフォームフィールドを対話的に入力"
+title = "フォーム入力"
 
 [home.getPdfInfo]
 desc = "PDFのあらゆる情報を取得します。"
@@ -3854,6 +3980,7 @@ version = "バージョン"
 accountCreatedSuccess = "アカウントが作成されました。今すぐサインインできます。"
 alreadyLoggedIn = "すでにログインしています"
 alreadyLoggedIn2 = "デバイスからログアウトしてもう一度お試しください。"
+backToSignIn = "Back to sign in"
 cancel = "キャンセル"
 changePasswordWarning = "初回ログイン後にパスワードを変更してください"
 credentialsUpdated = "認証情報を更新しました。もう一度サインインしてください。"
@@ -3895,13 +4022,17 @@ or = "または"
 password = "パスワード"
 passwordChangedSuccess = "パスワードを変更しました。新しいパスワードでサインインしてください。"
 passwordResetSent = "パスワード再設定リンクを {{email}} に送信しました！ メールの指示に従ってください。"
+passwordUpdatedSuccess = "Your password has been updated successfully."
 pleaseEnterBoth = "メールとパスワードの両方を入力してください"
 pleaseEnterEmail = "メールアドレスを入力してください"
 relyingPartyRegistrationNotFound = "リライングパーティーの登録が見つかりません"
 rememberme = "サインイン状態を記憶する"
+resetHelp = "Enter your email to receive a secure link to reset your password. If the link has expired, please request a new one."
+resetYourPassword = "Reset your password"
 saml2RequiresLicense = "SAML ログインには有料ライセンス（Server または Enterprise）が必要です。プランのアップグレードについては管理者にお問い合わせください。"
 sending = "送信中…"
 sendMagicLink = "マジックリンクを送る"
+sendResetLink = "Send reset link"
 sessionExpired = "セッションの有効期限が切れました。もう一度サインインしてください。"
 signin = "サインイン"
 signInAnonymously = "ゲストとして登録"
@@ -3910,9 +4041,11 @@ signinTitle = "サインインしてください"
 signInWith = "次でサインイン"
 signOut = "サインアウト"
 ssoSignIn = "シングルサインオンでログイン"
+subtitle = "Sign back in to Stirling PDF"
 title = "サインイン"
 toManySessions = "アクティブなセッションが多すぎます"
 unexpectedError = "予期しないエラー：{{message}}"
+updatePassword = "Update password"
 useEmailInstead = "メールでログイン"
 useMagicLink = "代わりにマジックリンクを使う"
 userIsDisabled = "ユーザーは非アクティブ化されており、現在このユーザー名でのログインはブロックされています。管理者に連絡してください。"
@@ -4235,6 +4368,15 @@ body = "Stirling はデスクトップアプリとして最適に動作します
 title = "ダウンロード"
 titleWithOs = "{{osLabel}} 用をダウンロード"
 
+[onboarding.freeTrial]
+afterTrialWithoutPayment = "After your trial ends, you'll continue with our free tier. Add a payment method to keep Pro access."
+afterTrialWithPayment = "Your Pro subscription will start automatically when the trial ends."
+body = "You have full access to Stirling PDF Pro features during your trial. Enjoy unlimited conversions, larger file sizes, and priority processing."
+daysRemaining = "{{days}} days remaining"
+daysRemainingSingular = "{{days}} day remaining"
+title = "Your 30-Day Pro Trial"
+trialEnds = "Trial ends {{date}}"
+
 [onboarding.planOverview]
 adminBodyLoginDisabled = "ログインモードを有効にすると、ユーザー管理、設定の構成、サーバーの健全性監視が可能です。サーバー上の最初の <strong>{{freeTierLimit}}</strong> 人は無料で Stirling を利用できます。"
 adminBodyLoginEnabled = "管理者として、ユーザー管理、設定の構成、サーバーの健全性監視ができます。サーバー上の最初の <strong>{{freeTierLimit}}</strong> 人は無料で Stirling を利用できます。"
@@ -4370,75 +4512,6 @@ title = "ページエディタ"
 zoomIn = "拡大"
 zoomOut = "縮小"
 
-[viewer]
-cannotPreviewFile = "ファイルをプレビューできません"
-dualPageView = "見開き表示"
-firstPage = "最初のページ"
-lastPage = "最後のページ"
-nextPage = "次のページ"
-onlyPdfSupported = "このビューアは PDF ファイルのみをサポートしています。このファイルは別の形式のようです。"
-previousPage = "前のページ"
-singlePageView = "単一ページ表示"
-unknownFile = "不明なファイル"
-zoomIn = "拡大"
-zoomOut = "縮小"
-
-[viewer.attachments]
-title = "添付ファイル"
-searchPlaceholder = "添付ファイルを検索"
-noSupport = "このビューアでは添付ファイルはサポートされていません。"
-noDocument = "添付ファイルを表示するには PDF を開いてください。"
-loading = "添付ファイルを読み込み中..."
-empty = "このドキュメントには添付ファイルがありません"
-noMatch = "検索条件に一致する添付ファイルはありません"
-
-[viewer.formBar]
-title = "フォームフィールド"
-unsavedBadge = "未保存"
-unsavedDesc = "未保存の変更があります"
-hasFieldsDesc = "この PDF には入力可能なフィールドがあります"
-dismiss = "閉じる"
-apply = "変更を適用"
-download = "PDF をダウンロード"
-
-[rightRail]
-closeSelected = "選択したファイルを閉じる"
-selectAll = "すべて選択"
-deselectAll = "選択を解除"
-selectByNumber = "ページ番号で選択"
-deleteSelected = "選択したページを削除"
-closePdf = "PDF を閉じる"
-exportAll = "PDF を書き出し"
-downloadSelected = "選択したファイルをダウンロード"
-annotations = "注釈"
-exportSelected = "選択したページを書き出し"
-formFill = "フォーム入力"
-saveChanges = "変更を保存"
-toggleAttachments = "添付ファイルの表示切替"
-toggleTheme = "テーマを切り替え"
-language = "言語"
-toggleAnnotations = "注釈の表示を切り替え"
-search = "PDF を検索"
-panMode = "パンモード"
-applyRedactionsFirst = "先に墨消しを適用"
-rotateLeft = "左に回転"
-rotateRight = "右に回転"
-toggleSidebar = "サイドバーを切り替え"
-toggleBookmarks = "ブックマークを切り替え"
-print = "PDFを印刷"
-ruler = "定規 / 測定"
-draw = "描画"
-redact = "墨消し"
-exitRedaction = "墨消しモードを終了"
-save = "保存"
-downloadAll = "すべてをダウンロード"
-saveAll = "すべて保存"
-
-[textAlign]
-left = "左揃え"
-center = "中央揃え"
-right = "右揃え"
-
 [pageExtracter]
 header = "ページの抽出"
 placeholder = "(例:1,2,8、4,7,12-16、2n-1)"
@@ -4547,6 +4620,9 @@ title = "ヒント"
 autoClose = "このウィンドウは自動的に閉じます..."
 billingPeriod = "請求期間"
 canCloseWindow = "このウィンドウは閉じても構いません。"
+checkoutInstructions = "開いたブラウザーウィンドウで購入手続きを完了してください。支払い完了後、ここに戻り、下のボタンをクリックして請求情報を更新してください。"
+checkoutOpened = "ブラウザーでチェックアウトを開きました"
+closeLater = "後で行う"
 emailInvalid = "有効なメールアドレスを入力してください"
 enterpriseNote = "席数はチェックアウトで調整できます（1〜1000）。"
 error = "支払いエラー"
@@ -4568,6 +4644,7 @@ perMonth = "/月"
 perYear = "/年"
 preparing = "チェックアウトを準備しています..."
 redirecting = "安全なチェックアウトにリダイレクトしています..."
+refreshBilling = "支払いが完了しました - 請求情報を更新"
 stripeNotConfigured = "Stripe が未設定"
 stripeNotConfiguredMessage = "Stripe の決済連携が設定されていません。管理者に連絡してください。"
 success = "支払いが完了しました"
@@ -4579,10 +4656,6 @@ upgradeCompleteMessage = "サブスクリプションは正常にアップグレ
 upgradeSuccess = "支払いに成功しました！ サブスクリプションがアップグレードされ、ライセンスがサーバーに更新されました。確認メールをまもなくお送りします。"
 upgradeTitle = "{{planName}} にアップグレード"
 yearly = "年額"
-checkoutOpened = "ブラウザーでチェックアウトを開きました"
-checkoutInstructions = "開いたブラウザーウィンドウで購入手続きを完了してください。支払い完了後、ここに戻り、下のボタンをクリックして請求情報を更新してください。"
-refreshBilling = "支払いが完了しました - 請求情報を更新"
-closeLater = "後で行う"
 
 [payment.emailStage]
 continue = "続行"
@@ -4806,13 +4879,6 @@ prompt = "表を抽出するページを選択"
 submit = "変換"
 title = "PDFをCSVに変換"
 
-[PDFToXLSX]
-header = "PDF から Excel へ"
-prompt = "表を抽出するページを選択"
-submit = "変換"
-title = "PDF から Excel（XLSX）へ"
-tags = "spreadsheet,excel,xlsx,table,extract,convert"
-
 [PDFToHTML]
 credit = "本サービスはファイル変換にpdftohtmlを使用しています。"
 header = "PDFをHTMLに変換"
@@ -4911,6 +4977,13 @@ title = "PDFをWordに変換"
 [PDFToWord.selectText]
 1 = "出力ファイル形式"
 
+[PDFToXLSX]
+header = "PDF から Excel へ"
+prompt = "表を抽出するページを選択"
+submit = "変換"
+tags = "spreadsheet,excel,xlsx,table,extract,convert"
+title = "PDF から Excel（XLSX）へ"
+
 [PDFToXML]
 credit = "本サービスはファイル変換にLibreOfficeを使用しています。"
 header = "PDFをXMLに変換"
@@ -4976,8 +5049,11 @@ manage = "管理"
 perMonth = "/月"
 perSeat = "/席"
 popular = "人気"
+purchase = "Purchase"
+selectCredits = "Select Credit Amount"
 selectPlan = "プランを選択"
 showComparison = "すべての機能を比較"
+totalCost = "Total Cost"
 upgrade = "アップグレード"
 withServer = "+ Server プラン"
 
@@ -4985,19 +5061,29 @@ withServer = "+ Server プラン"
 subtitle = "現在のサブスクリプションの詳細"
 title = "アクティブなプラン"
 
+[plan.api]
+large = "5,000 Credits"
+medium = "1,000 Credits"
+small = "500 Credits"
+xsmall = "100 Credits"
+
+[plan.apiPackages]
+subtitle = "Purchase API credits for your applications"
+title = "API Credit Packages"
+
 [plan.availablePlans]
-subtitle = "ニーズに合ったプランを選択"
 loadError = "プランの価格を読み込めません。既定値を使用します。"
+subtitle = "ニーズに合ったプランを選択"
 title = "利用可能なプラン"
 
 [plan.enterprise]
-siteLicense = "サイトライセンス"
 highlight1 = "カスタム価格"
 highlight2 = "専用サポート"
 highlight3 = "最新機能"
 name = "エンタープライズ"
 requiresServer = "Server が必要"
 requiresServerMessage = "Enterprise にアップグレードする前に、先に Server プランへアップグレードしてください。"
+siteLicense = "サイトライセンス"
 
 [plan.feature]
 api = "API アクセス"
@@ -5069,76 +5155,19 @@ successMessage = "ライセンスは正常に有効化されました。この�
 name = "Team"
 siteLicense = "サイトライセンス"
 
-[credits]
-enableOverageBilling = "超過課金を有効にする"
-maybeLater = "後で"
-upgrade = "アップグレード"
-
-[credits.modal]
-advancedMonitoring = "高度なモニタリング"
-allInOneWorkspace = "オールインワンの PDF ワークスペース（ビューア、ツール、エージェント）"
-apiSandbox = "API サンドボックス"
-contactSales = "営業に問い合わせ"
-creditsRemaining = "残り {{current}} / {{total}}"
-creditsThisMonth = "今月のクレジット"
-current = "現在のプラン"
-customPricing = "カスタム"
-customSmartFolders = "カスタムスマートフォルダー"
-dedicatedSupportSlas = "専用サポートと SLA"
-enterpriseSubscription = "Enterprise"
-everythingInCredits = "Credits の内容に加えて："
-everythingInFree = "Free の内容に加えて："
-fasterThroughput = "スループット 10 倍"
-forRegularWork = "通常の PDF 作業向け："
-freeTier = "Free ティア"
-fullyPrivateFiles = "完全にプライベートなファイル"
-largeFileProcessing = "大容量ファイルの処理"
-managedMemberMessage = "チームを通じてクレジットに無制限にアクセスできます。サポートが必要な場合はチームリーダーに連絡してください。"
-managedMemberTitle = "無制限のクレジット"
-meteringBillingNote = "超過クレジットは Team サブスクリプションと併せて毎月請求されます。アカウント設定でいつでも利用状況を確認できます。"
-meteringExplanation = "ご利用の Team プランには毎月 {{credits}} クレジットが含まれます。使い切った場合は、超過課金により自動的にクレジットが追加され、作業が中断されることはありません。"
-meteringIncluded = "Team には月 {{credits}} クレジットが含まれます"
-meteringNoCommitment = "契約の縛りなし、いつでも解約可能"
-meteringNeverRunOut = "クレジット切れの心配なし"
-meteringPayAsYouGo = "使った分だけお支払い"
-meteringPrice = "追加クレジットは {{price}}/クレジット"
-meteringTitle = "使った分だけの超過課金"
-monthlyCredits = "月次クレジット"
-orgWideAccess = "組織全体のアクセス制御"
-overage = "超過"
-perMonth = "/月"
-popular = "人気"
-premiumAiModels = "プレミアム AI モデル"
-prioritySupport = "優先サポート"
-privateDocCloud = "プライベートドキュメントクラウド"
-ragFineTuning = "RAG + ファインチューニング"
-secureApiAccess = "セキュアな API アクセス"
-selfHostLink = "ドキュメントとプランを確認"
-selfHostPrompt = "セルフホストしますか？"
-standardThroughput = "標準スループット"
-subtitle = "Team にアップグレードして、クレジット 10 倍と高速処理を。"
-subtitlePro = "自動超過課金を有効にして、クレジット切れを防ぎましょう。"
-teamLeaderOnly = "超過課金を有効にできるのはチームリーダーのみです"
-teamSubscription = "Team"
-titleExhausted = "無料クレジットを使い切りました"
-titleExhaustedPro = "クレジットが不足しています"
-unlimitedApiAccess = "API アクセス無制限"
-unlimitedMonthlyCredits = "サイトライセンス"
-unlimitedSeats = "ユーザー数無制限"
-
-[credits.modal.features]
-everythingInCredits = "Credits の内容に加えて："
-everythingInFree = "Free の内容に加えて："
-forRegularWork = "通常の PDF 作業向け："
-
-[credits.insufficient]
-brief = "クレジットが不足しています。必要数は {{required}} ですが、保有数は {{current}} です。"
-freeTier = "Team にアップグレードして、クレジット 10 倍と無制限の超過課金を。"
-managedMember = "サポートが必要な場合はチームリーダーに連絡してください。"
-message = "{{tool}} を実行するのに十分なクレジットがありません。現在の保有数は {{current}} クレジットです。"
-messageWithAmount = "{{tool}} を実行するには {{required}} クレジットが必要ですが、保有数は {{current}} のみです。"
-teamMember = "超過課金を有効にして、クレジット切れを防ぎましょう。"
-title = "クレジット不足"
+[plan.trial]
+badge = "Trial"
+continueWithFree = "Continue with Free"
+daysRemaining = "Your trial ends in {{days}} days"
+endDate = "Expires: {{date}}"
+expired = "Your Trial Has Ended"
+expiredMessage = "Your 30-day Pro trial has expired. Subscribe to Pro to continue accessing premium features, or continue with our free tier."
+freeTierLimitations = "Free tier includes basic PDF tools with usage limits."
+message = ""
+subscribe = "Subscribe to Pro"
+subscribeToPro = "Subscribe to Pro"
+subscriptionScheduled = "Subscription scheduled - starts {{date}}"
+title = "Free Trial Active"
 
 [printFile]
 header = "ファイルをプリンタで印刷"
@@ -5148,6 +5177,207 @@ title = "ファイルの印刷"
 [printFile.selectText]
 1 = "印刷するファイルを選択"
 2 = "プリンタ名を入力"
+
+[provider.googledrive]
+name = "Google Drive"
+scope = "ファイルのインポート"
+
+[provider.googledrive.apiKey]
+description = "Google Cloud Console の Google Picker API 用 Google API キー"
+label = "API キー"
+
+[provider.googledrive.appId]
+description = "Google Cloud Console の Google Drive アプリ ID"
+label = "アプリ ID"
+
+[provider.googledrive.clientId]
+description = "Google Cloud Console の Google OAuth 2.0 クライアント ID"
+label = "クライアント ID"
+
+[provider.googledrive.enabled]
+description = "ユーザーが Google Drive から直接ファイルをインポートできるようにする"
+label = "Google Drive ファイルピッカーを有効化"
+
+[provider.oauth2.generic]
+name = "汎用 OAuth2"
+scope = "SSO"
+
+[provider.oauth2.generic.autoCreateUser]
+description = "初回の OAuth2 ログイン時にユーザーアカウントを自動作成"
+label = "ユーザーを自動作成"
+
+[provider.oauth2.generic.blockRegistration]
+description = "OAuth2 経由での新規ユーザー登録を禁止"
+label = "登録をブロック"
+
+[provider.oauth2.generic.clientId]
+description = "プロバイダーの OAuth2 クライアント ID"
+label = "クライアント ID"
+
+[provider.oauth2.generic.clientSecret]
+description = "プロバイダーの OAuth2 クライアントシークレット"
+label = "クライアントシークレット"
+
+[provider.oauth2.generic.enabled]
+description = "カスタム OAuth2 プロバイダーを使用した認証を有効化"
+label = "汎用 OAuth2 を有効化"
+
+[provider.oauth2.generic.issuer]
+description = "OpenID Connect Discovery（/.well-known/openid-configuration）対応のプロバイダー"
+label = "Issuer URL"
+
+[provider.oauth2.generic.provider]
+description = "OAuth2 プロバイダー名（例：Azure AD、Okta）"
+label = "プロバイダー名"
+
+[provider.oauth2.generic.scopes]
+description = "カンマ区切りの OAuth2 スコープ"
+label = "スコープ"
+
+[provider.oauth2.generic.useAsUsername]
+description = "ユーザー名として使用するフィールド"
+label = "ユーザー名として使用"
+
+[provider.oauth2.github]
+scope = "サインイン認証"
+
+[provider.oauth2.github.clientId]
+description = "GitHub Developer Settings の OAuth2 クライアント ID"
+label = "クライアント ID"
+
+[provider.oauth2.github.clientSecret]
+description = "GitHub Developer Settings の OAuth2 クライアントシークレット"
+label = "クライアントシークレット"
+
+[provider.oauth2.github.scopes]
+description = "カンマ区切りの OAuth2 スコープ"
+label = "スコープ"
+
+[provider.oauth2.github.useAsUsername]
+description = "ユーザー名として使用するフィールド（email、login、name）"
+label = "ユーザー名として使用"
+
+[provider.oauth2.google]
+scope = "サインイン認証"
+
+[provider.oauth2.google.clientId]
+description = "Google Cloud Console の OAuth2 クライアント ID"
+label = "クライアント ID"
+
+[provider.oauth2.google.clientSecret]
+description = "Google Cloud Console の OAuth2 クライアントシークレット"
+label = "クライアントシークレット"
+
+[provider.oauth2.google.scopes]
+description = "カンマ区切りの OAuth2 スコープ"
+label = "スコープ"
+
+[provider.oauth2.google.useAsUsername]
+description = "ユーザー名として使用するフィールド（email、name、given_name、family_name）"
+label = "ユーザー名として使用"
+
+[provider.oauth2.keycloak]
+scope = "SSO"
+
+[provider.oauth2.keycloak.clientId]
+description = "Keycloak の OAuth2 クライアント ID"
+label = "クライアント ID"
+
+[provider.oauth2.keycloak.clientSecret]
+description = "Keycloak の OAuth2 クライアントシークレット"
+label = "クライアントシークレット"
+
+[provider.oauth2.keycloak.issuer]
+description = "Keycloak レルムの OpenID Connect Discovery エンドポイントの URL"
+label = "Issuer URL"
+
+[provider.oauth2.keycloak.scopes]
+description = "カンマ区切りの OAuth2 スコープ"
+label = "スコープ"
+
+[provider.oauth2.keycloak.useAsUsername]
+description = "ユーザー名として使用するフィールド（email、name、given_name、family_name、preferred_username）"
+label = "ユーザー名として使用"
+
+[provider.saml2]
+name = "SAML2"
+scope = "SSO（SAML）"
+
+[provider.saml2.autoCreateUser]
+description = "初回の SAML2 ログイン時にユーザーアカウントを自動作成"
+label = "ユーザーを自動作成"
+
+[provider.saml2.blockRegistration]
+description = "SAML2 経由での新規ユーザー登録を禁止"
+label = "登録をブロック"
+
+[provider.saml2.enabled]
+description = "SAML2 認証を有効化（Enterprise のみ）"
+label = "SAML2 を有効化"
+
+[provider.saml2.idpCert]
+description = "証明書のパス（例：classpath:okta.cert）"
+label = "IDP 証明書"
+
+[provider.saml2.idpIssuer]
+description = "プロバイダーの ID"
+label = "IDP Issuer"
+
+[provider.saml2.idpMetadataUri]
+description = "プロバイダーのメタデータ用 URI"
+label = "IDP メタデータ URI"
+
+[provider.saml2.idpSingleLoginUrl]
+description = "SSO を開始するための URL"
+label = "IDP シングルログイン URL"
+
+[provider.saml2.idpSingleLogoutUrl]
+description = "SLO を開始するための URL"
+label = "IDP シングルログアウト URL"
+
+[provider.saml2.privateKey]
+description = "秘密鍵のパス"
+label = "秘密鍵"
+
+[provider.saml2.provider]
+description = "SAML2 プロバイダー名"
+label = "プロバイダー名"
+
+[provider.saml2.registrationId]
+description = "Service Provider（SP）アプリ名"
+label = "登録 ID"
+
+[provider.saml2.spCert]
+description = "署名証明書のパス"
+label = "SP 証明書"
+
+[provider.smtp]
+name = "SMTP メール"
+scope = "メール通知"
+
+[provider.smtp.enabled]
+description = "メール通知と SMTP 機能を有効化"
+label = "メールを有効化"
+
+[provider.smtp.from]
+description = "送信者として使用するメールアドレス"
+label = "送信元アドレス"
+
+[provider.smtp.host]
+description = "SMTP サーバーのホスト名または IP アドレス"
+label = "SMTP ホスト"
+
+[provider.smtp.password]
+description = "SMTP 認証のパスワード"
+label = "SMTP パスワード"
+
+[provider.smtp.port]
+description = "SMTP 接続のポート番号（通常 25、465、587）"
+label = "SMTP ポート"
+
+[provider.smtp.username]
+description = "SMTP 認証のユーザー名"
+label = "SMTP ユーザー名"
 
 [quickAccess]
 account = "アカウント"
@@ -5204,15 +5434,15 @@ title = "墨消し語句"
 failed = "PDF の墨消し中にエラーが発生しました。"
 
 [redact.manual]
+activate = "墨消しツールを有効化"
+active = "墨消しモードが有効"
 apply = "適用"
 applyChanges = "変更を適用"
 applyRedactions = "Apply Redactions"
 applyWarning = "⚠️ 永久適用で元に戻せず、下のデータは削除されます"
 boxRedaction = "ボックス描画による墨消し"
-colourPicker = "カラーピッカー"
 colorLabel = "墨消しの色"
-active = "墨消しモードが有効"
-activate = "墨消しツールを有効化"
+colourPicker = "カラーピッカー"
 controlsTitle = "手動墨消しコントロール"
 convertPDFToImageLabel = "PDF を PDF-Image に変換（ボックス背後のテキスト除去用）"
 export = "エクスポート"
@@ -5608,6 +5838,39 @@ title = "高コントラスト"
 text = "PDF 内のすべての色を完全に反転し、ネガのような効果を作ります。ダークモード版の作成や暗所での眼精疲労の軽減に有用です。"
 title = "全色反転"
 
+[rightRail]
+annotations = "注釈"
+applyRedactionsFirst = "先に墨消しを適用"
+closePdf = "PDF を閉じる"
+closeSelected = "選択したファイルを閉じる"
+deleteSelected = "選択したページを削除"
+deselectAll = "選択を解除"
+downloadAll = "すべてをダウンロード"
+downloadSelected = "選択したファイルをダウンロード"
+draw = "描画"
+exitRedaction = "墨消しモードを終了"
+exportAll = "PDF を書き出し"
+exportSelected = "選択したページを書き出し"
+formFill = "フォーム入力"
+language = "言語"
+panMode = "パンモード"
+print = "PDFを印刷"
+redact = "墨消し"
+rotateLeft = "左に回転"
+rotateRight = "右に回転"
+ruler = "定規 / 測定"
+save = "保存"
+saveAll = "すべて保存"
+saveChanges = "変更を保存"
+search = "PDF を検索"
+selectAll = "すべて選択"
+selectByNumber = "ページ番号で選択"
+toggleAnnotations = "注釈の表示を切り替え"
+toggleAttachments = "添付ファイルの表示切替"
+toggleBookmarks = "ブックマークを切り替え"
+toggleSidebar = "サイドバーを切り替え"
+toggleTheme = "テーマを切り替え"
+
 [rotate]
 rotateLeft = "反時計回りに回転"
 rotateRight = "時計回りに回転"
@@ -5755,6 +6018,14 @@ placeholder = "検索語を入力..."
 searching = "検索中..."
 title = "PDF を検索"
 
+[selfHosted.offline]
+hideTools = "Hide unavailable tools ▴"
+messageNoFallback = "Tools are unavailable until your server comes back online."
+messageWithFallback = "Some tools require a server connection."
+showTools = "View unavailable tools ▾"
+title = "Your Stirling-PDF server is unreachable"
+toolNotAvailableLocally = "Your Stirling-PDF server is offline and \"{{endpoint}}\" is not available on the local backend."
+
 [session]
 expired = "セッションが期限切れです。ページを更新してもう一度お試しください。"
 refreshPage = "ページを更新"
@@ -5776,70 +6047,6 @@ user = "ログイン中:"
 [settings.connection.mode]
 saas = "Stirling Cloud"
 selfhosted = "セルフホスト"
-
-[settings.planBilling]
-currentPlan = "現在のプラン"
-loading = "請求情報を読み込み中..."
-notAvailable = "プランと請求は、Stirling Cloud（SaaS モード）に接続している場合にのみ利用できます。"
-title = "プランと請求"
-
-[settings.planBilling.billing]
-manageBilling = "請求を管理"
-nextBillingDate = "次回の請求日"
-overageCost = "現在の超過費用：{{amount}}（{{credits}} クレジット）"
-
-[settings.planBilling.credits]
-estimatedCost = "見積もり額：{{amount}}"
-freeTierInfo = "Free プランには毎月 {{freeCredits}} クレジットが含まれます。Team にアップグレードすると、{{teamCredits}} クレジット/月と使った分だけの超過課金が利用できます。"
-included = "{{count}} クレジット/月（含まれる）"
-noOverage = "今月は超過料金はありません。含まれている {{count}} クレジットをご利用中です。"
-overage = "+ 超過 {{count}}"
-overageInfo = "超過クレジットは 1 クレジットあたり {{price}} で請求されます。月間枠を超えた分のみお支払いください。"
-title = "クレジット使用状況"
-
-[settings.planBilling.errors]
-fetchFailed = "請求データを取得できません"
-retry = "再試行"
-
-[settings.planBilling.status]
-active = "有効"
-canceled = "キャンセル済み"
-pastDue = "延滞"
-trial = "トライアル"
-
-[settings.planBilling.tier]
-enterprise = "Enterprise"
-enterpriseDescription = "エンタープライズ向けのカスタム機能とサポート"
-free = "Free"
-freeDescription = "月 50 クレジット"
-team = "Team"
-teamBadge = "Team"
-teamDescription = "月 500 クレジットを含み、サービスが途切れない自動超過課金に対応"
-teamTooltipCredits = "Team プランには月 {{credits}} クレジットが含まれます。"
-teamTooltipFineprint = "含まれるクレジットを超えた分だけお支払いください。"
-teamTooltipOverage = "自動超過課金（{{price}}/クレジット）でサービスの継続性を確保します。"
-
-[settings.planBilling.team]
-managedByTeam = "チームによって管理"
-memberCount = "チームメンバー {{count}} 名"
-
-[settings.planBilling.trial]
-daysRemaining = "残り {{days}} 日"
-daysRemainingFull = "トライアルはあと {{days}} 日で終了します"
-endDate = "有効期限：{{date}}"
-endsOn = "トライアル終了"
-title = "無料トライアル中"
-
-[settings.planBilling.upgrade]
-cta = "Team にアップグレード"
-featureApi = "自動化のための API アクセス"
-featureCredits = "月 {{teamCredits}} クレジット（Free は {{freeCredits}}）"
-featureMembers = "チームメンバー無制限"
-featureSupport = "優先サポート"
-featureThroughput = "より高速な処理スループット"
-opensInBrowser = "ブラウザーで開いてアップグレードを完了します"
-subtitle = "Team にアップグレードすると："
-title = "プランをアップグレード"
 
 [settings.developer]
 apiKeys = "APIキー"
@@ -5923,6 +6130,70 @@ plan = "プラン"
 title = "ライセンスと分析"
 usageAnalytics = "利用分析"
 
+[settings.planBilling]
+currentPlan = "現在のプラン"
+loading = "請求情報を読み込み中..."
+notAvailable = "プランと請求は、Stirling Cloud（SaaS モード）に接続している場合にのみ利用できます。"
+title = "プランと請求"
+
+[settings.planBilling.billing]
+manageBilling = "請求を管理"
+nextBillingDate = "次回の請求日"
+overageCost = "現在の超過費用：{{amount}}（{{credits}} クレジット）"
+
+[settings.planBilling.credits]
+estimatedCost = "見積もり額：{{amount}}"
+freeTierInfo = "Free プランには毎月 {{freeCredits}} クレジットが含まれます。Team にアップグレードすると、{{teamCredits}} クレジット/月と使った分だけの超過課金が利用できます。"
+included = "{{count}} クレジット/月（含まれる）"
+noOverage = "今月は超過料金はありません。含まれている {{count}} クレジットをご利用中です。"
+overage = "+ 超過 {{count}}"
+overageInfo = "超過クレジットは 1 クレジットあたり {{price}} で請求されます。月間枠を超えた分のみお支払いください。"
+title = "クレジット使用状況"
+
+[settings.planBilling.errors]
+fetchFailed = "請求データを取得できません"
+retry = "再試行"
+
+[settings.planBilling.status]
+active = "有効"
+canceled = "キャンセル済み"
+pastDue = "延滞"
+trial = "トライアル"
+
+[settings.planBilling.team]
+managedByTeam = "チームによって管理"
+memberCount = "チームメンバー {{count}} 名"
+
+[settings.planBilling.tier]
+enterprise = "Enterprise"
+enterpriseDescription = "エンタープライズ向けのカスタム機能とサポート"
+free = "Free"
+freeDescription = "月 50 クレジット"
+team = "Team"
+teamBadge = "Team"
+teamDescription = "月 500 クレジットを含み、サービスが途切れない自動超過課金に対応"
+teamTooltipCredits = "Team プランには月 {{credits}} クレジットが含まれます。"
+teamTooltipFineprint = "含まれるクレジットを超えた分だけお支払いください。"
+teamTooltipOverage = "自動超過課金（{{price}}/クレジット）でサービスの継続性を確保します。"
+
+[settings.planBilling.trial]
+daysRemaining = "残り {{days}} 日"
+daysRemainingFull = "トライアルはあと {{days}} 日で終了します"
+endDate = "有効期限：{{date}}"
+endsOn = "トライアル終了"
+title = "無料トライアル中"
+
+[settings.planBilling.upgrade]
+cta = "Team にアップグレード"
+featureApi = "自動化のための API アクセス"
+featureCredits = "月 {{teamCredits}} クレジット（Free は {{freeCredits}}）"
+featureMembers = "チームメンバー無制限"
+featureSupport = "優先サポート"
+featureThroughput = "より高速な処理スループット"
+opensInBrowser = "ブラウザーで開いてアップグレードを完了します"
+subtitle = "Team にアップグレードすると："
+title = "プランをアップグレード"
+
 [settings.policiesPrivacy]
 legal = "法務"
 privacy = "プライバシー"
@@ -5930,6 +6201,9 @@ title = "ポリシーとプライバシー"
 
 [settings.preferences]
 title = "環境設定"
+
+[settings.search]
+placeholder = "Search settings pages..."
 
 [settings.security]
 description = "アカウントを安全に保つため、パスワードを更新してください。"
@@ -5956,6 +6230,9 @@ security = "セキュリティ"
 telegram = "Telegram"
 title = "セキュリティと認証"
 
+[settings.team]
+title = "Team"
+
 [settings.tooltips]
 enableLoginFirst = "先にログインモードを有効にしてください"
 requiresEnterprise = "Enterpriseライセンスが必要です"
@@ -5964,9 +6241,6 @@ requiresEnterprise = "Enterpriseライセンスが必要です"
 people = "メンバー"
 teams = "チーム"
 title = "ワークスペース"
-
-[settings.team]
-title = "Team"
 
 [setup]
 description = "Stirling PDF の使い方を選んで開始しましょう"
@@ -6290,15 +6564,15 @@ desc = "仕切りシートで自動分割"
 name = "仕切りページ"
 tooltip = "スキャン時に文書間に QR コードの仕切りシートを使用"
 
-[split.methods.byPoster]
-name = "印刷用の分割"
-desc = "大きなページを印刷可能なサイズに分割"
-tooltip = "大型ページを標準用紙（A4、Letter など）での印刷に適した小さなチャンクに分割します"
-
 [split.methods.byPages]
 desc = "特定のページを抽出（1,3,5-10）"
 name = "ページ番号"
 tooltip = "カンマで区切ったページ番号、またはハイフンで範囲を入力"
+
+[split.methods.byPoster]
+desc = "大きなページを印刷可能なサイズに分割"
+name = "印刷用の分割"
+tooltip = "大型ページを標準用紙（A4、Letter など）での印刷に適した小さなチャンクに分割します"
 
 [split.methods.bySections]
 desc = "ページをグリッド状のセクションに分割"
@@ -6326,27 +6600,27 @@ title = "分割方法を選択"
 text = "PDF をどのように分割するか選択してください。各方法はユースケースや文書タイプに最適化されています。"
 title = "分割方法の選択"
 
+[split.poster]
+rightToLeft = "右から左へ分割"
+
+[split.poster.pageSize]
+description = "印刷用の出力ページサイズ"
+label = "対象の用紙サイズ"
+
+[split.poster.xFactor]
+description = "各ページを分割する列数"
+label = "水平方向の分割数"
+
+[split.poster.yFactor]
+description = "各ページを分割する行数"
+label = "垂直方向の分割数"
+
 [split.settings]
 selectMethodFirst = "先に分割方法を選択してください"
 
 [split.steps]
 chooseMethod = "方法を選択"
 settings = "設定"
-
-[split.poster]
-rightToLeft = "右から左へ分割"
-
-[split.poster.pageSize]
-label = "対象の用紙サイズ"
-description = "印刷用の出力ページサイズ"
-
-[split.poster.xFactor]
-label = "水平方向の分割数"
-description = "各ページを分割する列数"
-
-[split.poster.yFactor]
-label = "垂直方向の分割数"
-description = "各ページを分割する行数"
 
 [split.tooltip.byChapters]
 bullet1 = "ブックマークレベル: どのレベルで分割するか（1=最上位）"
@@ -6385,6 +6659,13 @@ bullet5 = "仕切りシートの両面をスキャンする場合は両面モー
 text = "QR コード付きの物理的な仕切りシートを使って、まとめてスキャンした文書を自動分割します。複数文書の同時処理に最適。"
 title = "仕切りページで分割"
 
+[split.tooltip.byPages]
+bullet1 = "単一の分割点: 3,7（3ページ目と7ページ目の後で分割）"
+bullet2 = "範囲の分割点: 3-8（3ページ目の前と8ページ目の後で分割）"
+bullet3 = "混在: 2,5-10,15（2の後、5の前、10の後、15の後で分割）"
+text = "PDF を特定のページ番号で分割します。'n' はページ n の後で分割。'n-m' はページ n の前とページ m の後で分割します。"
+title = "ページ番号で分割"
+
 [split.tooltip.byPoster]
 bullet1 = "対象の用紙サイズ：出力する用紙サイズ（A4、Letter など）を選択"
 bullet2 = "水平/垂直の分割数：分割用のグリッドサイズ"
@@ -6392,13 +6673,6 @@ bullet3 = "右から左：RTL レイアウト用に列順を反転"
 bullet4 = "印刷して組み合わせればポスターが作成できます"
 text = "大きな PDF ページを標準的な用紙サイズで印刷可能な小さなチャンクに分割します。大型ページからポスター印刷を作成するのに最適です。"
 title = "ポスター印刷用に分割"
-
-[split.tooltip.byPages]
-bullet1 = "単一の分割点: 3,7（3ページ目と7ページ目の後で分割）"
-bullet2 = "範囲の分割点: 3-8（3ページ目の前と8ページ目の後で分割）"
-bullet3 = "混在: 2,5-10,15（2の後、5の前、10の後、15の後で分割）"
-text = "PDF を特定のページ番号で分割します。'n' はページ n の後で分割。'n-m' はページ n の前とページ m の後で分割します。"
-title = "ページ番号で分割"
 
 [split.tooltip.bySections]
 bullet1 = "水平: 作成する行数"
@@ -6541,6 +6815,82 @@ title = "API ドキュメント"
 [tableExtraxt]
 tags = "CSV,表抽出,抽出,変換"
 
+[team]
+cancelInviteError = "招待の取り消しに失敗しました"
+confirmCancelInvite = "この招待を取り消してもよろしいですか？"
+confirmLeave = "このチームから退出してもよろしいですか？"
+confirmLeaveLeader = "あなたはチームリーダーです。退出するとチームから削除されます。よろしいですか？"
+confirmRemove = "このメンバーを削除してもよろしいですか？"
+editName = "チーム名を編集"
+inviteCancelled = "招待を取り消しました"
+inviteError = "招待の送信に失敗しました"
+inviteSent = "招待を送信しました"
+leader = "リーダー"
+leaveButton = "チームを退出"
+leaveError = "チームの退出に失敗しました"
+leaveSuccess = "チームを退出しました"
+loading = "チーム情報を読み込み中..."
+memberCount = "{{count}} 名のメンバー"
+memberRemoved = "メンバーを削除しました"
+namePlaceholder = "チーム名を入力"
+personal = "個人"
+removeError = "メンバーの削除に失敗しました"
+renameError = "チーム名の変更に失敗しました"
+renameSuccess = "チーム名を変更しました"
+
+[team.features]
+badge = "Team の機能"
+subtitle = "チームでコラボレーション"
+title = "チームコラボレーション"
+viewPlans = "プランを見る"
+
+[team.features.billing]
+description = "請求とサブスクリプションを管理"
+title = "請求管理"
+
+[team.features.credits]
+description = "メンバー全員で共有するクレジットプール"
+title = "共有クレジット"
+
+[team.features.dashboard]
+description = "チームのアクティビティと利用状況を表示"
+title = "チームダッシュボード"
+
+[team.features.invite]
+description = "チームにメンバーを追加"
+title = "メンバーを招待"
+
+[team.invitationBanner]
+acceptButton = "承認"
+message = "があなたを招待しました"
+rejectButton = "辞退"
+
+[team.invite]
+cancelLabel = "キャンセル"
+invalidEmail = "無効なメールアドレスです"
+placeholder = "メールアドレスを入力"
+sendButton = "招待を送信"
+title = "チームメンバーを招待"
+
+[team.members]
+emailColumn = "メールアドレス"
+empty = "まだチームメンバーがいません"
+nameColumn = "名前"
+pending = "保留"
+remove = "削除"
+roleColumn = "役割"
+title = "チームメンバー"
+
+[team.upgrade]
+button = "Team にアップグレード"
+description = "チームコラボレーション機能を利用可能に"
+title = "Team プランにアップグレード"
+
+[textAlign]
+center = "中央揃え"
+left = "左揃え"
+right = "右揃え"
+
 [theme]
 toggle = "テーマを切り替え"
 
@@ -6557,6 +6907,7 @@ favorites = "お気に入り"
 heading = "すべてのツール（フルスクリーン表示）"
 noResults = "検索条件を調整するか、説明の表示を切り替えて必要なものを見つけてください。"
 recommended = "おすすめ"
+selfHostedOffline = "Requires your Stirling-PDF server (currently offline):"
 showDetails = "詳細を表示"
 unavailable = "サーバー管理者により無効化:"
 unavailableDependency = "利用不可 - 必要なツールがサーバーにありません:"
@@ -6819,6 +7170,37 @@ invalid = "証明書が信頼ストアにありません - ソースを検証で
 fileManager = "ファイルマネージャー"
 pageEditor = "ページエディタ"
 viewer = "ビューア"
+
+[viewer]
+cannotPreviewFile = "ファイルをプレビューできません"
+dualPageView = "見開き表示"
+firstPage = "最初のページ"
+lastPage = "最後のページ"
+nextPage = "次のページ"
+onlyPdfSupported = "このビューアは PDF ファイルのみをサポートしています。このファイルは別の形式のようです。"
+previousPage = "前のページ"
+singlePageView = "単一ページ表示"
+unknownFile = "不明なファイル"
+zoomIn = "拡大"
+zoomOut = "縮小"
+
+[viewer.attachments]
+empty = "このドキュメントには添付ファイルがありません"
+loading = "添付ファイルを読み込み中..."
+noDocument = "添付ファイルを表示するには PDF を開いてください。"
+noMatch = "検索条件に一致する添付ファイルはありません"
+noSupport = "このビューアでは添付ファイルはサポートされていません。"
+searchPlaceholder = "添付ファイルを検索"
+title = "添付ファイル"
+
+[viewer.formBar]
+apply = "変更を適用"
+dismiss = "閉じる"
+download = "PDF をダウンロード"
+hasFieldsDesc = "この PDF には入力可能なフィールドがあります"
+title = "フォームフィールド"
+unsavedBadge = "未保存"
+unsavedDesc = "未保存の変更があります"
 
 [viewPdf]
 header = "PDFを表示"
@@ -7259,278 +7641,3 @@ cancel = "キャンセル"
 confirm = "展開"
 message = "このZIPには{{count}}個のファイルが含まれています。展開しますか？"
 title = "大きな ZIP ファイル"
-
-[cloudBadge]
-tooltip = "この操作はクラウドクレジットを消費します"
-
-[team]
-cancelInviteError = "招待の取り消しに失敗しました"
-confirmCancelInvite = "この招待を取り消してもよろしいですか？"
-confirmLeave = "このチームから退出してもよろしいですか？"
-confirmLeaveLeader = "あなたはチームリーダーです。退出するとチームから削除されます。よろしいですか？"
-confirmRemove = "このメンバーを削除してもよろしいですか？"
-editName = "チーム名を編集"
-inviteCancelled = "招待を取り消しました"
-inviteError = "招待の送信に失敗しました"
-inviteSent = "招待を送信しました"
-leader = "リーダー"
-leaveButton = "チームを退出"
-leaveError = "チームの退出に失敗しました"
-leaveSuccess = "チームを退出しました"
-loading = "チーム情報を読み込み中..."
-memberCount = "{{count}} 名のメンバー"
-memberRemoved = "メンバーを削除しました"
-namePlaceholder = "チーム名を入力"
-personal = "個人"
-removeError = "メンバーの削除に失敗しました"
-renameError = "チーム名の変更に失敗しました"
-renameSuccess = "チーム名を変更しました"
-
-[team.invitationBanner]
-message = "があなたを招待しました"
-acceptButton = "承認"
-rejectButton = "辞退"
-
-[team.features]
-badge = "Team の機能"
-subtitle = "チームでコラボレーション"
-title = "チームコラボレーション"
-viewPlans = "プランを見る"
-
-[team.features.billing]
-description = "請求とサブスクリプションを管理"
-title = "請求管理"
-
-[team.features.credits]
-description = "メンバー全員で共有するクレジットプール"
-title = "共有クレジット"
-
-[team.features.dashboard]
-description = "チームのアクティビティと利用状況を表示"
-title = "チームダッシュボード"
-
-[team.features.invite]
-description = "チームにメンバーを追加"
-title = "メンバーを招待"
-
-[team.invite]
-cancelLabel = "キャンセル"
-invalidEmail = "無効なメールアドレスです"
-placeholder = "メールアドレスを入力"
-sendButton = "招待を送信"
-title = "チームメンバーを招待"
-
-[team.members]
-emailColumn = "メールアドレス"
-empty = "まだチームメンバーがいません"
-nameColumn = "名前"
-pending = "保留"
-remove = "削除"
-roleColumn = "役割"
-title = "チームメンバー"
-
-[team.upgrade]
-button = "Team にアップグレード"
-description = "チームコラボレーション機能を利用可能に"
-title = "Team プランにアップグレード"
-
-[provider.oauth2.google]
-scope = "サインイン認証"
-
-[provider.oauth2.google.clientId]
-label = "クライアント ID"
-description = "Google Cloud Console の OAuth2 クライアント ID"
-
-[provider.oauth2.google.clientSecret]
-label = "クライアントシークレット"
-description = "Google Cloud Console の OAuth2 クライアントシークレット"
-
-[provider.oauth2.google.scopes]
-label = "スコープ"
-description = "カンマ区切りの OAuth2 スコープ"
-
-[provider.oauth2.google.useAsUsername]
-label = "ユーザー名として使用"
-description = "ユーザー名として使用するフィールド（email、name、given_name、family_name）"
-
-[provider.oauth2.github]
-scope = "サインイン認証"
-
-[provider.oauth2.github.clientId]
-label = "クライアント ID"
-description = "GitHub Developer Settings の OAuth2 クライアント ID"
-
-[provider.oauth2.github.clientSecret]
-label = "クライアントシークレット"
-description = "GitHub Developer Settings の OAuth2 クライアントシークレット"
-
-[provider.oauth2.github.scopes]
-label = "スコープ"
-description = "カンマ区切りの OAuth2 スコープ"
-
-[provider.oauth2.github.useAsUsername]
-label = "ユーザー名として使用"
-description = "ユーザー名として使用するフィールド（email、login、name）"
-
-[provider.oauth2.keycloak]
-scope = "SSO"
-
-[provider.oauth2.keycloak.issuer]
-label = "Issuer URL"
-description = "Keycloak レルムの OpenID Connect Discovery エンドポイントの URL"
-
-[provider.oauth2.keycloak.clientId]
-label = "クライアント ID"
-description = "Keycloak の OAuth2 クライアント ID"
-
-[provider.oauth2.keycloak.clientSecret]
-label = "クライアントシークレット"
-description = "Keycloak の OAuth2 クライアントシークレット"
-
-[provider.oauth2.keycloak.scopes]
-label = "スコープ"
-description = "カンマ区切りの OAuth2 スコープ"
-
-[provider.oauth2.keycloak.useAsUsername]
-label = "ユーザー名として使用"
-description = "ユーザー名として使用するフィールド（email、name、given_name、family_name、preferred_username）"
-
-[provider.oauth2.generic]
-name = "汎用 OAuth2"
-scope = "SSO"
-
-[provider.oauth2.generic.enabled]
-label = "汎用 OAuth2 を有効化"
-description = "カスタム OAuth2 プロバイダーを使用した認証を有効化"
-
-[provider.oauth2.generic.provider]
-label = "プロバイダー名"
-description = "OAuth2 プロバイダー名（例：Azure AD、Okta）"
-
-[provider.oauth2.generic.issuer]
-label = "Issuer URL"
-description = "OpenID Connect Discovery（/.well-known/openid-configuration）対応のプロバイダー"
-
-[provider.oauth2.generic.clientId]
-label = "クライアント ID"
-description = "プロバイダーの OAuth2 クライアント ID"
-
-[provider.oauth2.generic.clientSecret]
-label = "クライアントシークレット"
-description = "プロバイダーの OAuth2 クライアントシークレット"
-
-[provider.oauth2.generic.scopes]
-label = "スコープ"
-description = "カンマ区切りの OAuth2 スコープ"
-
-[provider.oauth2.generic.useAsUsername]
-label = "ユーザー名として使用"
-description = "ユーザー名として使用するフィールド"
-
-[provider.oauth2.generic.autoCreateUser]
-label = "ユーザーを自動作成"
-description = "初回の OAuth2 ログイン時にユーザーアカウントを自動作成"
-
-[provider.oauth2.generic.blockRegistration]
-label = "登録をブロック"
-description = "OAuth2 経由での新規ユーザー登録を禁止"
-
-[provider.smtp]
-name = "SMTP メール"
-scope = "メール通知"
-
-[provider.smtp.enabled]
-label = "メールを有効化"
-description = "メール通知と SMTP 機能を有効化"
-
-[provider.smtp.host]
-label = "SMTP ホスト"
-description = "SMTP サーバーのホスト名または IP アドレス"
-
-[provider.smtp.port]
-label = "SMTP ポート"
-description = "SMTP 接続のポート番号（通常 25、465、587）"
-
-[provider.smtp.username]
-label = "SMTP ユーザー名"
-description = "SMTP 認証のユーザー名"
-
-[provider.smtp.password]
-label = "SMTP パスワード"
-description = "SMTP 認証のパスワード"
-
-[provider.smtp.from]
-label = "送信元アドレス"
-description = "送信者として使用するメールアドレス"
-
-[provider.saml2]
-name = "SAML2"
-scope = "SSO（SAML）"
-
-[provider.saml2.enabled]
-label = "SAML2 を有効化"
-description = "SAML2 認証を有効化（Enterprise のみ）"
-
-[provider.saml2.provider]
-label = "プロバイダー名"
-description = "SAML2 プロバイダー名"
-
-[provider.saml2.registrationId]
-label = "登録 ID"
-description = "Service Provider（SP）アプリ名"
-
-[provider.saml2.idpMetadataUri]
-label = "IDP メタデータ URI"
-description = "プロバイダーのメタデータ用 URI"
-
-[provider.saml2.idpSingleLoginUrl]
-label = "IDP シングルログイン URL"
-description = "SSO を開始するための URL"
-
-[provider.saml2.idpSingleLogoutUrl]
-label = "IDP シングルログアウト URL"
-description = "SLO を開始するための URL"
-
-[provider.saml2.idpIssuer]
-label = "IDP Issuer"
-description = "プロバイダーの ID"
-
-[provider.saml2.idpCert]
-label = "IDP 証明書"
-description = "証明書のパス（例：classpath:okta.cert）"
-
-[provider.saml2.privateKey]
-label = "秘密鍵"
-description = "秘密鍵のパス"
-
-[provider.saml2.spCert]
-label = "SP 証明書"
-description = "署名証明書のパス"
-
-[provider.saml2.autoCreateUser]
-label = "ユーザーを自動作成"
-description = "初回の SAML2 ログイン時にユーザーアカウントを自動作成"
-
-[provider.saml2.blockRegistration]
-label = "登録をブロック"
-description = "SAML2 経由での新規ユーザー登録を禁止"
-
-[provider.googledrive]
-name = "Google Drive"
-scope = "ファイルのインポート"
-
-[provider.googledrive.enabled]
-label = "Google Drive ファイルピッカーを有効化"
-description = "ユーザーが Google Drive から直接ファイルをインポートできるようにする"
-
-[provider.googledrive.clientId]
-label = "クライアント ID"
-description = "Google Cloud Console の Google OAuth 2.0 クライアント ID"
-
-[provider.googledrive.apiKey]
-label = "API キー"
-description = "Google Cloud Console の Google Picker API 用 Google API キー"
-
-[provider.googledrive.appId]
-label = "アプリ ID"
-description = "Google Cloud Console の Google Drive アプリ ID"

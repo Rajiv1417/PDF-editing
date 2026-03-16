@@ -16,13 +16,13 @@ comingSoon = "Již brzy"
 confirmClose = "Potvrdit zavření"
 confirmCloseCancel = "Zrušit"
 confirmCloseConfirm = "Zavřít soubor"
-confirmCloseMessage = "Opravdu chcete tento soubor zavřít?"
 confirmCloseDiscard = "Zahodit změny a zavřít"
+confirmCloseMessage = "Opravdu chcete tento soubor zavřít?"
 confirmCloseSave = "Uložit a zavřít"
+confirmCloseSaveFailed = "Uloženo s chybami. {{count}} soubor{{plural}} se nepodařilo uložit."
+confirmCloseSaveFailedTitle = "Uložení se nezdařilo"
 confirmCloseUnsaved = "Tento soubor má neuložené změny."
 confirmCloseUnsavedList = "Máte {{count}} soubor{{plural}} s neuloženými změnami.\n\n{{fileList}}"
-confirmCloseSaveFailedTitle = "Uložení se nezdařilo"
-confirmCloseSaveFailed = "Uloženo s chybami. {{count}} soubor{{plural}} se nepodařilo uložit."
 confirmPasswordErrorMessage = "Nové heslo a potvrzení nového hesla se musí shodovat."
 custom = "Vlastní..."
 customPosition = "Vlastní umístění"
@@ -42,11 +42,12 @@ downloadComplete = "Stahování dokončeno"
 downloadPdf = "Stáhnout PDF"
 downloadUnavailable = "Stažení pro tuto položku není k dispozici"
 edit = "Upravit"
+editSecret = "Upravit tuto hodnotu"
 editYourNewFiles = "Upravit nové soubory"
 exportAndContinue = "Exportovat a pokračovat"
 false = "Ne"
-fileSavedToDisk = "Soubor uložen na disk"
 fileNotSavedToDisk = "Neuloženo na disk"
+fileSavedToDisk = "Soubor uložen na disk"
 fileSelected = "Vybráno: {{filename}}"
 filesSelected = "vybraných souborů"
 font = "Písmo"
@@ -60,12 +61,15 @@ help = "Nápověda"
 imgPrompt = "Vyberte obrázek(y)"
 incorrectPasswordMessage = "Současné heslo není správné."
 info = "Informace"
+insufficientCredits = "Insufficient credits. Required: {{requiredCredits}}, Available: {{currentBalance}}, Shortfall: {{shortfall}}"
 invalidPasswordMessage = "Heslo nesmí být prázdné a nesmí obsahovat mezery na začátku nebo konci."
 invalidUndoData = "Nelze vrátit: neplatná data operace"
 invalidUsernameMessage = "Neplatné uživatelské jméno, může obsahovat pouze písmena, číslice a následující speciální znaky @._+- nebo musí být platná e-mailová adresa."
 joinDiscord = "Připojte se k našemu Discord serveru"
 keepWorking = "Pokračovat v práci"
 loading = "Načítání..."
+loadingCredits = "Checking credits..."
+loadingProStatus = "Checking subscription status..."
 logOut = "Odhlásit se"
 marginTooltip = "Vzdálenost mezi číslem stránky a okrajem stránky."
 moreOptions = "Další možnosti"
@@ -79,6 +83,7 @@ noFilesToUndo = "Nelze vrátit: v poslední operaci nebyly zpracovány žádné 
 noOperationToUndo = "Žádná operace k vrácení"
 notAuthenticatedMessage = "Uživatel není přihlášen."
 nothingToUndo = "Nelze vrátit žádnou akci"
+noticeTopUpOrPlan = "Not enough credits, please top up or upgrade to a plan"
 noValidFiles = "Žádné platné soubory ke zpracování"
 oops = "Jejda!"
 openInViewer = "Otevřít v prohlížeči"
@@ -95,9 +100,9 @@ pendingRedactionsTitle = "Neaplikovaná začernění"
 pin = "Připnout soubor (ponechat aktivní po spuštění nástroje)"
 poweredBy = "Využívá"
 pro = "Pro"
-processTimeWarning = "Upozornění: Tento proces může trvat až minutu v závislosti na velikosti souboru"
 processingComplete = "Váš soubor je připraven."
 processingCompleteMultiple = "{{count}} souborů je připraveno."
+processTimeWarning = "Upozornění: Tento proces může trvat až minutu v závislosti na velikosti souboru"
 property = "Vlastnost"
 quickPosition = "Rychlé umístění"
 red = "Červená"
@@ -107,7 +112,6 @@ save = "Uložit"
 saveToBrowser = "Uložit do prohlížeče"
 saveUnavailable = "Uložení pro tuto položku není k dispozici"
 seeDockerHub = "Prohlédněte si Docker Hub"
-editSecret = "Upravit tuto hodnotu"
 selectFillter = "-- Vybrat --"
 size = "Velikost"
 sponsor = "Sponzor"
@@ -845,6 +849,14 @@ title = "API koncové body"
 userDefaults = "Výchozí předvolby uživatelů"
 userDefaultsDescription = "Nastavte výchozí hodnoty uživatelských předvoleb. Uživatelé je mohou přepsat ve svém osobním nastavení."
 
+[admin.settings.endpoints.defaultHideUnavailableConversions]
+description = "Odebrat zakázané možnosti konverze místo jejich zobrazení šedě"
+label = "Ve výchozím nastavení skrýt nedostupné konverze"
+
+[admin.settings.endpoints.defaultHideUnavailableTools]
+description = "Odebrat zakázané nástroje místo jejich zobrazení šedě"
+label = "Ve výchozím nastavení skrýt nedostupné nástroje"
+
 [admin.settings.endpoints.groupsToRemove]
 description = "Vyberte skupiny koncových bodů k zakázání"
 label = "Zakázané skupiny koncových bodů"
@@ -852,14 +864,6 @@ label = "Zakázané skupiny koncových bodů"
 [admin.settings.endpoints.toRemove]
 description = "Vyberte jednotlivé koncové body k zakázání"
 label = "Zakázané koncové body"
-
-[admin.settings.endpoints.defaultHideUnavailableTools]
-description = "Odebrat zakázané nástroje místo jejich zobrazení šedě"
-label = "Ve výchozím nastavení skrýt nedostupné nástroje"
-
-[admin.settings.endpoints.defaultHideUnavailableConversions]
-description = "Odebrat zakázané možnosti konverze místo jejich zobrazení šedě"
-label = "Ve výchozím nastavení skrýt nedostupné konverze"
 
 [admin.settings.enterpriseRequired]
 message = "Pro přístup k {{featureName}} je vyžadována licence Enterprise. Zobrazená data jsou pouze ukázková."
@@ -968,6 +972,10 @@ label = "Výchozí jazyk"
 description = "Maximální velikost nahrávaného souboru (např. 100MB, 1GB)"
 label = "Limit nahrávání souboru"
 
+[admin.settings.general.frontendUrl]
+description = "Základní URL pro frontend (např. https://pdf.example.com). Používá se pro odkazy v e‑mailových pozvánkách a nahrávání přes mobilní QR kód. Ponechte prázdné pro použití backend URL."
+label = "Frontend URL"
+
 [admin.settings.general.hideDisabledTools]
 description = "Skrýt v rozhraní zakázané nástroje"
 label = "Skrýt zakázané nástroje"
@@ -979,10 +987,6 @@ label = "Skrýt Google Drive"
 [admin.settings.general.hideDisabledTools.mobileScanner]
 description = "Skrýt tlačítko pro mobilní QR skener, když není povoleno"
 label = "Skrýt mobilní skener"
-
-[admin.settings.general.frontendUrl]
-description = "Základní URL pro frontend (např. https://pdf.example.com). Používá se pro odkazy v e‑mailových pozvánkách a nahrávání přes mobilní QR kód. Ponechte prázdné pro použití backend URL."
-label = "Frontend URL"
 
 [admin.settings.general.homeDescription]
 description = "Popisný text zobrazovaný na úvodní stránce"
@@ -1163,9 +1167,25 @@ description = "Nakonfigurujte autentizaci, chování přihlášení a bezpečnos
 title = "Zabezpečení"
 
 [admin.settings.security.audit]
+hideDetails = "Skrýt podrobnosti úrovní auditu"
 label = "Auditní logování"
 showDetails = "Zobrazit podrobnosti úrovní auditu"
-hideDetails = "Skrýt podrobnosti úrovní auditu"
+
+[admin.settings.security.audit.advancedOptions]
+description = "Následující volby zvyšují dobu zpracování a spotřebu paměti. Povolte je pouze v případě skutečné potřeby."
+title = "Pokročilé možnosti"
+
+[admin.settings.security.audit.captureFileHash]
+description = "Získat hash SHA-256 nahraných souborů PDF pro ověření integrity. Nezávislé na úrovni auditu."
+label = "Zachytávat hash souboru (SHA-256)"
+
+[admin.settings.security.audit.captureOperationResults]
+description = "Zachytávat návratové hodnoty metod. Nedoporučuje se: výrazně zvyšuje objem logů a využití disku."
+label = "Zachytávat výsledky operací"
+
+[admin.settings.security.audit.capturePdfAuthor]
+description = "Během zpracování vyčíst pole autora z dokumentů PDF. Vyžaduje parsování PDF, zvyšuje latenci. Nezávislé na úrovni auditu."
+label = "Zachytávat metadata autora PDF"
 
 [admin.settings.security.audit.enabled]
 description = "Sledovat akce uživatelů a systémové události pro compliance a bezpečnostní dohled"
@@ -1176,30 +1196,14 @@ description = "0=OFF, 1=BASIC, 2=STANDARD, 3=VERBOSE"
 label = "Úroveň auditu"
 
 [admin.settings.security.audit.levelDetails]
-off = "Žádné auditní protokolování (kromě kritických bezpečnostních událostí)"
 basic = "Operace se soubory PDF (komprese, rozdělení, sloučení atd.) a změny nastavení. Zachycuje: stav operace (úspěch/neúspěch), parametry metod, časování. Minimální objem logů."
+off = "Žádné auditní protokolování (kromě kritických bezpečnostních událostí)"
 standard = "Události BASIC plus: přihlášení/odhlášení uživatele, změny účtu, obecné požadavky GET. Vylučuje průběžná dotazování (/auth/me, /app-config, /health atd.) pro snížení šumu v logu. Ideální pro většinu nasazení."
 verbose = "Události STANDARD plus: průběžná dotazování, všechny požadavky GET, podrobné časování. Upozornění: vysoký objem logů a dopad na výkon."
 
 [admin.settings.security.audit.retentionDays]
 description = "Počet dní uchování auditních záznamů"
 label = "Doba uchování auditů (dny)"
-
-[admin.settings.security.audit.advancedOptions]
-title = "Pokročilé možnosti"
-description = "Následující volby zvyšují dobu zpracování a spotřebu paměti. Povolte je pouze v případě skutečné potřeby."
-
-[admin.settings.security.audit.captureFileHash]
-description = "Získat hash SHA-256 nahraných souborů PDF pro ověření integrity. Nezávislé na úrovni auditu."
-label = "Zachytávat hash souboru (SHA-256)"
-
-[admin.settings.security.audit.capturePdfAuthor]
-description = "Během zpracování vyčíst pole autora z dokumentů PDF. Vyžaduje parsování PDF, zvyšuje latenci. Nezávislé na úrovni auditu."
-label = "Zachytávat metadata autora PDF"
-
-[admin.settings.security.audit.captureOperationResults]
-description = "Zachytávat návratové hodnoty metod. Nedoporučuje se: výrazně zvyšuje objem logů a využití disku."
-label = "Zachytávat výsledky operací"
 
 [admin.settings.security.csrfDisabled]
 description = "Zakázat ochranu proti Cross-Site Request Forgery (nedoporučuje se)"
@@ -1268,6 +1272,14 @@ label = "Počáteční uživatelské jméno"
 [admin.settings.security.jwt]
 label = "Konfigurace JWT"
 
+[admin.settings.security.jwt.allowedClockSkewSeconds]
+description = "Tolerance odchylky času klient/server během ověření tokenu (výchozí: 60 sekund)"
+label = "Tolerance odchylky času (sekundy)"
+
+[admin.settings.security.jwt.desktopTokenExpiryMinutes]
+description = "Doba platnosti přístupového tokenu v minutách pro desktopové klienty. Desktopové aplikace jsou automaticky detekovány podle User-Agent a získají delší relace pro lepší UX (výchozí: 43200 = 30 dní)"
+label = "Vypršení platnosti desktopového tokenu (minuty)"
+
 [admin.settings.security.jwt.enableKeyCleanup]
 description = "Automaticky odstraňovat expirované klíče JWT"
 label = "Povolit čištění klíčů"
@@ -1276,29 +1288,21 @@ label = "Povolit čištění klíčů"
 description = "Automaticky periodicky rotovat podepisovací klíče JWT"
 label = "Povolit rotaci klíčů"
 
-[admin.settings.security.jwt.tokenExpiryMinutes]
-description = "Doba platnosti přístupového tokenu v minutách pro webové klienty (výchozí: 1440 = 24 hodin)"
-label = "Vypršení platnosti webového tokenu (minuty)"
-
-[admin.settings.security.jwt.desktopTokenExpiryMinutes]
-description = "Doba platnosti přístupového tokenu v minutách pro desktopové klienty. Desktopové aplikace jsou automaticky detekovány podle User-Agent a získají delší relace pro lepší UX (výchozí: 43200 = 30 dní)"
-label = "Vypršení platnosti desktopového tokenu (minuty)"
-
-[admin.settings.security.jwt.allowedClockSkewSeconds]
-description = "Tolerance odchylky času klient/server během ověření tokenu (výchozí: 60 sekund)"
-label = "Tolerance odchylky času (sekundy)"
+[admin.settings.security.jwt.persistence]
+description = "Ukládat klíče JWT trvale, aby přežily restarty serveru"
+label = "Povolit persistenci klíčů"
 
 [admin.settings.security.jwt.refreshGraceMinutes]
 description = "Povolit obnovení tokenu v tomto počtu minut po vypršení (výchozí: 15 minut, max. 3 pokusy)"
 label = "Lhůta pro obnovení (minuty)"
 
-[admin.settings.security.jwt.persistence]
-description = "Ukládat klíče JWT trvale, aby přežily restarty serveru"
-label = "Povolit persistenci klíčů"
-
 [admin.settings.security.jwt.secureCookie]
 description = "Vyžadovat HTTPS pro cookies JWT (doporučeno pro produkci)"
 label = "Zabezpečená cookie"
+
+[admin.settings.security.jwt.tokenExpiryMinutes]
+description = "Doba platnosti přístupového tokenu v minutách pro webové klienty (výchozí: 1440 = 24 hodin)"
+label = "Vypršení platnosti webového tokenu (minuty)"
 
 [admin.settings.security.loginAttemptCount]
 description = "Maximální počet neúspěšných pokusů o přihlášení před uzamčením účtu"
@@ -1586,68 +1590,6 @@ goToSettings = "Přejít na nastavení auditu"
 notAvailable = "Systém auditu není k dispozici"
 notAvailableMessage = "Systém auditu není nakonfigurován nebo není k dispozici."
 
-[audit.error]
-title = "Chyba při načítání systému auditu"
-
-[audit.export]
-clearFilters = "Vymazat"
-description = "Exportujte auditní události do formátu CSV nebo JSON. Pomocí filtrů omezte exportovaná data."
-endDate = "Datum konce"
-error = "Export dat se nezdařil"
-exportButton = "Exportovat data"
-fieldAuthor = "Autor (z PDF)"
-fieldDate = "Datum"
-fieldDocumentName = "Název dokumentu"
-fieldFileHash = "Hash souboru (SHA-256)"
-fieldIpAddress = "IP adresa"
-fieldOperationResults = "Výsledky operace"
-fieldOutcome = "Výsledek (Úspěch/Neúspěch)"
-fieldTool = "Nástroj"
-fieldUsername = "Uživatelské jméno"
-filterByType = "Filtrovat podle typu"
-filterByUser = "Filtrovat podle uživatele"
-filters = "Filtry (volitelné)"
-format = "Formát exportu"
-selectFields = "Vyberte pole k zahrnutí"
-startDate = "Datum začátku"
-title = "Export auditních dat"
-verboseRequired = "Vyžaduje úroveň auditu VERBOSE"
-
-[audit.systemStatus]
-autoRefresh = "Automatické obnovení"
-autoRefreshLabel = "Automaticky obnovovat každých 30 s"
-captureBySettings = "Povolit v nastavení"
-capturedFields = "Zachycená pole"
-date = "Datum"
-days = "dní"
-disabled = "Vypnuto"
-documentName = "Název dokumentu"
-enabled = "Zapnuto"
-fileHash = "Hash souboru"
-level = "Úroveň auditu"
-pdfAuthor = "Autor PDF"
-retention = "Doba uchování"
-status = "Záznam auditu"
-title = "Stav systému"
-tool = "Nástroj"
-totalEvents = "Celkem událostí"
-username = "Uživatelské jméno"
-verboseOnly = "Pouze VERBOSE"
-
-[audit.stats]
-activeUsers = "Aktivní uživatelé"
-attention = "Vyžaduje pozornost"
-avgLatency = "Průměrná latence"
-error = "Chyba při načítání statistik"
-errorLoadingStats = "Nepodařilo se načíst statistiky"
-excellent = "Vynikající"
-good = "Dobré"
-noData = "N/A"
-successRate = "Míra úspěšnosti"
-title = "Souhrn"
-totalEvents = "Celkem událostí"
-vsLastPeriod = "oproti minulému období"
-
 [audit.charts]
 byTool = "Nejpoužívanější nástroje"
 byType = "Události podle typu"
@@ -1660,6 +1602,27 @@ noData = "Pro toto období nejsou k dispozici data"
 overTime = "Události v čase"
 title = "Přehled auditu"
 week = "Týden"
+
+[audit.clearData]
+cancel = "Zrušit"
+codeDoesNotMatch = "Kód neodpovídá"
+codePlaceholder = "Zde zadejte kód"
+confirmationCode = "Potvrzovací kód"
+confirmationRequired = "Smazat všechna auditní data"
+confirmMessage = "Tímto trvale odstraníte všechny auditní logy. Pro pokračování níže zadejte potvrzovací kód."
+confirmTitle = "Potvrďte, že chcete smazat"
+deleteButton = "Smazat"
+enterCode = "Potvrzovací kód"
+enterCodeBelow = "Zadejte kód přesně podle zobrazení výše (rozlišuje se velikost písmen)"
+initiateDelete = "Smazat všechna data"
+irreversible = "NEVRATNÉ"
+success = "Úspěch"
+successMessage = "Všechna auditní data byla úspěšně vymazána"
+warning1 = "Tuto akci nelze vrátit zpět"
+warning2 = "Smazání auditních dat trvale odstraní všechny historické auditní logy, včetně bezpečnostních událostí, aktivit uživatelů a operací se soubory z databáze."
+
+[audit.error]
+title = "Chyba při načítání systému auditu"
 
 [audit.events]
 actions = "Akce"
@@ -1687,40 +1650,81 @@ type = "Typ"
 user = "Uživatel"
 viewDetails = "Zobrazit podrobnosti"
 
+[audit.export]
+clearFilters = "Vymazat"
+description = "Exportujte auditní události do formátu CSV nebo JSON. Pomocí filtrů omezte exportovaná data."
+endDate = "Datum konce"
+error = "Export dat se nezdařil"
+exportButton = "Exportovat data"
+fieldAuthor = "Autor (z PDF)"
+fieldDate = "Datum"
+fieldDocumentName = "Název dokumentu"
+fieldFileHash = "Hash souboru (SHA-256)"
+fieldIpAddress = "IP adresa"
+fieldOperationResults = "Výsledky operace"
+fieldOutcome = "Výsledek (Úspěch/Neúspěch)"
+fieldTool = "Nástroj"
+fieldUsername = "Uživatelské jméno"
+filterByType = "Filtrovat podle typu"
+filterByUser = "Filtrovat podle uživatele"
+filters = "Filtry (volitelné)"
+format = "Formát exportu"
+selectFields = "Vyberte pole k zahrnutí"
+startDate = "Datum začátku"
+title = "Export auditních dat"
+verboseRequired = "Vyžaduje úroveň auditu VERBOSE"
+
 [audit.filters]
 allOutcomes = "Vše"
 failureOnly = "Pouze neúspěchy"
-last7Days = "Posledních 7 dní"
 last30Days = "Posledních 30 dní"
+last7Days = "Posledních 7 dní"
 outcomeFilter = "Výsledek"
 quickPresets = "Rychlé filtry"
 successOnly = "Pouze úspěchy"
 thisMonth = "Tento měsíc"
 today = "Dnes"
 
+[audit.stats]
+activeUsers = "Aktivní uživatelé"
+attention = "Vyžaduje pozornost"
+avgLatency = "Průměrná latence"
+error = "Chyba při načítání statistik"
+errorLoadingStats = "Nepodařilo se načíst statistiky"
+excellent = "Vynikající"
+good = "Dobré"
+noData = "N/A"
+successRate = "Míra úspěšnosti"
+title = "Souhrn"
+totalEvents = "Celkem událostí"
+vsLastPeriod = "oproti minulému období"
+
+[audit.systemStatus]
+autoRefresh = "Automatické obnovení"
+autoRefreshLabel = "Automaticky obnovovat každých 30 s"
+captureBySettings = "Povolit v nastavení"
+capturedFields = "Zachycená pole"
+date = "Datum"
+days = "dní"
+disabled = "Vypnuto"
+documentName = "Název dokumentu"
+enabled = "Zapnuto"
+fileHash = "Hash souboru"
+level = "Úroveň auditu"
+pdfAuthor = "Autor PDF"
+retention = "Doba uchování"
+status = "Záznam auditu"
+title = "Stav systému"
+tool = "Nástroj"
+totalEvents = "Celkem událostí"
+username = "Uživatelské jméno"
+verboseOnly = "Pouze VERBOSE"
+
 [audit.tabs]
 clearData = "Vymazat data"
 dashboard = "Přehled"
 events = "Události auditu"
 export = "Export"
-
-[audit.clearData]
-cancel = "Zrušit"
-codeDoesNotMatch = "Kód neodpovídá"
-codePlaceholder = "Zde zadejte kód"
-confirmationCode = "Potvrzovací kód"
-confirmationRequired = "Smazat všechna auditní data"
-confirmMessage = "Tímto trvale odstraníte všechny auditní logy. Pro pokračování níže zadejte potvrzovací kód."
-confirmTitle = "Potvrďte, že chcete smazat"
-deleteButton = "Smazat"
-enterCode = "Potvrzovací kód"
-enterCodeBelow = "Zadejte kód přesně podle zobrazení výše (rozlišuje se velikost písmen)"
-initiateDelete = "Smazat všechna data"
-irreversible = "NEVRATNÉ"
-success = "Úspěch"
-successMessage = "Všechna auditní data byla úspěšně vymazána"
-warning1 = "Tuto akci nelze vrátit zpět"
-warning2 = "Smazání auditních dat trvale odstraní všechny historické auditní logy, včetně bezpečnostních událostí, aktivit uživatelů a operací se soubory z databáze."
 
 [auth]
 accessDenied = "Přístup odepřen"
@@ -2358,6 +2362,9 @@ title = "Změnit oprávnění"
 [changePermissions.tooltip.warning]
 text = "Abyste tato oprávnění učinili nezměnitelnými, použijte nástroj Přidat heslo a nastavte heslo vlastníka."
 
+[cloudBadge]
+tooltip = "Tato operace využije vaše cloudové kredity"
+
 [colorPicker]
 title = "Zvolte barvu"
 
@@ -2574,10 +2581,48 @@ title = "Úprava kvality"
 [compressPdfs]
 tags = "stlačit,malý,drobný"
 
+[config]
+plan = "Plan"
+
 [config.account.overview]
+confirmDelete = "Delete My Account"
+deleteAccount = "Delete Account"
+deleteAccountTitle = "Delete Account"
+deleteFailed = "Failed to delete account."
+deleteFailedTitle = "Unable to delete account"
+deleteWarning = "This action is permanent and cannot be undone. All your data will be deleted."
+enterEmailConfirm = "To confirm deletion, please type your email address ({{email}}) below:"
 guestDescription = "Jste přihlášeni jako host. Zvažte vylepšení účtu výše."
+label = "Overview"
 manageAccountPreferences = "Spravovat předvolby účtu"
+signedInAs = "Signed in as"
 title = "Nastavení účtu"
+
+[config.account.profilePicture]
+description = "Upload an image to personalize your account."
+help = "PNG, JPG, or WebP up to 2MB."
+remove = "Remove"
+sizeError = "Please select an image smaller than 2MB."
+switchedToCustom = "Switched to custom picture. You can now upload your own."
+title = "Profile picture"
+upload = "Upload"
+useCustom = "Use custom picture"
+usingProvider = "Using {{provider}} profile picture"
+
+[config.account.profilePicture.cropper]
+cropError = "Failed to crop image. Please try again."
+invalidImage = "Invalid image file. Please select a valid PNG, JPG, or WebP file."
+processing = "Processing crop..."
+save = "Save Cropped Image"
+sizeErrorAfterCrop = "Cropped image is too large. Please zoom out or crop a smaller area."
+title = "Crop Profile Picture"
+zoom = "Zoom"
+
+[config.account.security]
+changePassword = "Change password"
+description = "Manage your password and security settings."
+title = "Passwords & Security"
+update = "Update password"
 
 [config.account.upgrade]
 description = "Propojte svůj účet, abyste zachovali historii a získali přístup k dalším funkcím!"
@@ -2595,6 +2640,7 @@ upgradeButton = "Vylepšit účet"
 [config.apiKeys]
 chartAriaLabel = "Využití kreditů: zahrnuto {{includedUsed}} z {{includedTotal}}, zakoupeno {{purchasedUsed}} z {{purchasedTotal}}"
 copyKeyAriaLabel = "Kopírovat API klíč"
+creditsRemaining = "Credits Remaining"
 description = "Váš API klíč pro přístup k sadě PDF nástrojů Stirlingu. Zkopírujte si ho do projektu nebo obnovte pro vygenerování nového."
 docsDescription = "Zjistěte více o integraci se Stirling PDF:"
 docsLink = "API dokumentace"
@@ -2651,9 +2697,11 @@ blackwhite = "Černobílé"
 cbrDpi = "DPI for image rendering"
 cbrOptions = "CBR Options"
 cbrOutputOptions = "PDF to CBR Options"
+cbrToPdf = "CBR → PDF"
 cbzDpi = "DPI pro vykreslení obrázků"
 cbzOptions = "Možnosti CBZ → PDF"
 cbzOutputOptions = "Možnosti PDF → CBZ"
+cbzToPdf = "CBZ → PDF"
 color = "Barva"
 colorType = "Barevný režim"
 combineImages = "Sloučit obrázky"
@@ -2671,13 +2719,16 @@ desc = "Převádějte soubory mezi různými formáty"
 downloadConverted = "Stáhnout převedený soubor"
 downloadHtml = "Stáhnout HTML mezisoubor místo PDF"
 dpi = "DPI"
+ebookToPdf = "eBook → PDF"
 emailOptions = "Možnosti Email → PDF"
+emlToPdf = "Email → PDF"
 errorConversion = "Při převodu souboru došlo k chybě."
 errorNoFiles = "Vyberte alespoň jeden soubor k převodu."
 errorNoFormat = "Vyberte zdrojový i cílový formát."
 errorNotSupported = "Převod z {{from}} do {{to}} není podporován."
 fileFormat = "Formát souboru"
 files = "Soubory"
+fileToPdf = "Office/Document → PDF"
 fillPage = "Vyplnit stránku"
 fitDocumentToPage = "Přizpůsobit dokument stránce"
 fitOption = "Možnost přizpůsobení"
@@ -2705,6 +2756,9 @@ pdfaFormat = "Formát PDF/A"
 pdfaNote = "PDF/A-1b je kompatibilnější, PDF/A-2b podporuje více funkcí."
 pdfaOptions = "Možnosti PDF/A"
 pdfOptions = "Možnosti PDF"
+pdfToCbr = "PDF → CBR"
+pdfToCbz = "PDF → CBZ"
+pdfToEpub = "PDF → EPUB"
 pdfxDescription = "PDF/X je podmnožina PDF dle standardu ISO pro spolehlivý tisk a výměnu grafiky."
 pdfxDigitalSignatureWarning = "PDF obsahuje digitální podpis. Ten bude v dalším kroku odstraněn."
 pptExt = "PowerPoint (.pptx)"
@@ -2719,6 +2773,7 @@ sourceFormatPlaceholder = "Zdrojový formát"
 strictMode = "Strict Mode"
 strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
 svgPdfOptions = "SVG to PDF Options"
+svgToPdf = "SVG → PDF"
 svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
 targetFormatPlaceholder = "Cílový formát"
 textRtf = "Text/RTF"
@@ -2791,6 +2846,77 @@ description = "These cookies are essential for the website to function properly.
 [cookieBanner.services]
 posthog = "PostHog Analytics"
 scarf = "Scarf Pixel"
+
+[credits]
+enableOverageBilling = "Povolit nadlimitní fakturaci"
+maybeLater = "Možná později"
+upgrade = "Upgradovat"
+
+[credits.insufficient]
+brief = "Nedostatek kreditů. Potřebujete {{required}} kreditů, ale máte {{current}}."
+freeTier = "Přejděte na Team pro 10× více kreditů a neomezenou nadlimitní fakturaci."
+managedMember = "Obraťte se prosím na vedoucího svého týmu."
+message = "Nemáte dostatek kreditů pro spuštění {{tool}}. Aktuálně máte {{current}} kreditů."
+messageWithAmount = "Pro spuštění {{tool}} potřebujete {{required}} kreditů, ale máte pouze {{current}}."
+teamMember = "Povolte nadlimitní fakturaci, aby vám kredity nikdy nedošly."
+title = "Nedostatek kreditů"
+
+[credits.modal]
+advancedMonitoring = "Pokročilé monitorování"
+allInOneWorkspace = "Vše v jednom: pracovní prostor pro PDF (prohlížeč, nástroje a agent)"
+apiSandbox = "API sandbox"
+contactSales = "Kontaktovat obchodní oddělení"
+creditsRemaining = "{{current}} z {{total}} zbývá"
+creditsThisMonth = "Měsíční kredity"
+current = "Aktuální tarif"
+customPricing = "Vlastní"
+customSmartFolders = "Vlastní chytré složky"
+dedicatedSupportSlas = "Vyhrazená podpora a SLA"
+enterpriseSubscription = "Enterprise"
+everythingInCredits = "Vše z Credits, navíc:"
+everythingInFree = "Vše z Free, navíc:"
+fasterThroughput = "10× rychlejší propustnost"
+forRegularWork = "Pro běžnou práci s PDF:"
+freeTier = "Bezplatný tarif"
+fullyPrivateFiles = "Plně soukromé soubory"
+largeFileProcessing = "Zpracování velkých souborů"
+managedMemberMessage = "Máte neomezený přístup ke kreditům prostřednictvím svého týmu. Pokud potřebujete pomoc, obraťte se na vedoucího týmu."
+managedMemberTitle = "Neomezené kredity"
+meteringBillingNote = "Nadlimitní kredity jsou fakturovány měsíčně spolu s vaším předplatným Team. Využití můžete kdykoli sledovat v nastavení účtu."
+meteringExplanation = "Váš plán Team zahrnuje {{credits}} kreditů měsíčně. Po jejich vyčerpání vám nadlimitní fakturace automaticky poskytne další kredity, abyste nemuseli přerušovat práci."
+meteringIncluded = "{{credits}} kreditů/měsíc v ceně u tarifu Team"
+meteringNeverRunOut = "Kredity vám nikdy nedojdou"
+meteringNoCommitment = "Bez závazků, zrušit lze kdykoli"
+meteringPayAsYouGo = "Plaťte jen za to, co využijete"
+meteringPrice = "Další kredity za {{price}}/kredit"
+meteringTitle = "Nadlimitní fakturace dle skutečného využití"
+monthlyCredits = "měsíčních kreditů"
+orgWideAccess = "Řízení přístupu napříč organizací"
+overage = "nadlimit"
+perMonth = "/měsíc"
+popular = "Oblíbené"
+premiumAiModels = "Prémiové AI modely"
+prioritySupport = "Prioritní podpora"
+privateDocCloud = "Soukromé úložiště dokumentů"
+ragFineTuning = "RAG + fine-tuning"
+secureApiAccess = "Zabezpečený přístup k API"
+selfHostLink = "Prostudovat dokumentaci a tarify"
+selfHostPrompt = "Chcete hostovat sami?"
+standardThroughput = "Standardní propustnost"
+subtitle = "Přejděte na Team pro 10× více kreditů a rychlejší zpracování."
+subtitlePro = "Povolte automatickou nadlimitní fakturaci, aby vám kredity nikdy nedošly."
+teamLeaderOnly = "Nadlimitní fakturaci může povolit pouze vedoucí týmu"
+teamSubscription = "Team"
+titleExhausted = "Vyčerpali jste bezplatné kredity"
+titleExhaustedPro = "Došly vám kredity"
+unlimitedApiAccess = "Neomezený přístup k API"
+unlimitedMonthlyCredits = "Site License"
+unlimitedSeats = "Neomezený počet uživatelů"
+
+[credits.modal.features]
+everythingInCredits = "Vše z Credits, navíc:"
+everythingInFree = "Vše z Free, navíc:"
+forRegularWork = "Pro běžnou práci s PDF:"
 
 [crop]
 autoCrop = "Auto-crop whitespace"
@@ -3469,10 +3595,6 @@ desc = "Vytvářejte vícekrokové workflow řetězením akcí PDF. Ideální pr
 tags = "pracovní postup,sekvence,automatizace"
 title = "Automatizace"
 
-[home.formFill]
-desc = "Interaktivně vyplňte pole formuláře PDF vizuálním editorem"
-title = "Vyplnit formulář"
-
 [home.autoRename]
 desc = "Automaticky přejmenuje soubor PDF podle detekovaného záhlaví"
 tags = "automatická detekce,na základě záhlaví,uspořádat,přejmenovat"
@@ -3567,6 +3689,10 @@ title = "Extrahovat stránky"
 desc = "Odstranit všechny interaktivní prvky a formuláře z PDF"
 tags = "zjednodušit,odstranit,interaktivní"
 title = "Zploštit"
+
+[home.formFill]
+desc = "Interaktivně vyplňte pole formuláře PDF vizuálním editorem"
+title = "Vyplnit formulář"
 
 [home.getPdfInfo]
 desc = "Získá všechny možné informace o PDF"
@@ -3854,6 +3980,7 @@ version = "Verze"
 accountCreatedSuccess = "Účet byl úspěšně vytvořen! Nyní se můžete přihlásit."
 alreadyLoggedIn = "Již jste přihlášeni na"
 alreadyLoggedIn2 = "zařízeních. Odhlaste se prosím z těchto zařízení a zkuste to znovu."
+backToSignIn = "Back to sign in"
 cancel = "Zrušit"
 changePasswordWarning = "Po prvním přihlášení si prosím změňte heslo"
 credentialsUpdated = "Vaše přihlašovací údaje byly aktualizovány. Přihlaste se prosím znovu."
@@ -3895,13 +4022,17 @@ or = "Nebo"
 password = "Heslo"
 passwordChangedSuccess = "Heslo bylo úspěšně změněno! Přihlaste se novým heslem."
 passwordResetSent = "Odkaz na reset hesla byl odeslán na {{email}}! Zkontrolujte e-mail a postupujte podle pokynů."
+passwordUpdatedSuccess = "Your password has been updated successfully."
 pleaseEnterBoth = "Zadejte prosím e-mail i heslo"
 pleaseEnterEmail = "Zadejte prosím svou e-mailovou adresu"
 relyingPartyRegistrationNotFound = "Nebyla nalezena žádná registrace spoléhající se strany"
 rememberme = "Zapamatovat si mě"
+resetHelp = "Enter your email to receive a secure link to reset your password. If the link has expired, please request a new one."
+resetYourPassword = "Reset your password"
 saml2RequiresLicense = "Přihlášení pomocí SAML vyžaduje placenou licenci (Server nebo Enterprise). Kontaktujte prosím administrátora kvůli upgradu vašeho plánu."
 sending = "Odesílání…"
 sendMagicLink = "Odeslat magický odkaz"
+sendResetLink = "Send reset link"
 sessionExpired = "Relace vypršela. Přihlaste se prosím znovu."
 signin = "Přihlásit se"
 signInAnonymously = "Přihlásit se jako host"
@@ -3910,9 +4041,11 @@ signinTitle = "Prosím přihlaste se"
 signInWith = "Přihlásit se pomocí"
 signOut = "Odhlásit se"
 ssoSignIn = "Přihlásit se přes Single Sign-on"
+subtitle = "Sign back in to Stirling PDF"
 title = "Přihlášení"
 toManySessions = "Máte příliš mnoho aktivních relací"
 unexpectedError = "Neočekávaná chyba: {{message}}"
+updatePassword = "Update password"
 useEmailInstead = "Přihlásit pomocí e-mailu"
 useMagicLink = "Použít místo toho magický odkaz"
 userIsDisabled = "Uživatel je deaktivován, přihlášení je momentálně pro toto uživatelské jméno blokováno. Kontaktujte prosím správce."
@@ -4235,6 +4368,15 @@ body = "Stirling nejlépe funguje jako desktopová aplikace. Můžete ji použí
 title = "Stáhnout"
 titleWithOs = "Stáhnout pro {{osLabel}}"
 
+[onboarding.freeTrial]
+afterTrialWithoutPayment = "After your trial ends, you'll continue with our free tier. Add a payment method to keep Pro access."
+afterTrialWithPayment = "Your Pro subscription will start automatically when the trial ends."
+body = "You have full access to Stirling PDF Pro features during your trial. Enjoy unlimited conversions, larger file sizes, and priority processing."
+daysRemaining = "{{days}} days remaining"
+daysRemainingSingular = "{{days}} day remaining"
+title = "Your 30-Day Pro Trial"
+trialEnds = "Trial ends {{date}}"
+
 [onboarding.planOverview]
 adminBodyLoginDisabled = "Po povolení režimu přihlášení můžete spravovat uživatele, konfigurovat nastavení a sledovat stav serveru. Prvních <strong>{{freeTierLimit}}</strong> uživatelů na vašem serveru může Stirling používat zdarma."
 adminBodyLoginEnabled = "Jako správce můžete spravovat uživatele, konfigurovat nastavení a sledovat stav serveru. Prvních <strong>{{freeTierLimit}}</strong> uživatelů na vašem serveru může Stirling používat zdarma."
@@ -4370,75 +4512,6 @@ title = "Editor stránek"
 zoomIn = "Přiblížit"
 zoomOut = "Oddálit"
 
-[viewer]
-cannotPreviewFile = "Nelze zobrazit náhled souboru"
-dualPageView = "Zobrazení dvou stránek"
-firstPage = "První stránka"
-lastPage = "Poslední stránka"
-nextPage = "Další stránka"
-onlyPdfSupported = "Prohlížeč podporuje pouze soubory PDF. Tento soubor má zřejmě jiný formát."
-previousPage = "Předchozí stránka"
-singlePageView = "Zobrazení jedné stránky"
-unknownFile = "Neznámý soubor"
-zoomIn = "Přiblížit"
-zoomOut = "Oddálit"
-
-[viewer.attachments]
-title = "Přílohy"
-searchPlaceholder = "Hledat přílohy"
-noSupport = "Podpora příloh není v tomto prohlížeči k dispozici."
-noDocument = "Otevřete PDF a zobrazte jeho přílohy."
-loading = "Načítání příloh..."
-empty = "Tento dokument neobsahuje žádné přílohy"
-noMatch = "Žádné přílohy neodpovídají vašemu hledání"
-
-[viewer.formBar]
-title = "Formulářová pole"
-unsavedBadge = "Neuloženo"
-unsavedDesc = "Máte neuložené změny"
-hasFieldsDesc = "Toto PDF obsahuje vyplnitelná pole"
-dismiss = "Skrýt"
-apply = "Použít změny"
-download = "Stáhnout PDF"
-
-[rightRail]
-closeSelected = "Zavřít vybrané soubory"
-selectAll = "Vybrat vše"
-deselectAll = "Zrušit výběr všeho"
-selectByNumber = "Vybrat podle čísel stránek"
-deleteSelected = "Smazat vybrané stránky"
-closePdf = "Zavřít PDF"
-exportAll = "Exportovat PDF"
-downloadSelected = "Stáhnout vybrané soubory"
-annotations = "Annotations"
-exportSelected = "Exportovat vybrané stránky"
-formFill = "Vyplnit formulář"
-saveChanges = "Uložit změny"
-toggleAttachments = "Přepnout zobrazení příloh"
-toggleTheme = "Přepnout motiv"
-language = "Jazyk"
-toggleAnnotations = "Přepnout viditelnost anotací"
-search = "Hledat v PDF"
-panMode = "Režim posunu"
-applyRedactionsFirst = "Nejprve použijte začernění"
-rotateLeft = "Otočit doleva"
-rotateRight = "Otočit doprava"
-toggleSidebar = "Přepnout postranní panel"
-toggleBookmarks = "Přepnout záložky"
-print = "Tisk PDF"
-ruler = "Pravítko / Měření"
-draw = "Kreslit"
-redact = "Začernit"
-exitRedaction = "Opustit režim začernění"
-save = "Uložit"
-downloadAll = "Stáhnout vše"
-saveAll = "Uložit vše"
-
-[textAlign]
-left = "Left"
-center = "Center"
-right = "Right"
-
 [pageExtracter]
 header = "Extrahovat stránky"
 placeholder = "(např. 1,2,8 nebo 4,7,12-16 nebo 2n-1)"
@@ -4547,6 +4620,9 @@ title = "Tipy"
 autoClose = "Toto okno se zavře automaticky..."
 billingPeriod = "Fakturační období"
 canCloseWindow = "Toto okno můžete nyní zavřít."
+checkoutInstructions = "Dokončete nákup v právě otevřeném okně prohlížeče. Po dokončení platby se sem vraťte a klikněte na tlačítko níže pro aktualizaci fakturačních informací."
+checkoutOpened = "Pokladna otevřena v prohlížeči"
+closeLater = "Udělám to později"
 emailInvalid = "Zadejte prosím platnou e-mailovou adresu"
 enterpriseNote = "Počet míst lze upravit při platbě (1–1000)."
 error = "Chyba platby"
@@ -4568,6 +4644,7 @@ perMonth = "/měsíc"
 perYear = "/rok"
 preparing = "Připravujeme vaši platbu..."
 redirecting = "Přesměrování na zabezpečenou pokladnu..."
+refreshBilling = "Dokončil(a) jsem platbu – aktualizovat fakturaci"
 stripeNotConfigured = "Stripe není nastaven"
 stripeNotConfiguredMessage = "Integrace plateb Stripe není nakonfigurována. Kontaktujte prosím svého správce."
 success = "Platba úspěšná!"
@@ -4579,10 +4656,6 @@ upgradeCompleteMessage = "Vaše předplatné bylo úspěšně upgradováno. Vá�
 upgradeSuccess = "Platba proběhla úspěšně! Vaše předplatné bylo upgradováno. Licence na vašem serveru byla aktualizována. Brzy obdržíte potvrzovací e-mail."
 upgradeTitle = "Upgradovat na {{planName}}"
 yearly = "Ročně"
-checkoutOpened = "Pokladna otevřena v prohlížeči"
-checkoutInstructions = "Dokončete nákup v právě otevřeném okně prohlížeče. Po dokončení platby se sem vraťte a klikněte na tlačítko níže pro aktualizaci fakturačních informací."
-refreshBilling = "Dokončil(a) jsem platbu – aktualizovat fakturaci"
-closeLater = "Udělám to později"
 
 [payment.emailStage]
 continue = "Pokračovat"
@@ -4806,13 +4879,6 @@ prompt = "Vyberte stránku pro extrakci tabulky"
 submit = "Extrahovat"
 title = "PDF na CSV"
 
-[PDFToXLSX]
-header = "PDF do Excelu"
-prompt = "Vyberte stránky pro extrakci tabulek"
-submit = "Převést"
-title = "PDF do Excelu (XLSX)"
-tags = "tabulkový sešit,excel,xlsx,tabulka,extrakce,převod"
-
 [PDFToHTML]
 credit = "Tato služba používá pdftohtml pro konverzi souborů."
 header = "PDF na HTML"
@@ -4911,6 +4977,13 @@ title = "PDF na Word"
 [PDFToWord.selectText]
 1 = "Formát výstupního souboru"
 
+[PDFToXLSX]
+header = "PDF do Excelu"
+prompt = "Vyberte stránky pro extrakci tabulek"
+submit = "Převést"
+tags = "tabulkový sešit,excel,xlsx,tabulka,extrakce,převod"
+title = "PDF do Excelu (XLSX)"
+
 [PDFToXML]
 credit = "Tato služba používá LibreOffice pro konverzi souborů."
 header = "PDF na XML"
@@ -4976,8 +5049,11 @@ manage = "Spravovat"
 perMonth = "/měsíc"
 perSeat = "/místo"
 popular = "Oblíbené"
+purchase = "Purchase"
+selectCredits = "Select Credit Amount"
 selectPlan = "Vybrat plán"
 showComparison = "Porovnat všechny funkce"
+totalCost = "Total Cost"
 upgrade = "Upgradovat"
 withServer = "+ Serverový plán"
 
@@ -4985,19 +5061,29 @@ withServer = "+ Serverový plán"
 subtitle = "Podrobnosti vašeho aktuálního předplatného"
 title = "Aktivní plán"
 
+[plan.api]
+large = "5,000 Credits"
+medium = "1,000 Credits"
+small = "500 Credits"
+xsmall = "100 Credits"
+
+[plan.apiPackages]
+subtitle = "Purchase API credits for your applications"
+title = "API Credit Packages"
+
 [plan.availablePlans]
-subtitle = "Vyberte plán, který vám vyhovuje"
 loadError = "Nelze načíst ceny tarifů. Používají se výchozí hodnoty."
+subtitle = "Vyberte plán, který vám vyhovuje"
 title = "Dostupné plány"
 
 [plan.enterprise]
-siteLicense = "Site License"
 highlight1 = "Vlastní ceny"
 highlight2 = "Vyhrazená podpora"
 highlight3 = "Nejnovější funkce"
 name = "Enterprise"
 requiresServer = "Vyžaduje Server"
 requiresServerMessage = "Nejprve prosím přejděte na plán Server a teprve poté na Enterprise."
+siteLicense = "Site License"
 
 [plan.feature]
 api = "Přístup k API"
@@ -5069,76 +5155,19 @@ successMessage = "Your license has been successfully activated. You can now clos
 name = "Team"
 siteLicense = "Site License"
 
-[credits]
-enableOverageBilling = "Povolit nadlimitní fakturaci"
-maybeLater = "Možná později"
-upgrade = "Upgradovat"
-
-[credits.modal]
-advancedMonitoring = "Pokročilé monitorování"
-allInOneWorkspace = "Vše v jednom: pracovní prostor pro PDF (prohlížeč, nástroje a agent)"
-apiSandbox = "API sandbox"
-contactSales = "Kontaktovat obchodní oddělení"
-creditsRemaining = "{{current}} z {{total}} zbývá"
-creditsThisMonth = "Měsíční kredity"
-current = "Aktuální tarif"
-customPricing = "Vlastní"
-customSmartFolders = "Vlastní chytré složky"
-dedicatedSupportSlas = "Vyhrazená podpora a SLA"
-enterpriseSubscription = "Enterprise"
-everythingInCredits = "Vše z Credits, navíc:"
-everythingInFree = "Vše z Free, navíc:"
-fasterThroughput = "10× rychlejší propustnost"
-forRegularWork = "Pro běžnou práci s PDF:"
-freeTier = "Bezplatný tarif"
-fullyPrivateFiles = "Plně soukromé soubory"
-largeFileProcessing = "Zpracování velkých souborů"
-managedMemberMessage = "Máte neomezený přístup ke kreditům prostřednictvím svého týmu. Pokud potřebujete pomoc, obraťte se na vedoucího týmu."
-managedMemberTitle = "Neomezené kredity"
-meteringBillingNote = "Nadlimitní kredity jsou fakturovány měsíčně spolu s vaším předplatným Team. Využití můžete kdykoli sledovat v nastavení účtu."
-meteringExplanation = "Váš plán Team zahrnuje {{credits}} kreditů měsíčně. Po jejich vyčerpání vám nadlimitní fakturace automaticky poskytne další kredity, abyste nemuseli přerušovat práci."
-meteringIncluded = "{{credits}} kreditů/měsíc v ceně u tarifu Team"
-meteringNoCommitment = "Bez závazků, zrušit lze kdykoli"
-meteringNeverRunOut = "Kredity vám nikdy nedojdou"
-meteringPayAsYouGo = "Plaťte jen za to, co využijete"
-meteringPrice = "Další kredity za {{price}}/kredit"
-meteringTitle = "Nadlimitní fakturace dle skutečného využití"
-monthlyCredits = "měsíčních kreditů"
-orgWideAccess = "Řízení přístupu napříč organizací"
-overage = "nadlimit"
-perMonth = "/měsíc"
-popular = "Oblíbené"
-premiumAiModels = "Prémiové AI modely"
-prioritySupport = "Prioritní podpora"
-privateDocCloud = "Soukromé úložiště dokumentů"
-ragFineTuning = "RAG + fine-tuning"
-secureApiAccess = "Zabezpečený přístup k API"
-selfHostLink = "Prostudovat dokumentaci a tarify"
-selfHostPrompt = "Chcete hostovat sami?"
-standardThroughput = "Standardní propustnost"
-subtitle = "Přejděte na Team pro 10× více kreditů a rychlejší zpracování."
-subtitlePro = "Povolte automatickou nadlimitní fakturaci, aby vám kredity nikdy nedošly."
-teamLeaderOnly = "Nadlimitní fakturaci může povolit pouze vedoucí týmu"
-teamSubscription = "Team"
-titleExhausted = "Vyčerpali jste bezplatné kredity"
-titleExhaustedPro = "Došly vám kredity"
-unlimitedApiAccess = "Neomezený přístup k API"
-unlimitedMonthlyCredits = "Site License"
-unlimitedSeats = "Neomezený počet uživatelů"
-
-[credits.modal.features]
-everythingInCredits = "Vše z Credits, navíc:"
-everythingInFree = "Vše z Free, navíc:"
-forRegularWork = "Pro běžnou práci s PDF:"
-
-[credits.insufficient]
-brief = "Nedostatek kreditů. Potřebujete {{required}} kreditů, ale máte {{current}}."
-freeTier = "Přejděte na Team pro 10× více kreditů a neomezenou nadlimitní fakturaci."
-managedMember = "Obraťte se prosím na vedoucího svého týmu."
-message = "Nemáte dostatek kreditů pro spuštění {{tool}}. Aktuálně máte {{current}} kreditů."
-messageWithAmount = "Pro spuštění {{tool}} potřebujete {{required}} kreditů, ale máte pouze {{current}}."
-teamMember = "Povolte nadlimitní fakturaci, aby vám kredity nikdy nedošly."
-title = "Nedostatek kreditů"
+[plan.trial]
+badge = "Trial"
+continueWithFree = "Continue with Free"
+daysRemaining = "Your trial ends in {{days}} days"
+endDate = "Expires: {{date}}"
+expired = "Your Trial Has Ended"
+expiredMessage = "Your 30-day Pro trial has expired. Subscribe to Pro to continue accessing premium features, or continue with our free tier."
+freeTierLimitations = "Free tier includes basic PDF tools with usage limits."
+message = ""
+subscribe = "Subscribe to Pro"
+subscribeToPro = "Subscribe to Pro"
+subscriptionScheduled = "Subscription scheduled - starts {{date}}"
+title = "Free Trial Active"
 
 [printFile]
 header = "Tisk souboru na tiskárně"
@@ -5148,6 +5177,207 @@ title = "Tisk souboru"
 [printFile.selectText]
 1 = "Vyberte soubor k tisku"
 2 = "Zadejte název tiskárny"
+
+[provider.googledrive]
+name = "Google Drive"
+scope = "Import souborů"
+
+[provider.googledrive.apiKey]
+description = "Google API Key pro Google Picker API z Google Cloud Console"
+label = "API Key"
+
+[provider.googledrive.appId]
+description = "Google Drive App ID z Google Cloud Console"
+label = "App ID"
+
+[provider.googledrive.clientId]
+description = "Google OAuth 2.0 Client ID z Google Cloud Console"
+label = "Client ID"
+
+[provider.googledrive.enabled]
+description = "Umožnit uživatelům importovat soubory přímo z Google Drive"
+label = "Povolit výběr souborů z Google Drive"
+
+[provider.oauth2.generic]
+name = "Obecné OAuth2"
+scope = "SSO"
+
+[provider.oauth2.generic.autoCreateUser]
+description = "Automaticky vytvořit uživatelský účet při prvním přihlášení přes OAuth2"
+label = "Automaticky vytvářet uživatele"
+
+[provider.oauth2.generic.blockRegistration]
+description = "Zabránit registraci nových uživatelů přes OAuth2"
+label = "Blokovat registraci"
+
+[provider.oauth2.generic.clientId]
+description = "OAuth2 Client ID od vašeho poskytovatele"
+label = "Client ID"
+
+[provider.oauth2.generic.clientSecret]
+description = "OAuth2 Client Secret od vašeho poskytovatele"
+label = "Client Secret"
+
+[provider.oauth2.generic.enabled]
+description = "Povolit ověřování pomocí vlastního poskytovatele OAuth2"
+label = "Povolit Generic OAuth2"
+
+[provider.oauth2.generic.issuer]
+description = "Poskytovatel, který podporuje OpenID Connect Discovery (/.well-known/openid-configuration)"
+label = "URL vydavatele"
+
+[provider.oauth2.generic.provider]
+description = "Název vašeho poskytovatele OAuth2 (např. Azure AD, Okta)"
+label = "Název poskytovatele"
+
+[provider.oauth2.generic.scopes]
+description = "OAuth2 scopes oddělené čárkami"
+label = "Scopes"
+
+[provider.oauth2.generic.useAsUsername]
+description = "Pole použité jako uživatelské jméno"
+label = "Použít jako uživatelské jméno"
+
+[provider.oauth2.github]
+scope = "Ověřování přihlášení"
+
+[provider.oauth2.github.clientId]
+description = "OAuth2 Client ID z GitHub Developer Settings"
+label = "Client ID"
+
+[provider.oauth2.github.clientSecret]
+description = "OAuth2 Client Secret z GitHub Developer Settings"
+label = "Client Secret"
+
+[provider.oauth2.github.scopes]
+description = "OAuth2 scopes oddělené čárkami"
+label = "Scopes"
+
+[provider.oauth2.github.useAsUsername]
+description = "Pole použité jako uživatelské jméno (email, login, name)"
+label = "Použít jako uživatelské jméno"
+
+[provider.oauth2.google]
+scope = "Ověřování přihlášení"
+
+[provider.oauth2.google.clientId]
+description = "OAuth2 Client ID z Google Cloud Console"
+label = "Client ID"
+
+[provider.oauth2.google.clientSecret]
+description = "OAuth2 Client Secret z Google Cloud Console"
+label = "Client Secret"
+
+[provider.oauth2.google.scopes]
+description = "OAuth2 scopes oddělené čárkami"
+label = "Scopes"
+
+[provider.oauth2.google.useAsUsername]
+description = "Pole použité jako uživatelské jméno (email, name, given_name, family_name)"
+label = "Použít jako uživatelské jméno"
+
+[provider.oauth2.keycloak]
+scope = "SSO"
+
+[provider.oauth2.keycloak.clientId]
+description = "OAuth2 Client ID z Keycloak"
+label = "Client ID"
+
+[provider.oauth2.keycloak.clientSecret]
+description = "OAuth2 Client Secret z Keycloak"
+label = "Client Secret"
+
+[provider.oauth2.keycloak.issuer]
+description = "URL koncového bodu OpenID Connect Discovery pro realm Keycloak"
+label = "URL vydavatele"
+
+[provider.oauth2.keycloak.scopes]
+description = "OAuth2 scopes oddělené čárkami"
+label = "Scopes"
+
+[provider.oauth2.keycloak.useAsUsername]
+description = "Pole použité jako uživatelské jméno (email, name, given_name, family_name, preferred_username)"
+label = "Použít jako uživatelské jméno"
+
+[provider.saml2]
+name = "SAML2"
+scope = "SSO (SAML)"
+
+[provider.saml2.autoCreateUser]
+description = "Automaticky vytvořit uživatelský účet při prvním přihlášení přes SAML2"
+label = "Automaticky vytvářet uživatele"
+
+[provider.saml2.blockRegistration]
+description = "Zabránit registraci nových uživatelů přes SAML2"
+label = "Blokovat registraci"
+
+[provider.saml2.enabled]
+description = "Povolit ověřování pomocí SAML2 (pouze Enterprise)"
+label = "Povolit SAML2"
+
+[provider.saml2.idpCert]
+description = "Cesta k certifikátu (např. classpath:okta.cert)"
+label = "Certifikát IDP"
+
+[provider.saml2.idpIssuer]
+description = "ID vašeho poskytovatele"
+label = "Vydavatel IDP"
+
+[provider.saml2.idpMetadataUri]
+description = "URI metadat vašeho poskytovatele"
+label = "IDP Metadata URI"
+
+[provider.saml2.idpSingleLoginUrl]
+description = "URL pro zahájení SSO"
+label = "IDP Single Login URL"
+
+[provider.saml2.idpSingleLogoutUrl]
+description = "URL pro zahájení SLO"
+label = "IDP Single Logout URL"
+
+[provider.saml2.privateKey]
+description = "Cesta k vašemu soukromému klíči"
+label = "Soukromý klíč"
+
+[provider.saml2.provider]
+description = "Název vašeho poskytovatele SAML2"
+label = "Název poskytovatele"
+
+[provider.saml2.registrationId]
+description = "Název vaší aplikace poskytovatele služeb (SP)"
+label = "Registration ID"
+
+[provider.saml2.spCert]
+description = "Cesta k vašemu podepisovacímu certifikátu"
+label = "Certifikát SP"
+
+[provider.smtp]
+name = "SMTP pošta"
+scope = "E-mailová upozornění"
+
+[provider.smtp.enabled]
+description = "Povolit e-mailová upozornění a funkce SMTP"
+label = "Povolit poštu"
+
+[provider.smtp.from]
+description = "E-mailová adresa použitá jako odesílatel"
+label = "Adresa odesílatele"
+
+[provider.smtp.host]
+description = "Název hostitele nebo IP adresa vašeho SMTP serveru"
+label = "SMTP hostitel"
+
+[provider.smtp.password]
+description = "Heslo pro ověřování SMTP"
+label = "SMTP heslo"
+
+[provider.smtp.port]
+description = "Číslo portu pro připojení SMTP (obvykle 25, 465 nebo 587)"
+label = "SMTP port"
+
+[provider.smtp.username]
+description = "Uživatelské jméno pro ověřování SMTP"
+label = "SMTP uživatelské jméno"
 
 [quickAccess]
 account = "Účet"
@@ -5204,15 +5434,15 @@ title = "Slova k začernění"
 failed = "Při začerňování PDF došlo k chybě."
 
 [redact.manual]
+activate = "Aktivovat nástroj začernění"
+active = "Režim začernění aktivní"
 apply = "Použít"
 applyChanges = "Použít změny"
 applyRedactions = "Apply Redactions"
 applyWarning = "⚠️ Trvalé použití, nelze vrátit zpět a data pod začerněním budou smazána"
 boxRedaction = "Začernění tažením rámečku"
-colourPicker = "Výběr barvy"
 colorLabel = "Barva začernění"
-active = "Režim začernění aktivní"
-activate = "Aktivovat nástroj začernění"
+colourPicker = "Výběr barvy"
 controlsTitle = "Ovládání ručního začernění"
 convertPDFToImageLabel = "Převést PDF na PDF-Image (použito k odstranění textu za rámečkem)"
 export = "Exportovat"
@@ -5608,6 +5838,39 @@ title = "Vysoký kontrast"
 text = "Úplně invertuje všechny barvy v PDF a vytvoří efekt podobný negativu. Vhodné pro tvorbu tmavých verzí dokumentů nebo snížení únavy očí při slabém osvětlení."
 title = "Invertovat všechny barvy"
 
+[rightRail]
+annotations = "Annotations"
+applyRedactionsFirst = "Nejprve použijte začernění"
+closePdf = "Zavřít PDF"
+closeSelected = "Zavřít vybrané soubory"
+deleteSelected = "Smazat vybrané stránky"
+deselectAll = "Zrušit výběr všeho"
+downloadAll = "Stáhnout vše"
+downloadSelected = "Stáhnout vybrané soubory"
+draw = "Kreslit"
+exitRedaction = "Opustit režim začernění"
+exportAll = "Exportovat PDF"
+exportSelected = "Exportovat vybrané stránky"
+formFill = "Vyplnit formulář"
+language = "Jazyk"
+panMode = "Režim posunu"
+print = "Tisk PDF"
+redact = "Začernit"
+rotateLeft = "Otočit doleva"
+rotateRight = "Otočit doprava"
+ruler = "Pravítko / Měření"
+save = "Uložit"
+saveAll = "Uložit vše"
+saveChanges = "Uložit změny"
+search = "Hledat v PDF"
+selectAll = "Vybrat vše"
+selectByNumber = "Vybrat podle čísel stránek"
+toggleAnnotations = "Přepnout viditelnost anotací"
+toggleAttachments = "Přepnout zobrazení příloh"
+toggleBookmarks = "Přepnout záložky"
+toggleSidebar = "Přepnout postranní panel"
+toggleTheme = "Přepnout motiv"
+
 [rotate]
 rotateLeft = "Otočit proti směru hodinových ručiček"
 rotateRight = "Otočit po směru hodinových ručiček"
@@ -5755,6 +6018,14 @@ placeholder = "Zadejte hledaný výraz..."
 searching = "Vyhledávání..."
 title = "Hledat v PDF"
 
+[selfHosted.offline]
+hideTools = "Hide unavailable tools ▴"
+messageNoFallback = "Tools are unavailable until your server comes back online."
+messageWithFallback = "Some tools require a server connection."
+showTools = "View unavailable tools ▾"
+title = "Your Stirling-PDF server is unreachable"
+toolNotAvailableLocally = "Your Stirling-PDF server is offline and \"{{endpoint}}\" is not available on the local backend."
+
 [session]
 expired = "Vaše relace vypršela. Obnovte prosím stránku a zkuste to znovu."
 refreshPage = "Obnovit stránku"
@@ -5776,70 +6047,6 @@ user = "Přihlášen jako"
 [settings.connection.mode]
 saas = "Stirling Cloud"
 selfhosted = "Vlastní hosting"
-
-[settings.planBilling]
-currentPlan = "Aktuální tarif"
-loading = "Načítání fakturačních informací..."
-notAvailable = "Plán a fakturace jsou dostupné pouze při připojení ke Stirling Cloud (režim SaaS)."
-title = "Plán a fakturace"
-
-[settings.planBilling.billing]
-manageBilling = "Spravovat fakturaci"
-nextBillingDate = "Další datum fakturace"
-overageCost = "Aktuální cena nadlimitu: {{amount}} ({{credits}} kreditů)"
-
-[settings.planBilling.credits]
-estimatedCost = "Odhadovaná cena: {{amount}}"
-freeTierInfo = "Bezplatný plán zahrnuje {{freeCredits}} kreditů měsíčně. Přejděte na Team pro {{teamCredits}} kreditů/měsíc a nadlimitní fakturaci dle skutečného využití."
-included = "{{count}} kreditů/měsíc (v ceně)"
-noOverage = "Tento měsíc nemáte žádné nadlimitní poplatky. Využíváte zahrnutých {{count}} kreditů."
-overage = "+ {{count}} nadlimit"
-overageInfo = "Nadlimitní kredity jsou účtovány {{price}} za kredit. Zaplatíte jen za to, co využijete nad svůj měsíční limit."
-title = "Využití kreditů"
-
-[settings.planBilling.errors]
-fetchFailed = "Nelze načíst fakturační data"
-retry = "Zkusit znovu"
-
-[settings.planBilling.status]
-active = "Aktivní"
-canceled = "Zrušeno"
-pastDue = "Po splatnosti"
-trial = "Zkušební verze"
-
-[settings.planBilling.tier]
-enterprise = "Enterprise"
-enterpriseDescription = "Vlastní enterprise funkce a podpora"
-free = "Free"
-freeDescription = "50 kreditů měsíčně"
-team = "Team"
-teamBadge = "Team"
-teamDescription = "500 kreditů/měsíc v ceně, automatická nadlimitní fakturace pro nepřerušovanou službu"
-teamTooltipCredits = "Plán Team zahrnuje {{credits}} kreditů/měsíc."
-teamTooltipFineprint = "Platíte jen za to, co využijete nad zahrnuté kredity."
-teamTooltipOverage = "Automatická nadlimitní fakturace {{price}}/kredit zajišťuje nepřerušovanou službu."
-
-[settings.planBilling.team]
-managedByTeam = "Spravováno týmem"
-memberCount = "{{count}} členů týmu"
-
-[settings.planBilling.trial]
-daysRemaining = "Zbývá {{days}} dní"
-daysRemainingFull = "Vaše zkušební verze skončí za {{days}} dní"
-endDate = "Vyprší: {{date}}"
-endsOn = "Konec zkušební verze"
-title = "Aktivní zkušební verze"
-
-[settings.planBilling.upgrade]
-cta = "Přejít na Team"
-featureApi = "Přístup k API pro automatizaci"
-featureCredits = "{{teamCredits}} kreditů měsíčně (oproti {{freeCredits}} u Free)"
-featureMembers = "Neomezený počet členů týmu"
-featureSupport = "Prioritní podpora"
-featureThroughput = "Rychlejší propustnost zpracování"
-opensInBrowser = "Otevře se v prohlížeči pro dokončení upgradu"
-subtitle = "Přejděte na Team a získejte:"
-title = "Upgradujte svůj tarif"
 
 [settings.developer]
 apiKeys = "API klíče"
@@ -5923,6 +6130,70 @@ plan = "Plán"
 title = "Licencování a analytika"
 usageAnalytics = "Analytika využití"
 
+[settings.planBilling]
+currentPlan = "Aktuální tarif"
+loading = "Načítání fakturačních informací..."
+notAvailable = "Plán a fakturace jsou dostupné pouze při připojení ke Stirling Cloud (režim SaaS)."
+title = "Plán a fakturace"
+
+[settings.planBilling.billing]
+manageBilling = "Spravovat fakturaci"
+nextBillingDate = "Další datum fakturace"
+overageCost = "Aktuální cena nadlimitu: {{amount}} ({{credits}} kreditů)"
+
+[settings.planBilling.credits]
+estimatedCost = "Odhadovaná cena: {{amount}}"
+freeTierInfo = "Bezplatný plán zahrnuje {{freeCredits}} kreditů měsíčně. Přejděte na Team pro {{teamCredits}} kreditů/měsíc a nadlimitní fakturaci dle skutečného využití."
+included = "{{count}} kreditů/měsíc (v ceně)"
+noOverage = "Tento měsíc nemáte žádné nadlimitní poplatky. Využíváte zahrnutých {{count}} kreditů."
+overage = "+ {{count}} nadlimit"
+overageInfo = "Nadlimitní kredity jsou účtovány {{price}} za kredit. Zaplatíte jen za to, co využijete nad svůj měsíční limit."
+title = "Využití kreditů"
+
+[settings.planBilling.errors]
+fetchFailed = "Nelze načíst fakturační data"
+retry = "Zkusit znovu"
+
+[settings.planBilling.status]
+active = "Aktivní"
+canceled = "Zrušeno"
+pastDue = "Po splatnosti"
+trial = "Zkušební verze"
+
+[settings.planBilling.team]
+managedByTeam = "Spravováno týmem"
+memberCount = "{{count}} členů týmu"
+
+[settings.planBilling.tier]
+enterprise = "Enterprise"
+enterpriseDescription = "Vlastní enterprise funkce a podpora"
+free = "Free"
+freeDescription = "50 kreditů měsíčně"
+team = "Team"
+teamBadge = "Team"
+teamDescription = "500 kreditů/měsíc v ceně, automatická nadlimitní fakturace pro nepřerušovanou službu"
+teamTooltipCredits = "Plán Team zahrnuje {{credits}} kreditů/měsíc."
+teamTooltipFineprint = "Platíte jen za to, co využijete nad zahrnuté kredity."
+teamTooltipOverage = "Automatická nadlimitní fakturace {{price}}/kredit zajišťuje nepřerušovanou službu."
+
+[settings.planBilling.trial]
+daysRemaining = "Zbývá {{days}} dní"
+daysRemainingFull = "Vaše zkušební verze skončí za {{days}} dní"
+endDate = "Vyprší: {{date}}"
+endsOn = "Konec zkušební verze"
+title = "Aktivní zkušební verze"
+
+[settings.planBilling.upgrade]
+cta = "Přejít na Team"
+featureApi = "Přístup k API pro automatizaci"
+featureCredits = "{{teamCredits}} kreditů měsíčně (oproti {{freeCredits}} u Free)"
+featureMembers = "Neomezený počet členů týmu"
+featureSupport = "Prioritní podpora"
+featureThroughput = "Rychlejší propustnost zpracování"
+opensInBrowser = "Otevře se v prohlížeči pro dokončení upgradu"
+subtitle = "Přejděte na Team a získejte:"
+title = "Upgradujte svůj tarif"
+
 [settings.policiesPrivacy]
 legal = "Právní"
 privacy = "Soukromí"
@@ -5930,6 +6201,9 @@ title = "Zásady a soukromí"
 
 [settings.preferences]
 title = "Předvolby"
+
+[settings.search]
+placeholder = "Search settings pages..."
 
 [settings.security]
 description = "Update your password to keep your account secure."
@@ -5956,6 +6230,9 @@ security = "Zabezpečení"
 telegram = "Telegram"
 title = "Zabezpečení a ověřování"
 
+[settings.team]
+title = "Tým"
+
 [settings.tooltips]
 enableLoginFirst = "Nejprve povolte režim přihlášení"
 requiresEnterprise = "Vyžaduje licenci Enterprise"
@@ -5964,9 +6241,6 @@ requiresEnterprise = "Vyžaduje licenci Enterprise"
 people = "Lidé"
 teams = "Týmy"
 title = "Pracovní prostor"
-
-[settings.team]
-title = "Tým"
 
 [setup]
 description = "Začněte výběrem způsobu používání Stirling PDF"
@@ -6290,15 +6564,15 @@ desc = "Automatické rozdělení pomocí oddělovacích listů"
 name = "Oddělovač stránek"
 tooltip = "Použijte mezi dokumenty při skenování oddělovací listy s QR kódem"
 
-[split.methods.byPoster]
-name = "Tisknutelné části"
-desc = "Rozdělit velké stránky na tisknutelné velikosti"
-tooltip = "Rozdělit nadrozměrné stránky na menší části vhodné pro tisk na standardní papír (A4, Letter atd.)"
-
 [split.methods.byPages]
 desc = "Vyjmout konkrétní stránky (1,3,5–10)"
 name = "Čísla stránek"
 tooltip = "Zadejte čísla stránek oddělená čárkami nebo rozsahy s pomlčkami"
+
+[split.methods.byPoster]
+desc = "Rozdělit velké stránky na tisknutelné velikosti"
+name = "Tisknutelné části"
+tooltip = "Rozdělit nadrozměrné stránky na menší části vhodné pro tisk na standardní papír (A4, Letter atd.)"
 
 [split.methods.bySections]
 desc = "Rozdělit stránky na mřížkové sekce"
@@ -6326,27 +6600,27 @@ title = "Zvolte svou metodu rozdělení"
 text = "Zvolte, jak chcete rozdělit svůj PDF dokument. Každá metoda je optimalizována pro jiné případy použití a typy dokumentů."
 title = "Výběr metody rozdělení"
 
+[split.poster]
+rightToLeft = "Rozdělit zprava doleva"
+
+[split.poster.pageSize]
+description = "Velikost výstupních stránek pro tisk"
+label = "Cílová velikost stránky"
+
+[split.poster.xFactor]
+description = "Počet sloupců, na které se každá stránka rozdělí"
+label = "Horizontální dělení"
+
+[split.poster.yFactor]
+description = "Počet řádků, na které se každá stránka rozdělí"
+label = "Vertikální dělení"
+
 [split.settings]
 selectMethodFirst = "Nejprve vyberte metodu rozdělení"
 
 [split.steps]
 chooseMethod = "Vybrat metodu"
 settings = "Nastavení"
-
-[split.poster]
-rightToLeft = "Rozdělit zprava doleva"
-
-[split.poster.pageSize]
-label = "Cílová velikost stránky"
-description = "Velikost výstupních stránek pro tisk"
-
-[split.poster.xFactor]
-label = "Horizontální dělení"
-description = "Počet sloupců, na které se každá stránka rozdělí"
-
-[split.poster.yFactor]
-label = "Vertikální dělení"
-description = "Počet řádků, na které se každá stránka rozdělí"
 
 [split.tooltip.byChapters]
 bullet1 = "Úroveň záložek: Na které úrovni rozdělit (1 = nejvyšší úroveň)"
@@ -6385,6 +6659,13 @@ bullet5 = "Povolte režim duplexu, pokud skenujete obě strany oddělovacích li
 text = "Automaticky rozdělí skenované dokumenty pomocí fyzických oddělovacích listů s QR kódy. Ideální pro zpracování více dokumentů skenovaných společně."
 title = "Rozdělit pomocí oddělovače stránek"
 
+[split.tooltip.byPages]
+bullet1 = "Jednotlivé body: 3,7 (rozdělí po stránkách 3 a 7)"
+bullet2 = "Rozsahové body: 3–8 (rozdělí před stránkou 3 a po stránce 8)"
+bullet3 = "Smíšené: 2,5–10,15 (rozdělí po stránce 2, před stránkou 5, po stránce 10 a po stránce 15)"
+text = "Rozdělte PDF na konkrétních číslech stránek. Použití 'n' rozdělí po stránce n. Použití 'n-m' rozdělí před stránkou n a po stránce m."
+title = "Rozdělit na číslech stránek"
+
 [split.tooltip.byPoster]
 bullet1 = "Cílová velikost stránky: Zvolte výstupní formát papíru (A4, Letter atd.)"
 bullet2 = "Horizontální/vertikální dělení: Velikost mřížky pro rozdělení"
@@ -6392,13 +6673,6 @@ bullet3 = "Zprava doleva: Obrátit pořadí sloupců pro RTL rozvržení"
 bullet4 = "Vytiskněte a složte díly pro vytvoření plakátu"
 text = "Rozdělte velké stránky PDF na menší tisknutelné části vhodné pro standardní formáty papíru. Ideální pro tvorbu plakátových tisků z nadrozměrných stránek."
 title = "Rozdělení pro tisk plakátu"
-
-[split.tooltip.byPages]
-bullet1 = "Jednotlivé body: 3,7 (rozdělí po stránkách 3 a 7)"
-bullet2 = "Rozsahové body: 3–8 (rozdělí před stránkou 3 a po stránce 8)"
-bullet3 = "Smíšené: 2,5–10,15 (rozdělí po stránce 2, před stránkou 5, po stránce 10 a po stránce 15)"
-text = "Rozdělte PDF na konkrétních číslech stránek. Použití 'n' rozdělí po stránce n. Použití 'n-m' rozdělí před stránkou n a po stránce m."
-title = "Rozdělit na číslech stránek"
 
 [split.tooltip.bySections]
 bullet1 = "Horizontálně: Počet řádků k vytvoření"
@@ -6541,6 +6815,82 @@ title = "API Dokumentace"
 [tableExtraxt]
 tags = "CSV,Extrakce tabulek,extrahovat,převést"
 
+[team]
+cancelInviteError = "Zrušení pozvánky se nezdařilo"
+confirmCancelInvite = "Opravdu chcete tuto pozvánku zrušit?"
+confirmLeave = "Opravdu chcete tento tým opustit?"
+confirmLeaveLeader = "Jako vedoucí týmu budete odstraněni z týmu. Opravdu chcete odejít?"
+confirmRemove = "Opravdu chcete tohoto člena odstranit?"
+editName = "Upravit název týmu"
+inviteCancelled = "Pozvánka zrušena"
+inviteError = "Odeslání pozvánky se nezdařilo"
+inviteSent = "Pozvánka úspěšně odeslána"
+leader = "Vedoucí"
+leaveButton = "Opustit tým"
+leaveError = "Odchod z týmu se nezdařil"
+leaveSuccess = "Úspěšně jste opustili tým"
+loading = "Načítání informací o týmu..."
+memberCount = "{{count}} členů"
+memberRemoved = "Člen úspěšně odstraněn"
+namePlaceholder = "Zadejte název týmu"
+personal = "Osobní"
+removeError = "Nepodařilo se odstranit člena"
+renameError = "Přejmenování týmu se nezdařilo"
+renameSuccess = "Tým byl úspěšně přejmenován"
+
+[team.features]
+badge = "Funkce týmu"
+subtitle = "Spolupracujte se svým týmem"
+title = "Týmová spolupráce"
+viewPlans = "Zobrazit tarify"
+
+[team.features.billing]
+description = "Správa fakturace a předplatného"
+title = "Správa fakturace"
+
+[team.features.credits]
+description = "Sdílený fond kreditů pro všechny členy"
+title = "Sdílené kredity"
+
+[team.features.dashboard]
+description = "Zobrazení aktivity a využití týmu"
+title = "Týmový přehled"
+
+[team.features.invite]
+description = "Přidejte členy do svého týmu"
+title = "Pozvat členy"
+
+[team.invitationBanner]
+acceptButton = "Přijmout"
+message = "vás pozval(a), abyste se připojili"
+rejectButton = "Odmítnout"
+
+[team.invite]
+cancelLabel = "Zrušit"
+invalidEmail = "Neplatná e-mailová adresa"
+placeholder = "Zadejte e-mailovou adresu"
+sendButton = "Odeslat pozvánku"
+title = "Pozvat člena týmu"
+
+[team.members]
+emailColumn = "E-mail"
+empty = "Zatím žádní členové týmu"
+nameColumn = "Jméno"
+pending = "Čeká na vyřízení"
+remove = "Odebrat"
+roleColumn = "Role"
+title = "Členové týmu"
+
+[team.upgrade]
+button = "Přejít na Team"
+description = "Odemkněte funkce pro týmovou spolupráci"
+title = "Přejít na tarif Team"
+
+[textAlign]
+center = "Center"
+left = "Left"
+right = "Right"
+
 [theme]
 toggle = "Přepnout motiv"
 
@@ -6557,6 +6907,7 @@ favorites = "Oblíbené"
 heading = "Všechny nástroje (zobrazení na celou obrazovku)"
 noResults = "Zkuste upravit hledání nebo přepnout popisy, abyste našli, co potřebujete."
 recommended = "Doporučeno"
+selfHostedOffline = "Requires your Stirling-PDF server (currently offline):"
 showDetails = "Zobrazit podrobnosti"
 unavailable = "Zakázáno správcem serveru:"
 unavailableDependency = "Nedostupné – na serveru chybí požadovaný nástroj:"
@@ -6819,6 +7170,37 @@ invalid = "Certifikát není v úložišti důvěryhodných certifikátů - zdro
 fileManager = "Správce souborů"
 pageEditor = "Editor stránek"
 viewer = "Prohlížeč"
+
+[viewer]
+cannotPreviewFile = "Nelze zobrazit náhled souboru"
+dualPageView = "Zobrazení dvou stránek"
+firstPage = "První stránka"
+lastPage = "Poslední stránka"
+nextPage = "Další stránka"
+onlyPdfSupported = "Prohlížeč podporuje pouze soubory PDF. Tento soubor má zřejmě jiný formát."
+previousPage = "Předchozí stránka"
+singlePageView = "Zobrazení jedné stránky"
+unknownFile = "Neznámý soubor"
+zoomIn = "Přiblížit"
+zoomOut = "Oddálit"
+
+[viewer.attachments]
+empty = "Tento dokument neobsahuje žádné přílohy"
+loading = "Načítání příloh..."
+noDocument = "Otevřete PDF a zobrazte jeho přílohy."
+noMatch = "Žádné přílohy neodpovídají vašemu hledání"
+noSupport = "Podpora příloh není v tomto prohlížeči k dispozici."
+searchPlaceholder = "Hledat přílohy"
+title = "Přílohy"
+
+[viewer.formBar]
+apply = "Použít změny"
+dismiss = "Skrýt"
+download = "Stáhnout PDF"
+hasFieldsDesc = "Toto PDF obsahuje vyplnitelná pole"
+title = "Formulářová pole"
+unsavedBadge = "Neuloženo"
+unsavedDesc = "Máte neuložené změny"
 
 [viewPdf]
 header = "Zobrazit PDF"
@@ -7259,278 +7641,3 @@ cancel = "Zrušit"
 confirm = "Rozbalit"
 message = "Tento ZIP obsahuje {{count}} souborů. Přesto rozbalit?"
 title = "Velký soubor ZIP"
-
-[cloudBadge]
-tooltip = "Tato operace využije vaše cloudové kredity"
-
-[team]
-cancelInviteError = "Zrušení pozvánky se nezdařilo"
-confirmCancelInvite = "Opravdu chcete tuto pozvánku zrušit?"
-confirmLeave = "Opravdu chcete tento tým opustit?"
-confirmLeaveLeader = "Jako vedoucí týmu budete odstraněni z týmu. Opravdu chcete odejít?"
-confirmRemove = "Opravdu chcete tohoto člena odstranit?"
-editName = "Upravit název týmu"
-inviteCancelled = "Pozvánka zrušena"
-inviteError = "Odeslání pozvánky se nezdařilo"
-inviteSent = "Pozvánka úspěšně odeslána"
-leader = "Vedoucí"
-leaveButton = "Opustit tým"
-leaveError = "Odchod z týmu se nezdařil"
-leaveSuccess = "Úspěšně jste opustili tým"
-loading = "Načítání informací o týmu..."
-memberCount = "{{count}} členů"
-memberRemoved = "Člen úspěšně odstraněn"
-namePlaceholder = "Zadejte název týmu"
-personal = "Osobní"
-removeError = "Nepodařilo se odstranit člena"
-renameError = "Přejmenování týmu se nezdařilo"
-renameSuccess = "Tým byl úspěšně přejmenován"
-
-[team.invitationBanner]
-message = "vás pozval(a), abyste se připojili"
-acceptButton = "Přijmout"
-rejectButton = "Odmítnout"
-
-[team.features]
-badge = "Funkce týmu"
-subtitle = "Spolupracujte se svým týmem"
-title = "Týmová spolupráce"
-viewPlans = "Zobrazit tarify"
-
-[team.features.billing]
-description = "Správa fakturace a předplatného"
-title = "Správa fakturace"
-
-[team.features.credits]
-description = "Sdílený fond kreditů pro všechny členy"
-title = "Sdílené kredity"
-
-[team.features.dashboard]
-description = "Zobrazení aktivity a využití týmu"
-title = "Týmový přehled"
-
-[team.features.invite]
-description = "Přidejte členy do svého týmu"
-title = "Pozvat členy"
-
-[team.invite]
-cancelLabel = "Zrušit"
-invalidEmail = "Neplatná e-mailová adresa"
-placeholder = "Zadejte e-mailovou adresu"
-sendButton = "Odeslat pozvánku"
-title = "Pozvat člena týmu"
-
-[team.members]
-emailColumn = "E-mail"
-empty = "Zatím žádní členové týmu"
-nameColumn = "Jméno"
-pending = "Čeká na vyřízení"
-remove = "Odebrat"
-roleColumn = "Role"
-title = "Členové týmu"
-
-[team.upgrade]
-button = "Přejít na Team"
-description = "Odemkněte funkce pro týmovou spolupráci"
-title = "Přejít na tarif Team"
-
-[provider.oauth2.google]
-scope = "Ověřování přihlášení"
-
-[provider.oauth2.google.clientId]
-label = "Client ID"
-description = "OAuth2 Client ID z Google Cloud Console"
-
-[provider.oauth2.google.clientSecret]
-label = "Client Secret"
-description = "OAuth2 Client Secret z Google Cloud Console"
-
-[provider.oauth2.google.scopes]
-label = "Scopes"
-description = "OAuth2 scopes oddělené čárkami"
-
-[provider.oauth2.google.useAsUsername]
-label = "Použít jako uživatelské jméno"
-description = "Pole použité jako uživatelské jméno (email, name, given_name, family_name)"
-
-[provider.oauth2.github]
-scope = "Ověřování přihlášení"
-
-[provider.oauth2.github.clientId]
-label = "Client ID"
-description = "OAuth2 Client ID z GitHub Developer Settings"
-
-[provider.oauth2.github.clientSecret]
-label = "Client Secret"
-description = "OAuth2 Client Secret z GitHub Developer Settings"
-
-[provider.oauth2.github.scopes]
-label = "Scopes"
-description = "OAuth2 scopes oddělené čárkami"
-
-[provider.oauth2.github.useAsUsername]
-label = "Použít jako uživatelské jméno"
-description = "Pole použité jako uživatelské jméno (email, login, name)"
-
-[provider.oauth2.keycloak]
-scope = "SSO"
-
-[provider.oauth2.keycloak.issuer]
-label = "URL vydavatele"
-description = "URL koncového bodu OpenID Connect Discovery pro realm Keycloak"
-
-[provider.oauth2.keycloak.clientId]
-label = "Client ID"
-description = "OAuth2 Client ID z Keycloak"
-
-[provider.oauth2.keycloak.clientSecret]
-label = "Client Secret"
-description = "OAuth2 Client Secret z Keycloak"
-
-[provider.oauth2.keycloak.scopes]
-label = "Scopes"
-description = "OAuth2 scopes oddělené čárkami"
-
-[provider.oauth2.keycloak.useAsUsername]
-label = "Použít jako uživatelské jméno"
-description = "Pole použité jako uživatelské jméno (email, name, given_name, family_name, preferred_username)"
-
-[provider.oauth2.generic]
-name = "Obecné OAuth2"
-scope = "SSO"
-
-[provider.oauth2.generic.enabled]
-label = "Povolit Generic OAuth2"
-description = "Povolit ověřování pomocí vlastního poskytovatele OAuth2"
-
-[provider.oauth2.generic.provider]
-label = "Název poskytovatele"
-description = "Název vašeho poskytovatele OAuth2 (např. Azure AD, Okta)"
-
-[provider.oauth2.generic.issuer]
-label = "URL vydavatele"
-description = "Poskytovatel, který podporuje OpenID Connect Discovery (/.well-known/openid-configuration)"
-
-[provider.oauth2.generic.clientId]
-label = "Client ID"
-description = "OAuth2 Client ID od vašeho poskytovatele"
-
-[provider.oauth2.generic.clientSecret]
-label = "Client Secret"
-description = "OAuth2 Client Secret od vašeho poskytovatele"
-
-[provider.oauth2.generic.scopes]
-label = "Scopes"
-description = "OAuth2 scopes oddělené čárkami"
-
-[provider.oauth2.generic.useAsUsername]
-label = "Použít jako uživatelské jméno"
-description = "Pole použité jako uživatelské jméno"
-
-[provider.oauth2.generic.autoCreateUser]
-label = "Automaticky vytvářet uživatele"
-description = "Automaticky vytvořit uživatelský účet při prvním přihlášení přes OAuth2"
-
-[provider.oauth2.generic.blockRegistration]
-label = "Blokovat registraci"
-description = "Zabránit registraci nových uživatelů přes OAuth2"
-
-[provider.smtp]
-name = "SMTP pošta"
-scope = "E-mailová upozornění"
-
-[provider.smtp.enabled]
-label = "Povolit poštu"
-description = "Povolit e-mailová upozornění a funkce SMTP"
-
-[provider.smtp.host]
-label = "SMTP hostitel"
-description = "Název hostitele nebo IP adresa vašeho SMTP serveru"
-
-[provider.smtp.port]
-label = "SMTP port"
-description = "Číslo portu pro připojení SMTP (obvykle 25, 465 nebo 587)"
-
-[provider.smtp.username]
-label = "SMTP uživatelské jméno"
-description = "Uživatelské jméno pro ověřování SMTP"
-
-[provider.smtp.password]
-label = "SMTP heslo"
-description = "Heslo pro ověřování SMTP"
-
-[provider.smtp.from]
-label = "Adresa odesílatele"
-description = "E-mailová adresa použitá jako odesílatel"
-
-[provider.saml2]
-name = "SAML2"
-scope = "SSO (SAML)"
-
-[provider.saml2.enabled]
-label = "Povolit SAML2"
-description = "Povolit ověřování pomocí SAML2 (pouze Enterprise)"
-
-[provider.saml2.provider]
-label = "Název poskytovatele"
-description = "Název vašeho poskytovatele SAML2"
-
-[provider.saml2.registrationId]
-label = "Registration ID"
-description = "Název vaší aplikace poskytovatele služeb (SP)"
-
-[provider.saml2.idpMetadataUri]
-label = "IDP Metadata URI"
-description = "URI metadat vašeho poskytovatele"
-
-[provider.saml2.idpSingleLoginUrl]
-label = "IDP Single Login URL"
-description = "URL pro zahájení SSO"
-
-[provider.saml2.idpSingleLogoutUrl]
-label = "IDP Single Logout URL"
-description = "URL pro zahájení SLO"
-
-[provider.saml2.idpIssuer]
-label = "Vydavatel IDP"
-description = "ID vašeho poskytovatele"
-
-[provider.saml2.idpCert]
-label = "Certifikát IDP"
-description = "Cesta k certifikátu (např. classpath:okta.cert)"
-
-[provider.saml2.privateKey]
-label = "Soukromý klíč"
-description = "Cesta k vašemu soukromému klíči"
-
-[provider.saml2.spCert]
-label = "Certifikát SP"
-description = "Cesta k vašemu podepisovacímu certifikátu"
-
-[provider.saml2.autoCreateUser]
-label = "Automaticky vytvářet uživatele"
-description = "Automaticky vytvořit uživatelský účet při prvním přihlášení přes SAML2"
-
-[provider.saml2.blockRegistration]
-label = "Blokovat registraci"
-description = "Zabránit registraci nových uživatelů přes SAML2"
-
-[provider.googledrive]
-name = "Google Drive"
-scope = "Import souborů"
-
-[provider.googledrive.enabled]
-label = "Povolit výběr souborů z Google Drive"
-description = "Umožnit uživatelům importovat soubory přímo z Google Drive"
-
-[provider.googledrive.clientId]
-label = "Client ID"
-description = "Google OAuth 2.0 Client ID z Google Cloud Console"
-
-[provider.googledrive.apiKey]
-label = "API Key"
-description = "Google API Key pro Google Picker API z Google Cloud Console"
-
-[provider.googledrive.appId]
-label = "App ID"
-description = "Google Drive App ID z Google Cloud Console"

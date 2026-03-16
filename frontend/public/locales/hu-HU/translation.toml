@@ -16,13 +16,13 @@ comingSoon = "Hamarosan"
 confirmClose = "Bezárás megerősítése"
 confirmCloseCancel = "Mégse"
 confirmCloseConfirm = "Fájl bezárása"
-confirmCloseMessage = "Biztosan be akarja zárni ezt a fájlt?"
 confirmCloseDiscard = "Módosítások elvetése és bezárás"
+confirmCloseMessage = "Biztosan be akarja zárni ezt a fájlt?"
 confirmCloseSave = "Mentés és bezárás"
+confirmCloseSaveFailed = "Hibákkal mentve. {{count}} file{{plural}} mentése nem sikerült."
+confirmCloseSaveFailedTitle = "Mentés sikertelen"
 confirmCloseUnsaved = "Ez a fájl mentetlen módosításokat tartalmaz."
 confirmCloseUnsavedList = "Önnél {{count}} file{{plural}} van mentetlen módosításokkal.\n\n{{fileList}}"
-confirmCloseSaveFailedTitle = "Mentés sikertelen"
-confirmCloseSaveFailed = "Hibákkal mentve. {{count}} file{{plural}} mentése nem sikerült."
 confirmPasswordErrorMessage = "Az új jelszó és a jelszó megerősítése nem egyezik."
 custom = "Egyéni..."
 customPosition = "Egyéni pozíció"
@@ -42,11 +42,12 @@ downloadComplete = "Letöltés befejezve"
 downloadPdf = "PDF letöltése"
 downloadUnavailable = "A letöltés nem érhető el ehhez az elemhez"
 edit = "Szerkesztés"
+editSecret = "Érték szerkesztése"
 editYourNewFiles = "Új fájl(ok) szerkesztése"
 exportAndContinue = "Exportálás és folytatás"
 false = "Nem"
-fileSavedToDisk = "Fájl mentve a lemezre"
 fileNotSavedToDisk = "Nincs lemezre mentve"
+fileSavedToDisk = "Fájl mentve a lemezre"
 fileSelected = "Kiválasztva: {{filename}}"
 filesSelected = "fájl kiválasztva"
 font = "Betűtípus"
@@ -60,12 +61,15 @@ help = "Súgó"
 imgPrompt = "Kép kiválasztása"
 incorrectPasswordMessage = "A jelenlegi jelszó helytelen."
 info = "Információ"
+insufficientCredits = "Insufficient credits. Required: {{requiredCredits}}, Available: {{currentBalance}}, Shortfall: {{shortfall}}"
 invalidPasswordMessage = "A jelszó nem lehet üres, és nem tartalmazhat szóközt az elején vagy végén."
 invalidUndoData = "Nem lehet visszavonni: érvénytelen műveleti adatok"
 invalidUsernameMessage = "Érvénytelen felhasználónév. A felhasználónév csak betűket, számokat és a következő speciális karaktereket tartalmazhatja: @._+- vagy érvényes e-mail címnek kell lennie."
 joinDiscord = "Csatlakozzon Discord szerverünkhöz"
 keepWorking = "Munka folytatása"
 loading = "Betöltés..."
+loadingCredits = "Checking credits..."
+loadingProStatus = "Checking subscription status..."
 logOut = "Kijelentkezés"
 marginTooltip = "A lapszám és az oldal széle közötti távolság."
 moreOptions = "További beállítások"
@@ -79,6 +83,7 @@ noFilesToUndo = "Nem lehet visszavonni: az előző műveletben nem történt fá
 noOperationToUndo = "Nincs visszavonható művelet"
 notAuthenticatedMessage = "A felhasználó nincs hitelesítve."
 nothingToUndo = "Nincs visszavonható művelet"
+noticeTopUpOrPlan = "Not enough credits, please top up or upgrade to a plan"
 noValidFiles = "Nincs feldolgozható érvényes fájl"
 oops = "Hoppá!"
 openInViewer = "Megnyitás a megjelenítőben"
@@ -95,9 +100,9 @@ pendingRedactionsTitle = "Nem alkalmazott kitakarások"
 pin = "Fájl rögzítése (aktív marad az eszköz futtatása után)"
 poweredBy = "Üzemelteti:"
 pro = "Pro"
-processTimeWarning = "Figyelmeztetés: A folyamat akár egy percig is eltarthat a fájlmérettől függően"
 processingComplete = "A fájl elkészült."
 processingCompleteMultiple = "{{count}} fájl elkészült."
+processTimeWarning = "Figyelmeztetés: A folyamat akár egy percig is eltarthat a fájlmérettől függően"
 property = "Tulajdonság"
 quickPosition = "Gyors pozíció"
 red = "Piros"
@@ -107,7 +112,6 @@ save = "Mentés"
 saveToBrowser = "Mentés böngészőbe"
 saveUnavailable = "Mentés nem érhető el ehhez az elemhez"
 seeDockerHub = "Docker Hub megtekintése"
-editSecret = "Érték szerkesztése"
 selectFillter = "-- Válasszon --"
 size = "Méret"
 sponsor = "Támogató"
@@ -845,6 +849,14 @@ title = "API végpontok"
 userDefaults = "Felhasználói preferenciák alapértelmezései"
 userDefaultsDescription = "Alapértelmezett értékek beállítása a felhasználói preferenciákhoz. A felhasználók ezeket felülírhatják a saját beállításaikban."
 
+[admin.settings.endpoints.defaultHideUnavailableConversions]
+description = "A letiltott konverziós lehetőségek eltávolítása ahelyett, hogy szürkítve jelenjenek meg"
+label = "Nem elérhető konverziók elrejtése alapértelmezetten"
+
+[admin.settings.endpoints.defaultHideUnavailableTools]
+description = "A letiltott eszközök eltávolítása ahelyett, hogy szürkítve jelenjenek meg"
+label = "Nem elérhető eszközök elrejtése alapértelmezetten"
+
 [admin.settings.endpoints.groupsToRemove]
 description = "Letiltandó végpontcsoportok kiválasztása"
 label = "Letiltott végpontcsoportok"
@@ -852,14 +864,6 @@ label = "Letiltott végpontcsoportok"
 [admin.settings.endpoints.toRemove]
 description = "Letiltandó egyes végpontok kiválasztása"
 label = "Letiltott végpontok"
-
-[admin.settings.endpoints.defaultHideUnavailableTools]
-description = "A letiltott eszközök eltávolítása ahelyett, hogy szürkítve jelenjenek meg"
-label = "Nem elérhető eszközök elrejtése alapértelmezetten"
-
-[admin.settings.endpoints.defaultHideUnavailableConversions]
-description = "A letiltott konverziós lehetőségek eltávolítása ahelyett, hogy szürkítve jelenjenek meg"
-label = "Nem elérhető konverziók elrejtése alapértelmezetten"
 
 [admin.settings.enterpriseRequired]
 message = "{{featureName}} eléréséhez vállalati licenc szükséges. Jelenleg referenciaként demóadatokat lát."
@@ -968,6 +972,10 @@ label = "Alapértelmezett területi beállítás"
 description = "Maximális fájlméret feltöltéskor (pl. 100MB, 1GB)"
 label = "Fájlfeltöltési korlát"
 
+[admin.settings.general.frontendUrl]
+description = "A frontend alap URL-je (pl. https://pdf.example.com). E-mail meghívó linkekhez és mobil QR-kódos feltöltésekhez használjuk. Hagyja üresen a backend URL használatához."
+label = "Frontend URL"
+
 [admin.settings.general.hideDisabledTools]
 description = "Letiltott eszközök elrejtése a felületen"
 label = "Letiltott eszközök elrejtése"
@@ -979,10 +987,6 @@ label = "Google Drive elrejtése"
 [admin.settings.general.hideDisabledTools.mobileScanner]
 description = "A mobil QR-olvasó gomb elrejtése, ha nincs engedélyezve"
 label = "Mobil szkenner elrejtése"
-
-[admin.settings.general.frontendUrl]
-description = "A frontend alap URL-je (pl. https://pdf.example.com). E-mail meghívó linkekhez és mobil QR-kódos feltöltésekhez használjuk. Hagyja üresen a backend URL használatához."
-label = "Frontend URL"
 
 [admin.settings.general.homeDescription]
 description = "A kezdőlapon megjelenő leírás"
@@ -1163,9 +1167,25 @@ description = "Hitelesítés, bejelentkezési viselkedés és biztonsági házir
 title = "Biztonság"
 
 [admin.settings.security.audit]
+hideDetails = "Audit szint részleteinek elrejtése"
 label = "Auditnaplózás"
 showDetails = "Audit szint részleteinek megjelenítése"
-hideDetails = "Audit szint részleteinek elrejtése"
+
+[admin.settings.security.audit.advancedOptions]
+description = "Az alábbi beállítások növelik a feldolgozási időt és a memóriahasználatot. Csak valóban indokolt esetben engedélyezze."
+title = "Speciális beállítások"
+
+[admin.settings.security.audit.captureFileHash]
+description = "A feltöltött PDF fájlok SHA-256 hashének kinyerése az integritás ellenőrzéséhez. Független az audit szinttől."
+label = "Fájl hash rögzítése (SHA-256)"
+
+[admin.settings.security.audit.captureOperationResults]
+description = "Metódus-visszatérési értékek rögzítése. Nem ajánlott: jelentősen növeli a naplók mennyiségét és a lemezhasználatot."
+label = "Műveleti eredmények rögzítése"
+
+[admin.settings.security.audit.capturePdfAuthor]
+description = "Szerző mező kinyerése a PDF dokumentumokból feldolgozás közben. PDF feldolgozást igényel, növeli a késleltetést. Független az audit szinttől."
+label = "PDF szerző metaadatainak rögzítése"
 
 [admin.settings.security.audit.enabled]
 description = "Felhasználói műveletek és rendszeresemények nyomon követése megfelelőségi és biztonsági felügyelet céljából"
@@ -1176,30 +1196,14 @@ description = "0=KI, 1=ALAP, 2=NORMÁL, 3=RÉSZLETES"
 label = "Audit szint"
 
 [admin.settings.security.audit.levelDetails]
-off = "Nincs auditnaplózás (kritikus biztonsági események kivételével)"
 basic = "PDF fájlműveletek (tömörítés, felosztás, egyesítés stb.) és beállításváltozások. Rögzíti: művelet állapota (siker/sikertelen), metódusparaméterek, időzítés. Minimális naplómennyiség."
+off = "Nincs auditnaplózás (kritikus biztonsági események kivételével)"
 standard = "A BASIC eseményeken felül: felhasználói be-/kijelentkezés, fiókmódosítások, általános GET kérések. Kizárja a folyamatos lekérdezéseket (/auth/me, /app-config, /health stb.) a zaj csökkentése érdekében. A legtöbb telepítéshez ideális."
 verbose = "A STANDARD eseményeken felül: folyamatos lekérdezések, minden GET kérés, részletes időzítés. Figyelmeztetés: nagy naplómennyiség és teljesítményhatás."
 
 [admin.settings.security.audit.retentionDays]
 description = "Az audit naplók megőrzésének ideje napokban"
 label = "Audit megőrzés (nap)"
-
-[admin.settings.security.audit.advancedOptions]
-title = "Speciális beállítások"
-description = "Az alábbi beállítások növelik a feldolgozási időt és a memóriahasználatot. Csak valóban indokolt esetben engedélyezze."
-
-[admin.settings.security.audit.captureFileHash]
-description = "A feltöltött PDF fájlok SHA-256 hashének kinyerése az integritás ellenőrzéséhez. Független az audit szinttől."
-label = "Fájl hash rögzítése (SHA-256)"
-
-[admin.settings.security.audit.capturePdfAuthor]
-description = "Szerző mező kinyerése a PDF dokumentumokból feldolgozás közben. PDF feldolgozást igényel, növeli a késleltetést. Független az audit szinttől."
-label = "PDF szerző metaadatainak rögzítése"
-
-[admin.settings.security.audit.captureOperationResults]
-description = "Metódus-visszatérési értékek rögzítése. Nem ajánlott: jelentősen növeli a naplók mennyiségét és a lemezhasználatot."
-label = "Műveleti eredmények rögzítése"
 
 [admin.settings.security.csrfDisabled]
 description = "Cross-Site Request Forgery védelem letiltása (nem ajánlott)"
@@ -1268,6 +1272,14 @@ label = "Kezdeti felhasználónév"
 [admin.settings.security.jwt]
 label = "JWT konfiguráció"
 
+[admin.settings.security.jwt.allowedClockSkewSeconds]
+description = "Tűrés a kliens/szerver időeltérésére a token érvényesítésekor (alapértelmezés: 60 másodperc)"
+label = "Óraeltérés tűrése (másodperc)"
+
+[admin.settings.security.jwt.desktopTokenExpiryMinutes]
+description = "Hozzáférési token élettartama percekben asztali kliensek számára. Az asztali alkalmazások User-Agent alapján automatikusan felismerhetők, és a jobb felhasználói élmény érdekében hosszabb munkamenetet kapnak (alapértelmezés: 43200 = 30 nap)"
+label = "Asztali token lejárata (perc)"
+
 [admin.settings.security.jwt.enableKeyCleanup]
 description = "Lejárt JWT kulcsok automatikus eltávolítása"
 label = "Kulcsok tisztításának engedélyezése"
@@ -1276,29 +1288,21 @@ label = "Kulcsok tisztításának engedélyezése"
 description = "JWT aláíró kulcsok időszakos automatikus forgatása"
 label = "Kulcsforgatás engedélyezése"
 
-[admin.settings.security.jwt.tokenExpiryMinutes]
-description = "Hozzáférési token élettartama percekben webes kliensek számára (alapértelmezés: 1440 = 24 óra)"
-label = "Webes token lejárata (perc)"
-
-[admin.settings.security.jwt.desktopTokenExpiryMinutes]
-description = "Hozzáférési token élettartama percekben asztali kliensek számára. Az asztali alkalmazások User-Agent alapján automatikusan felismerhetők, és a jobb felhasználói élmény érdekében hosszabb munkamenetet kapnak (alapértelmezés: 43200 = 30 nap)"
-label = "Asztali token lejárata (perc)"
-
-[admin.settings.security.jwt.allowedClockSkewSeconds]
-description = "Tűrés a kliens/szerver időeltérésére a token érvényesítésekor (alapértelmezés: 60 másodperc)"
-label = "Óraeltérés tűrése (másodperc)"
+[admin.settings.security.jwt.persistence]
+description = "JWT kulcsok tartós tárolása a szerver újraindításai között"
+label = "Kulcsok tartós tárolása"
 
 [admin.settings.security.jwt.refreshGraceMinutes]
 description = "Lehetővé teszi a token frissítését a lejárat után ennyi percig (alapértelmezés: 15 perc, max. 3 kísérlet)"
 label = "Frissítési türelmi idő (perc)"
 
-[admin.settings.security.jwt.persistence]
-description = "JWT kulcsok tartós tárolása a szerver újraindításai között"
-label = "Kulcsok tartós tárolása"
-
 [admin.settings.security.jwt.secureCookie]
 description = "HTTPS megkövetelése a JWT sütikhez (éles környezetben ajánlott)"
 label = "Biztonságos süti"
+
+[admin.settings.security.jwt.tokenExpiryMinutes]
+description = "Hozzáférési token élettartama percekben webes kliensek számára (alapértelmezés: 1440 = 24 óra)"
+label = "Webes token lejárata (perc)"
 
 [admin.settings.security.loginAttemptCount]
 description = "Sikertelen bejelentkezési kísérletek maximális száma fiókzárolás előtt"
@@ -1586,68 +1590,6 @@ goToSettings = "Ugrás az audit beállításaihoz"
 notAvailable = "Audit rendszer nem érhető el"
 notAvailableMessage = "Az audit rendszer nincs konfigurálva vagy nem elérhető."
 
-[audit.error]
-title = "Hiba az audit rendszer betöltésekor"
-
-[audit.export]
-clearFilters = "Törlés"
-description = "Audit események exportálása CSV vagy JSON formátumba. A szűrőkkel korlátozhatja az exportált adatokat."
-endDate = "Záró dátum"
-error = "Nem sikerült exportálni az adatokat"
-exportButton = "Adatok exportálása"
-fieldAuthor = "Szerző (PDF-ből)"
-fieldDate = "Dátum"
-fieldDocumentName = "Dokumentumnév"
-fieldFileHash = "Fájlhash (SHA-256)"
-fieldIpAddress = "IP-cím"
-fieldOperationResults = "Művelet eredményei"
-fieldOutcome = "Eredmény (Siker/Sikertelen)"
-fieldTool = "Eszköz"
-fieldUsername = "Felhasználónév"
-filterByType = "Szűrés típus szerint"
-filterByUser = "Szűrés felhasználó szerint"
-filters = "Szűrők (opcionális)"
-format = "Exportformátum"
-selectFields = "Válassza ki a felvenni kívánt mezőket"
-startDate = "Kezdő dátum"
-title = "Auditadatok exportálása"
-verboseRequired = "VERBOSE audit szint szükséges"
-
-[audit.systemStatus]
-autoRefresh = "Automatikus frissítés"
-autoRefreshLabel = "Automatikus frissítés 30 mp-enként"
-captureBySettings = "Engedélyezze a beállításokban"
-capturedFields = "Rögzített mezők"
-date = "Dátum"
-days = "nap"
-disabled = "Letiltva"
-documentName = "Dokumentumnév"
-enabled = "Engedélyezve"
-fileHash = "Fájlhash"
-level = "Audit szint"
-pdfAuthor = "PDF szerző"
-retention = "Megőrzési idő"
-status = "Audit naplózás"
-title = "Rendszerállapot"
-tool = "Eszköz"
-totalEvents = "Események összesen"
-username = "Felhasználónév"
-verboseOnly = "Csak VERBOSE"
-
-[audit.stats]
-activeUsers = "Aktív felhasználók"
-attention = "Beavatkozás szükséges"
-avgLatency = "Átlagos késleltetés"
-error = "Hiba a statisztikák betöltésekor"
-errorLoadingStats = "Nem sikerült betölteni a statisztikákat"
-excellent = "Kiváló"
-good = "Jó"
-noData = "N/A"
-successRate = "Sikerarány"
-title = "Összegzés"
-totalEvents = "Események összesen"
-vsLastPeriod = "az előző időszakhoz képest"
-
 [audit.charts]
 byTool = "Legtöbbet használt eszközök"
 byType = "Események típus szerint"
@@ -1660,6 +1602,27 @@ noData = "Nincs adat erre az időszakra"
 overTime = "Események időben"
 title = "Audit vezérlőpult"
 week = "Hét"
+
+[audit.clearData]
+cancel = "Mégse"
+codeDoesNotMatch = "A kód nem egyezik"
+codePlaceholder = "Írja be a kódot ide"
+confirmationCode = "Megerősítő kód"
+confirmationRequired = "Összes auditadat törlése"
+confirmMessage = "Ez véglegesen eltávolít minden auditnaplót. A folytatáshoz adja meg alább a megerősítő kódot."
+confirmTitle = "Erősítse meg a törlést"
+deleteButton = "Törlés"
+enterCode = "Megerősítő kód"
+enterCodeBelow = "Adja meg a kódot pontosan a fentiek szerint (kis- és nagybetűk számítanak)"
+initiateDelete = "Összes adat törlése"
+irreversible = "VISSZAFORDÍTHATATLAN"
+success = "Siker"
+successMessage = "Az összes auditadat sikeresen törölve"
+warning1 = "Ez a művelet nem vonható vissza"
+warning2 = "Az auditadatok törlése véglegesen eltávolítja az összes korábbi auditnaplót, beleértve a biztonsági eseményeket, felhasználói aktivitásokat és fájlműveleteket az adatbázisból."
+
+[audit.error]
+title = "Hiba az audit rendszer betöltésekor"
 
 [audit.events]
 actions = "Műveletek"
@@ -1687,40 +1650,81 @@ type = "Típus"
 user = "Felhasználó"
 viewDetails = "Részletek megtekintése"
 
+[audit.export]
+clearFilters = "Törlés"
+description = "Audit események exportálása CSV vagy JSON formátumba. A szűrőkkel korlátozhatja az exportált adatokat."
+endDate = "Záró dátum"
+error = "Nem sikerült exportálni az adatokat"
+exportButton = "Adatok exportálása"
+fieldAuthor = "Szerző (PDF-ből)"
+fieldDate = "Dátum"
+fieldDocumentName = "Dokumentumnév"
+fieldFileHash = "Fájlhash (SHA-256)"
+fieldIpAddress = "IP-cím"
+fieldOperationResults = "Művelet eredményei"
+fieldOutcome = "Eredmény (Siker/Sikertelen)"
+fieldTool = "Eszköz"
+fieldUsername = "Felhasználónév"
+filterByType = "Szűrés típus szerint"
+filterByUser = "Szűrés felhasználó szerint"
+filters = "Szűrők (opcionális)"
+format = "Exportformátum"
+selectFields = "Válassza ki a felvenni kívánt mezőket"
+startDate = "Kezdő dátum"
+title = "Auditadatok exportálása"
+verboseRequired = "VERBOSE audit szint szükséges"
+
 [audit.filters]
 allOutcomes = "Összes"
 failureOnly = "Csak sikertelenek"
-last7Days = "Elmúlt 7 nap"
 last30Days = "Elmúlt 30 nap"
+last7Days = "Elmúlt 7 nap"
 outcomeFilter = "Eredmény"
 quickPresets = "Gyors szűrők"
 successOnly = "Csak sikeresek"
 thisMonth = "Ebben a hónapban"
 today = "Ma"
 
+[audit.stats]
+activeUsers = "Aktív felhasználók"
+attention = "Beavatkozás szükséges"
+avgLatency = "Átlagos késleltetés"
+error = "Hiba a statisztikák betöltésekor"
+errorLoadingStats = "Nem sikerült betölteni a statisztikákat"
+excellent = "Kiváló"
+good = "Jó"
+noData = "N/A"
+successRate = "Sikerarány"
+title = "Összegzés"
+totalEvents = "Események összesen"
+vsLastPeriod = "az előző időszakhoz képest"
+
+[audit.systemStatus]
+autoRefresh = "Automatikus frissítés"
+autoRefreshLabel = "Automatikus frissítés 30 mp-enként"
+captureBySettings = "Engedélyezze a beállításokban"
+capturedFields = "Rögzített mezők"
+date = "Dátum"
+days = "nap"
+disabled = "Letiltva"
+documentName = "Dokumentumnév"
+enabled = "Engedélyezve"
+fileHash = "Fájlhash"
+level = "Audit szint"
+pdfAuthor = "PDF szerző"
+retention = "Megőrzési idő"
+status = "Audit naplózás"
+title = "Rendszerállapot"
+tool = "Eszköz"
+totalEvents = "Események összesen"
+username = "Felhasználónév"
+verboseOnly = "Csak VERBOSE"
+
 [audit.tabs]
 clearData = "Adatok törlése"
 dashboard = "Vezérlőpult"
 events = "Audit események"
 export = "Exportálás"
-
-[audit.clearData]
-cancel = "Mégse"
-codeDoesNotMatch = "A kód nem egyezik"
-codePlaceholder = "Írja be a kódot ide"
-confirmationCode = "Megerősítő kód"
-confirmationRequired = "Összes auditadat törlése"
-confirmMessage = "Ez véglegesen eltávolít minden auditnaplót. A folytatáshoz adja meg alább a megerősítő kódot."
-confirmTitle = "Erősítse meg a törlést"
-deleteButton = "Törlés"
-enterCode = "Megerősítő kód"
-enterCodeBelow = "Adja meg a kódot pontosan a fentiek szerint (kis- és nagybetűk számítanak)"
-initiateDelete = "Összes adat törlése"
-irreversible = "VISSZAFORDÍTHATATLAN"
-success = "Siker"
-successMessage = "Az összes auditadat sikeresen törölve"
-warning1 = "Ez a művelet nem vonható vissza"
-warning2 = "Az auditadatok törlése véglegesen eltávolítja az összes korábbi auditnaplót, beleértve a biztonsági eseményeket, felhasználói aktivitásokat és fájlműveleteket az adatbázisból."
 
 [auth]
 accessDenied = "Hozzáférés megtagadva"
@@ -2358,6 +2362,9 @@ title = "Jogosultságok módosítása"
 [changePermissions.tooltip.warning]
 text = "Ezeket a jogosultságokat tegye megváltoztathatatlanná a \"Jelszó hozzáadása\" eszközzel beállított tulajdonosi jelszóval."
 
+[cloudBadge]
+tooltip = "Ez a művelet a felhőkrediteket használja"
+
 [colorPicker]
 title = "Szín kiválasztása"
 
@@ -2574,10 +2581,48 @@ title = "Minőség állítása"
 [compressPdfs]
 tags = "tömörítés,kicsi,kompakt"
 
+[config]
+plan = "Plan"
+
 [config.account.overview]
+confirmDelete = "Delete My Account"
+deleteAccount = "Delete Account"
+deleteAccountTitle = "Delete Account"
+deleteFailed = "Failed to delete account."
+deleteFailedTitle = "Unable to delete account"
+deleteWarning = "This action is permanent and cannot be undone. All your data will be deleted."
+enterEmailConfirm = "To confirm deletion, please type your email address ({{email}}) below:"
 guestDescription = "Vendégként van bejelentkezve. Fontolja meg a fiók frissítését fentebb."
+label = "Overview"
 manageAccountPreferences = "Fiókbeállítások kezelése"
+signedInAs = "Signed in as"
 title = "Fiókbeállítások"
+
+[config.account.profilePicture]
+description = "Upload an image to personalize your account."
+help = "PNG, JPG, or WebP up to 2MB."
+remove = "Remove"
+sizeError = "Please select an image smaller than 2MB."
+switchedToCustom = "Switched to custom picture. You can now upload your own."
+title = "Profile picture"
+upload = "Upload"
+useCustom = "Use custom picture"
+usingProvider = "Using {{provider}} profile picture"
+
+[config.account.profilePicture.cropper]
+cropError = "Failed to crop image. Please try again."
+invalidImage = "Invalid image file. Please select a valid PNG, JPG, or WebP file."
+processing = "Processing crop..."
+save = "Save Cropped Image"
+sizeErrorAfterCrop = "Cropped image is too large. Please zoom out or crop a smaller area."
+title = "Crop Profile Picture"
+zoom = "Zoom"
+
+[config.account.security]
+changePassword = "Change password"
+description = "Manage your password and security settings."
+title = "Passwords & Security"
+update = "Update password"
 
 [config.account.upgrade]
 description = "Kapcsolja össze a fiókját, hogy megőrizze az előzményeket és további funkciókhoz férjen hozzá!"
@@ -2595,6 +2640,7 @@ upgradeButton = "Fiók frissítése"
 [config.apiKeys]
 chartAriaLabel = "Kredithasználat: tartalmazott {{includedUsed}} / {{includedTotal}}, vásárolt {{purchasedUsed}} / {{purchasedTotal}}"
 copyKeyAriaLabel = "API-kulcs másolása"
+creditsRemaining = "Credits Remaining"
 description = "Az API-kulcsa a Stirling PDF eszközkészletének eléréséhez. Másolja a projektjébe, vagy frissítse, hogy újat generáljon."
 docsDescription = "További információ a Stirling PDF integrálásáról:"
 docsLink = "API-dokumentáció"
@@ -2651,9 +2697,11 @@ blackwhite = "Fekete-fehér"
 cbrDpi = "DPI a képrendereléshez"
 cbrOptions = "CBR beállítások"
 cbrOutputOptions = "PDF → CBR beállítások"
+cbrToPdf = "CBR → PDF"
 cbzDpi = "DPI a képrendereléshez"
 cbzOptions = "CBZ to PDF beállítások"
 cbzOutputOptions = "PDF to CBZ beállítások"
+cbzToPdf = "CBZ → PDF"
 color = "Szín"
 colorType = "Színtípus"
 combineImages = "Képek egyesítése"
@@ -2671,13 +2719,16 @@ desc = "Fájlok konvertálása különböző formátumok között"
 downloadConverted = "Átalakított fájl letöltése"
 downloadHtml = "HTML köztes fájl letöltése PDF helyett"
 dpi = "DPI"
+ebookToPdf = "eBook → PDF"
 emailOptions = "E-mail to PDF beállítások"
+emlToPdf = "Email → PDF"
 errorConversion = "Hiba történt a fájl konvertálása közben."
 errorNoFiles = "Kérjük, válasszon ki legalább egy fájlt az átalakításhoz."
 errorNoFormat = "Kérjük, válassza ki a forrás- és célformátumot is."
 errorNotSupported = "A(z) {{from}} formátumról {{to}} formátumra történő átalakítás nem támogatott."
 fileFormat = "Fájlformátum"
 files = "Fájlok"
+fileToPdf = "Office/Document → PDF"
 fillPage = "Oldal kitöltése"
 fitDocumentToPage = "Dokumentum illesztése az oldalhoz"
 fitOption = "Illesztési beállítás"
@@ -2705,6 +2756,9 @@ pdfaFormat = "PDF/A formátum"
 pdfaNote = "A PDF/A-1b kompatibilisebb, a PDF/A-2b több funkciót támogat."
 pdfaOptions = "PDF/A beállítások"
 pdfOptions = "PDF beállítások"
+pdfToCbr = "PDF → CBR"
+pdfToCbz = "PDF → CBZ"
+pdfToEpub = "PDF → EPUB"
 pdfxDescription = "A PDF/X egy ISO szabványos PDF-részhalmaz megbízható nyomtatáshoz és grafikai cseréhez."
 pdfxDigitalSignatureWarning = "A PDF digitális aláírást tartalmaz. Ez a következő lépésben eltávolításra kerül."
 pptExt = "PowerPoint (.pptx)"
@@ -2719,6 +2773,7 @@ sourceFormatPlaceholder = "Forrásformátum"
 strictMode = "Strict Mode"
 strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
 svgPdfOptions = "SVG to PDF Options"
+svgToPdf = "SVG → PDF"
 svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
 targetFormatPlaceholder = "Célformátum"
 textRtf = "Szöveg/RTF"
@@ -2791,6 +2846,77 @@ description = "Ezek a sütik elengedhetetlenek a weboldal megfelelő működés�
 [cookieBanner.services]
 posthog = "PostHog Analytics"
 scarf = "Scarf Pixel"
+
+[credits]
+enableOverageBilling = "Túlhasználati számlázás engedélyezése"
+maybeLater = "Talán később"
+upgrade = "Frissítés"
+
+[credits.insufficient]
+brief = "Nincs elég kredit. {{required}} szükséges, de csak {{current}} van."
+freeTier = "Frissítsen Csapat csomagra 10× több kreditért és korlátlan túlhasználati számlázásért."
+managedMember = "Kérjen segítséget csapatvezetőjétől."
+message = "Nincs elég kredit a(z) {{tool}} futtatásához. Jelenleg {{current}} kreditje van."
+messageWithAmount = "A(z) {{tool}} futtatásához {{required}} kredit szükséges, de csak {{current}} áll rendelkezésre."
+teamMember = "Engedélyezze a túlhasználati számlázást, hogy sose fogyjon el a kredit."
+title = "Nincs elegendő kredit"
+
+[credits.modal]
+advancedMonitoring = "Fejlett monitorozás"
+allInOneWorkspace = "Minden egyben PDF munkaterület (megjelenítő, eszközök és agent)"
+apiSandbox = "API sandbox"
+contactSales = "Kapcsolat értékesítéssel"
+creditsRemaining = "{{current}} a {{total}}-ból maradt"
+creditsThisMonth = "Havi kreditek"
+current = "Jelenlegi csomag"
+customPricing = "Egyéni"
+customSmartFolders = "Egyéni Smart mappák"
+dedicatedSupportSlas = "Dedikált támogatás és SLA-k"
+enterpriseSubscription = "Vállalati"
+everythingInCredits = "A Kreditek csomag minden eleme, plusz:"
+everythingInFree = "Az Ingyenes csomag minden eleme, plusz:"
+fasterThroughput = "10× gyorsabb áteresztőképesség"
+forRegularWork = "Rendszeres PDF-munkához:"
+freeTier = "Ingyenes csomag"
+fullyPrivateFiles = "Teljesen privát fájlok"
+largeFileProcessing = "Nagy fájlok feldolgozása"
+managedMemberMessage = "Korlátlan hozzáférése van a kreditekhez a csapatán keresztül. Ha segítségre van szüksége, forduljon a csapatvezetőhöz."
+managedMemberTitle = "Korlátlan kreditek"
+meteringBillingNote = "A túlhasználati krediteket havonta számlázzuk a Csapat előfizetéssel együtt. Használatát bármikor nyomon követheti a fiókbeállításokban."
+meteringExplanation = "A Csapat csomag havonta {{credits}} kreditet tartalmaz. Ha elfogynak, a túlhasználati számlázás automatikusan további krediteket biztosít, így sosem kell leállnia."
+meteringIncluded = "{{credits}} kredit/hó a Csapat csomagban"
+meteringNeverRunOut = "Soha ne fogyjon el a kredit"
+meteringNoCommitment = "Nincs elköteleződés, bármikor lemondható"
+meteringPayAsYouGo = "Csak azért fizet, amit felhasznál"
+meteringPrice = "További kreditek {{price}}/kredit áron"
+meteringTitle = "Használatarányos túlhasználati számlázás"
+monthlyCredits = "havi kreditek"
+orgWideAccess = "Szervezetszintű hozzáférés-vezérlés"
+overage = "túlhasználat"
+perMonth = "/hó"
+popular = "Népszerű"
+premiumAiModels = "Prémium AI modellek"
+prioritySupport = "Elsőbbségi támogatás"
+privateDocCloud = "Privát dokumentumfelhő"
+ragFineTuning = "RAG + finomhangolás"
+secureApiAccess = "Biztonságos API-hozzáférés"
+selfHostLink = "Dokumentáció és csomagok megtekintése"
+selfHostPrompt = "Szeretne saját üzemeltetést?"
+standardThroughput = "Normál áteresztőképesség"
+subtitle = "Frissítsen Csapat csomagra 10× több kreditért és gyorsabb feldolgozásért."
+subtitlePro = "Engedélyezze az automatikus túlhasználati számlázást, hogy sose fogyjon el a kredit."
+teamLeaderOnly = "Csak csapatvezetők engedélyezhetik a túlhasználati számlázást"
+teamSubscription = "Csapat"
+titleExhausted = "Felhasználta az ingyenes krediteket"
+titleExhaustedPro = "Elfogytak a kreditek"
+unlimitedApiAccess = "Korlátlan API-hozzáférés"
+unlimitedMonthlyCredits = "Telephelyi licenc"
+unlimitedSeats = "Korlátlan felhasználói helyek"
+
+[credits.modal.features]
+everythingInCredits = "A Kreditek csomag minden eleme, plusz:"
+everythingInFree = "Az Ingyenes csomag minden eleme, plusz:"
+forRegularWork = "Rendszeres PDF-munkához:"
 
 [crop]
 autoCrop = "Üres terület automatikus levágása"
@@ -3469,10 +3595,6 @@ desc = "Többlépéses munkafolyamatok összeállítása PDF műveletek összef�
 tags = "munkafolyamat,sorozat,automatizálás"
 title = "Automatizálás"
 
-[home.formFill]
-desc = "PDF-űrlapmezők interaktív kitöltése vizuális szerkesztővel"
-title = "Űrlap kitöltése"
-
 [home.autoRename]
 desc = "Automatikusan átnevezi a PDF fájlt az észlelt fejléc alapján"
 tags = "automatikus,fejlécalapú,rendez,átcímkéz"
@@ -3567,6 +3689,10 @@ title = "Oldalak kinyerése"
 desc = "Minden interaktív elem és űrlap eltávolítása a PDF-ből"
 tags = "egyszerűsít,eltávolít,interaktív"
 title = "Lapítás"
+
+[home.formFill]
+desc = "PDF-űrlapmezők interaktív kitöltése vizuális szerkesztővel"
+title = "Űrlap kitöltése"
 
 [home.getPdfInfo]
 desc = "Minden elérhető információ lekérése PDF-ekről"
@@ -3854,6 +3980,7 @@ version = "Verzió"
 accountCreatedSuccess = "A fiók sikeresen létrejött! Most már bejelentkezhet."
 alreadyLoggedIn = "Már be van jelentkezve"
 alreadyLoggedIn2 = "eszközön. Kérjük, jelentkezzen ki az eszközökről és próbálja újra."
+backToSignIn = "Back to sign in"
 cancel = "Mégse"
 changePasswordWarning = "Kérjük, az első bejelentkezés után változtassa meg a jelszavát"
 credentialsUpdated = "Az adatait frissítettük. Kérjük, jelentkezzen be újra."
@@ -3895,13 +4022,17 @@ or = "Vagy"
 password = "Jelszó"
 passwordChangedSuccess = "A jelszó sikeresen megváltozott! Jelentkezzen be az új jelszavával."
 passwordResetSent = "Jelszó-visszaállító link elküldve ide: {{email}}! Ellenőrizze e-mailjét, és kövesse az utasításokat."
+passwordUpdatedSuccess = "Your password has been updated successfully."
 pleaseEnterBoth = "Adja meg az e-mail-címet és a jelszót is"
 pleaseEnterEmail = "Adja meg e-mail-címét"
 relyingPartyRegistrationNotFound = "Kliens regisztráció nem található"
 rememberme = "Emlékezzen rám"
+resetHelp = "Enter your email to receive a secure link to reset your password. If the link has expired, please request a new one."
+resetYourPassword = "Reset your password"
 saml2RequiresLicense = "A SAML bejelentkezés fizetős licencet igényel (Server vagy Enterprise). Kérjük, lépjen kapcsolatba az adminisztrátorral a csomag frissítéséhez."
 sending = "Küldés…"
 sendMagicLink = "Magic Link küldése"
+sendResetLink = "Send reset link"
 sessionExpired = "A munkamenet lejárt. Kérjük, jelentkezzen be újra."
 signin = "Bejelentkezés"
 signInAnonymously = "Bejelentkezés vendégként"
@@ -3910,9 +4041,11 @@ signinTitle = "Kérjük, jelentkezzen be"
 signInWith = "Bejelentkezés ezzel:"
 signOut = "Kijelentkezés"
 ssoSignIn = "Bejelentkezés egyszeri bejelentkezéssel"
+subtitle = "Sign back in to Stirling PDF"
 title = "Bejelentkezés"
 toManySessions = "Túl sok aktív munkamenet"
 unexpectedError = "Váratlan hiba: {{message}}"
+updatePassword = "Update password"
 useEmailInstead = "Bejelentkezés e-maillel"
 useMagicLink = "Használjon Magic Linket"
 userIsDisabled = "A felhasználó letiltva, a bejelentkezés jelenleg nem lehetséges ezzel a felhasználónévvel. Kérjük, forduljon a rendszergazdához."
@@ -4235,6 +4368,15 @@ body = "A Stirling asztali alkalmazásként működik a legjobban. Használhatja
 title = "Letöltés"
 titleWithOs = "Letöltés: {{osLabel}}"
 
+[onboarding.freeTrial]
+afterTrialWithoutPayment = "After your trial ends, you'll continue with our free tier. Add a payment method to keep Pro access."
+afterTrialWithPayment = "Your Pro subscription will start automatically when the trial ends."
+body = "You have full access to Stirling PDF Pro features during your trial. Enjoy unlimited conversions, larger file sizes, and priority processing."
+daysRemaining = "{{days}} days remaining"
+daysRemainingSingular = "{{days}} day remaining"
+title = "Your 30-Day Pro Trial"
+trialEnds = "Trial ends {{date}}"
+
 [onboarding.planOverview]
 adminBodyLoginDisabled = "A bejelentkezési mód engedélyezése után kezelheti a felhasználókat, beállításokat és figyelheti a szerver állapotát. A szerver első <strong>{{freeTierLimit}}</strong> felhasználója ingyen használhatja a Stirlinget."
 adminBodyLoginEnabled = "Adminisztrátorként kezelheti a felhasználókat, beállításokat és figyelheti a szerver állapotát. A szerver első <strong>{{freeTierLimit}}</strong> felhasználója ingyen használhatja a Stirlinget."
@@ -4370,75 +4512,6 @@ title = "Oldalszerkesztő"
 zoomIn = "Nagyítás"
 zoomOut = "Kicsinyítés"
 
-[viewer]
-cannotPreviewFile = "A fájl előnézete nem lehetséges"
-dualPageView = "Kétoldalas nézet"
-firstPage = "Első oldal"
-lastPage = "Utolsó oldal"
-nextPage = "Következő oldal"
-onlyPdfSupported = "A megjelenítő csak PDF fájlokat támogat. Úgy tűnik, ez a fájl más formátumú."
-previousPage = "Előző oldal"
-singlePageView = "Egyoldalas nézet"
-unknownFile = "Ismeretlen fájl"
-zoomIn = "Nagyítás"
-zoomOut = "Kicsinyítés"
-
-[viewer.attachments]
-title = "Mellékletek"
-searchPlaceholder = "Mellékletek keresése"
-noSupport = "Ez a megjelenítő nem támogatja a mellékleteket."
-noDocument = "Nyisson meg egy PDF-et a mellékletek megtekintéséhez."
-loading = "Mellékletek betöltése..."
-empty = "Nincsenek mellékletek ebben a dokumentumban"
-noMatch = "Nincs a keresésnek megfelelő melléklet"
-
-[viewer.formBar]
-title = "Űrlapmezők"
-unsavedBadge = "Mentetlen"
-unsavedDesc = "Mentetlen módosításai vannak"
-hasFieldsDesc = "Ez a PDF kitölthető mezőket tartalmaz"
-dismiss = "Bezárás"
-apply = "Módosítások alkalmazása"
-download = "PDF letöltése"
-
-[rightRail]
-closeSelected = "Kijelölt fájlok bezárása"
-selectAll = "Összes kijelölése"
-deselectAll = "Kijelölés megszüntetése"
-selectByNumber = "Kijelölés oldalszámok alapján"
-deleteSelected = "Kijelölt oldalak törlése"
-closePdf = "PDF bezárása"
-exportAll = "PDF exportálása"
-downloadSelected = "Kijelölt fájlok letöltése"
-annotations = "Jegyzetek"
-exportSelected = "Kijelölt oldalak exportálása"
-formFill = "Űrlap kitöltése"
-saveChanges = "Változtatások mentése"
-toggleAttachments = "Mellékletek megjelenítése/elrejtése"
-toggleTheme = "Téma váltása"
-language = "Nyelv"
-toggleAnnotations = "Jegyzetek láthatóságának váltása"
-search = "PDF keresése"
-panMode = "Pásztázó mód"
-applyRedactionsFirst = "Előbb alkalmazza a kitakarásokat"
-rotateLeft = "Forgatás balra"
-rotateRight = "Forgatás jobbra"
-toggleSidebar = "Oldalsáv ki/be"
-toggleBookmarks = "Könyvjelzők megjelenítése/elrejtése"
-print = "PDF nyomtatása"
-ruler = "Vonalzó / mérés"
-draw = "Rajzolás"
-redact = "Kitakarás"
-exitRedaction = "Kilépés a kitakarás módból"
-save = "Mentés"
-downloadAll = "Összes letöltése"
-saveAll = "Összes mentése"
-
-[textAlign]
-left = "Balra"
-center = "Középre"
-right = "Jobbra"
-
 [pageExtracter]
 header = "Oldalak kinyerése"
 placeholder = "(pl. 1,2,8 vagy 4,7,12-16 vagy 2n-1)"
@@ -4547,6 +4620,9 @@ title = "Tippek"
 autoClose = "Ez az ablak automatikusan bezárul..."
 billingPeriod = "Számlázási időszak"
 canCloseWindow = "Most bezárhatja ezt az ablakot."
+checkoutInstructions = "Fejezze be a vásárlást a most megnyílt böngészőablakban. A fizetés befejezése után térjen vissza ide, és kattintson az alábbi gombra a számlázási információk frissítéséhez."
+checkoutOpened = "Fizetés megnyitva a böngészőben"
+closeLater = "Később intézem"
 emailInvalid = "Adjon meg egy érvényes e-mail-címet"
 enterpriseNote = "A helyek a fizetéskor állíthatók (1–1000)."
 error = "Fizetési hiba"
@@ -4568,6 +4644,7 @@ perMonth = "/hó"
 perYear = "/év"
 preparing = "Fizetés előkészítése..."
 redirecting = "Átirányítás a biztonságos pénztárhoz..."
+refreshBilling = "Fizetés befejezve – számlázás frissítése"
 stripeNotConfigured = "Stripe nincs beállítva"
 stripeNotConfiguredMessage = "A Stripe fizetési integráció nincs beállítva. Kérjük, lépjen kapcsolatba az adminisztrátorral."
 success = "Sikeres fizetés!"
@@ -4579,10 +4656,6 @@ upgradeCompleteMessage = "Az előfizetés sikeresen frissült. A meglévő licen
 upgradeSuccess = "Sikeres fizetés! Az előfizetése frissült. A licenc frissítve lett a szerverén. Hamarosan visszaigazoló e-mailt kap."
 upgradeTitle = "Frissítés erre: {{planName}}"
 yearly = "Éves"
-checkoutOpened = "Fizetés megnyitva a böngészőben"
-checkoutInstructions = "Fejezze be a vásárlást a most megnyílt böngészőablakban. A fizetés befejezése után térjen vissza ide, és kattintson az alábbi gombra a számlázási információk frissítéséhez."
-refreshBilling = "Fizetés befejezve – számlázás frissítése"
-closeLater = "Később intézem"
 
 [payment.emailStage]
 continue = "Folytatás"
@@ -4806,13 +4879,6 @@ prompt = "Válassza ki az oldalt a táblázat kinyeréséhez"
 submit = "Kinyerés"
 title = "PDF konvertálása CSV-be"
 
-[PDFToXLSX]
-header = "PDF Excelbe"
-prompt = "Válassza ki a táblázatok kinyeréséhez az oldalakat"
-submit = "Konvertálás"
-title = "PDF Excelbe (XLSX)"
-tags = "táblázatkezelő,excel,xlsx,táblázat,kinyerés,konvertálás"
-
 [PDFToHTML]
 credit = "Ez a szolgáltatás a pdftohtml használatával végzi a konverziót."
 header = "PDF konvertálása HTML-be"
@@ -4911,6 +4977,13 @@ title = "PDF konvertálása Word formátumba"
 [PDFToWord.selectText]
 1 = "Kimeneti fájlformátum"
 
+[PDFToXLSX]
+header = "PDF Excelbe"
+prompt = "Válassza ki a táblázatok kinyeréséhez az oldalakat"
+submit = "Konvertálás"
+tags = "táblázatkezelő,excel,xlsx,táblázat,kinyerés,konvertálás"
+title = "PDF Excelbe (XLSX)"
+
 [PDFToXML]
 credit = "Ez a szolgáltatás a LibreOffice használatával végzi a konverziót."
 header = "PDF konvertálása XML-be"
@@ -4976,8 +5049,11 @@ manage = "Kezelés"
 perMonth = "/hó"
 perSeat = "/hely"
 popular = "Népszerű"
+purchase = "Purchase"
+selectCredits = "Select Credit Amount"
 selectPlan = "Csomag kiválasztása"
 showComparison = "Összes funkció összehasonlítása"
+totalCost = "Total Cost"
 upgrade = "Frissítés"
 withServer = "+ Szervercsomag"
 
@@ -4985,19 +5061,29 @@ withServer = "+ Szervercsomag"
 subtitle = "Jelenlegi előfizetése részletei"
 title = "Aktív csomag"
 
+[plan.api]
+large = "5,000 Credits"
+medium = "1,000 Credits"
+small = "500 Credits"
+xsmall = "100 Credits"
+
+[plan.apiPackages]
+subtitle = "Purchase API credits for your applications"
+title = "API Credit Packages"
+
 [plan.availablePlans]
-subtitle = "Válassza ki az igényeinek megfelelő csomagot"
 loadError = "Nem sikerült betölteni a csomagárakat. Alapértelmezett értékek használata."
+subtitle = "Válassza ki az igényeinek megfelelő csomagot"
 title = "Elérhető csomagok"
 
 [plan.enterprise]
-siteLicense = "Telephelyi licenc"
 highlight1 = "Egyedi árazás"
 highlight2 = "Dedikált támogatás"
 highlight3 = "Legújabb funkciók"
 name = "Enterprise"
 requiresServer = "Szerver szükséges"
 requiresServerMessage = "Először váltson a Server csomagra, majd frissítsen Enterprise-ra."
+siteLicense = "Telephelyi licenc"
 
 [plan.feature]
 api = "API-hozzáférés"
@@ -5069,76 +5155,19 @@ successMessage = "A licenc sikeresen aktiválva. Most bezárhatja ezt az ablakot
 name = "Csapat"
 siteLicense = "Telephelyi licenc"
 
-[credits]
-enableOverageBilling = "Túlhasználati számlázás engedélyezése"
-maybeLater = "Talán később"
-upgrade = "Frissítés"
-
-[credits.modal]
-advancedMonitoring = "Fejlett monitorozás"
-allInOneWorkspace = "Minden egyben PDF munkaterület (megjelenítő, eszközök és agent)"
-apiSandbox = "API sandbox"
-contactSales = "Kapcsolat értékesítéssel"
-creditsRemaining = "{{current}} a {{total}}-ból maradt"
-creditsThisMonth = "Havi kreditek"
-current = "Jelenlegi csomag"
-customPricing = "Egyéni"
-customSmartFolders = "Egyéni Smart mappák"
-dedicatedSupportSlas = "Dedikált támogatás és SLA-k"
-enterpriseSubscription = "Vállalati"
-everythingInCredits = "A Kreditek csomag minden eleme, plusz:"
-everythingInFree = "Az Ingyenes csomag minden eleme, plusz:"
-fasterThroughput = "10× gyorsabb áteresztőképesség"
-forRegularWork = "Rendszeres PDF-munkához:"
-freeTier = "Ingyenes csomag"
-fullyPrivateFiles = "Teljesen privát fájlok"
-largeFileProcessing = "Nagy fájlok feldolgozása"
-managedMemberMessage = "Korlátlan hozzáférése van a kreditekhez a csapatán keresztül. Ha segítségre van szüksége, forduljon a csapatvezetőhöz."
-managedMemberTitle = "Korlátlan kreditek"
-meteringBillingNote = "A túlhasználati krediteket havonta számlázzuk a Csapat előfizetéssel együtt. Használatát bármikor nyomon követheti a fiókbeállításokban."
-meteringExplanation = "A Csapat csomag havonta {{credits}} kreditet tartalmaz. Ha elfogynak, a túlhasználati számlázás automatikusan további krediteket biztosít, így sosem kell leállnia."
-meteringIncluded = "{{credits}} kredit/hó a Csapat csomagban"
-meteringNoCommitment = "Nincs elköteleződés, bármikor lemondható"
-meteringNeverRunOut = "Soha ne fogyjon el a kredit"
-meteringPayAsYouGo = "Csak azért fizet, amit felhasznál"
-meteringPrice = "További kreditek {{price}}/kredit áron"
-meteringTitle = "Használatarányos túlhasználati számlázás"
-monthlyCredits = "havi kreditek"
-orgWideAccess = "Szervezetszintű hozzáférés-vezérlés"
-overage = "túlhasználat"
-perMonth = "/hó"
-popular = "Népszerű"
-premiumAiModels = "Prémium AI modellek"
-prioritySupport = "Elsőbbségi támogatás"
-privateDocCloud = "Privát dokumentumfelhő"
-ragFineTuning = "RAG + finomhangolás"
-secureApiAccess = "Biztonságos API-hozzáférés"
-selfHostLink = "Dokumentáció és csomagok megtekintése"
-selfHostPrompt = "Szeretne saját üzemeltetést?"
-standardThroughput = "Normál áteresztőképesség"
-subtitle = "Frissítsen Csapat csomagra 10× több kreditért és gyorsabb feldolgozásért."
-subtitlePro = "Engedélyezze az automatikus túlhasználati számlázást, hogy sose fogyjon el a kredit."
-teamLeaderOnly = "Csak csapatvezetők engedélyezhetik a túlhasználati számlázást"
-teamSubscription = "Csapat"
-titleExhausted = "Felhasználta az ingyenes krediteket"
-titleExhaustedPro = "Elfogytak a kreditek"
-unlimitedApiAccess = "Korlátlan API-hozzáférés"
-unlimitedMonthlyCredits = "Telephelyi licenc"
-unlimitedSeats = "Korlátlan felhasználói helyek"
-
-[credits.modal.features]
-everythingInCredits = "A Kreditek csomag minden eleme, plusz:"
-everythingInFree = "Az Ingyenes csomag minden eleme, plusz:"
-forRegularWork = "Rendszeres PDF-munkához:"
-
-[credits.insufficient]
-brief = "Nincs elég kredit. {{required}} szükséges, de csak {{current}} van."
-freeTier = "Frissítsen Csapat csomagra 10× több kreditért és korlátlan túlhasználati számlázásért."
-managedMember = "Kérjen segítséget csapatvezetőjétől."
-message = "Nincs elég kredit a(z) {{tool}} futtatásához. Jelenleg {{current}} kreditje van."
-messageWithAmount = "A(z) {{tool}} futtatásához {{required}} kredit szükséges, de csak {{current}} áll rendelkezésre."
-teamMember = "Engedélyezze a túlhasználati számlázást, hogy sose fogyjon el a kredit."
-title = "Nincs elegendő kredit"
+[plan.trial]
+badge = "Trial"
+continueWithFree = "Continue with Free"
+daysRemaining = "Your trial ends in {{days}} days"
+endDate = "Expires: {{date}}"
+expired = "Your Trial Has Ended"
+expiredMessage = "Your 30-day Pro trial has expired. Subscribe to Pro to continue accessing premium features, or continue with our free tier."
+freeTierLimitations = "Free tier includes basic PDF tools with usage limits."
+message = ""
+subscribe = "Subscribe to Pro"
+subscribeToPro = "Subscribe to Pro"
+subscriptionScheduled = "Subscription scheduled - starts {{date}}"
+title = "Free Trial Active"
 
 [printFile]
 header = "Fájl nyomtatása nyomtatóra"
@@ -5148,6 +5177,207 @@ title = "Fájl nyomtatása"
 [printFile.selectText]
 1 = "Válassza ki a nyomtatandó fájlt"
 2 = "Adja meg a nyomtató nevét"
+
+[provider.googledrive]
+name = "Google Drive"
+scope = "Fájlimport"
+
+[provider.googledrive.apiKey]
+description = "Google API Key a Google Picker API-hoz a Google Cloud Console-ból"
+label = "API kulcs"
+
+[provider.googledrive.appId]
+description = "Google Drive App ID a Google Cloud Console-ból"
+label = "App ID"
+
+[provider.googledrive.clientId]
+description = "Google OAuth 2.0 Client ID a Google Cloud Console-ból"
+label = "Kliensazonosító"
+
+[provider.googledrive.enabled]
+description = "Lehetővé teszi a felhasználóknak, hogy közvetlenül a Google Drive-ból importáljanak fájlokat"
+label = "Google Drive fájlválasztó engedélyezése"
+
+[provider.oauth2.generic]
+name = "Általános OAuth2"
+scope = "SSO"
+
+[provider.oauth2.generic.autoCreateUser]
+description = "Felhasználói fiókok automatikus létrehozása az első OAuth2 bejelentkezéskor"
+label = "Felhasználók automatikus létrehozása"
+
+[provider.oauth2.generic.blockRegistration]
+description = "Új felhasználói regisztráció megakadályozása OAuth2-n keresztül"
+label = "Regisztráció tiltása"
+
+[provider.oauth2.generic.clientId]
+description = "Az OAuth2 kliensazonosítója a szolgáltatótól"
+label = "Kliensazonosító"
+
+[provider.oauth2.generic.clientSecret]
+description = "Az OAuth2 kliens titka a szolgáltatótól"
+label = "Kliens titok"
+
+[provider.oauth2.generic.enabled]
+description = "Hitelesítés engedélyezése egyéni OAuth2 szolgáltatóval"
+label = "Általános OAuth2 engedélyezése"
+
+[provider.oauth2.generic.issuer]
+description = "OpenID Connect Discovery-t támogató szolgáltató (/.well-known/openid-configuration)"
+label = "Kibocsátó URL-je"
+
+[provider.oauth2.generic.provider]
+description = "Az OAuth2 szolgáltatója neve (pl. Azure AD, Okta)"
+label = "Szolgáltató neve"
+
+[provider.oauth2.generic.scopes]
+description = "Vesszővel elválasztott OAuth2 scope-ok"
+label = "Scope-ok"
+
+[provider.oauth2.generic.useAsUsername]
+description = "Mező, amelyet felhasználónévként használunk"
+label = "Használat felhasználónévként"
+
+[provider.oauth2.github]
+scope = "Bejelentkezési hitelesítés"
+
+[provider.oauth2.github.clientId]
+description = "Az OAuth2 kliensazonosítója a GitHub Developer Settings-ből"
+label = "Kliensazonosító"
+
+[provider.oauth2.github.clientSecret]
+description = "Az OAuth2 kliens titka a GitHub Developer Settings-ből"
+label = "Kliens titok"
+
+[provider.oauth2.github.scopes]
+description = "Vesszővel elválasztott OAuth2 scope-ok"
+label = "Scope-ok"
+
+[provider.oauth2.github.useAsUsername]
+description = "Mező, amelyet felhasználónévként használunk (email, login, name)"
+label = "Használat felhasználónévként"
+
+[provider.oauth2.google]
+scope = "Bejelentkezési hitelesítés"
+
+[provider.oauth2.google.clientId]
+description = "Az OAuth2 kliensazonosítója a Google Cloud Console-ban"
+label = "Kliensazonosító"
+
+[provider.oauth2.google.clientSecret]
+description = "Az OAuth2 kliens titka a Google Cloud Console-ban"
+label = "Kliens titok"
+
+[provider.oauth2.google.scopes]
+description = "Vesszővel elválasztott OAuth2 scope-ok"
+label = "Scope-ok"
+
+[provider.oauth2.google.useAsUsername]
+description = "Mező, amelyet felhasználónévként használunk (email, name, given_name, family_name)"
+label = "Használat felhasználónévként"
+
+[provider.oauth2.keycloak]
+scope = "SSO"
+
+[provider.oauth2.keycloak.clientId]
+description = "Az OAuth2 kliensazonosítója a Keycloakban"
+label = "Kliensazonosító"
+
+[provider.oauth2.keycloak.clientSecret]
+description = "Az OAuth2 kliens titka a Keycloakban"
+label = "Kliens titok"
+
+[provider.oauth2.keycloak.issuer]
+description = "A Keycloak tartomány OpenID Connect Discovery végpontjának URL-je"
+label = "Kibocsátó URL-je"
+
+[provider.oauth2.keycloak.scopes]
+description = "Vesszővel elválasztott OAuth2 scope-ok"
+label = "Scope-ok"
+
+[provider.oauth2.keycloak.useAsUsername]
+description = "Mező, amelyet felhasználónévként használunk (email, name, given_name, family_name, preferred_username)"
+label = "Használat felhasználónévként"
+
+[provider.saml2]
+name = "SAML2"
+scope = "SSO (SAML)"
+
+[provider.saml2.autoCreateUser]
+description = "Felhasználói fiókok automatikus létrehozása az első SAML2 bejelentkezéskor"
+label = "Felhasználók automatikus létrehozása"
+
+[provider.saml2.blockRegistration]
+description = "Új felhasználói regisztráció megakadályozása SAML2-n keresztül"
+label = "Regisztráció tiltása"
+
+[provider.saml2.enabled]
+description = "SAML2 hitelesítés engedélyezése (csak Enterprise)"
+label = "SAML2 engedélyezése"
+
+[provider.saml2.idpCert]
+description = "A tanúsítvány útvonala (pl. classpath:okta.cert)"
+label = "IDP tanúsítvány"
+
+[provider.saml2.idpIssuer]
+description = "A szolgáltató azonosítója"
+label = "IDP kibocsátó"
+
+[provider.saml2.idpMetadataUri]
+description = "A szolgáltató metaadatainak URI-ja"
+label = "IDP Metaadat URI"
+
+[provider.saml2.idpSingleLoginUrl]
+description = "Az SSO indításához használt URL"
+label = "IDP egyszeri bejelentkezési URL"
+
+[provider.saml2.idpSingleLogoutUrl]
+description = "Az SLO indításához használt URL"
+label = "IDP egyszeri kijelentkezési URL"
+
+[provider.saml2.privateKey]
+description = "A privát kulcsa elérési útja"
+label = "Privát kulcs"
+
+[provider.saml2.provider]
+description = "A SAML2 szolgáltatója neve"
+label = "Szolgáltató neve"
+
+[provider.saml2.registrationId]
+description = "A Service Provider (SP) alkalmazásának neve"
+label = "Regisztrációs azonosító"
+
+[provider.saml2.spCert]
+description = "Az aláíró tanúsítvány elérési útja"
+label = "SP tanúsítvány"
+
+[provider.smtp]
+name = "SMTP levelezés"
+scope = "E-mail értesítések"
+
+[provider.smtp.enabled]
+description = "E-mail értesítések és SMTP funkció engedélyezése"
+label = "Levelezés engedélyezése"
+
+[provider.smtp.from]
+description = "A küldőként használt e-mail-cím"
+label = "Feladó címe"
+
+[provider.smtp.host]
+description = "Az SMTP szerver hosztneve vagy IP-címe"
+label = "SMTP hoszt"
+
+[provider.smtp.password]
+description = "Jelszó az SMTP hitelesítéshez"
+label = "SMTP jelszó"
+
+[provider.smtp.port]
+description = "A SMTP kapcsolathoz használt portszám (jellemzően 25, 465 vagy 587)"
+label = "SMTP port"
+
+[provider.smtp.username]
+description = "Felhasználónév az SMTP hitelesítéshez"
+label = "SMTP felhasználónév"
 
 [quickAccess]
 account = "Fiók"
@@ -5204,15 +5434,15 @@ title = "Kitakarandó szavak"
 failed = "Hiba történt a PDF kitakarása közben."
 
 [redact.manual]
+activate = "Kitakaró eszköz aktiválása"
+active = "Kitakarási mód aktív"
 apply = "Alkalmazás"
 applyChanges = "Változtatások alkalmazása"
 applyRedactions = "Apply Redactions"
 applyWarning = "⚠️ Végleges alkalmazás, nem vonható vissza, és az alatta lévő adatok törlődnek"
 boxRedaction = "Dobozos kitakarás rajzolása"
-colourPicker = "Színválasztó"
 colorLabel = "Kitakarás színe"
-active = "Kitakarási mód aktív"
-activate = "Kitakaró eszköz aktiválása"
+colourPicker = "Színválasztó"
 controlsTitle = "Kézi kitakarás vezérlők"
 convertPDFToImageLabel = "PDF konvertálása PDF-Image formátumra (a doboz mögötti szöveg eltávolításához)"
 export = "Exportálás"
@@ -5608,6 +5838,39 @@ title = "Magas kontraszt"
 text = "A PDF összes színének teljes invertálása, negatívhoz hasonló hatással. Hasznos dokumentumok sötét módú változatához vagy a szemfáradás csökkentéséhez gyenge fényviszonyok között."
 title = "Minden szín invertálása"
 
+[rightRail]
+annotations = "Jegyzetek"
+applyRedactionsFirst = "Előbb alkalmazza a kitakarásokat"
+closePdf = "PDF bezárása"
+closeSelected = "Kijelölt fájlok bezárása"
+deleteSelected = "Kijelölt oldalak törlése"
+deselectAll = "Kijelölés megszüntetése"
+downloadAll = "Összes letöltése"
+downloadSelected = "Kijelölt fájlok letöltése"
+draw = "Rajzolás"
+exitRedaction = "Kilépés a kitakarás módból"
+exportAll = "PDF exportálása"
+exportSelected = "Kijelölt oldalak exportálása"
+formFill = "Űrlap kitöltése"
+language = "Nyelv"
+panMode = "Pásztázó mód"
+print = "PDF nyomtatása"
+redact = "Kitakarás"
+rotateLeft = "Forgatás balra"
+rotateRight = "Forgatás jobbra"
+ruler = "Vonalzó / mérés"
+save = "Mentés"
+saveAll = "Összes mentése"
+saveChanges = "Változtatások mentése"
+search = "PDF keresése"
+selectAll = "Összes kijelölése"
+selectByNumber = "Kijelölés oldalszámok alapján"
+toggleAnnotations = "Jegyzetek láthatóságának váltása"
+toggleAttachments = "Mellékletek megjelenítése/elrejtése"
+toggleBookmarks = "Könyvjelzők megjelenítése/elrejtése"
+toggleSidebar = "Oldalsáv ki/be"
+toggleTheme = "Téma váltása"
+
 [rotate]
 rotateLeft = "Forgatás az óramutató járásával ellentétesen"
 rotateRight = "Forgatás az óramutató járásával megegyezően"
@@ -5755,6 +6018,14 @@ placeholder = "Adja meg a keresőkifejezést..."
 searching = "Keresés..."
 title = "PDF keresése"
 
+[selfHosted.offline]
+hideTools = "Hide unavailable tools ▴"
+messageNoFallback = "Tools are unavailable until your server comes back online."
+messageWithFallback = "Some tools require a server connection."
+showTools = "View unavailable tools ▾"
+title = "Your Stirling-PDF server is unreachable"
+toolNotAvailableLocally = "Your Stirling-PDF server is offline and \"{{endpoint}}\" is not available on the local backend."
+
 [session]
 expired = "A munkamenet lejárt. Kérjük, frissítse az oldalt és próbálja újra."
 refreshPage = "Oldal frissítése"
@@ -5776,70 +6047,6 @@ user = "Bejelentkezve mint"
 [settings.connection.mode]
 saas = "Stirling Cloud"
 selfhosted = "Önhostolt"
-
-[settings.planBilling]
-currentPlan = "Jelenlegi csomag"
-loading = "Számlázási információk betöltése..."
-notAvailable = "A Csomag és számlázás csak Stirling Cloud kapcsolattal érhető el (SaaS mód)."
-title = "Csomag és számlázás"
-
-[settings.planBilling.billing]
-manageBilling = "Számlázás kezelése"
-nextBillingDate = "Következő számlázási dátum"
-overageCost = "Jelenlegi túlhasználati költség: {{amount}} ({{credits}} kredit)"
-
-[settings.planBilling.credits]
-estimatedCost = "Becsült költség: {{amount}}"
-freeTierInfo = "Az ingyenes csomag havonta {{freeCredits}} kreditet tartalmaz. Frissítsen Csapat csomagra {{teamCredits}} kredit/hó kerettel és használatarányos túlhasználati számlázással."
-included = "{{count}} kredit/hó (tartalmazza)"
-noOverage = "Ebben a hónapban nincs túlhasználati díj. Az Ön {{count}} tartalmazott kreditjét használja."
-overage = "+ {{count}} túlhasználat"
-overageInfo = "A túlhasználati krediteket {{price}} per kredit áron számlázzuk. Csak azért fizet, amit a havi kereten felül használ."
-title = "Kreditfelhasználás"
-
-[settings.planBilling.errors]
-fetchFailed = "Nem sikerült lekérni a számlázási adatokat"
-retry = "Újra"
-
-[settings.planBilling.status]
-active = "Aktív"
-canceled = "Lemondva"
-pastDue = "Lejárt"
-trial = "Próbaidő"
-
-[settings.planBilling.tier]
-enterprise = "Vállalati"
-enterpriseDescription = "Egyedi vállalati funkciók és támogatás"
-free = "Ingyenes"
-freeDescription = "50 kredit havonta"
-team = "Csapat"
-teamBadge = "Csapat"
-teamDescription = "500 kredit/hó tartalmazva, automatikus túlhasználati számlázás a folyamatos szolgáltatásért"
-teamTooltipCredits = "A Csapat csomag {{credits}} kreditet/hó tartalmaz."
-teamTooltipFineprint = "Csak a tartalmazott krediten felül használtért fizet."
-teamTooltipOverage = "Az automatikus túlhasználati számlázás {{price}}/kredit áron biztosítja a folyamatos szolgáltatást."
-
-[settings.planBilling.team]
-managedByTeam = "Csapat által kezelt"
-memberCount = "{{count}} csapattag"
-
-[settings.planBilling.trial]
-daysRemaining = "{{days}} nap van hátra"
-daysRemainingFull = "A próbaidő {{days}} nap múlva lejár"
-endDate = "Lejár: {{date}}"
-endsOn = "Próbaidő vége"
-title = "Ingyenes próba aktív"
-
-[settings.planBilling.upgrade]
-cta = "Frissítés Csapat csomagra"
-featureApi = "API-hozzáférés automatizáláshoz"
-featureCredits = "{{teamCredits}} kredit havonta (szemben az Ingyenes {{freeCredits}} kreditjével)"
-featureMembers = "Korlátlan csapattagok"
-featureSupport = "Elsőbbségi támogatás"
-featureThroughput = "Gyorsabb feldolgozási áteresztőképesség"
-opensInBrowser = "A böngészőben nyílik meg a frissítés befejezéséhez"
-subtitle = "Frissítsen Csapat csomagra az alábbiakért:"
-title = "Csomag frissítése"
 
 [settings.developer]
 apiKeys = "API-kulcsok"
@@ -5923,6 +6130,70 @@ plan = "Csomag"
 title = "Licencelés és analitika"
 usageAnalytics = "Használati analitika"
 
+[settings.planBilling]
+currentPlan = "Jelenlegi csomag"
+loading = "Számlázási információk betöltése..."
+notAvailable = "A Csomag és számlázás csak Stirling Cloud kapcsolattal érhető el (SaaS mód)."
+title = "Csomag és számlázás"
+
+[settings.planBilling.billing]
+manageBilling = "Számlázás kezelése"
+nextBillingDate = "Következő számlázási dátum"
+overageCost = "Jelenlegi túlhasználati költség: {{amount}} ({{credits}} kredit)"
+
+[settings.planBilling.credits]
+estimatedCost = "Becsült költség: {{amount}}"
+freeTierInfo = "Az ingyenes csomag havonta {{freeCredits}} kreditet tartalmaz. Frissítsen Csapat csomagra {{teamCredits}} kredit/hó kerettel és használatarányos túlhasználati számlázással."
+included = "{{count}} kredit/hó (tartalmazza)"
+noOverage = "Ebben a hónapban nincs túlhasználati díj. Az Ön {{count}} tartalmazott kreditjét használja."
+overage = "+ {{count}} túlhasználat"
+overageInfo = "A túlhasználati krediteket {{price}} per kredit áron számlázzuk. Csak azért fizet, amit a havi kereten felül használ."
+title = "Kreditfelhasználás"
+
+[settings.planBilling.errors]
+fetchFailed = "Nem sikerült lekérni a számlázási adatokat"
+retry = "Újra"
+
+[settings.planBilling.status]
+active = "Aktív"
+canceled = "Lemondva"
+pastDue = "Lejárt"
+trial = "Próbaidő"
+
+[settings.planBilling.team]
+managedByTeam = "Csapat által kezelt"
+memberCount = "{{count}} csapattag"
+
+[settings.planBilling.tier]
+enterprise = "Vállalati"
+enterpriseDescription = "Egyedi vállalati funkciók és támogatás"
+free = "Ingyenes"
+freeDescription = "50 kredit havonta"
+team = "Csapat"
+teamBadge = "Csapat"
+teamDescription = "500 kredit/hó tartalmazva, automatikus túlhasználati számlázás a folyamatos szolgáltatásért"
+teamTooltipCredits = "A Csapat csomag {{credits}} kreditet/hó tartalmaz."
+teamTooltipFineprint = "Csak a tartalmazott krediten felül használtért fizet."
+teamTooltipOverage = "Az automatikus túlhasználati számlázás {{price}}/kredit áron biztosítja a folyamatos szolgáltatást."
+
+[settings.planBilling.trial]
+daysRemaining = "{{days}} nap van hátra"
+daysRemainingFull = "A próbaidő {{days}} nap múlva lejár"
+endDate = "Lejár: {{date}}"
+endsOn = "Próbaidő vége"
+title = "Ingyenes próba aktív"
+
+[settings.planBilling.upgrade]
+cta = "Frissítés Csapat csomagra"
+featureApi = "API-hozzáférés automatizáláshoz"
+featureCredits = "{{teamCredits}} kredit havonta (szemben az Ingyenes {{freeCredits}} kreditjével)"
+featureMembers = "Korlátlan csapattagok"
+featureSupport = "Elsőbbségi támogatás"
+featureThroughput = "Gyorsabb feldolgozási áteresztőképesség"
+opensInBrowser = "A böngészőben nyílik meg a frissítés befejezéséhez"
+subtitle = "Frissítsen Csapat csomagra az alábbiakért:"
+title = "Csomag frissítése"
+
 [settings.policiesPrivacy]
 legal = "Jogi"
 privacy = "Adatvédelem"
@@ -5930,6 +6201,9 @@ title = "Irányelvek és adatvédelem"
 
 [settings.preferences]
 title = "Beállítások"
+
+[settings.search]
+placeholder = "Search settings pages..."
 
 [settings.security]
 description = "Frissítse jelszavát fiókja biztonságáért."
@@ -5956,6 +6230,9 @@ security = "Biztonság"
 telegram = "Telegram"
 title = "Biztonság és hitelesítés"
 
+[settings.team]
+title = "Csapat"
+
 [settings.tooltips]
 enableLoginFirst = "Először engedélyezze a bejelentkezési módot"
 requiresEnterprise = "Enterprise licenc szükséges"
@@ -5964,9 +6241,6 @@ requiresEnterprise = "Enterprise licenc szükséges"
 people = "Felhasználók"
 teams = "Csapatok"
 title = "Munkaterület"
-
-[settings.team]
-title = "Csapat"
 
 [setup]
 description = "Kezdésként válassza ki, hogyan szeretné használni a Stirling PDF-et"
@@ -6290,15 +6564,15 @@ desc = "Automatikus felosztás elválasztó lapokkal"
 name = "Elválasztó oldal"
 tooltip = "Használjon QR kódos elválasztó lapokat a dokumentumok közé szkenneléskor"
 
-[split.methods.byPoster]
-name = "Nyomtatható darabok"
-desc = "A nagy oldalak felosztása nyomtatható méretekre"
-tooltip = "A túlméretezett oldalak felosztása kisebb darabokra, amelyek szabványos papíron (A4, Letter stb.) nyomtathatók"
-
 [split.methods.byPages]
 desc = "Adott oldalak kinyerése (1,3,5-10)"
 name = "Oldalszámok"
 tooltip = "Adja meg az oldalszámokat vesszővel elválasztva, a tartományokat kötőjellel"
+
+[split.methods.byPoster]
+desc = "A nagy oldalak felosztása nyomtatható méretekre"
+name = "Nyomtatható darabok"
+tooltip = "A túlméretezett oldalak felosztása kisebb darabokra, amelyek szabványos papíron (A4, Letter stb.) nyomtathatók"
 
 [split.methods.bySections]
 desc = "Oldalak felosztása rácsszerű szakaszokra"
@@ -6326,27 +6600,27 @@ title = "Válassza ki a felosztási módszert"
 text = "Válassza ki, hogyan szeretné felosztani a PDF dokumentumot. Minden módszer más esetre és dokumentumtípusra optimalizált."
 title = "Felosztási módszer kiválasztása"
 
+[split.poster]
+rightToLeft = "Felosztás jobbról balra"
+
+[split.poster.pageSize]
+description = "A kimeneti oldalak mérete nyomtatáshoz"
+label = "Céloldal-méret"
+
+[split.poster.xFactor]
+description = "Az egyes oldalak felosztásához használt oszlopok száma"
+label = "Vízszintes osztások"
+
+[split.poster.yFactor]
+description = "Az egyes oldalak felosztásához használt sorok száma"
+label = "Függőleges osztások"
+
 [split.settings]
 selectMethodFirst = "Kérjük, először válasszon felosztási módszert"
 
 [split.steps]
 chooseMethod = "Válasszon módszert"
 settings = "Beállítások"
-
-[split.poster]
-rightToLeft = "Felosztás jobbról balra"
-
-[split.poster.pageSize]
-label = "Céloldal-méret"
-description = "A kimeneti oldalak mérete nyomtatáshoz"
-
-[split.poster.xFactor]
-label = "Vízszintes osztások"
-description = "Az egyes oldalak felosztásához használt oszlopok száma"
-
-[split.poster.yFactor]
-label = "Függőleges osztások"
-description = "Az egyes oldalak felosztásához használt sorok száma"
 
 [split.tooltip.byChapters]
 bullet1 = "Könyvjelző szint: Melyik szinten történjen a felosztás (1 = legfelső szint)"
@@ -6385,6 +6659,13 @@ bullet5 = "Kapcsolja be a kétoldalas módot, ha az elválasztó lapok mindkét 
 text = "Automatikusan ossza fel a beszkennelt dokumentumokat fizikai, QR kódos elválasztó lapokkal. Tökéletes több, együtt beszkennelt dokumentum feldolgozásához."
 title = "Felosztás elválasztó oldal szerint"
 
+[split.tooltip.byPages]
+bullet1 = "Egyedi vágási pontok: 3,7 (vágás a 3. és 7. oldal után)"
+bullet2 = "Tartomány vágási pontok: 3-8 (vágás a 3. oldal előtt és a 8. oldal után)"
+bullet3 = "Kevert: 2,5-10,15 (vágás a 2. oldal után, az 5. oldal előtt, a 10. oldal után és a 15. oldal után)"
+text = "Ossza fel a PDF-et meghatározott oldalszámoknál. Az 'n' használatával az n. oldal után vág. Az 'n-m' használatával az n. oldal elé és az m. oldal után vág."
+title = "Vágás oldalszámoknál"
+
 [split.tooltip.byPoster]
 bullet1 = "Céloldal-méret: válassza ki a kimeneti papírméretet (A4, Letter stb.)"
 bullet2 = "Vízszintes/Függőleges osztások: rácsméret a felosztáshoz"
@@ -6392,13 +6673,6 @@ bullet3 = "Jobbról balra: az oszlopok sorrendjének megfordítása RTL elrendez
 bullet4 = "Nyomtassa ki és illessze össze a darabokat a poszterhez"
 text = "A nagy PDF-oldalak felosztása kisebb, szabványos papírméretekhez illeszkedő nyomtatható darabokra. Tökéletes poszternyomathoz a túlméretes oldalakról."
 title = "Felosztás poszternyomathoz"
-
-[split.tooltip.byPages]
-bullet1 = "Egyedi vágási pontok: 3,7 (vágás a 3. és 7. oldal után)"
-bullet2 = "Tartomány vágási pontok: 3-8 (vágás a 3. oldal előtt és a 8. oldal után)"
-bullet3 = "Kevert: 2,5-10,15 (vágás a 2. oldal után, az 5. oldal előtt, a 10. oldal után és a 15. oldal után)"
-text = "Ossza fel a PDF-et meghatározott oldalszámoknál. Az 'n' használatával az n. oldal után vág. Az 'n-m' használatával az n. oldal elé és az m. oldal után vág."
-title = "Vágás oldalszámoknál"
 
 [split.tooltip.bySections]
 bullet1 = "Vízszintes: Létrehozandó sorok száma"
@@ -6541,6 +6815,82 @@ title = "API-dokumentáció"
 [tableExtraxt]
 tags = "CSV,Táblázat kinyerése,kinyerés,konvertálás"
 
+[team]
+cancelInviteError = "Nem sikerült visszavonni a meghívást"
+confirmCancelInvite = "Biztosan visszavonja ezt a meghívást?"
+confirmLeave = "Biztosan elhagyja ezt a csapatot?"
+confirmLeaveLeader = "Csapatvezetőként a távozás eltávolítja Önt a csapatból. Biztos benne?"
+confirmRemove = "Biztosan eltávolítja ezt a tagot?"
+editName = "Csapatnév szerkesztése"
+inviteCancelled = "Meghívás visszavonva"
+inviteError = "Nem sikerült elküldeni a meghívást"
+inviteSent = "Meghívás sikeresen elküldve"
+leader = "Vezető"
+leaveButton = "Kilépés a csapatból"
+leaveError = "Nem sikerült kilépni a csapatból"
+leaveSuccess = "Sikeresen kilépett a csapatból"
+loading = "Csapatinformációk betöltése..."
+memberCount = "{{count}} tag"
+memberRemoved = "Tag sikeresen eltávolítva"
+namePlaceholder = "Adja meg a csapat nevét"
+personal = "Személyes"
+removeError = "Nem sikerült eltávolítani a tagot"
+renameError = "Nem sikerült átnevezni a csapatot"
+renameSuccess = "Csapat sikeresen átnevezve"
+
+[team.features]
+badge = "Csapatfunkciók"
+subtitle = "Együttműködés a csapattal"
+title = "Csapat-együttműködés"
+viewPlans = "Csomagok megtekintése"
+
+[team.features.billing]
+description = "Számlázás és előfizetések kezelése"
+title = "Számlázás kezelése"
+
+[team.features.credits]
+description = "Megosztott kreditalap minden tagnak"
+title = "Megosztott kreditek"
+
+[team.features.dashboard]
+description = "Csapataktivitás és felhasználás megtekintése"
+title = "Csapatirányítópult"
+
+[team.features.invite]
+description = "Tagok hozzáadása a csapathoz"
+title = "Tagok meghívása"
+
+[team.invitationBanner]
+acceptButton = "Elfogadás"
+message = "meghívta, hogy csatlakozzon"
+rejectButton = "Elutasítás"
+
+[team.invite]
+cancelLabel = "Mégse"
+invalidEmail = "Érvénytelen e-mail-cím"
+placeholder = "Adja meg az e-mail-címet"
+sendButton = "Meghívó küldése"
+title = "Csapattag meghívása"
+
+[team.members]
+emailColumn = "E-mail"
+empty = "Még nincsenek csapattagok"
+nameColumn = "Név"
+pending = "Függőben"
+remove = "Eltávolítás"
+roleColumn = "Szerep"
+title = "Csapattagok"
+
+[team.upgrade]
+button = "Frissítés Csapat csomagra"
+description = "Csapat-együttműködési funkciók feloldása"
+title = "Frissítés Csapat csomagra"
+
+[textAlign]
+center = "Középre"
+left = "Balra"
+right = "Jobbra"
+
 [theme]
 toggle = "Téma váltása"
 
@@ -6557,6 +6907,7 @@ favorites = "Kedvencek"
 heading = "Minden eszköz (teljes képernyős nézet)"
 noResults = "Próbálja módosítani a keresést vagy kapcsolja be a leírásokat, hogy megtalálja, amit keres."
 recommended = "Ajánlott"
+selfHostedOffline = "Requires your Stirling-PDF server (currently offline):"
 showDetails = "Részletek megjelenítése"
 unavailable = "Szerveradminisztrátor letiltotta:"
 unavailableDependency = "Nem érhető el – szükséges eszköz hiányzik a szerveren:"
@@ -6819,6 +7170,37 @@ invalid = "A tanúsítvány nincs a megbízható tárolóban - a forrás nem ell
 fileManager = "Fájlkezelő"
 pageEditor = "Oldalszerkesztő"
 viewer = "Megjelenítő"
+
+[viewer]
+cannotPreviewFile = "A fájl előnézete nem lehetséges"
+dualPageView = "Kétoldalas nézet"
+firstPage = "Első oldal"
+lastPage = "Utolsó oldal"
+nextPage = "Következő oldal"
+onlyPdfSupported = "A megjelenítő csak PDF fájlokat támogat. Úgy tűnik, ez a fájl más formátumú."
+previousPage = "Előző oldal"
+singlePageView = "Egyoldalas nézet"
+unknownFile = "Ismeretlen fájl"
+zoomIn = "Nagyítás"
+zoomOut = "Kicsinyítés"
+
+[viewer.attachments]
+empty = "Nincsenek mellékletek ebben a dokumentumban"
+loading = "Mellékletek betöltése..."
+noDocument = "Nyisson meg egy PDF-et a mellékletek megtekintéséhez."
+noMatch = "Nincs a keresésnek megfelelő melléklet"
+noSupport = "Ez a megjelenítő nem támogatja a mellékleteket."
+searchPlaceholder = "Mellékletek keresése"
+title = "Mellékletek"
+
+[viewer.formBar]
+apply = "Módosítások alkalmazása"
+dismiss = "Bezárás"
+download = "PDF letöltése"
+hasFieldsDesc = "Ez a PDF kitölthető mezőket tartalmaz"
+title = "Űrlapmezők"
+unsavedBadge = "Mentetlen"
+unsavedDesc = "Mentetlen módosításai vannak"
 
 [viewPdf]
 header = "PDF megtekintése"
@@ -7259,278 +7641,3 @@ cancel = "Mégse"
 confirm = "Kibontás"
 message = "Ez a ZIP {{count}} fájlt tartalmaz. Mégis kibontja?"
 title = "Nagy ZIP fájl"
-
-[cloudBadge]
-tooltip = "Ez a művelet a felhőkrediteket használja"
-
-[team]
-cancelInviteError = "Nem sikerült visszavonni a meghívást"
-confirmCancelInvite = "Biztosan visszavonja ezt a meghívást?"
-confirmLeave = "Biztosan elhagyja ezt a csapatot?"
-confirmLeaveLeader = "Csapatvezetőként a távozás eltávolítja Önt a csapatból. Biztos benne?"
-confirmRemove = "Biztosan eltávolítja ezt a tagot?"
-editName = "Csapatnév szerkesztése"
-inviteCancelled = "Meghívás visszavonva"
-inviteError = "Nem sikerült elküldeni a meghívást"
-inviteSent = "Meghívás sikeresen elküldve"
-leader = "Vezető"
-leaveButton = "Kilépés a csapatból"
-leaveError = "Nem sikerült kilépni a csapatból"
-leaveSuccess = "Sikeresen kilépett a csapatból"
-loading = "Csapatinformációk betöltése..."
-memberCount = "{{count}} tag"
-memberRemoved = "Tag sikeresen eltávolítva"
-namePlaceholder = "Adja meg a csapat nevét"
-personal = "Személyes"
-removeError = "Nem sikerült eltávolítani a tagot"
-renameError = "Nem sikerült átnevezni a csapatot"
-renameSuccess = "Csapat sikeresen átnevezve"
-
-[team.invitationBanner]
-message = "meghívta, hogy csatlakozzon"
-acceptButton = "Elfogadás"
-rejectButton = "Elutasítás"
-
-[team.features]
-badge = "Csapatfunkciók"
-subtitle = "Együttműködés a csapattal"
-title = "Csapat-együttműködés"
-viewPlans = "Csomagok megtekintése"
-
-[team.features.billing]
-description = "Számlázás és előfizetések kezelése"
-title = "Számlázás kezelése"
-
-[team.features.credits]
-description = "Megosztott kreditalap minden tagnak"
-title = "Megosztott kreditek"
-
-[team.features.dashboard]
-description = "Csapataktivitás és felhasználás megtekintése"
-title = "Csapatirányítópult"
-
-[team.features.invite]
-description = "Tagok hozzáadása a csapathoz"
-title = "Tagok meghívása"
-
-[team.invite]
-cancelLabel = "Mégse"
-invalidEmail = "Érvénytelen e-mail-cím"
-placeholder = "Adja meg az e-mail-címet"
-sendButton = "Meghívó küldése"
-title = "Csapattag meghívása"
-
-[team.members]
-emailColumn = "E-mail"
-empty = "Még nincsenek csapattagok"
-nameColumn = "Név"
-pending = "Függőben"
-remove = "Eltávolítás"
-roleColumn = "Szerep"
-title = "Csapattagok"
-
-[team.upgrade]
-button = "Frissítés Csapat csomagra"
-description = "Csapat-együttműködési funkciók feloldása"
-title = "Frissítés Csapat csomagra"
-
-[provider.oauth2.google]
-scope = "Bejelentkezési hitelesítés"
-
-[provider.oauth2.google.clientId]
-label = "Kliensazonosító"
-description = "Az OAuth2 kliensazonosítója a Google Cloud Console-ban"
-
-[provider.oauth2.google.clientSecret]
-label = "Kliens titok"
-description = "Az OAuth2 kliens titka a Google Cloud Console-ban"
-
-[provider.oauth2.google.scopes]
-label = "Scope-ok"
-description = "Vesszővel elválasztott OAuth2 scope-ok"
-
-[provider.oauth2.google.useAsUsername]
-label = "Használat felhasználónévként"
-description = "Mező, amelyet felhasználónévként használunk (email, name, given_name, family_name)"
-
-[provider.oauth2.github]
-scope = "Bejelentkezési hitelesítés"
-
-[provider.oauth2.github.clientId]
-label = "Kliensazonosító"
-description = "Az OAuth2 kliensazonosítója a GitHub Developer Settings-ből"
-
-[provider.oauth2.github.clientSecret]
-label = "Kliens titok"
-description = "Az OAuth2 kliens titka a GitHub Developer Settings-ből"
-
-[provider.oauth2.github.scopes]
-label = "Scope-ok"
-description = "Vesszővel elválasztott OAuth2 scope-ok"
-
-[provider.oauth2.github.useAsUsername]
-label = "Használat felhasználónévként"
-description = "Mező, amelyet felhasználónévként használunk (email, login, name)"
-
-[provider.oauth2.keycloak]
-scope = "SSO"
-
-[provider.oauth2.keycloak.issuer]
-label = "Kibocsátó URL-je"
-description = "A Keycloak tartomány OpenID Connect Discovery végpontjának URL-je"
-
-[provider.oauth2.keycloak.clientId]
-label = "Kliensazonosító"
-description = "Az OAuth2 kliensazonosítója a Keycloakban"
-
-[provider.oauth2.keycloak.clientSecret]
-label = "Kliens titok"
-description = "Az OAuth2 kliens titka a Keycloakban"
-
-[provider.oauth2.keycloak.scopes]
-label = "Scope-ok"
-description = "Vesszővel elválasztott OAuth2 scope-ok"
-
-[provider.oauth2.keycloak.useAsUsername]
-label = "Használat felhasználónévként"
-description = "Mező, amelyet felhasználónévként használunk (email, name, given_name, family_name, preferred_username)"
-
-[provider.oauth2.generic]
-name = "Általános OAuth2"
-scope = "SSO"
-
-[provider.oauth2.generic.enabled]
-label = "Általános OAuth2 engedélyezése"
-description = "Hitelesítés engedélyezése egyéni OAuth2 szolgáltatóval"
-
-[provider.oauth2.generic.provider]
-label = "Szolgáltató neve"
-description = "Az OAuth2 szolgáltatója neve (pl. Azure AD, Okta)"
-
-[provider.oauth2.generic.issuer]
-label = "Kibocsátó URL-je"
-description = "OpenID Connect Discovery-t támogató szolgáltató (/.well-known/openid-configuration)"
-
-[provider.oauth2.generic.clientId]
-label = "Kliensazonosító"
-description = "Az OAuth2 kliensazonosítója a szolgáltatótól"
-
-[provider.oauth2.generic.clientSecret]
-label = "Kliens titok"
-description = "Az OAuth2 kliens titka a szolgáltatótól"
-
-[provider.oauth2.generic.scopes]
-label = "Scope-ok"
-description = "Vesszővel elválasztott OAuth2 scope-ok"
-
-[provider.oauth2.generic.useAsUsername]
-label = "Használat felhasználónévként"
-description = "Mező, amelyet felhasználónévként használunk"
-
-[provider.oauth2.generic.autoCreateUser]
-label = "Felhasználók automatikus létrehozása"
-description = "Felhasználói fiókok automatikus létrehozása az első OAuth2 bejelentkezéskor"
-
-[provider.oauth2.generic.blockRegistration]
-label = "Regisztráció tiltása"
-description = "Új felhasználói regisztráció megakadályozása OAuth2-n keresztül"
-
-[provider.smtp]
-name = "SMTP levelezés"
-scope = "E-mail értesítések"
-
-[provider.smtp.enabled]
-label = "Levelezés engedélyezése"
-description = "E-mail értesítések és SMTP funkció engedélyezése"
-
-[provider.smtp.host]
-label = "SMTP hoszt"
-description = "Az SMTP szerver hosztneve vagy IP-címe"
-
-[provider.smtp.port]
-label = "SMTP port"
-description = "A SMTP kapcsolathoz használt portszám (jellemzően 25, 465 vagy 587)"
-
-[provider.smtp.username]
-label = "SMTP felhasználónév"
-description = "Felhasználónév az SMTP hitelesítéshez"
-
-[provider.smtp.password]
-label = "SMTP jelszó"
-description = "Jelszó az SMTP hitelesítéshez"
-
-[provider.smtp.from]
-label = "Feladó címe"
-description = "A küldőként használt e-mail-cím"
-
-[provider.saml2]
-name = "SAML2"
-scope = "SSO (SAML)"
-
-[provider.saml2.enabled]
-label = "SAML2 engedélyezése"
-description = "SAML2 hitelesítés engedélyezése (csak Enterprise)"
-
-[provider.saml2.provider]
-label = "Szolgáltató neve"
-description = "A SAML2 szolgáltatója neve"
-
-[provider.saml2.registrationId]
-label = "Regisztrációs azonosító"
-description = "A Service Provider (SP) alkalmazásának neve"
-
-[provider.saml2.idpMetadataUri]
-label = "IDP Metaadat URI"
-description = "A szolgáltató metaadatainak URI-ja"
-
-[provider.saml2.idpSingleLoginUrl]
-label = "IDP egyszeri bejelentkezési URL"
-description = "Az SSO indításához használt URL"
-
-[provider.saml2.idpSingleLogoutUrl]
-label = "IDP egyszeri kijelentkezési URL"
-description = "Az SLO indításához használt URL"
-
-[provider.saml2.idpIssuer]
-label = "IDP kibocsátó"
-description = "A szolgáltató azonosítója"
-
-[provider.saml2.idpCert]
-label = "IDP tanúsítvány"
-description = "A tanúsítvány útvonala (pl. classpath:okta.cert)"
-
-[provider.saml2.privateKey]
-label = "Privát kulcs"
-description = "A privát kulcsa elérési útja"
-
-[provider.saml2.spCert]
-label = "SP tanúsítvány"
-description = "Az aláíró tanúsítvány elérési útja"
-
-[provider.saml2.autoCreateUser]
-label = "Felhasználók automatikus létrehozása"
-description = "Felhasználói fiókok automatikus létrehozása az első SAML2 bejelentkezéskor"
-
-[provider.saml2.blockRegistration]
-label = "Regisztráció tiltása"
-description = "Új felhasználói regisztráció megakadályozása SAML2-n keresztül"
-
-[provider.googledrive]
-name = "Google Drive"
-scope = "Fájlimport"
-
-[provider.googledrive.enabled]
-label = "Google Drive fájlválasztó engedélyezése"
-description = "Lehetővé teszi a felhasználóknak, hogy közvetlenül a Google Drive-ból importáljanak fájlokat"
-
-[provider.googledrive.clientId]
-label = "Kliensazonosító"
-description = "Google OAuth 2.0 Client ID a Google Cloud Console-ból"
-
-[provider.googledrive.apiKey]
-label = "API kulcs"
-description = "Google API Key a Google Picker API-hoz a Google Cloud Console-ból"
-
-[provider.googledrive.appId]
-label = "App ID"
-description = "Google Drive App ID a Google Cloud Console-ból"

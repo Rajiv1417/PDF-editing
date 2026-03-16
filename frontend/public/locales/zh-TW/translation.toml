@@ -16,13 +16,13 @@ comingSoon = "即將推出"
 confirmClose = "確認關閉"
 confirmCloseCancel = "取消"
 confirmCloseConfirm = "關閉檔案"
-confirmCloseMessage = "確定要關閉此檔案嗎？"
 confirmCloseDiscard = "捨棄變更並關閉"
+confirmCloseMessage = "確定要關閉此檔案嗎？"
 confirmCloseSave = "儲存並關閉"
+confirmCloseSaveFailed = "已儲存但有錯誤。{{count}} 個檔案{{plural}}無法儲存。"
+confirmCloseSaveFailedTitle = "儲存失敗"
 confirmCloseUnsaved = "此檔案有未儲存的變更。"
 confirmCloseUnsavedList = "您有 {{count}} 個檔案{{plural}}有未儲存的變更。\n\n{{fileList}}"
-confirmCloseSaveFailedTitle = "儲存失敗"
-confirmCloseSaveFailed = "已儲存但有錯誤。{{count}} 個檔案{{plural}}無法儲存。"
 confirmPasswordErrorMessage = "新密碼與確認新密碼必須相符。"
 custom = "自訂..."
 customPosition = "自訂位置"
@@ -42,11 +42,12 @@ downloadComplete = "下載完成"
 downloadPdf = "下載 PDF"
 downloadUnavailable = "此項目無法下載"
 edit = "編輯"
+editSecret = "編輯此值"
 editYourNewFiles = "編輯新檔案"
 exportAndContinue = "匯出並繼續"
 false = "否"
-fileSavedToDisk = "檔案已儲存至磁碟"
 fileNotSavedToDisk = "未儲存至磁碟"
+fileSavedToDisk = "檔案已儲存至磁碟"
 fileSelected = "已選取：{{filename}}"
 filesSelected = "已選擇的檔案"
 font = "字型"
@@ -60,12 +61,15 @@ help = "說明"
 imgPrompt = "選擇圖片"
 incorrectPasswordMessage = "目前密碼不正確。"
 info = "資訊"
+insufficientCredits = "Insufficient credits. Required: {{requiredCredits}}, Available: {{currentBalance}}, Shortfall: {{shortfall}}"
 invalidPasswordMessage = "密碼不能為空，且開頭和結尾不能有空格。"
 invalidUndoData = "無法復原：無效的作業資料"
 invalidUsernameMessage = "無效的使用者名稱。使用者名稱只能包含字母、數字和以下特殊字元 @._+- 或必須是有效的電子郵件地址。"
 joinDiscord = "加入我們的 Discord 伺服器"
 keepWorking = "繼續編輯"
 loading = "載入中..."
+loadingCredits = "Checking credits..."
+loadingProStatus = "Checking subscription status..."
 logOut = "登出"
 marginTooltip = "頁碼與頁面邊緣的距離。"
 moreOptions = "更多選項"
@@ -79,6 +83,7 @@ noFilesToUndo = "無法復原：上一個作業未處理任何檔案"
 noOperationToUndo = "沒有可復原的作業"
 notAuthenticatedMessage = "使用者未通過驗證。"
 nothingToUndo = "沒有可復原的項目"
+noticeTopUpOrPlan = "Not enough credits, please top up or upgrade to a plan"
 noValidFiles = "沒有可處理的有效檔案"
 oops = "哎呀！"
 openInViewer = "在檢視器中開啟"
@@ -95,9 +100,9 @@ pendingRedactionsTitle = "未套用的塗黑"
 pin = "釘選檔案（工具執行後保持作用中）"
 poweredBy = "技術支援"
 pro = "專業版"
-processTimeWarning = "警告：此過程可能長達一分鐘，具體取決於檔案大小"
 processingComplete = "您的檔案已就緒。"
 processingCompleteMultiple = "已有 {{count}} 個檔案就緒。"
+processTimeWarning = "警告：此過程可能長達一分鐘，具體取決於檔案大小"
 property = "屬性"
 quickPosition = "快速定位"
 red = "紅色"
@@ -107,7 +112,6 @@ save = "儲存"
 saveToBrowser = "儲存到瀏覽器"
 saveUnavailable = "此項目無法儲存"
 seeDockerHub = "造訪 Docker Hub 儲存庫"
-editSecret = "編輯此值"
 selectFillter = "-- 選擇 --"
 size = "大小"
 sponsor = "贊助"
@@ -845,6 +849,14 @@ title = "API 端點"
 userDefaults = "使用者偏好預設值"
 userDefaultsDescription = "設定使用者偏好的預設值。使用者可在個人設定中覆寫。"
 
+[admin.settings.endpoints.defaultHideUnavailableConversions]
+description = "移除已停用的轉換選項，而非以灰色顯示"
+label = "預設隱藏不可用的轉換"
+
+[admin.settings.endpoints.defaultHideUnavailableTools]
+description = "移除已停用的工具，而非以灰色顯示"
+label = "預設隱藏不可用的工具"
+
 [admin.settings.endpoints.groupsToRemove]
 description = "選擇要停用的端點群組"
 label = "已停用的端點群組"
@@ -852,14 +864,6 @@ label = "已停用的端點群組"
 [admin.settings.endpoints.toRemove]
 description = "選擇要停用的個別端點"
 label = "已停用的端點"
-
-[admin.settings.endpoints.defaultHideUnavailableTools]
-description = "移除已停用的工具，而非以灰色顯示"
-label = "預設隱藏不可用的工具"
-
-[admin.settings.endpoints.defaultHideUnavailableConversions]
-description = "移除已停用的轉換選項，而非以灰色顯示"
-label = "預設隱藏不可用的轉換"
 
 [admin.settings.enterpriseRequired]
 message = "存取 {{featureName}} 需要企業版授權。您目前看到的是示範資料，供參考。"
@@ -968,6 +972,10 @@ label = "預設語系"
 description = "最大檔案上傳大小（例如：100MB、1GB）"
 label = "檔案上傳限制"
 
+[admin.settings.general.frontendUrl]
+description = "前端的基礎 URL（例如：https://pdf.example.com）。用於電子郵件邀請連結與行動 QR 碼上傳。留空則使用後端 URL。"
+label = "前端 URL"
+
 [admin.settings.general.hideDisabledTools]
 description = "在介面中隱藏已停用的工具"
 label = "隱藏已停用的工具"
@@ -979,10 +987,6 @@ label = "隱藏 Google Drive"
 [admin.settings.general.hideDisabledTools.mobileScanner]
 description = "未啟用時隱藏行動 QR 掃描器按鈕"
 label = "隱藏行動掃描器"
-
-[admin.settings.general.frontendUrl]
-description = "前端的基礎 URL（例如：https://pdf.example.com）。用於電子郵件邀請連結與行動 QR 碼上傳。留空則使用後端 URL。"
-label = "前端 URL"
 
 [admin.settings.general.homeDescription]
 description = "顯示在首頁的說明文字"
@@ -1163,9 +1167,25 @@ description = "設定驗證、登入行為與安全性原則。"
 title = "安全性"
 
 [admin.settings.security.audit]
+hideDetails = "隱藏稽核層級詳細資訊"
 label = "稽核記錄"
 showDetails = "顯示稽核層級詳細資訊"
-hideDetails = "隱藏稽核層級詳細資訊"
+
+[admin.settings.security.audit.advancedOptions]
+description = "下列選項會增加處理時間與記憶體使用量。僅在確有需要時啟用。"
+title = "進階選項"
+
+[admin.settings.security.audit.captureFileHash]
+description = "擷取上傳 PDF 檔案的 SHA-256 雜湊以進行完整性驗證。與稽核層級無關。"
+label = "擷取檔案雜湊（SHA-256）"
+
+[admin.settings.security.audit.captureOperationResults]
+description = "擷取方法的回傳值。不建議：會大幅增加記錄量與磁碟使用。"
+label = "擷取操作結果"
+
+[admin.settings.security.audit.capturePdfAuthor]
+description = "處理期間自 PDF 文件擷取作者欄位。需要解析 PDF，會增加延遲。與稽核層級無關。"
+label = "擷取 PDF 作者中繼資料"
 
 [admin.settings.security.audit.enabled]
 description = "追蹤使用者操作與系統事件以利合規與安全監控"
@@ -1176,30 +1196,14 @@ description = "0=關閉，1=基本，2=標準，3=詳細"
 label = "稽核等級"
 
 [admin.settings.security.audit.levelDetails]
-off = "不記錄稽核（重大安全事件除外）"
 basic = "PDF 檔案操作（壓縮、分割、合併等）與設定變更。擷取：操作狀態（成功/失敗）、方法參數、時間。最小記錄量。"
+off = "不記錄稽核（重大安全事件除外）"
 standard = "在 BASIC 事件基礎上，另包含：使用者登入/登出、帳戶變更、一般 GET 請求。為降低記錄雜訊，排除連續輪詢呼叫（/auth/me、/app-config、/health 等）。適用於多數部署。"
 verbose = "在 STANDARD 事件基礎上，另包含：連續輪詢呼叫、所有 GET 請求、詳細時間資訊。警告：記錄量高且可能影響效能。"
 
 [admin.settings.security.audit.retentionDays]
 description = "稽核記錄的保留天數"
 label = "稽核保留（天）"
-
-[admin.settings.security.audit.advancedOptions]
-title = "進階選項"
-description = "下列選項會增加處理時間與記憶體使用量。僅在確有需要時啟用。"
-
-[admin.settings.security.audit.captureFileHash]
-description = "擷取上傳 PDF 檔案的 SHA-256 雜湊以進行完整性驗證。與稽核層級無關。"
-label = "擷取檔案雜湊（SHA-256）"
-
-[admin.settings.security.audit.capturePdfAuthor]
-description = "處理期間自 PDF 文件擷取作者欄位。需要解析 PDF，會增加延遲。與稽核層級無關。"
-label = "擷取 PDF 作者中繼資料"
-
-[admin.settings.security.audit.captureOperationResults]
-description = "擷取方法的回傳值。不建議：會大幅增加記錄量與磁碟使用。"
-label = "擷取操作結果"
 
 [admin.settings.security.csrfDisabled]
 description = "停用跨站請求偽造保護（不建議）"
@@ -1268,6 +1272,14 @@ label = "初始使用者名稱"
 [admin.settings.security.jwt]
 label = "JWT 設定"
 
+[admin.settings.security.jwt.allowedClockSkewSeconds]
+description = "權杖驗證期間允許的用戶端/伺服器時間偏差（預設：60 秒）"
+label = "時鐘偏差容許值（秒）"
+
+[admin.settings.security.jwt.desktopTokenExpiryMinutes]
+description = "桌面用戶端的存取權杖有效期限（分鐘）。會透過 User-Agent 自動偵測桌面應用程式，並提供較長的工作階段以提升 UX（預設：43200 = 30 天）"
+label = "桌面權杖到期（分鐘）"
+
 [admin.settings.security.jwt.enableKeyCleanup]
 description = "自動移除過期的 JWT 金鑰"
 label = "啟用金鑰清理"
@@ -1276,29 +1288,21 @@ label = "啟用金鑰清理"
 description = "定期自動輪替 JWT 簽署金鑰"
 label = "啟用金鑰輪替"
 
-[admin.settings.security.jwt.tokenExpiryMinutes]
-description = "網頁用戶端的存取權杖有效期限（分鐘）（預設：1440 = 24 小時）"
-label = "Web 權杖到期（分鐘）"
-
-[admin.settings.security.jwt.desktopTokenExpiryMinutes]
-description = "桌面用戶端的存取權杖有效期限（分鐘）。會透過 User-Agent 自動偵測桌面應用程式，並提供較長的工作階段以提升 UX（預設：43200 = 30 天）"
-label = "桌面權杖到期（分鐘）"
-
-[admin.settings.security.jwt.allowedClockSkewSeconds]
-description = "權杖驗證期間允許的用戶端/伺服器時間偏差（預設：60 秒）"
-label = "時鐘偏差容許值（秒）"
+[admin.settings.security.jwt.persistence]
+description = "持久儲存 JWT 金鑰，以在伺服器重啟後保留"
+label = "啟用金鑰永續化"
 
 [admin.settings.security.jwt.refreshGraceMinutes]
 description = "允許在到期後於此分鐘數內更新權杖（預設：15 分鐘，最多 3 次嘗試）"
 label = "更新寬限期（分鐘）"
 
-[admin.settings.security.jwt.persistence]
-description = "持久儲存 JWT 金鑰，以在伺服器重啟後保留"
-label = "啟用金鑰永續化"
-
 [admin.settings.security.jwt.secureCookie]
 description = "要求 JWT Cookie 使用 HTTPS（建議用於正式環境）"
 label = "安全 Cookie"
+
+[admin.settings.security.jwt.tokenExpiryMinutes]
+description = "網頁用戶端的存取權杖有效期限（分鐘）（預設：1440 = 24 小時）"
+label = "Web 權杖到期（分鐘）"
 
 [admin.settings.security.loginAttemptCount]
 description = "帳戶被鎖定前允許的最大登入失敗次數"
@@ -1586,68 +1590,6 @@ goToSettings = "前往稽核設定"
 notAvailable = "稽核系統不可用"
 notAvailableMessage = "稽核系統未設定或不可用。"
 
-[audit.error]
-title = "載入稽核系統時發生錯誤"
-
-[audit.export]
-clearFilters = "清除"
-description = "將稽核事件匯出為 CSV 或 JSON 格式。使用篩選器限制匯出資料。"
-endDate = "結束日期"
-error = "匯出資料失敗"
-exportButton = "匯出資料"
-fieldAuthor = "作者（來自 PDF）"
-fieldDate = "日期"
-fieldDocumentName = "文件名稱"
-fieldFileHash = "檔案雜湊（SHA-256）"
-fieldIpAddress = "IP 位址"
-fieldOperationResults = "操作結果"
-fieldOutcome = "結果（成功/失敗）"
-fieldTool = "工具"
-fieldUsername = "使用者名稱"
-filterByType = "依類型篩選"
-filterByUser = "依使用者篩選"
-filters = "篩選（選填）"
-format = "匯出格式"
-selectFields = "選取要包含的欄位"
-startDate = "開始日期"
-title = "匯出稽核資料"
-verboseRequired = "需要 VERBOSE 稽核層級"
-
-[audit.systemStatus]
-autoRefresh = "自動重新整理"
-autoRefreshLabel = "每 30 秒自動重新整理"
-captureBySettings = "請在設定中啟用"
-capturedFields = "擷取的欄位"
-date = "日期"
-days = "天"
-disabled = "已停用"
-documentName = "文件名稱"
-enabled = "已啟用"
-fileHash = "檔案雜湊"
-level = "稽核等級"
-pdfAuthor = "PDF 作者"
-retention = "保留期間"
-status = "稽核記錄"
-title = "系統狀態"
-tool = "工具"
-totalEvents = "事件總數"
-username = "使用者名稱"
-verboseOnly = "僅限 VERBOSE"
-
-[audit.stats]
-activeUsers = "活躍使用者"
-attention = "需要留意"
-avgLatency = "平均延遲"
-error = "載入統計時發生錯誤"
-errorLoadingStats = "無法載入統計"
-excellent = "極佳"
-good = "良好"
-noData = "無"
-successRate = "成功率"
-title = "摘要"
-totalEvents = "事件總數"
-vsLastPeriod = "較上期"
-
 [audit.charts]
 byTool = "最常使用的工具"
 byType = "依類型分類的事件"
@@ -1660,6 +1602,27 @@ noData = "此期間沒有資料"
 overTime = "事件隨時間變化"
 title = "稽核總覽"
 week = "週"
+
+[audit.clearData]
+cancel = "取消"
+codeDoesNotMatch = "代碼不相符"
+codePlaceholder = "在此輸入代碼"
+confirmationCode = "確認代碼"
+confirmationRequired = "刪除所有稽核資料"
+confirmMessage = "這將永久移除所有稽核記錄。請在下方輸入確認代碼以繼續。"
+confirmTitle = "請確認您要刪除"
+deleteButton = "刪除"
+enterCode = "確認代碼"
+enterCodeBelow = "請完整輸入上方代碼（區分大小寫）"
+initiateDelete = "刪除所有資料"
+irreversible = "無法還原"
+success = "成功"
+successMessage = "已成功清除所有稽核資料"
+warning1 = "此動作無法復原"
+warning2 = "刪除稽核資料會永久從資料庫中移除所有歷史稽核記錄，包括安全事件、使用者活動與檔案操作。"
+
+[audit.error]
+title = "載入稽核系統時發生錯誤"
 
 [audit.events]
 actions = "操作"
@@ -1687,40 +1650,81 @@ type = "類型"
 user = "使用者"
 viewDetails = "檢視詳細資訊"
 
+[audit.export]
+clearFilters = "清除"
+description = "將稽核事件匯出為 CSV 或 JSON 格式。使用篩選器限制匯出資料。"
+endDate = "結束日期"
+error = "匯出資料失敗"
+exportButton = "匯出資料"
+fieldAuthor = "作者（來自 PDF）"
+fieldDate = "日期"
+fieldDocumentName = "文件名稱"
+fieldFileHash = "檔案雜湊（SHA-256）"
+fieldIpAddress = "IP 位址"
+fieldOperationResults = "操作結果"
+fieldOutcome = "結果（成功/失敗）"
+fieldTool = "工具"
+fieldUsername = "使用者名稱"
+filterByType = "依類型篩選"
+filterByUser = "依使用者篩選"
+filters = "篩選（選填）"
+format = "匯出格式"
+selectFields = "選取要包含的欄位"
+startDate = "開始日期"
+title = "匯出稽核資料"
+verboseRequired = "需要 VERBOSE 稽核層級"
+
 [audit.filters]
 allOutcomes = "全部"
 failureOnly = "僅失敗"
-last7Days = "最近 7 天"
 last30Days = "最近 30 天"
+last7Days = "最近 7 天"
 outcomeFilter = "結果"
 quickPresets = "快速篩選"
 successOnly = "僅成功"
 thisMonth = "本月"
 today = "今天"
 
+[audit.stats]
+activeUsers = "活躍使用者"
+attention = "需要留意"
+avgLatency = "平均延遲"
+error = "載入統計時發生錯誤"
+errorLoadingStats = "無法載入統計"
+excellent = "極佳"
+good = "良好"
+noData = "無"
+successRate = "成功率"
+title = "摘要"
+totalEvents = "事件總數"
+vsLastPeriod = "較上期"
+
+[audit.systemStatus]
+autoRefresh = "自動重新整理"
+autoRefreshLabel = "每 30 秒自動重新整理"
+captureBySettings = "請在設定中啟用"
+capturedFields = "擷取的欄位"
+date = "日期"
+days = "天"
+disabled = "已停用"
+documentName = "文件名稱"
+enabled = "已啟用"
+fileHash = "檔案雜湊"
+level = "稽核等級"
+pdfAuthor = "PDF 作者"
+retention = "保留期間"
+status = "稽核記錄"
+title = "系統狀態"
+tool = "工具"
+totalEvents = "事件總數"
+username = "使用者名稱"
+verboseOnly = "僅限 VERBOSE"
+
 [audit.tabs]
 clearData = "清除資料"
 dashboard = "總覽"
 events = "稽核事件"
 export = "匯出"
-
-[audit.clearData]
-cancel = "取消"
-codeDoesNotMatch = "代碼不相符"
-codePlaceholder = "在此輸入代碼"
-confirmationCode = "確認代碼"
-confirmationRequired = "刪除所有稽核資料"
-confirmMessage = "這將永久移除所有稽核記錄。請在下方輸入確認代碼以繼續。"
-confirmTitle = "請確認您要刪除"
-deleteButton = "刪除"
-enterCode = "確認代碼"
-enterCodeBelow = "請完整輸入上方代碼（區分大小寫）"
-initiateDelete = "刪除所有資料"
-irreversible = "無法還原"
-success = "成功"
-successMessage = "已成功清除所有稽核資料"
-warning1 = "此動作無法復原"
-warning2 = "刪除稽核資料會永久從資料庫中移除所有歷史稽核記錄，包括安全事件、使用者活動與檔案操作。"
 
 [auth]
 accessDenied = "拒絕存取"
@@ -2358,6 +2362,9 @@ title = "變更權限"
 [changePermissions.tooltip.warning]
 text = "若要使這些權限無法被變更，請使用「新增密碼」工具設定擁有者密碼。"
 
+[cloudBadge]
+tooltip = "此操作會使用您的雲端點數"
+
 [colorPicker]
 title = "選擇顏色"
 
@@ -2574,10 +2581,48 @@ title = "品質調整"
 [compressPdfs]
 tags = "壓縮,小,微小"
 
+[config]
+plan = "Plan"
+
 [config.account.overview]
+confirmDelete = "Delete My Account"
+deleteAccount = "Delete Account"
+deleteAccountTitle = "Delete Account"
+deleteFailed = "Failed to delete account."
+deleteFailedTitle = "Unable to delete account"
+deleteWarning = "This action is permanent and cannot be undone. All your data will be deleted."
+enterEmailConfirm = "To confirm deletion, please type your email address ({{email}}) below:"
 guestDescription = "您以訪客身分登入。建議於上方升級您的帳戶。"
+label = "Overview"
 manageAccountPreferences = "管理您的帳戶偏好"
+signedInAs = "Signed in as"
 title = "帳戶設定"
+
+[config.account.profilePicture]
+description = "Upload an image to personalize your account."
+help = "PNG, JPG, or WebP up to 2MB."
+remove = "Remove"
+sizeError = "Please select an image smaller than 2MB."
+switchedToCustom = "Switched to custom picture. You can now upload your own."
+title = "Profile picture"
+upload = "Upload"
+useCustom = "Use custom picture"
+usingProvider = "Using {{provider}} profile picture"
+
+[config.account.profilePicture.cropper]
+cropError = "Failed to crop image. Please try again."
+invalidImage = "Invalid image file. Please select a valid PNG, JPG, or WebP file."
+processing = "Processing crop..."
+save = "Save Cropped Image"
+sizeErrorAfterCrop = "Cropped image is too large. Please zoom out or crop a smaller area."
+title = "Crop Profile Picture"
+zoom = "Zoom"
+
+[config.account.security]
+changePassword = "Change password"
+description = "Manage your password and security settings."
+title = "Passwords & Security"
+update = "Update password"
 
 [config.account.upgrade]
 description = "將您的帳號連結起來以保留歷史紀錄並存取更多功能！"
@@ -2595,6 +2640,7 @@ upgradeButton = "升級帳號"
 [config.apiKeys]
 chartAriaLabel = "額度使用：包含 {{includedUsed}} / {{includedTotal}}，已購買 {{purchasedUsed}} / {{purchasedTotal}}"
 copyKeyAriaLabel = "複製 API 金鑰"
+creditsRemaining = "Credits Remaining"
 description = "用於存取 Stirling 的 PDF 工具套件的 API 金鑰。將它複製到您的專案，或重新產生以建立新金鑰。"
 docsDescription = "深入了解如何與 Stirling PDF 整合："
 docsLink = "API 文件"
@@ -2651,9 +2697,11 @@ blackwhite = "黑白"
 cbrDpi = "影像渲染的 DPI"
 cbrOptions = "CBR 選項"
 cbrOutputOptions = "PDF 轉 CBR 選項"
+cbrToPdf = "CBR → PDF"
 cbzDpi = "影像轉繪的 DPI"
 cbzOptions = "CBZ 轉 PDF 選項"
 cbzOutputOptions = "PDF 轉 CBZ 選項"
+cbzToPdf = "CBZ → PDF"
 color = "顏色"
 colorType = "色彩類型"
 combineImages = "合併影像"
@@ -2671,13 +2719,16 @@ desc = "在不同格式之間轉換檔案"
 downloadConverted = "下載已轉換檔案"
 downloadHtml = "下載中介的 HTML 檔而非 PDF"
 dpi = "DPI"
+ebookToPdf = "eBook → PDF"
 emailOptions = "Email 轉 PDF 選項"
+emlToPdf = "Email → PDF"
 errorConversion = "轉換檔案時發生錯誤。"
 errorNoFiles = "請至少選擇一個要轉換的檔案。"
 errorNoFormat = "請同時選擇來源與目標格式。"
 errorNotSupported = "不支援從 {{from}} 轉換為 {{to}}。"
 fileFormat = "檔案格式"
 files = "檔案"
+fileToPdf = "Office/Document → PDF"
 fillPage = "填充頁面"
 fitDocumentToPage = "使文件符合頁面"
 fitOption = "適配選項"
@@ -2705,6 +2756,9 @@ pdfaFormat = "PDF/A 格式"
 pdfaNote = "PDF/A-1b 相容性較佳，PDF/A-2b 支援更多功能。"
 pdfaOptions = "PDF/A 選項"
 pdfOptions = "PDF 選項"
+pdfToCbr = "PDF → CBR"
+pdfToCbz = "PDF → CBZ"
+pdfToEpub = "PDF → EPUB"
 pdfxDescription = "PDF/X 是 ISO 標準的 PDF 子集，用於可靠的列印與圖形交換。"
 pdfxDigitalSignatureWarning = "該 PDF 含有數位簽章。此簽章將在下一步移除。"
 pptExt = "PowerPoint（.pptx）"
@@ -2719,6 +2773,7 @@ sourceFormatPlaceholder = "來源格式"
 strictMode = "Strict Mode"
 strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
 svgPdfOptions = "SVG to PDF Options"
+svgToPdf = "SVG → PDF"
 svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
 targetFormatPlaceholder = "目標格式"
 textRtf = "文字/RTF"
@@ -2791,6 +2846,77 @@ description = "這些 Cookies 對網站正常運作至關重要。它們讓核�
 [cookieBanner.services]
 posthog = "PostHog 分析"
 scarf = "Scarf 像素"
+
+[credits]
+enableOverageBilling = "啟用超量計費"
+maybeLater = "稍後再說"
+upgrade = "升級"
+
+[credits.insufficient]
+brief = "點數不足。您需要 {{required}} 點，但目前只有 {{current}} 點。"
+freeTier = "升級至 Team 以獲得 10 倍點數並啟用無上限的超量計費。"
+managedMember = "請聯絡您的團隊領導者以取得協助。"
+message = "您的點數不足，無法執行 {{tool}}。您目前有 {{current}} 點。"
+messageWithAmount = "執行 {{tool}} 需要 {{required}} 點，但您僅有 {{current}} 點。"
+teamMember = "啟用超量計費，永不耗盡點數。"
+title = "點數不足"
+
+[credits.modal]
+advancedMonitoring = "進階監控"
+allInOneWorkspace = "一體化 PDF 工作空間（檢視器、工具與代理）"
+apiSandbox = "API 沙箱"
+contactSales = "聯絡業務"
+creditsRemaining = "剩餘 {{current}} / {{total}}"
+creditsThisMonth = "每月點數"
+current = "目前方案"
+customPricing = "自訂"
+customSmartFolders = "自訂智慧資料夾"
+dedicatedSupportSlas = "專屬支援與 SLA"
+enterpriseSubscription = "企業版"
+everythingInCredits = "包含 Credits 的所有內容，另加："
+everythingInFree = "包含 Free 的所有內容，另加："
+fasterThroughput = "10 倍更快的處理速度"
+forRegularWork = "適用於日常 PDF 工作："
+freeTier = "免費方案"
+fullyPrivateFiles = "完全私密的檔案"
+largeFileProcessing = "大型檔案處理"
+managedMemberMessage = "您可透過團隊無限使用點數。如需協助，請聯絡您的團隊領導者。"
+managedMemberTitle = "無限點數"
+meteringBillingNote = "超量點數將與您的 Team 訂閱一併於每月計費。您可隨時在帳戶設定中追蹤用量。"
+meteringExplanation = "您的 Team 方案每月包含 {{credits}} 點。用完後，超量計費會自動提供額外點數，讓您不必中斷工作。"
+meteringIncluded = "Team 方案每月含 {{credits}} 點"
+meteringNeverRunOut = "永不耗盡點數"
+meteringNoCommitment = "無綁約，隨時可取消"
+meteringPayAsYouGo = "按用量付費"
+meteringPrice = "額外點數 {{price}}/點"
+meteringTitle = "用多少付多少的超量計費"
+monthlyCredits = "每月點數"
+orgWideAccess = "組織層級的存取控制"
+overage = "超量"
+perMonth = "/月"
+popular = "熱門"
+premiumAiModels = "進階 AI 模型"
+prioritySupport = "優先支援"
+privateDocCloud = "私人文件雲"
+ragFineTuning = "RAG + 微調"
+secureApiAccess = "安全的 API 存取"
+selfHostLink = "查看文件與方案"
+selfHostPrompt = "想自行架設嗎？"
+standardThroughput = "標準吞吐量"
+subtitle = "升級至 Team 可獲得 10 倍點數與更快的處理。"
+subtitlePro = "啟用自動超量計費，永不耗盡點數。"
+teamLeaderOnly = "僅團隊領導者可啟用超量計費"
+teamSubscription = "Team"
+titleExhausted = "您已用完免費點數"
+titleExhaustedPro = "您的點數已用罄"
+unlimitedApiAccess = "無限 API 存取"
+unlimitedMonthlyCredits = "站台授權"
+unlimitedSeats = "不限人數"
+
+[credits.modal.features]
+everythingInCredits = "包含 Credits 的所有內容，另加："
+everythingInFree = "包含 Free 的所有內容，另加："
+forRegularWork = "適用於日常 PDF 工作："
 
 [crop]
 autoCrop = "自動裁切空白"
@@ -3469,10 +3595,6 @@ desc = "將多個 PDF 動作串接，建立多步驟工作流程。適合重複�
 tags = "工作流程,序列,自動化"
 title = "自動化"
 
-[home.formFill]
-desc = "使用視覺化編輯器互動式填寫 PDF 表單欄位"
-title = "填寫表單"
-
 [home.autoRename]
 desc = "依偵測到的標頭自動重新命名 PDF 檔案"
 tags = "自動偵測,依標頭,整理,重新命名"
@@ -3567,6 +3689,10 @@ title = "提取頁面"
 desc = "從 PDF 中移除所有互動元素和表單"
 tags = "簡化,移除,互動"
 title = "平坦化"
+
+[home.formFill]
+desc = "使用視覺化編輯器互動式填寫 PDF 表單欄位"
+title = "填寫表單"
 
 [home.getPdfInfo]
 desc = "取得 PDF 的所有可能資訊"
@@ -3854,6 +3980,7 @@ version = "版本"
 accountCreatedSuccess = "帳號建立成功！您現在可以登入。"
 alreadyLoggedIn = "您已經登入了"
 alreadyLoggedIn2 = "部裝置。請先從這些裝置登出後再試一次。"
+backToSignIn = "Back to sign in"
 cancel = "取消"
 changePasswordWarning = "首次登入後請更改您的密碼"
 credentialsUpdated = "您的認證資訊已更新。請重新登入。"
@@ -3895,13 +4022,17 @@ or = "或"
 password = "密碼"
 passwordChangedSuccess = "密碼變更成功！請使用新密碼登入。"
 passwordResetSent = "密碼重設連結已寄至 {{email}}！請查看您的電子郵件並依指示操作。"
+passwordUpdatedSuccess = "Your password has been updated successfully."
 pleaseEnterBoth = "請輸入電子郵件與密碼"
 pleaseEnterEmail = "請輸入您的電子郵件地址"
 relyingPartyRegistrationNotFound = "找不到任何信賴方註冊紀錄"
 rememberme = "記住我"
+resetHelp = "Enter your email to receive a secure link to reset your password. If the link has expired, please request a new one."
+resetYourPassword = "Reset your password"
 saml2RequiresLicense = "SAML 登入需要付費授權（Server 或 Enterprise）。請聯絡管理員升級您的方案。"
 sending = "正在傳送…"
 sendMagicLink = "傳送魔術連結"
+sendResetLink = "Send reset link"
 sessionExpired = "您的工作階段已過期。請重新登入。"
 signin = "登入"
 signInAnonymously = "以訪客身分登入"
@@ -3910,9 +4041,11 @@ signinTitle = "請登入"
 signInWith = "使用以下方式登入"
 signOut = "登出"
 ssoSignIn = "透過 SSO 單一登入"
+subtitle = "Sign back in to Stirling PDF"
 title = "登入"
 toManySessions = "您有太多使用中的工作階段"
 unexpectedError = "未預期的錯誤：{{message}}"
+updatePassword = "Update password"
 useEmailInstead = "使用電子郵件登入"
 useMagicLink = "改用魔術連結"
 userIsDisabled = "使用者已停用，目前此使用者無法登入。請聯絡系統管理員。"
@@ -4235,6 +4368,15 @@ body = "Stirling 最適合以桌面應用程式使用。你可以離線操作、
 title = "下載"
 titleWithOs = "下載適用於 {{osLabel}} 的版本"
 
+[onboarding.freeTrial]
+afterTrialWithoutPayment = "After your trial ends, you'll continue with our free tier. Add a payment method to keep Pro access."
+afterTrialWithPayment = "Your Pro subscription will start automatically when the trial ends."
+body = "You have full access to Stirling PDF Pro features during your trial. Enjoy unlimited conversions, larger file sizes, and priority processing."
+daysRemaining = "{{days}} days remaining"
+daysRemainingSingular = "{{days}} day remaining"
+title = "Your 30-Day Pro Trial"
+trialEnds = "Trial ends {{date}}"
+
 [onboarding.planOverview]
 adminBodyLoginDisabled = "啟用登入模式後，你可以管理使用者、設定參數並監控伺服器健康狀態。伺服器上的前 <strong>{{freeTierLimit}}</strong> 人可免費使用 Stirling。"
 adminBodyLoginEnabled = "身為管理員，你可以管理使用者、設定參數並監控伺服器健康狀態。伺服器上的前 <strong>{{freeTierLimit}}</strong> 人可免費使用 Stirling。"
@@ -4370,75 +4512,6 @@ title = "頁面編輯器"
 zoomIn = "放大"
 zoomOut = "縮小"
 
-[viewer]
-cannotPreviewFile = "無法預覽檔案"
-dualPageView = "雙頁檢視"
-firstPage = "第一頁"
-lastPage = "最後一頁"
-nextPage = "下一頁"
-onlyPdfSupported = "此檢視器僅支援 PDF 檔案。此檔案似乎是其他格式。"
-previousPage = "上一頁"
-singlePageView = "單頁檢視"
-unknownFile = "未知檔案"
-zoomIn = "放大"
-zoomOut = "縮小"
-
-[viewer.attachments]
-title = "附件"
-searchPlaceholder = "搜尋附件"
-noSupport = "此檢視器不支援附件。"
-noDocument = "開啟 PDF 以檢視其附件。"
-loading = "正在載入附件..."
-empty = "此文件沒有附件"
-noMatch = "沒有符合搜尋的附件"
-
-[viewer.formBar]
-title = "表單欄位"
-unsavedBadge = "未儲存"
-unsavedDesc = "您有未儲存的變更"
-hasFieldsDesc = "此 PDF 包含可填寫欄位"
-dismiss = "關閉"
-apply = "套用變更"
-download = "下載 PDF"
-
-[rightRail]
-closeSelected = "關閉已選檔案"
-selectAll = "全選"
-deselectAll = "取消全選"
-selectByNumber = "依頁碼選取"
-deleteSelected = "刪除所選頁面"
-closePdf = "關閉 PDF"
-exportAll = "匯出 PDF"
-downloadSelected = "下載選取的檔案"
-annotations = "註解"
-exportSelected = "匯出選取的頁面"
-formFill = "填寫表單"
-saveChanges = "儲存變更"
-toggleAttachments = "切換附件"
-toggleTheme = "切換主題"
-language = "語言"
-toggleAnnotations = "切換註解可見度"
-search = "搜尋 PDF"
-panMode = "平移模式"
-applyRedactionsFirst = "請先套用塗黑"
-rotateLeft = "向左旋轉"
-rotateRight = "向右旋轉"
-toggleSidebar = "切換側邊欄"
-toggleBookmarks = "切換書籤"
-print = "列印 PDF"
-ruler = "尺規 / 量測"
-draw = "繪圖"
-redact = "塗黑"
-exitRedaction = "退出塗黑模式"
-save = "儲存"
-downloadAll = "全部下載"
-saveAll = "全部儲存"
-
-[textAlign]
-left = "靠左"
-center = "置中"
-right = "靠右"
-
 [pageExtracter]
 header = "提取頁面"
 placeholder = "（例如 1,2,8 或 4,7,12-16 或 2n-1）"
@@ -4547,6 +4620,9 @@ title = "提示"
 autoClose = "此視窗將自動關閉..."
 billingPeriod = "計費週期"
 canCloseWindow = "你現在可以關閉此視窗。"
+checkoutInstructions = "請在剛剛開啟的瀏覽器視窗中完成購買。付款完成後，返回此處並點擊下方按鈕以重新整理您的帳務資訊。"
+checkoutOpened = "已在瀏覽器開啟結帳"
+closeLater = "稍後再說"
 emailInvalid = "請輸入有效的 Email 位址"
 enterpriseNote = "席次可在結帳時調整（1-1000）。"
 error = "付款錯誤"
@@ -4568,6 +4644,7 @@ perMonth = "/月"
 perYear = "/年"
 preparing = "正在準備結帳..."
 redirecting = "正在重新導向至安全結帳..."
+refreshBilling = "我已完成付款 - 重新整理帳務"
 stripeNotConfigured = "未設定 Stripe"
 stripeNotConfiguredMessage = "尚未設定 Stripe 付款整合。請聯絡你的管理員。"
 success = "付款成功！"
@@ -4579,10 +4656,6 @@ upgradeCompleteMessage = "你的訂閱已成功升級。既有授權金鑰已更
 upgradeSuccess = "付款成功！你的訂閱已升級。伺服器上的授權已更新。你將很快收到確認 Email。"
 upgradeTitle = "升級至 {{planName}}"
 yearly = "年繳"
-checkoutOpened = "已在瀏覽器開啟結帳"
-checkoutInstructions = "請在剛剛開啟的瀏覽器視窗中完成購買。付款完成後，返回此處並點擊下方按鈕以重新整理您的帳務資訊。"
-refreshBilling = "我已完成付款 - 重新整理帳務"
-closeLater = "稍後再說"
 
 [payment.emailStage]
 continue = "繼續"
@@ -4806,13 +4879,6 @@ prompt = "選擇要提取表格的頁面"
 submit = "提取"
 title = "PDF 轉換為 CSV"
 
-[PDFToXLSX]
-header = "PDF 轉 Excel"
-prompt = "選擇要擷取表格的頁面"
-submit = "轉換"
-title = "PDF 轉 Excel（XLSX）"
-tags = "spreadsheet,excel,xlsx,table,extract,convert"
-
 [PDFToHTML]
 credit = "此服務使用 pdftohtml 進行檔案轉換。"
 header = "PDF 轉 HTML"
@@ -4911,6 +4977,13 @@ title = "PDF 轉 Word"
 [PDFToWord.selectText]
 1 = "輸出文件格式"
 
+[PDFToXLSX]
+header = "PDF 轉 Excel"
+prompt = "選擇要擷取表格的頁面"
+submit = "轉換"
+tags = "spreadsheet,excel,xlsx,table,extract,convert"
+title = "PDF 轉 Excel（XLSX）"
+
 [PDFToXML]
 credit = "此服務使用 LibreOffice 進行檔案轉換。"
 header = "PDF 轉換為 XML"
@@ -4976,8 +5049,11 @@ manage = "管理"
 perMonth = "/月"
 perSeat = "/席"
 popular = "最受歡迎"
+purchase = "Purchase"
+selectCredits = "Select Credit Amount"
 selectPlan = "選擇方案"
 showComparison = "比較所有功能"
+totalCost = "Total Cost"
 upgrade = "升級"
 withServer = "+ Server 方案"
 
@@ -4985,19 +5061,29 @@ withServer = "+ Server 方案"
 subtitle = "您目前的訂閱詳情"
 title = "使用中方案"
 
+[plan.api]
+large = "5,000 Credits"
+medium = "1,000 Credits"
+small = "500 Credits"
+xsmall = "100 Credits"
+
+[plan.apiPackages]
+subtitle = "Purchase API credits for your applications"
+title = "API Credit Packages"
+
 [plan.availablePlans]
-subtitle = "選擇符合您需求的方案"
 loadError = "無法載入方案價格。已使用預設值。"
+subtitle = "選擇符合您需求的方案"
 title = "可用方案"
 
 [plan.enterprise]
-siteLicense = "站台授權"
 highlight1 = "自訂價格"
 highlight2 = "專屬支援"
 highlight3 = "最新功能"
 name = "企業版"
 requiresServer = "需要 Server"
 requiresServerMessage = "請先升級到 Server 方案，再升級至 Enterprise。"
+siteLicense = "站台授權"
 
 [plan.feature]
 api = "API 存取"
@@ -5069,76 +5155,19 @@ successMessage = "您的授權已成功啟用。您現在可以關閉此視窗�
 name = "Team"
 siteLicense = "站台授權"
 
-[credits]
-enableOverageBilling = "啟用超量計費"
-maybeLater = "稍後再說"
-upgrade = "升級"
-
-[credits.modal]
-advancedMonitoring = "進階監控"
-allInOneWorkspace = "一體化 PDF 工作空間（檢視器、工具與代理）"
-apiSandbox = "API 沙箱"
-contactSales = "聯絡業務"
-creditsRemaining = "剩餘 {{current}} / {{total}}"
-creditsThisMonth = "每月點數"
-current = "目前方案"
-customPricing = "自訂"
-customSmartFolders = "自訂智慧資料夾"
-dedicatedSupportSlas = "專屬支援與 SLA"
-enterpriseSubscription = "企業版"
-everythingInCredits = "包含 Credits 的所有內容，另加："
-everythingInFree = "包含 Free 的所有內容，另加："
-fasterThroughput = "10 倍更快的處理速度"
-forRegularWork = "適用於日常 PDF 工作："
-freeTier = "免費方案"
-fullyPrivateFiles = "完全私密的檔案"
-largeFileProcessing = "大型檔案處理"
-managedMemberMessage = "您可透過團隊無限使用點數。如需協助，請聯絡您的團隊領導者。"
-managedMemberTitle = "無限點數"
-meteringBillingNote = "超量點數將與您的 Team 訂閱一併於每月計費。您可隨時在帳戶設定中追蹤用量。"
-meteringExplanation = "您的 Team 方案每月包含 {{credits}} 點。用完後，超量計費會自動提供額外點數，讓您不必中斷工作。"
-meteringIncluded = "Team 方案每月含 {{credits}} 點"
-meteringNoCommitment = "無綁約，隨時可取消"
-meteringNeverRunOut = "永不耗盡點數"
-meteringPayAsYouGo = "按用量付費"
-meteringPrice = "額外點數 {{price}}/點"
-meteringTitle = "用多少付多少的超量計費"
-monthlyCredits = "每月點數"
-orgWideAccess = "組織層級的存取控制"
-overage = "超量"
-perMonth = "/月"
-popular = "熱門"
-premiumAiModels = "進階 AI 模型"
-prioritySupport = "優先支援"
-privateDocCloud = "私人文件雲"
-ragFineTuning = "RAG + 微調"
-secureApiAccess = "安全的 API 存取"
-selfHostLink = "查看文件與方案"
-selfHostPrompt = "想自行架設嗎？"
-standardThroughput = "標準吞吐量"
-subtitle = "升級至 Team 可獲得 10 倍點數與更快的處理。"
-subtitlePro = "啟用自動超量計費，永不耗盡點數。"
-teamLeaderOnly = "僅團隊領導者可啟用超量計費"
-teamSubscription = "Team"
-titleExhausted = "您已用完免費點數"
-titleExhaustedPro = "您的點數已用罄"
-unlimitedApiAccess = "無限 API 存取"
-unlimitedMonthlyCredits = "站台授權"
-unlimitedSeats = "不限人數"
-
-[credits.modal.features]
-everythingInCredits = "包含 Credits 的所有內容，另加："
-everythingInFree = "包含 Free 的所有內容，另加："
-forRegularWork = "適用於日常 PDF 工作："
-
-[credits.insufficient]
-brief = "點數不足。您需要 {{required}} 點，但目前只有 {{current}} 點。"
-freeTier = "升級至 Team 以獲得 10 倍點數並啟用無上限的超量計費。"
-managedMember = "請聯絡您的團隊領導者以取得協助。"
-message = "您的點數不足，無法執行 {{tool}}。您目前有 {{current}} 點。"
-messageWithAmount = "執行 {{tool}} 需要 {{required}} 點，但您僅有 {{current}} 點。"
-teamMember = "啟用超量計費，永不耗盡點數。"
-title = "點數不足"
+[plan.trial]
+badge = "Trial"
+continueWithFree = "Continue with Free"
+daysRemaining = "Your trial ends in {{days}} days"
+endDate = "Expires: {{date}}"
+expired = "Your Trial Has Ended"
+expiredMessage = "Your 30-day Pro trial has expired. Subscribe to Pro to continue accessing premium features, or continue with our free tier."
+freeTierLimitations = "Free tier includes basic PDF tools with usage limits."
+message = ""
+subscribe = "Subscribe to Pro"
+subscribeToPro = "Subscribe to Pro"
+subscriptionScheduled = "Subscription scheduled - starts {{date}}"
+title = "Free Trial Active"
 
 [printFile]
 header = "使用印表機印出檔案"
@@ -5148,6 +5177,207 @@ title = "列印檔案"
 [printFile.selectText]
 1 = "選擇要印的檔案"
 2 = "輸入印表機名稱"
+
+[provider.googledrive]
+name = "Google Drive"
+scope = "檔案匯入"
+
+[provider.googledrive.apiKey]
+description = "Google API 金鑰，供 Google Picker API 使用（來自 Google Cloud Console）"
+label = "API 金鑰"
+
+[provider.googledrive.appId]
+description = "來自 Google Cloud Console 的 Google Drive 應用程式 ID"
+label = "應用程式 ID"
+
+[provider.googledrive.clientId]
+description = "來自 Google Cloud Console 的 Google OAuth 2.0 用戶端 ID"
+label = "用戶端 ID"
+
+[provider.googledrive.enabled]
+description = "允許使用者直接從 Google Drive 匯入檔案"
+label = "啟用 Google Drive 檔案選擇器"
+
+[provider.oauth2.generic]
+name = "通用 OAuth2"
+scope = "SSO"
+
+[provider.oauth2.generic.autoCreateUser]
+description = "首次使用 OAuth2 登入時自動建立使用者帳戶"
+label = "自動建立使用者"
+
+[provider.oauth2.generic.blockRegistration]
+description = "防止透過 OAuth2 註冊新使用者"
+label = "封鎖註冊"
+
+[provider.oauth2.generic.clientId]
+description = "來自您的提供者的 OAuth2 用戶端 ID"
+label = "用戶端 ID"
+
+[provider.oauth2.generic.clientSecret]
+description = "來自您的提供者的 OAuth2 用戶端密鑰"
+label = "用戶端密鑰"
+
+[provider.oauth2.generic.enabled]
+description = "使用自訂 OAuth2 提供者啟用驗證"
+label = "啟用通用 OAuth2"
+
+[provider.oauth2.generic.issuer]
+description = "支援 OpenID Connect Discovery（/.well-known/openid-configuration）的提供者"
+label = "簽發者 URL"
+
+[provider.oauth2.generic.provider]
+description = "您的 OAuth2 提供者名稱（如 Azure AD、Okta）"
+label = "提供者名稱"
+
+[provider.oauth2.generic.scopes]
+description = "以逗號分隔的 OAuth2 scopes"
+label = "Scopes"
+
+[provider.oauth2.generic.useAsUsername]
+description = "用來作為使用者名稱的欄位"
+label = "作為使用者名稱"
+
+[provider.oauth2.github]
+scope = "登入驗證"
+
+[provider.oauth2.github.clientId]
+description = "來自 GitHub Developer Settings 的 OAuth2 用戶端 ID"
+label = "用戶端 ID"
+
+[provider.oauth2.github.clientSecret]
+description = "來自 GitHub Developer Settings 的 OAuth2 用戶端密鑰"
+label = "用戶端密鑰"
+
+[provider.oauth2.github.scopes]
+description = "以逗號分隔的 OAuth2 scopes"
+label = "Scopes"
+
+[provider.oauth2.github.useAsUsername]
+description = "用來作為使用者名稱的欄位（email、login、name）"
+label = "作為使用者名稱"
+
+[provider.oauth2.google]
+scope = "登入驗證"
+
+[provider.oauth2.google.clientId]
+description = "來自 Google Cloud Console 的 OAuth2 用戶端 ID"
+label = "用戶端 ID"
+
+[provider.oauth2.google.clientSecret]
+description = "來自 Google Cloud Console 的 OAuth2 用戶端密鑰"
+label = "用戶端密鑰"
+
+[provider.oauth2.google.scopes]
+description = "以逗號分隔的 OAuth2 scopes"
+label = "Scopes"
+
+[provider.oauth2.google.useAsUsername]
+description = "用來作為使用者名稱的欄位（email、name、given_name、family_name）"
+label = "作為使用者名稱"
+
+[provider.oauth2.keycloak]
+scope = "SSO"
+
+[provider.oauth2.keycloak.clientId]
+description = "來自 Keycloak 的 OAuth2 用戶端 ID"
+label = "用戶端 ID"
+
+[provider.oauth2.keycloak.clientSecret]
+description = "來自 Keycloak 的 OAuth2 用戶端密鑰"
+label = "用戶端密鑰"
+
+[provider.oauth2.keycloak.issuer]
+description = "Keycloak realm 的 OpenID Connect Discovery 端點 URL"
+label = "簽發者 URL"
+
+[provider.oauth2.keycloak.scopes]
+description = "以逗號分隔的 OAuth2 scopes"
+label = "Scopes"
+
+[provider.oauth2.keycloak.useAsUsername]
+description = "用來作為使用者名稱的欄位（email、name、given_name、family_name、preferred_username）"
+label = "作為使用者名稱"
+
+[provider.saml2]
+name = "SAML2"
+scope = "SSO（SAML）"
+
+[provider.saml2.autoCreateUser]
+description = "首次使用 SAML2 登入時自動建立使用者帳戶"
+label = "自動建立使用者"
+
+[provider.saml2.blockRegistration]
+description = "防止透過 SAML2 註冊新使用者"
+label = "封鎖註冊"
+
+[provider.saml2.enabled]
+description = "啟用 SAML2 驗證（僅限企業版）"
+label = "啟用 SAML2"
+
+[provider.saml2.idpCert]
+description = "憑證路徑（例如：classpath:okta.cert）"
+label = "IDP 憑證"
+
+[provider.saml2.idpIssuer]
+description = "您的提供者 ID"
+label = "IDP Issuer"
+
+[provider.saml2.idpMetadataUri]
+description = "您的提供者中繼資料的 URI"
+label = "IDP 中繼資料 URI"
+
+[provider.saml2.idpSingleLoginUrl]
+description = "用於啟動 SSO 的 URL"
+label = "IDP 單一登入 URL"
+
+[provider.saml2.idpSingleLogoutUrl]
+description = "用於啟動 SLO 的 URL"
+label = "IDP 單一登出 URL"
+
+[provider.saml2.privateKey]
+description = "您的私鑰路徑"
+label = "私鑰"
+
+[provider.saml2.provider]
+description = "您的 SAML2 提供者名稱"
+label = "提供者名稱"
+
+[provider.saml2.registrationId]
+description = "您的 Service Provider（SP）應用程式名稱"
+label = "註冊 ID"
+
+[provider.saml2.spCert]
+description = "您的簽章憑證路徑"
+label = "SP 憑證"
+
+[provider.smtp]
+name = "SMTP 郵件"
+scope = "電子郵件通知"
+
+[provider.smtp.enabled]
+description = "啟用電子郵件通知與 SMTP 功能"
+label = "啟用郵件"
+
+[provider.smtp.from]
+description = "用作寄件者的電子郵件地址"
+label = "寄件地址"
+
+[provider.smtp.host]
+description = "您的 SMTP 伺服器主機名稱或 IP 位址"
+label = "SMTP 主機"
+
+[provider.smtp.password]
+description = "SMTP 驗證用的密碼"
+label = "SMTP 密碼"
+
+[provider.smtp.port]
+description = "SMTP 連線埠號（通常為 25、465 或 587）"
+label = "SMTP 埠"
+
+[provider.smtp.username]
+description = "SMTP 驗證用的使用者名稱"
+label = "SMTP 使用者名稱"
 
 [quickAccess]
 account = "帳戶"
@@ -5204,15 +5434,15 @@ title = "要遮蔽的字詞"
 failed = "遮蔽 PDF 時發生錯誤。"
 
 [redact.manual]
+activate = "啟用遮蔽工具"
+active = "遮蔽模式已啟用"
 apply = "套用"
 applyChanges = "套用變更"
 applyRedactions = "Apply Redactions"
 applyWarning = "⚠️ 永久套用，無法復原，且底層資料將被刪除"
 boxRedaction = "方框繪製遮蔽"
-colourPicker = "顏色選擇器"
 colorLabel = "遮蔽顏色"
-active = "遮蔽模式已啟用"
-activate = "啟用遮蔽工具"
+colourPicker = "顏色選擇器"
 controlsTitle = "手動塗黑控制"
 convertPDFToImageLabel = "將 PDF 轉為 PDF-Image（用於移除方框後方文字）"
 export = "匯出"
@@ -5608,6 +5838,39 @@ title = "高對比"
 text = "完全反轉 PDF 中的所有顏色，形成類似負片的效果。可用於建立文件的深色模式版本，或在低光環境下減輕眼睛疲勞。"
 title = "反轉所有顏色"
 
+[rightRail]
+annotations = "註解"
+applyRedactionsFirst = "請先套用塗黑"
+closePdf = "關閉 PDF"
+closeSelected = "關閉已選檔案"
+deleteSelected = "刪除所選頁面"
+deselectAll = "取消全選"
+downloadAll = "全部下載"
+downloadSelected = "下載選取的檔案"
+draw = "繪圖"
+exitRedaction = "退出塗黑模式"
+exportAll = "匯出 PDF"
+exportSelected = "匯出選取的頁面"
+formFill = "填寫表單"
+language = "語言"
+panMode = "平移模式"
+print = "列印 PDF"
+redact = "塗黑"
+rotateLeft = "向左旋轉"
+rotateRight = "向右旋轉"
+ruler = "尺規 / 量測"
+save = "儲存"
+saveAll = "全部儲存"
+saveChanges = "儲存變更"
+search = "搜尋 PDF"
+selectAll = "全選"
+selectByNumber = "依頁碼選取"
+toggleAnnotations = "切換註解可見度"
+toggleAttachments = "切換附件"
+toggleBookmarks = "切換書籤"
+toggleSidebar = "切換側邊欄"
+toggleTheme = "切換主題"
+
 [rotate]
 rotateLeft = "逆時針旋轉"
 rotateRight = "順時針旋轉"
@@ -5755,6 +6018,14 @@ placeholder = "輸入搜尋詞..."
 searching = "搜尋中..."
 title = "搜尋 PDF"
 
+[selfHosted.offline]
+hideTools = "Hide unavailable tools ▴"
+messageNoFallback = "Tools are unavailable until your server comes back online."
+messageWithFallback = "Some tools require a server connection."
+showTools = "View unavailable tools ▾"
+title = "Your Stirling-PDF server is unreachable"
+toolNotAvailableLocally = "Your Stirling-PDF server is offline and \"{{endpoint}}\" is not available on the local backend."
+
 [session]
 expired = "您的工作階段已過期。請重新整理頁面並再試一次。"
 refreshPage = "重新整理頁面"
@@ -5776,70 +6047,6 @@ user = "已登入身分"
 [settings.connection.mode]
 saas = "Stirling Cloud"
 selfhosted = "自託管"
-
-[settings.planBilling]
-currentPlan = "目前方案"
-loading = "正在載入帳務資訊..."
-notAvailable = "僅在連線至 Stirling Cloud（SaaS 模式）時可使用「方案與計費」。"
-title = "方案與計費"
-
-[settings.planBilling.billing]
-manageBilling = "管理計費"
-nextBillingDate = "下次計費日期"
-overageCost = "目前超量費用：{{amount}}（{{credits}} 點）"
-
-[settings.planBilling.credits]
-estimatedCost = "預估費用：{{amount}}"
-freeTierInfo = "免費方案每月包含 {{freeCredits}} 點。升級至 Team 可獲得每月 {{teamCredits}} 點與按用量付費的超量計費。"
-included = "每月 {{count}} 點（已包含）"
-noOverage = "本月無超量收費。您正在使用包含的 {{count}} 點。"
-overage = "+ {{count}} 超量"
-overageInfo = "超量點數每點 {{price}} 計費。您只需支付超出每月額度的用量。"
-title = "點數用量"
-
-[settings.planBilling.errors]
-fetchFailed = "無法取得帳務資料"
-retry = "重試"
-
-[settings.planBilling.status]
-active = "啟用"
-canceled = "已取消"
-pastDue = "逾期"
-trial = "試用"
-
-[settings.planBilling.tier]
-enterprise = "企業版"
-enterpriseDescription = "自訂企業功能與支援"
-free = "免費"
-freeDescription = "每月 50 點"
-team = "Team"
-teamBadge = "Team"
-teamDescription = "每月包含 500 點，自動超量計費以確保持續服務"
-teamTooltipCredits = "Team 方案每月包含 {{credits}} 點。"
-teamTooltipFineprint = "僅需支付超出包含點數的用量。"
-teamTooltipOverage = "自動以 {{price}}/點進行超量計費，確保持續服務。"
-
-[settings.planBilling.team]
-managedByTeam = "由團隊管理"
-memberCount = "{{count}} 位團隊成員"
-
-[settings.planBilling.trial]
-daysRemaining = "剩餘 {{days}} 天"
-daysRemainingFull = "您的試用將在 {{days}} 天後結束"
-endDate = "到期日：{{date}}"
-endsOn = "試用結束"
-title = "免費試用啟用中"
-
-[settings.planBilling.upgrade]
-cta = "升級至 Team"
-featureApi = "用於自動化的 API 存取"
-featureCredits = "每月 {{teamCredits}} 點（免費方案為 {{freeCredits}} 點）"
-featureMembers = "不限團隊人數"
-featureSupport = "優先支援"
-featureThroughput = "更快的處理吞吐量"
-opensInBrowser = "將在瀏覽器中開啟以完成升級"
-subtitle = "升級至 Team 可獲得："
-title = "升級您的方案"
 
 [settings.developer]
 apiKeys = "API 金鑰"
@@ -5923,6 +6130,70 @@ plan = "方案"
 title = "授權與分析"
 usageAnalytics = "使用分析"
 
+[settings.planBilling]
+currentPlan = "目前方案"
+loading = "正在載入帳務資訊..."
+notAvailable = "僅在連線至 Stirling Cloud（SaaS 模式）時可使用「方案與計費」。"
+title = "方案與計費"
+
+[settings.planBilling.billing]
+manageBilling = "管理計費"
+nextBillingDate = "下次計費日期"
+overageCost = "目前超量費用：{{amount}}（{{credits}} 點）"
+
+[settings.planBilling.credits]
+estimatedCost = "預估費用：{{amount}}"
+freeTierInfo = "免費方案每月包含 {{freeCredits}} 點。升級至 Team 可獲得每月 {{teamCredits}} 點與按用量付費的超量計費。"
+included = "每月 {{count}} 點（已包含）"
+noOverage = "本月無超量收費。您正在使用包含的 {{count}} 點。"
+overage = "+ {{count}} 超量"
+overageInfo = "超量點數每點 {{price}} 計費。您只需支付超出每月額度的用量。"
+title = "點數用量"
+
+[settings.planBilling.errors]
+fetchFailed = "無法取得帳務資料"
+retry = "重試"
+
+[settings.planBilling.status]
+active = "啟用"
+canceled = "已取消"
+pastDue = "逾期"
+trial = "試用"
+
+[settings.planBilling.team]
+managedByTeam = "由團隊管理"
+memberCount = "{{count}} 位團隊成員"
+
+[settings.planBilling.tier]
+enterprise = "企業版"
+enterpriseDescription = "自訂企業功能與支援"
+free = "免費"
+freeDescription = "每月 50 點"
+team = "Team"
+teamBadge = "Team"
+teamDescription = "每月包含 500 點，自動超量計費以確保持續服務"
+teamTooltipCredits = "Team 方案每月包含 {{credits}} 點。"
+teamTooltipFineprint = "僅需支付超出包含點數的用量。"
+teamTooltipOverage = "自動以 {{price}}/點進行超量計費，確保持續服務。"
+
+[settings.planBilling.trial]
+daysRemaining = "剩餘 {{days}} 天"
+daysRemainingFull = "您的試用將在 {{days}} 天後結束"
+endDate = "到期日：{{date}}"
+endsOn = "試用結束"
+title = "免費試用啟用中"
+
+[settings.planBilling.upgrade]
+cta = "升級至 Team"
+featureApi = "用於自動化的 API 存取"
+featureCredits = "每月 {{teamCredits}} 點（免費方案為 {{freeCredits}} 點）"
+featureMembers = "不限團隊人數"
+featureSupport = "優先支援"
+featureThroughput = "更快的處理吞吐量"
+opensInBrowser = "將在瀏覽器中開啟以完成升級"
+subtitle = "升級至 Team 可獲得："
+title = "升級您的方案"
+
 [settings.policiesPrivacy]
 legal = "法務"
 privacy = "隱私"
@@ -5930,6 +6201,9 @@ title = "政策與隱私"
 
 [settings.preferences]
 title = "偏好設定"
+
+[settings.search]
+placeholder = "Search settings pages..."
 
 [settings.security]
 description = "更新您的密碼以保護帳戶安全。"
@@ -5956,6 +6230,9 @@ security = "安全性"
 telegram = "Telegram"
 title = "安全性與身分驗證"
 
+[settings.team]
+title = "團隊"
+
 [settings.tooltips]
 enableLoginFirst = "先啟用登入模式"
 requiresEnterprise = "需要 Enterprise 授權"
@@ -5964,9 +6241,6 @@ requiresEnterprise = "需要 Enterprise 授權"
 people = "成員"
 teams = "團隊"
 title = "工作空間"
-
-[settings.team]
-title = "團隊"
 
 [setup]
 description = "開始選擇你要如何使用 Stirling PDF"
@@ -6290,15 +6564,15 @@ desc = "使用分隔頁自動分割"
 name = "分隔頁"
 tooltip = "在掃描時於文件間放置帶有 QR 碼的分隔頁"
 
-[split.methods.byPoster]
-name = "可列印分塊"
-desc = "將大型頁面分割為可列印大小"
-tooltip = "將過大頁面分割成適合在標準紙張（A4、Letter 等）上列印的較小區塊"
-
 [split.methods.byPages]
 desc = "擷取特定頁面（1,3,5-10）"
 name = "頁碼"
 tooltip = "輸入以逗號分隔的頁碼，或以連字號表示的範圍"
+
+[split.methods.byPoster]
+desc = "將大型頁面分割為可列印大小"
+name = "可列印分塊"
+tooltip = "將過大頁面分割成適合在標準紙張（A4、Letter 等）上列印的較小區塊"
 
 [split.methods.bySections]
 desc = "將頁面劃分為格狀區塊"
@@ -6326,27 +6600,27 @@ title = "選擇您的分割方法"
 text = "選擇您想如何分割 PDF 文件。每種方法都針對不同使用情境與文件類型最佳化。"
 title = "分割方法選擇"
 
+[split.poster]
+rightToLeft = "由右至左分割"
+
+[split.poster.pageSize]
+description = "用於列印的輸出頁面大小"
+label = "目標頁面尺寸"
+
+[split.poster.xFactor]
+description = "每頁要分成的欄數"
+label = "水平切分數"
+
+[split.poster.yFactor]
+description = "每頁要分成的列數"
+label = "垂直切分數"
+
 [split.settings]
 selectMethodFirst = "請先選擇分割方法"
 
 [split.steps]
 chooseMethod = "選擇方法"
 settings = "設定"
-
-[split.poster]
-rightToLeft = "由右至左分割"
-
-[split.poster.pageSize]
-label = "目標頁面尺寸"
-description = "用於列印的輸出頁面大小"
-
-[split.poster.xFactor]
-label = "水平切分數"
-description = "每頁要分成的欄數"
-
-[split.poster.yFactor]
-label = "垂直切分數"
-description = "每頁要分成的列數"
 
 [split.tooltip.byChapters]
 bullet1 = "書籤層級：要在第幾層分割（1=最上層）"
@@ -6385,6 +6659,13 @@ bullet5 = "若掃描分隔頁雙面，請啟用雙面模式"
 text = "使用含 QR 碼的實體分隔頁自動分割掃描文件。非常適合同時處理多份一起掃描的文件。"
 title = "依分隔頁分割"
 
+[split.tooltip.byPages]
+bullet1 = "單一分割點：3,7（在第 3 與第 7 頁之後分割）"
+bullet2 = "範圍分割點：3-8（在第 3 頁之前與第 8 頁之後分割）"
+bullet3 = "混合：2,5-10,15（在第 2 頁之後、第 5 頁之前、第 10 頁之後與第 15 頁之後分割）"
+text = "在特定頁碼處分割您的 PDF。使用「n」會在第 n 頁之後分割。使用「n-m」會在第 n 頁之前與第 m 頁之後分割。"
+title = "依頁碼分割"
+
 [split.tooltip.byPoster]
 bullet1 = "目標頁面尺寸：選擇輸出紙張尺寸（A4、Letter 等）"
 bullet2 = "水平/垂直切分數：用於分割的網格大小"
@@ -6392,13 +6673,6 @@ bullet3 = "由右至左：為 RTL 版面反轉欄順序"
 bullet4 = "列印並組裝各部分以製作您的海報"
 text = "將大型 PDF 頁面分割為適合標準紙張尺寸列印的較小區塊。非常適合將超大頁面製作成海報列印。"
 title = "海報列印分割"
-
-[split.tooltip.byPages]
-bullet1 = "單一分割點：3,7（在第 3 與第 7 頁之後分割）"
-bullet2 = "範圍分割點：3-8（在第 3 頁之前與第 8 頁之後分割）"
-bullet3 = "混合：2,5-10,15（在第 2 頁之後、第 5 頁之前、第 10 頁之後與第 15 頁之後分割）"
-text = "在特定頁碼處分割您的 PDF。使用「n」會在第 n 頁之後分割。使用「n-m」會在第 n 頁之前與第 m 頁之後分割。"
-title = "依頁碼分割"
 
 [split.tooltip.bySections]
 bullet1 = "水平：要建立的列數"
@@ -6541,6 +6815,82 @@ title = "API 文件"
 [tableExtraxt]
 tags = "CSV,表格提取,提取,轉換"
 
+[team]
+cancelInviteError = "取消邀請失敗"
+confirmCancelInvite = "確定要取消此邀請嗎？"
+confirmLeave = "確定要離開此團隊嗎？"
+confirmLeaveLeader = "身為團隊領導者，離開後您將被移出團隊。確定要繼續嗎？"
+confirmRemove = "確定要移除此成員嗎？"
+editName = "編輯團隊名稱"
+inviteCancelled = "已取消邀請"
+inviteError = "邀請寄送失敗"
+inviteSent = "已成功寄出邀請"
+leader = "領導者"
+leaveButton = "離開團隊"
+leaveError = "離開團隊失敗"
+leaveSuccess = "已成功離開團隊"
+loading = "正在載入團隊資訊..."
+memberCount = "{{count}} 位成員"
+memberRemoved = "已成功移除成員"
+namePlaceholder = "輸入團隊名稱"
+personal = "個人"
+removeError = "移除成員失敗"
+renameError = "重新命名團隊失敗"
+renameSuccess = "已成功重新命名團隊"
+
+[team.features]
+badge = "團隊功能"
+subtitle = "與您的團隊協作"
+title = "團隊協作"
+viewPlans = "查看方案"
+
+[team.features.billing]
+description = "管理計費與訂閱"
+title = "計費管理"
+
+[team.features.credits]
+description = "所有成員共享點數池"
+title = "共享點數"
+
+[team.features.dashboard]
+description = "檢視團隊活動與使用情況"
+title = "團隊儀表板"
+
+[team.features.invite]
+description = "將成員加入您的團隊"
+title = "邀請成員"
+
+[team.invitationBanner]
+acceptButton = "接受"
+message = "已邀請您加入"
+rejectButton = "拒絕"
+
+[team.invite]
+cancelLabel = "取消"
+invalidEmail = "電子郵件地址無效"
+placeholder = "輸入電子郵件地址"
+sendButton = "傳送邀請"
+title = "邀請團隊成員"
+
+[team.members]
+emailColumn = "電子郵件"
+empty = "尚無團隊成員"
+nameColumn = "名稱"
+pending = "待處理"
+remove = "移除"
+roleColumn = "角色"
+title = "團隊成員"
+
+[team.upgrade]
+button = "升級至 Team"
+description = "解鎖團隊協作功能"
+title = "升級至 Team 方案"
+
+[textAlign]
+center = "置中"
+left = "靠左"
+right = "靠右"
+
 [theme]
 toggle = "切換主題"
 
@@ -6557,6 +6907,7 @@ favorites = "我的最愛"
 heading = "所有工具（全螢幕檢視）"
 noResults = "嘗試調整搜尋或切換說明以找到所需內容。"
 recommended = "建議"
+selfHostedOffline = "Requires your Stirling-PDF server (currently offline):"
 showDetails = "顯示詳細資料"
 unavailable = "已被伺服器管理員停用："
 unavailableDependency = "無法使用 - 伺服器缺少必要工具："
@@ -6819,6 +7170,37 @@ invalid = "憑證不在信任儲存區中 - 無法驗證來源"
 fileManager = "檔案管理器"
 pageEditor = "頁面編輯器"
 viewer = "檢視器"
+
+[viewer]
+cannotPreviewFile = "無法預覽檔案"
+dualPageView = "雙頁檢視"
+firstPage = "第一頁"
+lastPage = "最後一頁"
+nextPage = "下一頁"
+onlyPdfSupported = "此檢視器僅支援 PDF 檔案。此檔案似乎是其他格式。"
+previousPage = "上一頁"
+singlePageView = "單頁檢視"
+unknownFile = "未知檔案"
+zoomIn = "放大"
+zoomOut = "縮小"
+
+[viewer.attachments]
+empty = "此文件沒有附件"
+loading = "正在載入附件..."
+noDocument = "開啟 PDF 以檢視其附件。"
+noMatch = "沒有符合搜尋的附件"
+noSupport = "此檢視器不支援附件。"
+searchPlaceholder = "搜尋附件"
+title = "附件"
+
+[viewer.formBar]
+apply = "套用變更"
+dismiss = "關閉"
+download = "下載 PDF"
+hasFieldsDesc = "此 PDF 包含可填寫欄位"
+title = "表單欄位"
+unsavedBadge = "未儲存"
+unsavedDesc = "您有未儲存的變更"
 
 [viewPdf]
 header = "檢視 PDF"
@@ -7259,278 +7641,3 @@ cancel = "取消"
 confirm = "解壓縮"
 message = "此 ZIP 包含 {{count}} 個檔案。仍要解壓縮嗎？"
 title = "大型 ZIP 檔案"
-
-[cloudBadge]
-tooltip = "此操作會使用您的雲端點數"
-
-[team]
-cancelInviteError = "取消邀請失敗"
-confirmCancelInvite = "確定要取消此邀請嗎？"
-confirmLeave = "確定要離開此團隊嗎？"
-confirmLeaveLeader = "身為團隊領導者，離開後您將被移出團隊。確定要繼續嗎？"
-confirmRemove = "確定要移除此成員嗎？"
-editName = "編輯團隊名稱"
-inviteCancelled = "已取消邀請"
-inviteError = "邀請寄送失敗"
-inviteSent = "已成功寄出邀請"
-leader = "領導者"
-leaveButton = "離開團隊"
-leaveError = "離開團隊失敗"
-leaveSuccess = "已成功離開團隊"
-loading = "正在載入團隊資訊..."
-memberCount = "{{count}} 位成員"
-memberRemoved = "已成功移除成員"
-namePlaceholder = "輸入團隊名稱"
-personal = "個人"
-removeError = "移除成員失敗"
-renameError = "重新命名團隊失敗"
-renameSuccess = "已成功重新命名團隊"
-
-[team.invitationBanner]
-message = "已邀請您加入"
-acceptButton = "接受"
-rejectButton = "拒絕"
-
-[team.features]
-badge = "團隊功能"
-subtitle = "與您的團隊協作"
-title = "團隊協作"
-viewPlans = "查看方案"
-
-[team.features.billing]
-description = "管理計費與訂閱"
-title = "計費管理"
-
-[team.features.credits]
-description = "所有成員共享點數池"
-title = "共享點數"
-
-[team.features.dashboard]
-description = "檢視團隊活動與使用情況"
-title = "團隊儀表板"
-
-[team.features.invite]
-description = "將成員加入您的團隊"
-title = "邀請成員"
-
-[team.invite]
-cancelLabel = "取消"
-invalidEmail = "電子郵件地址無效"
-placeholder = "輸入電子郵件地址"
-sendButton = "傳送邀請"
-title = "邀請團隊成員"
-
-[team.members]
-emailColumn = "電子郵件"
-empty = "尚無團隊成員"
-nameColumn = "名稱"
-pending = "待處理"
-remove = "移除"
-roleColumn = "角色"
-title = "團隊成員"
-
-[team.upgrade]
-button = "升級至 Team"
-description = "解鎖團隊協作功能"
-title = "升級至 Team 方案"
-
-[provider.oauth2.google]
-scope = "登入驗證"
-
-[provider.oauth2.google.clientId]
-label = "用戶端 ID"
-description = "來自 Google Cloud Console 的 OAuth2 用戶端 ID"
-
-[provider.oauth2.google.clientSecret]
-label = "用戶端密鑰"
-description = "來自 Google Cloud Console 的 OAuth2 用戶端密鑰"
-
-[provider.oauth2.google.scopes]
-label = "Scopes"
-description = "以逗號分隔的 OAuth2 scopes"
-
-[provider.oauth2.google.useAsUsername]
-label = "作為使用者名稱"
-description = "用來作為使用者名稱的欄位（email、name、given_name、family_name）"
-
-[provider.oauth2.github]
-scope = "登入驗證"
-
-[provider.oauth2.github.clientId]
-label = "用戶端 ID"
-description = "來自 GitHub Developer Settings 的 OAuth2 用戶端 ID"
-
-[provider.oauth2.github.clientSecret]
-label = "用戶端密鑰"
-description = "來自 GitHub Developer Settings 的 OAuth2 用戶端密鑰"
-
-[provider.oauth2.github.scopes]
-label = "Scopes"
-description = "以逗號分隔的 OAuth2 scopes"
-
-[provider.oauth2.github.useAsUsername]
-label = "作為使用者名稱"
-description = "用來作為使用者名稱的欄位（email、login、name）"
-
-[provider.oauth2.keycloak]
-scope = "SSO"
-
-[provider.oauth2.keycloak.issuer]
-label = "簽發者 URL"
-description = "Keycloak realm 的 OpenID Connect Discovery 端點 URL"
-
-[provider.oauth2.keycloak.clientId]
-label = "用戶端 ID"
-description = "來自 Keycloak 的 OAuth2 用戶端 ID"
-
-[provider.oauth2.keycloak.clientSecret]
-label = "用戶端密鑰"
-description = "來自 Keycloak 的 OAuth2 用戶端密鑰"
-
-[provider.oauth2.keycloak.scopes]
-label = "Scopes"
-description = "以逗號分隔的 OAuth2 scopes"
-
-[provider.oauth2.keycloak.useAsUsername]
-label = "作為使用者名稱"
-description = "用來作為使用者名稱的欄位（email、name、given_name、family_name、preferred_username）"
-
-[provider.oauth2.generic]
-name = "通用 OAuth2"
-scope = "SSO"
-
-[provider.oauth2.generic.enabled]
-label = "啟用通用 OAuth2"
-description = "使用自訂 OAuth2 提供者啟用驗證"
-
-[provider.oauth2.generic.provider]
-label = "提供者名稱"
-description = "您的 OAuth2 提供者名稱（如 Azure AD、Okta）"
-
-[provider.oauth2.generic.issuer]
-label = "簽發者 URL"
-description = "支援 OpenID Connect Discovery（/.well-known/openid-configuration）的提供者"
-
-[provider.oauth2.generic.clientId]
-label = "用戶端 ID"
-description = "來自您的提供者的 OAuth2 用戶端 ID"
-
-[provider.oauth2.generic.clientSecret]
-label = "用戶端密鑰"
-description = "來自您的提供者的 OAuth2 用戶端密鑰"
-
-[provider.oauth2.generic.scopes]
-label = "Scopes"
-description = "以逗號分隔的 OAuth2 scopes"
-
-[provider.oauth2.generic.useAsUsername]
-label = "作為使用者名稱"
-description = "用來作為使用者名稱的欄位"
-
-[provider.oauth2.generic.autoCreateUser]
-label = "自動建立使用者"
-description = "首次使用 OAuth2 登入時自動建立使用者帳戶"
-
-[provider.oauth2.generic.blockRegistration]
-label = "封鎖註冊"
-description = "防止透過 OAuth2 註冊新使用者"
-
-[provider.smtp]
-name = "SMTP 郵件"
-scope = "電子郵件通知"
-
-[provider.smtp.enabled]
-label = "啟用郵件"
-description = "啟用電子郵件通知與 SMTP 功能"
-
-[provider.smtp.host]
-label = "SMTP 主機"
-description = "您的 SMTP 伺服器主機名稱或 IP 位址"
-
-[provider.smtp.port]
-label = "SMTP 埠"
-description = "SMTP 連線埠號（通常為 25、465 或 587）"
-
-[provider.smtp.username]
-label = "SMTP 使用者名稱"
-description = "SMTP 驗證用的使用者名稱"
-
-[provider.smtp.password]
-label = "SMTP 密碼"
-description = "SMTP 驗證用的密碼"
-
-[provider.smtp.from]
-label = "寄件地址"
-description = "用作寄件者的電子郵件地址"
-
-[provider.saml2]
-name = "SAML2"
-scope = "SSO（SAML）"
-
-[provider.saml2.enabled]
-label = "啟用 SAML2"
-description = "啟用 SAML2 驗證（僅限企業版）"
-
-[provider.saml2.provider]
-label = "提供者名稱"
-description = "您的 SAML2 提供者名稱"
-
-[provider.saml2.registrationId]
-label = "註冊 ID"
-description = "您的 Service Provider（SP）應用程式名稱"
-
-[provider.saml2.idpMetadataUri]
-label = "IDP 中繼資料 URI"
-description = "您的提供者中繼資料的 URI"
-
-[provider.saml2.idpSingleLoginUrl]
-label = "IDP 單一登入 URL"
-description = "用於啟動 SSO 的 URL"
-
-[provider.saml2.idpSingleLogoutUrl]
-label = "IDP 單一登出 URL"
-description = "用於啟動 SLO 的 URL"
-
-[provider.saml2.idpIssuer]
-label = "IDP Issuer"
-description = "您的提供者 ID"
-
-[provider.saml2.idpCert]
-label = "IDP 憑證"
-description = "憑證路徑（例如：classpath:okta.cert）"
-
-[provider.saml2.privateKey]
-label = "私鑰"
-description = "您的私鑰路徑"
-
-[provider.saml2.spCert]
-label = "SP 憑證"
-description = "您的簽章憑證路徑"
-
-[provider.saml2.autoCreateUser]
-label = "自動建立使用者"
-description = "首次使用 SAML2 登入時自動建立使用者帳戶"
-
-[provider.saml2.blockRegistration]
-label = "封鎖註冊"
-description = "防止透過 SAML2 註冊新使用者"
-
-[provider.googledrive]
-name = "Google Drive"
-scope = "檔案匯入"
-
-[provider.googledrive.enabled]
-label = "啟用 Google Drive 檔案選擇器"
-description = "允許使用者直接從 Google Drive 匯入檔案"
-
-[provider.googledrive.clientId]
-label = "用戶端 ID"
-description = "來自 Google Cloud Console 的 Google OAuth 2.0 用戶端 ID"
-
-[provider.googledrive.apiKey]
-label = "API 金鑰"
-description = "Google API 金鑰，供 Google Picker API 使用（來自 Google Cloud Console）"
-
-[provider.googledrive.appId]
-label = "應用程式 ID"
-description = "來自 Google Cloud Console 的 Google Drive 應用程式 ID"

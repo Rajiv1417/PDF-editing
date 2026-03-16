@@ -16,13 +16,13 @@ comingSoon = "به‌زودی"
 confirmClose = "تأیید بستن"
 confirmCloseCancel = "انصراف"
 confirmCloseConfirm = "بستن فایل"
-confirmCloseMessage = "مطمئنید می‌خواهید این فایل را ببندید؟"
 confirmCloseDiscard = "لغو تغییرات و بستن"
+confirmCloseMessage = "مطمئنید می‌خواهید این فایل را ببندید؟"
 confirmCloseSave = "ذخیره و بستن"
+confirmCloseSaveFailed = "با خطا ذخیره شد. {{count}} فایل{{plural}} ذخیره نشد."
+confirmCloseSaveFailedTitle = "ذخیره ناموفق"
 confirmCloseUnsaved = "این فایل دارای تغییرات ذخیره‌نشده است."
 confirmCloseUnsavedList = "شما {{count}} فایل{{plural}} با تغییرات ذخیره‌نشده دارید.\n\n{{fileList}}"
-confirmCloseSaveFailedTitle = "ذخیره ناموفق"
-confirmCloseSaveFailed = "با خطا ذخیره شد. {{count}} فایل{{plural}} ذخیره نشد."
 confirmPasswordErrorMessage = "رمز عبور جدید و تأیید رمز عبور جدید باید یکسان باشند."
 custom = "سفارشی..."
 customPosition = "موقعیت سفارشی"
@@ -42,11 +42,12 @@ downloadComplete = "دانلود کامل شد"
 downloadPdf = "دانلود PDF"
 downloadUnavailable = "دانلود برای این مورد در دسترس نیست"
 edit = "ویرایش"
+editSecret = "ویرایش این مقدار"
 editYourNewFiles = "فایل(های) جدید خود را ویرایش کنید"
 exportAndContinue = "خروجی بگیرید و ادامه دهید"
 false = "غلط"
-fileSavedToDisk = "فایل روی دیسک ذخیره شد"
 fileNotSavedToDisk = "روی دیسک ذخیره نشد"
+fileSavedToDisk = "فایل روی دیسک ذخیره شد"
 fileSelected = "انتخاب‌شده: {{filename}}"
 filesSelected = "فایل‌ها انتخاب شدند"
 font = "فونت"
@@ -60,12 +61,15 @@ help = "راهنما"
 imgPrompt = "انتخاب تصویر(ها)"
 incorrectPasswordMessage = "رمز عبور فعلی نادرست است."
 info = "اطلاعات"
+insufficientCredits = "Insufficient credits. Required: {{requiredCredits}}, Available: {{currentBalance}}, Shortfall: {{shortfall}}"
 invalidPasswordMessage = "رمز عبور نباید خالی باشد و نباید در ابتدا یا انتها فاصله داشته باشد."
 invalidUndoData = "امکان واگردانی نیست: داده‌های عملیات نامعتبر است"
 invalidUsernameMessage = "نام کاربری نامعتبر است، نام کاربری فقط می‌تواند شامل حروف، اعداد و کاراکترهای خاص @._+- باشد یا باید یک آدرس ایمیل معتبر باشد."
 joinDiscord = "به سرور دیسکورد ما بپیوندید"
 keepWorking = "ادامه کار"
 loading = "در حال بارگذاری..."
+loadingCredits = "Checking credits..."
+loadingProStatus = "Checking subscription status..."
 logOut = "خروج از حساب"
 marginTooltip = "فاصله بین شماره صفحه و لبه صفحه."
 moreOptions = "گزینه‌های بیشتر"
@@ -79,6 +83,7 @@ noFilesToUndo = "امکان واگردانی نیست: هیچ فایلی در آ
 noOperationToUndo = "عملیاتی برای واگردانی وجود ندارد"
 notAuthenticatedMessage = "کاربر تأیید نشده است."
 nothingToUndo = "موردی برای واگرد نیست"
+noticeTopUpOrPlan = "Not enough credits, please top up or upgrade to a plan"
 noValidFiles = "فایل معتبری برای پردازش وجود ندارد"
 oops = "اوپس!"
 openInViewer = "باز کردن در نمایشگر"
@@ -95,9 +100,9 @@ pendingRedactionsTitle = "سانسورهای اعمال‌نشده"
 pin = "سنجاق کردن فایل (پس از اجرای ابزار فعال بماند)"
 poweredBy = "قدرت گرفته از"
 pro = "نسخه حرفه‌ای"
-processTimeWarning = "هشدار: این فرآیند ممکن است بسته به اندازه فایل تا یک دقیقه طول بکشد"
 processingComplete = "فایل شما آماده است."
 processingCompleteMultiple = "{{count}} فایل آماده‌اند."
+processTimeWarning = "هشدار: این فرآیند ممکن است بسته به اندازه فایل تا یک دقیقه طول بکشد"
 property = "ویژگی"
 quickPosition = "موقعیت سریع"
 red = "قرمز"
@@ -107,7 +112,6 @@ save = "ذخیره"
 saveToBrowser = "ذخیره در مرورگر"
 saveUnavailable = "ذخیره برای این مورد در دسترس نیست"
 seeDockerHub = "مشاهده Docker Hub"
-editSecret = "ویرایش این مقدار"
 selectFillter = "-- انتخاب کنید --"
 size = "اندازه"
 sponsor = "حمایت مالی"
@@ -845,6 +849,14 @@ title = "نقاط پایانی API"
 userDefaults = "پیش‌فرض‌های ترجیحات کاربر"
 userDefaultsDescription = "مقادیر پیش‌فرض برای ترجیحات کاربر را تنظیم کنید. کاربران می‌توانند آن‌ها را در تنظیمات شخصی خود تغییر دهند."
 
+[admin.settings.endpoints.defaultHideUnavailableConversions]
+description = "گزینه‌های تبدیل غیرفعال را به‌جای نمایش به‌شکل خاکستری، حذف کنید"
+label = "پنهان‌کردن تبدیل‌های غیردردسترس به‌صورت پیش‌فرض"
+
+[admin.settings.endpoints.defaultHideUnavailableTools]
+description = "ابزارهای غیرفعال را به‌جای نمایش به‌شکل خاکستری، حذف کنید"
+label = "پنهان‌کردن ابزارهای غیردردسترس به‌صورت پیش‌فرض"
+
 [admin.settings.endpoints.groupsToRemove]
 description = "گروه‌های نقاط پایانی را برای غیرفعال‌سازی انتخاب کنید"
 label = "گروه‌های نقاط پایانی غیرفعال"
@@ -852,14 +864,6 @@ label = "گروه‌های نقاط پایانی غیرفعال"
 [admin.settings.endpoints.toRemove]
 description = "نقاط پایانی منفرد را برای غیرفعال‌سازی انتخاب کنید"
 label = "نقاط پایانی غیرفعال"
-
-[admin.settings.endpoints.defaultHideUnavailableTools]
-description = "ابزارهای غیرفعال را به‌جای نمایش به‌شکل خاکستری، حذف کنید"
-label = "پنهان‌کردن ابزارهای غیردردسترس به‌صورت پیش‌فرض"
-
-[admin.settings.endpoints.defaultHideUnavailableConversions]
-description = "گزینه‌های تبدیل غیرفعال را به‌جای نمایش به‌شکل خاکستری، حذف کنید"
-label = "پنهان‌کردن تبدیل‌های غیردردسترس به‌صورت پیش‌فرض"
 
 [admin.settings.enterpriseRequired]
 message = "برای دسترسی به {{featureName}} به یک مجوز Enterprise نیاز است. شما در حال مشاهده داده‌های نمایشی برای مرجع هستید."
@@ -968,6 +972,10 @@ label = "زبان پیش‌فرض"
 description = "حداکثر اندازه بارگذاری فایل (مثلاً 100MB, 1GB)"
 label = "محدودیت بارگذاری فایل"
 
+[admin.settings.general.frontendUrl]
+description = "آدرس پایه برای فرانت‌اند (مثلاً https://pdf.example.com). برای لینک‌های دعوت ایمیل و آپلودهای کد QR موبایل استفاده می‌شود. برای استفاده از آدرس بک‌اند خالی بگذارید."
+label = "Frontend URL"
+
 [admin.settings.general.hideDisabledTools]
 description = "ابزارهای غیرفعال را از رابط کاربری پنهان کنید"
 label = "پنهان کردن ابزارهای غیرفعال"
@@ -979,10 +987,6 @@ label = "پنهان کردن Google Drive"
 [admin.settings.general.hideDisabledTools.mobileScanner]
 description = "دکمه اسکنر QR موبایل را هنگام غیرفعال بودن پنهان کنید"
 label = "پنهان کردن اسکنر موبایل"
-
-[admin.settings.general.frontendUrl]
-description = "آدرس پایه برای فرانت‌اند (مثلاً https://pdf.example.com). برای لینک‌های دعوت ایمیل و آپلودهای کد QR موبایل استفاده می‌شود. برای استفاده از آدرس بک‌اند خالی بگذارید."
-label = "Frontend URL"
 
 [admin.settings.general.homeDescription]
 description = "متن توضیحی که در صفحه اصلی نمایش داده می‌شود"
@@ -1163,9 +1167,25 @@ description = "پیکربندی احراز هویت، رفتار ورود و س�
 title = "امنیت"
 
 [admin.settings.security.audit]
+hideDetails = "پنهان کردن جزئیات سطح ممیزی"
 label = "گزارش حسابرسی"
 showDetails = "نمایش جزئیات سطح ممیزی"
-hideDetails = "پنهان کردن جزئیات سطح ممیزی"
+
+[admin.settings.security.audit.advancedOptions]
+description = "گزینه‌های زیر زمان پردازش و مصرف حافظه را افزایش می‌دهند. فقط در صورت نیاز واقعی فعال کنید."
+title = "گزینه‌های پیشرفته"
+
+[admin.settings.security.audit.captureFileHash]
+description = "استخراج هش SHA-256 فایل‌های PDF آپلودشده برای راستی‌آزمایی یکپارچگی. مستقل از سطح ممیزی."
+label = "گرفتن هش فایل (SHA-256)"
+
+[admin.settings.security.audit.captureOperationResults]
+description = "ثبت مقادیر بازگشتی متدها. توصیه نمی‌شود: حجم لاگ و مصرف دیسک را به‌طور قابل‌توجهی افزایش می‌دهد."
+label = "گرفتن نتایج عملیات"
+
+[admin.settings.security.audit.capturePdfAuthor]
+description = "استخراج فیلد نویسنده از اسناد PDF در حین پردازش. نیازمند پردازش PDF است و تأخیر را افزایش می‌دهد. مستقل از سطح ممیزی."
+label = "گرفتن فراداده نویسنده PDF"
 
 [admin.settings.security.audit.enabled]
 description = "رهگیری اقدامات کاربر و رویدادهای سیستم برای انطباق و پایش امنیتی"
@@ -1176,30 +1196,14 @@ description = "0=OFF، 1=BASIC، 2=STANDARD، 3=VERBOSE"
 label = "سطح حسابرسی"
 
 [admin.settings.security.audit.levelDetails]
-off = "بدون ثبت لاگ ممیزی (به‌جز رویدادهای امنیتی بحرانی)"
 basic = "عملیات فایل PDF (فشرده‌سازی، تقسیم، ادغام و غیره) و تغییرات تنظیمات. ثبت می‌شود: وضعیت عملیات (موفق/ناموفق)، پارامترهای متد، زمان‌بندی. حجم لاگ حداقلی."
+off = "بدون ثبت لاگ ممیزی (به‌جز رویدادهای امنیتی بحرانی)"
 standard = "رویدادهای BASIC به‌علاوه: ورود/خروج کاربر، تغییرات حساب، درخواست‌های عمومی GET. برای کاهش نویز لاگ، فراخوانی‌های polling پیوسته (/auth/me، /app-config، /health و غیره) مستثنا می‌شوند. ایده‌آل برای اکثر استقرارها."
 verbose = "رویدادهای STANDARD به‌علاوه: فراخوانی‌های polling پیوسته، همه درخواست‌های GET، زمان‌بندی دقیق. هشدار: حجم لاگ بالا و تأثیر بر عملکرد."
 
 [admin.settings.security.audit.retentionDays]
 description = "تعداد روزهای نگهداری گزارش‌های حسابرسی"
 label = "نگهداری گزارش (روز)"
-
-[admin.settings.security.audit.advancedOptions]
-title = "گزینه‌های پیشرفته"
-description = "گزینه‌های زیر زمان پردازش و مصرف حافظه را افزایش می‌دهند. فقط در صورت نیاز واقعی فعال کنید."
-
-[admin.settings.security.audit.captureFileHash]
-description = "استخراج هش SHA-256 فایل‌های PDF آپلودشده برای راستی‌آزمایی یکپارچگی. مستقل از سطح ممیزی."
-label = "گرفتن هش فایل (SHA-256)"
-
-[admin.settings.security.audit.capturePdfAuthor]
-description = "استخراج فیلد نویسنده از اسناد PDF در حین پردازش. نیازمند پردازش PDF است و تأخیر را افزایش می‌دهد. مستقل از سطح ممیزی."
-label = "گرفتن فراداده نویسنده PDF"
-
-[admin.settings.security.audit.captureOperationResults]
-description = "ثبت مقادیر بازگشتی متدها. توصیه نمی‌شود: حجم لاگ و مصرف دیسک را به‌طور قابل‌توجهی افزایش می‌دهد."
-label = "گرفتن نتایج عملیات"
 
 [admin.settings.security.csrfDisabled]
 description = "غیرفعال کردن محافظت Cross-Site Request Forgery (توصیه نمی‌شود)"
@@ -1268,6 +1272,14 @@ label = "نام کاربری اولیه"
 [admin.settings.security.jwt]
 label = "پیکربندی JWT"
 
+[admin.settings.security.jwt.allowedClockSkewSeconds]
+description = "میزان تحمل انحراف زمانی کلاینت/سرور هنگام اعتبارسنجی توکن (پیش‌فرض: 60 ثانیه)"
+label = "تحمل اختلاف ساعت (ثانیه)"
+
+[admin.settings.security.jwt.desktopTokenExpiryMinutes]
+description = "طول عمر توکن دسترسی به دقیقه برای کلاینت‌های دسکتاپ. برنامه‌های دسکتاپ از طریق User-Agent به‌طور خودکار شناسایی می‌شوند و برای تجربهٔ کاربری بهتر نشست‌های طولانی‌تری دریافت می‌کنند (پیش‌فرض: 43200 = 30 روز)"
+label = "انقضای توکن دسکتاپ (دقیقه)"
+
 [admin.settings.security.jwt.enableKeyCleanup]
 description = "حذف خودکار کلیدهای JWT منقضی‌شده"
 label = "فعال‌سازی پاکسازی کلید"
@@ -1276,29 +1288,21 @@ label = "فعال‌سازی پاکسازی کلید"
 description = "چرخش خودکار کلیدهای امضای JWT به‌صورت دوره‌ای"
 label = "فعال‌سازی چرخش کلید"
 
-[admin.settings.security.jwt.tokenExpiryMinutes]
-description = "طول عمر توکن دسترسی به دقیقه برای کلاینت‌های وب (پیش‌فرض: 1440 = 24 ساعت)"
-label = "انقضای توکن وب (دقیقه)"
-
-[admin.settings.security.jwt.desktopTokenExpiryMinutes]
-description = "طول عمر توکن دسترسی به دقیقه برای کلاینت‌های دسکتاپ. برنامه‌های دسکتاپ از طریق User-Agent به‌طور خودکار شناسایی می‌شوند و برای تجربهٔ کاربری بهتر نشست‌های طولانی‌تری دریافت می‌کنند (پیش‌فرض: 43200 = 30 روز)"
-label = "انقضای توکن دسکتاپ (دقیقه)"
-
-[admin.settings.security.jwt.allowedClockSkewSeconds]
-description = "میزان تحمل انحراف زمانی کلاینت/سرور هنگام اعتبارسنجی توکن (پیش‌فرض: 60 ثانیه)"
-label = "تحمل اختلاف ساعت (ثانیه)"
+[admin.settings.security.jwt.persistence]
+description = "ذخیره پایدار کلیدهای JWT برای مقاومت در برابر راه‌اندازی مجدد سرور"
+label = "فعال‌سازی ماندگاری کلید"
 
 [admin.settings.security.jwt.refreshGraceMinutes]
 description = "اجازهٔ نوسازی توکن تا این تعداد دقیقه پس از انقضا (پیش‌فرض: 15 دقیقه، حداکثر 3 تلاش)"
 label = "دورهٔ مهلت نوسازی (دقیقه)"
 
-[admin.settings.security.jwt.persistence]
-description = "ذخیره پایدار کلیدهای JWT برای مقاومت در برابر راه‌اندازی مجدد سرور"
-label = "فعال‌سازی ماندگاری کلید"
-
 [admin.settings.security.jwt.secureCookie]
 description = "الزام HTTPS برای کوکی‌های JWT (پیشنهاد‌شده برای محیط تولید)"
 label = "کوکی امن"
+
+[admin.settings.security.jwt.tokenExpiryMinutes]
+description = "طول عمر توکن دسترسی به دقیقه برای کلاینت‌های وب (پیش‌فرض: 1440 = 24 ساعت)"
+label = "انقضای توکن وب (دقیقه)"
 
 [admin.settings.security.loginAttemptCount]
 description = "حداکثر تعداد تلاش ناموفق ورود قبل از قفل شدن حساب"
@@ -1586,68 +1590,6 @@ goToSettings = "رفتن به تنظیمات ممیزی"
 notAvailable = "سیستم ممیزی در دسترس نیست"
 notAvailableMessage = "سیستم ممیزی پیکربندی نشده یا در دسترس نیست."
 
-[audit.error]
-title = "خطا در بارگذاری سیستم ممیزی"
-
-[audit.export]
-clearFilters = "پاک‌سازی"
-description = "رویدادهای ممیزی را به قالب CSV یا JSON برون‌بری کنید. برای محدود کردن داده‌های برون‌بری‌شده از فیلترها استفاده کنید."
-endDate = "تاریخ پایان"
-error = "برون‌بری داده‌ها ناموفق بود"
-exportButton = "برون‌بری داده‌ها"
-fieldAuthor = "نویسنده (از PDF)"
-fieldDate = "تاریخ"
-fieldDocumentName = "نام سند"
-fieldFileHash = "هش فایل (SHA-256)"
-fieldIpAddress = "نشانی IP"
-fieldOperationResults = "نتایج عملیات"
-fieldOutcome = "نتیجه (موفق/ناموفق)"
-fieldTool = "ابزار"
-fieldUsername = "نام کاربری"
-filterByType = "فیلتر بر اساس نوع"
-filterByUser = "فیلتر بر اساس کاربر"
-filters = "فیلترها (اختیاری)"
-format = "قالب برون‌بری"
-selectFields = "انتخاب فیلدهای قابل درج"
-startDate = "تاریخ شروع"
-title = "برون‌بری داده‌های ممیزی"
-verboseRequired = "نیازمند سطح ممیزی VERBOSE"
-
-[audit.systemStatus]
-autoRefresh = "نوسازی خودکار"
-autoRefreshLabel = "نوسازی خودکار هر ۳۰ ثانیه"
-captureBySettings = "در تنظیمات فعال کنید"
-capturedFields = "فیلدهای ثبت‌شده"
-date = "تاریخ"
-days = "روز"
-disabled = "غیرفعال"
-documentName = "نام سند"
-enabled = "فعال"
-fileHash = "هش فایل"
-level = "سطح ممیزی"
-pdfAuthor = "نویسنده PDF"
-retention = "دوره نگهداری"
-status = "ثبت ممیزی"
-title = "وضعیت سیستم"
-tool = "ابزار"
-totalEvents = "کل رویدادها"
-username = "نام کاربری"
-verboseOnly = "فقط در حالت VERBOSE"
-
-[audit.stats]
-activeUsers = "کاربران فعال"
-attention = "نیاز به توجه"
-avgLatency = "میانگین تأخیر"
-error = "خطا در بارگذاری آمار"
-errorLoadingStats = "بارگذاری آمار ناموفق بود"
-excellent = "عالی"
-good = "خوب"
-noData = "ناموجود"
-successRate = "نرخ موفقیت"
-title = "خلاصه"
-totalEvents = "کل رویدادها"
-vsLastPeriod = "نسبت به دوره قبل"
-
 [audit.charts]
 byTool = "پراستفاده‌ترین ابزارها"
 byType = "رویدادها بر اساس نوع"
@@ -1660,6 +1602,27 @@ noData = "برای این بازه داده‌ای وجود ندارد"
 overTime = "رویدادها در گذر زمان"
 title = "داشبورد ممیزی"
 week = "هفته"
+
+[audit.clearData]
+cancel = "لغو"
+codeDoesNotMatch = "کد مطابقت ندارد"
+codePlaceholder = "کد را اینجا وارد کنید"
+confirmationCode = "کد تأیید"
+confirmationRequired = "حذف همه داده‌های ممیزی"
+confirmMessage = "این کار همه لاگ‌های ممیزی را برای همیشه حذف می‌کند. برای ادامه، کد تأیید را در زیر وارد کنید."
+confirmTitle = "لطفاً حذف را تأیید کنید"
+deleteButton = "حذف"
+enterCode = "کد تأیید"
+enterCodeBelow = "کد را دقیقاً مطابق نمایش بالا وارد کنید (حساس به حروف بزرگ/کوچک)"
+initiateDelete = "حذف همه داده‌ها"
+irreversible = "غیرقابل‌بازگشت"
+success = "موفق"
+successMessage = "همه داده‌های ممیزی با موفقیت پاک شد"
+warning1 = "این اقدام قابل بازگشت نیست"
+warning2 = "حذف داده‌های ممیزی، همه لاگ‌های ممیزی تاریخی از جمله رویدادهای امنیتی، فعالیت‌های کاربر و عملیات فایل را برای همیشه از پایگاه داده حذف می‌کند."
+
+[audit.error]
+title = "خطا در بارگذاری سیستم ممیزی"
 
 [audit.events]
 actions = "اقدامات"
@@ -1687,40 +1650,81 @@ type = "نوع"
 user = "کاربر"
 viewDetails = "مشاهده جزئیات"
 
+[audit.export]
+clearFilters = "پاک‌سازی"
+description = "رویدادهای ممیزی را به قالب CSV یا JSON برون‌بری کنید. برای محدود کردن داده‌های برون‌بری‌شده از فیلترها استفاده کنید."
+endDate = "تاریخ پایان"
+error = "برون‌بری داده‌ها ناموفق بود"
+exportButton = "برون‌بری داده‌ها"
+fieldAuthor = "نویسنده (از PDF)"
+fieldDate = "تاریخ"
+fieldDocumentName = "نام سند"
+fieldFileHash = "هش فایل (SHA-256)"
+fieldIpAddress = "نشانی IP"
+fieldOperationResults = "نتایج عملیات"
+fieldOutcome = "نتیجه (موفق/ناموفق)"
+fieldTool = "ابزار"
+fieldUsername = "نام کاربری"
+filterByType = "فیلتر بر اساس نوع"
+filterByUser = "فیلتر بر اساس کاربر"
+filters = "فیلترها (اختیاری)"
+format = "قالب برون‌بری"
+selectFields = "انتخاب فیلدهای قابل درج"
+startDate = "تاریخ شروع"
+title = "برون‌بری داده‌های ممیزی"
+verboseRequired = "نیازمند سطح ممیزی VERBOSE"
+
 [audit.filters]
 allOutcomes = "همه"
 failureOnly = "فقط ناموفق‌ها"
-last7Days = "۷ روز گذشته"
 last30Days = "۳۰ روز گذشته"
+last7Days = "۷ روز گذشته"
 outcomeFilter = "نتیجه"
 quickPresets = "فیلترهای سریع"
 successOnly = "فقط موفق‌ها"
 thisMonth = "این ماه"
 today = "امروز"
 
+[audit.stats]
+activeUsers = "کاربران فعال"
+attention = "نیاز به توجه"
+avgLatency = "میانگین تأخیر"
+error = "خطا در بارگذاری آمار"
+errorLoadingStats = "بارگذاری آمار ناموفق بود"
+excellent = "عالی"
+good = "خوب"
+noData = "ناموجود"
+successRate = "نرخ موفقیت"
+title = "خلاصه"
+totalEvents = "کل رویدادها"
+vsLastPeriod = "نسبت به دوره قبل"
+
+[audit.systemStatus]
+autoRefresh = "نوسازی خودکار"
+autoRefreshLabel = "نوسازی خودکار هر ۳۰ ثانیه"
+captureBySettings = "در تنظیمات فعال کنید"
+capturedFields = "فیلدهای ثبت‌شده"
+date = "تاریخ"
+days = "روز"
+disabled = "غیرفعال"
+documentName = "نام سند"
+enabled = "فعال"
+fileHash = "هش فایل"
+level = "سطح ممیزی"
+pdfAuthor = "نویسنده PDF"
+retention = "دوره نگهداری"
+status = "ثبت ممیزی"
+title = "وضعیت سیستم"
+tool = "ابزار"
+totalEvents = "کل رویدادها"
+username = "نام کاربری"
+verboseOnly = "فقط در حالت VERBOSE"
+
 [audit.tabs]
 clearData = "پاک‌سازی داده‌ها"
 dashboard = "داشبورد"
 events = "رویدادهای ممیزی"
 export = "برون‌بری"
-
-[audit.clearData]
-cancel = "لغو"
-codeDoesNotMatch = "کد مطابقت ندارد"
-codePlaceholder = "کد را اینجا وارد کنید"
-confirmationCode = "کد تأیید"
-confirmationRequired = "حذف همه داده‌های ممیزی"
-confirmMessage = "این کار همه لاگ‌های ممیزی را برای همیشه حذف می‌کند. برای ادامه، کد تأیید را در زیر وارد کنید."
-confirmTitle = "لطفاً حذف را تأیید کنید"
-deleteButton = "حذف"
-enterCode = "کد تأیید"
-enterCodeBelow = "کد را دقیقاً مطابق نمایش بالا وارد کنید (حساس به حروف بزرگ/کوچک)"
-initiateDelete = "حذف همه داده‌ها"
-irreversible = "غیرقابل‌بازگشت"
-success = "موفق"
-successMessage = "همه داده‌های ممیزی با موفقیت پاک شد"
-warning1 = "این اقدام قابل بازگشت نیست"
-warning2 = "حذف داده‌های ممیزی، همه لاگ‌های ممیزی تاریخی از جمله رویدادهای امنیتی، فعالیت‌های کاربر و عملیات فایل را برای همیشه از پایگاه داده حذف می‌کند."
 
 [auth]
 accessDenied = "دسترسی رد شد"
@@ -2358,6 +2362,9 @@ title = "تغییر مجوزها"
 [changePermissions.tooltip.warning]
 text = "برای غیرقابل‌تغییر کردن این مجوزها، از ابزار افزودن رمز عبور برای تنظیم رمز عبور مالک استفاده کنید."
 
+[cloudBadge]
+tooltip = "این عملیات از اعتبارهای ابری شما استفاده می‌کند"
+
 [colorPicker]
 title = "انتخاب رنگ"
 
@@ -2574,10 +2581,48 @@ title = "تنظیم کیفیت"
 [compressPdfs]
 tags = "فشرده،کوچک،ریز"
 
+[config]
+plan = "Plan"
+
 [config.account.overview]
+confirmDelete = "Delete My Account"
+deleteAccount = "Delete Account"
+deleteAccountTitle = "Delete Account"
+deleteFailed = "Failed to delete account."
+deleteFailedTitle = "Unable to delete account"
+deleteWarning = "This action is permanent and cannot be undone. All your data will be deleted."
+enterEmailConfirm = "To confirm deletion, please type your email address ({{email}}) below:"
 guestDescription = "شما به‌عنوان مهمان وارد شده‌اید. پیشنهاد می‌کنیم حساب خود را ارتقا دهید."
+label = "Overview"
 manageAccountPreferences = "مدیریت ترجیحات حساب شما"
+signedInAs = "Signed in as"
 title = "تنظیمات حساب"
+
+[config.account.profilePicture]
+description = "Upload an image to personalize your account."
+help = "PNG, JPG, or WebP up to 2MB."
+remove = "Remove"
+sizeError = "Please select an image smaller than 2MB."
+switchedToCustom = "Switched to custom picture. You can now upload your own."
+title = "Profile picture"
+upload = "Upload"
+useCustom = "Use custom picture"
+usingProvider = "Using {{provider}} profile picture"
+
+[config.account.profilePicture.cropper]
+cropError = "Failed to crop image. Please try again."
+invalidImage = "Invalid image file. Please select a valid PNG, JPG, or WebP file."
+processing = "Processing crop..."
+save = "Save Cropped Image"
+sizeErrorAfterCrop = "Cropped image is too large. Please zoom out or crop a smaller area."
+title = "Crop Profile Picture"
+zoom = "Zoom"
+
+[config.account.security]
+changePassword = "Change password"
+description = "Manage your password and security settings."
+title = "Passwords & Security"
+update = "Update password"
 
 [config.account.upgrade]
 description = "حساب خود را پیوند دهید تا تاریخچه‌تان حفظ شود و به امکانات بیشتری دسترسی پیدا کنید!"
@@ -2595,6 +2640,7 @@ upgradeButton = "ارتقای حساب"
 [config.apiKeys]
 chartAriaLabel = "استفاده از اعتبار: شامل‌شده {{includedUsed}} از {{includedTotal}}، خریداری‌شده {{purchasedUsed}} از {{purchasedTotal}}"
 copyKeyAriaLabel = "کپی کلید API"
+creditsRemaining = "Credits Remaining"
 description = "کلید API شما برای دسترسی به مجموعه ابزارهای PDF Stirling. آن را در پروژه خود کپی کنید یا برای تولید کلید جدید تازه‌سازی کنید."
 docsDescription = "برای اطلاع بیشتر از یکپارچه‌سازی با Stirling PDF:"
 docsLink = "اسناد API"
@@ -2651,9 +2697,11 @@ blackwhite = "سیاه و سفید"
 cbrDpi = "DPI برای رندر تصویر"
 cbrOptions = "گزینه‌های CBR"
 cbrOutputOptions = "گزینه‌های PDF به CBR"
+cbrToPdf = "CBR → PDF"
 cbzDpi = "DPI برای رندر تصویر"
 cbzOptions = "گزینه‌های CBZ به PDF"
 cbzOutputOptions = "گزینه‌های PDF به CBZ"
+cbzToPdf = "CBZ → PDF"
 color = "رنگ"
 colorType = "نوع رنگ"
 combineImages = "ترکیب تصاویر"
@@ -2671,13 +2719,16 @@ desc = "تبدیل فایل‌ها بین قالب‌های مختلف"
 downloadConverted = "دانلود فایل تبدیل‌شده"
 downloadHtml = "به‌جای PDF فایل HTML میانی را دانلود کن"
 dpi = "DPI"
+ebookToPdf = "eBook → PDF"
 emailOptions = "گزینه‌های Email به PDF"
+emlToPdf = "Email → PDF"
 errorConversion = "هنگام تبدیل فایل خطایی رخ داد."
 errorNoFiles = "لطفاً حداقل یک فایل برای تبدیل انتخاب کنید."
 errorNoFormat = "لطفاً هر دو قالب مبدأ و مقصد را انتخاب کنید."
 errorNotSupported = "تبدیل از {{from}} به {{to}} پشتیبانی نمی‌شود."
 fileFormat = "قالب فایل"
 files = "فایل‌ها"
+fileToPdf = "Office/Document → PDF"
 fillPage = "پر کردن صفحه"
 fitDocumentToPage = "برازش سند به صفحه"
 fitOption = "گزینه برازش"
@@ -2705,6 +2756,9 @@ pdfaFormat = "فرمت PDF/A"
 pdfaNote = "PDF/A-1b سازگارتر است، PDF/A-2b از قابلیت‌های بیشتری پشتیبانی می‌کند."
 pdfaOptions = "گزینه‌های PDF/A"
 pdfOptions = "گزینه‌های PDF"
+pdfToCbr = "PDF → CBR"
+pdfToCbz = "PDF → CBZ"
+pdfToEpub = "PDF → EPUB"
 pdfxDescription = "PDF/X زیرمجموعه استاندارد ISO از PDF برای چاپ قابل‌اعتماد و تبادل گرافیک است."
 pdfxDigitalSignatureWarning = "این PDF شامل امضای دیجیتال است. این مورد در مرحله بعد حذف خواهد شد."
 pptExt = "PowerPoint (.pptx)"
@@ -2719,6 +2773,7 @@ sourceFormatPlaceholder = "قالب مبدأ"
 strictMode = "Strict Mode"
 strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
 svgPdfOptions = "SVG to PDF Options"
+svgToPdf = "SVG → PDF"
 svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
 targetFormatPlaceholder = "قالب مقصد"
 textRtf = "متن/RTF"
@@ -2791,6 +2846,77 @@ description = "These cookies are essential for the website to function properly.
 [cookieBanner.services]
 posthog = "PostHog Analytics"
 scarf = "Scarf Pixel"
+
+[credits]
+enableOverageBilling = "فعال‌سازی صورت‌حساب اضافه‌مصرف"
+maybeLater = "بعداً"
+upgrade = "ارتقا"
+
+[credits.insufficient]
+brief = "اعتبار کافی نیست. شما به {{required}} اعتبار نیاز دارید اما {{current}} اعتبار دارید."
+freeTier = "برای ۱۰ برابر اعتبار بیشتر و صورت‌حساب اضافه‌مصرف نامحدود، به طرح تیم ارتقا دهید."
+managedMember = "لطفاً برای دریافت کمک با رهبر تیم خود تماس بگیرید."
+message = "اعتبار کافی برای اجرای {{tool}} ندارید. در حال حاضر {{current}} اعتبار دارید."
+messageWithAmount = "برای اجرای {{tool}} به {{required}} اعتبار نیاز دارید، اما فقط {{current}} اعتبار دارید."
+teamMember = "صورت‌حساب اضافه‌مصرف را فعال کنید تا هرگز اعتبارتان تمام نشود."
+title = "اعتبار کافی نیست"
+
+[credits.modal]
+advancedMonitoring = "پایش پیشرفته"
+allInOneWorkspace = "فضای کاری یکپارچه PDF (نمایشگر، ابزارها و عامل)"
+apiSandbox = "محیط آزمایشی API"
+contactSales = "تماس با فروش"
+creditsRemaining = "{{current}} از {{total}} باقیمانده"
+creditsThisMonth = "اعتبارهای ماهانه"
+current = "طرح فعلی"
+customPricing = "سفارشی"
+customSmartFolders = "پوشه‌های هوشمند سفارشی"
+dedicatedSupportSlas = "پشتیبانی اختصاصی و SLAها"
+enterpriseSubscription = "سازمانی"
+everythingInCredits = "همه امکانات طرح Credits، به‌علاوه:"
+everythingInFree = "همه امکانات طرح رایگان، به‌علاوه:"
+fasterThroughput = "توان عبوری ۱۰ برابری"
+forRegularWork = "برای کارهای معمول PDF:"
+freeTier = "طرح رایگان"
+fullyPrivateFiles = "فایل‌ها کاملاً خصوصی"
+largeFileProcessing = "پردازش فایل‌های بزرگ"
+managedMemberMessage = "شما از طریق تیم خود به اعتبارها دسترسی نامحدود دارید. در صورت نیاز به کمک، لطفاً با رهبر تیم خود تماس بگیرید."
+managedMemberTitle = "اعتبار نامحدود"
+meteringBillingNote = "اعتبارهای اضافه‌مصرف به‌صورت ماهانه همراه با اشتراک تیم شما صورتحساب می‌شوند. می‌توانید هر زمان در تنظیمات حساب، مصرف خود را پیگیری کنید."
+meteringExplanation = "طرح تیم شما شامل {{credits}} اعتبار در ماه است. وقتی تمام شوند، صورت‌حساب اضافه‌مصرف به‌طور خودکار اعتبارهای بیشتری فراهم می‌کند تا هرگز کارتان متوقف نشود."
+meteringIncluded = "{{credits}} اعتبار/ماه همراه با طرح تیم"
+meteringNeverRunOut = "هرگز اعتبارتان تمام نمی‌شود"
+meteringNoCommitment = "بدون تعهد، هر زمان بخواهید لغو کنید"
+meteringPayAsYouGo = "فقط به‌اندازه استفاده پرداخت کنید"
+meteringPrice = "اعتبارهای اضافی با نرخ {{price}} به‌ازای هر اعتبار"
+meteringTitle = "صورت‌حساب اضافه‌مصرف بر اساس میزان استفاده"
+monthlyCredits = "اعتبارهای ماهانه"
+orgWideAccess = "کنترل‌های دسترسی در سطح سازمان"
+overage = "اضافه‌مصرف"
+perMonth = "/ماه"
+popular = "محبوب"
+premiumAiModels = "مدل‌های هوش مصنوعی پریمیوم"
+prioritySupport = "پشتیبانی اولویت‌دار"
+privateDocCloud = "ابر اسناد خصوصی"
+ragFineTuning = "RAG + fine-tuning"
+secureApiAccess = "دسترسی امن API"
+selfHostLink = "مرور مستندات و طرح‌ها"
+selfHostPrompt = "می‌خواهید خود میزبانی کنید؟"
+standardThroughput = "توان عبوری استاندارد"
+subtitle = "ارتقا به طرح تیم برای ۱۰ برابر اعتبار و پردازش سریع‌تر."
+subtitlePro = "صورت‌حساب اضافه‌مصرف را فعال کنید تا هرگز اعتبارتان تمام نشود."
+teamLeaderOnly = "فقط رهبر تیم می‌تواند صورت‌حساب اضافه‌مصرف را فعال کند"
+teamSubscription = "تیم"
+titleExhausted = "اعتبار رایگان خود را مصرف کرده‌اید"
+titleExhaustedPro = "اعتبار شما تمام شده است"
+unlimitedApiAccess = "دسترسی نامحدود به API"
+unlimitedMonthlyCredits = "مجوز سراسری"
+unlimitedSeats = "کاربران نامحدود"
+
+[credits.modal.features]
+everythingInCredits = "همه امکانات طرح Credits، به‌علاوه:"
+everythingInFree = "همه امکانات طرح رایگان، به‌علاوه:"
+forRegularWork = "برای کارهای معمول PDF:"
 
 [crop]
 autoCrop = "برش خودکار فضاهای خالی"
@@ -3469,10 +3595,6 @@ desc = "ساخت گردش‌کارهای چندمرحله‌ای با زنجیر
 tags = "گردش‌کار,توالی,اتوماسیون"
 title = "اتوماسیون"
 
-[home.formFill]
-desc = "پر کردن فیلدهای فرم PDF به‌صورت تعاملی با ویرایشگر بصری"
-title = "پر کردن فرم"
-
 [home.autoRename]
 desc = "به‌طور خودکار نام فایل PDF را بر اساس سربرگ شناسایی‌شده تغییر می‌دهد"
 tags = "تشخیص خودکار,بر پایه سربرگ,سازمان‌دهی,نام‌گذاری مجدد"
@@ -3567,6 +3689,10 @@ title = "استخراج صفحات"
 desc = "حذف تمام عناصر تعاملی و فرم‌ها از یک PDF"
 tags = "ساده‌سازی,حذف,تعامل"
 title = "تسطیح"
+
+[home.formFill]
+desc = "پر کردن فیلدهای فرم PDF به‌صورت تعاملی با ویرایشگر بصری"
+title = "پر کردن فرم"
 
 [home.getPdfInfo]
 desc = "گرفتن هر اطلاعات ممکن در مورد PDF"
@@ -3854,6 +3980,7 @@ version = "نسخه"
 accountCreatedSuccess = "حساب با موفقیت ایجاد شد! اکنون می‌توانید وارد شوید."
 alreadyLoggedIn = "شما قبلاً وارد شده‌اید در"
 alreadyLoggedIn2 = "دستگاه‌ها. لطفاً از دستگاه‌ها خارج شده و دوباره تلاش کنید."
+backToSignIn = "Back to sign in"
 cancel = "انصراف"
 changePasswordWarning = "لطفاً پس از اولین ورود، گذرواژه خود را تغییر دهید"
 credentialsUpdated = "اطلاعات ورود شما به‌روزرسانی شد. لطفاً دوباره وارد شوید."
@@ -3895,13 +4022,17 @@ or = "یا"
 password = "گذرواژه"
 passwordChangedSuccess = "گذرواژه با موفقیت تغییر کرد! لطفاً با گذرواژه جدید خود وارد شوید."
 passwordResetSent = "لینک بازنشانی گذرواژه به {{email}} ارسال شد! ایمیل خود را بررسی کرده و دستورالعمل‌ها را دنبال کنید."
+passwordUpdatedSuccess = "Your password has been updated successfully."
 pleaseEnterBoth = "لطفاً ایمیل و گذرواژه را وارد کنید"
 pleaseEnterEmail = "لطفاً آدرس ایمیل خود را وارد کنید"
 relyingPartyRegistrationNotFound = "هیچ ثبت‌نام طرف اتکا پیدا نشد"
 rememberme = "مرا به خاطر بسپار"
+resetHelp = "Enter your email to receive a secure link to reset your password. If the link has expired, please request a new one."
+resetYourPassword = "Reset your password"
 saml2RequiresLicense = "ورود با SAML به لایسنس پولی (Server یا Enterprise) نیاز دارد. لطفاً برای ارتقای طرح خود با مدیر تماس بگیرید."
 sending = "در حال ارسال…"
 sendMagicLink = "ارسال لینک جادویی"
+sendResetLink = "Send reset link"
 sessionExpired = "نشست شما منقضی شده است. لطفاً دوباره وارد شوید."
 signin = "ورود"
 signInAnonymously = "ثبت‌نام به‌عنوان مهمان"
@@ -3910,9 +4041,11 @@ signinTitle = "لطفاً وارد شوید"
 signInWith = "ورود با"
 signOut = "خروج"
 ssoSignIn = "ورود از طریق Single Sign-on"
+subtitle = "Sign back in to Stirling PDF"
 title = "ورود"
 toManySessions = "شما تعداد زیادی نشست فعال دارید."
 unexpectedError = "خطای غیرمنتظره: {{message}}"
+updatePassword = "Update password"
 useEmailInstead = "ورود با ایمیل"
 useMagicLink = "به‌جای آن از لینک جادویی استفاده کنید"
 userIsDisabled = "کاربر غیرفعال شده است، ورود با این نام کاربری در حال حاضر مسدود است. لطفاً با مدیر تماس بگیرید."
@@ -4235,6 +4368,15 @@ body = "Stirling به‌صورت برنامه دسکتاپ بهترین عملک
 title = "دانلود"
 titleWithOs = "دانلود برای {{osLabel}}"
 
+[onboarding.freeTrial]
+afterTrialWithoutPayment = "After your trial ends, you'll continue with our free tier. Add a payment method to keep Pro access."
+afterTrialWithPayment = "Your Pro subscription will start automatically when the trial ends."
+body = "You have full access to Stirling PDF Pro features during your trial. Enjoy unlimited conversions, larger file sizes, and priority processing."
+daysRemaining = "{{days}} days remaining"
+daysRemainingSingular = "{{days}} day remaining"
+title = "Your 30-Day Pro Trial"
+trialEnds = "Trial ends {{date}}"
+
 [onboarding.planOverview]
 adminBodyLoginDisabled = "وقتی حالت لاگین را فعال کنید، می‌توانید کاربران را مدیریت کنید، تنظیمات را پیکربندی کنید و سلامت سرور را پایش کنید. نخستین <strong>{{freeTierLimit}}</strong> نفر روی سرور شما به‌صورت رایگان از Stirling استفاده می‌کنند."
 adminBodyLoginEnabled = "به‌عنوان ادمین می‌توانید کاربران را مدیریت کنید، تنظیمات را پیکربندی کنید و سلامت سرور را پایش کنید. نخستین <strong>{{freeTierLimit}}</strong> نفر روی سرور شما رایگان از Stirling استفاده می‌کنند."
@@ -4370,75 +4512,6 @@ title = "ویرایشگر صفحه"
 zoomIn = "بزرگ‌نمایی"
 zoomOut = "کوچک‌نمایی"
 
-[viewer]
-cannotPreviewFile = "امکان پیش‌نمایش فایل نیست"
-dualPageView = "نمای دوصفحه‌ای"
-firstPage = "صفحه نخست"
-lastPage = "صفحه آخر"
-nextPage = "صفحه بعد"
-onlyPdfSupported = "نمایشگر فقط فایل‌های PDF را پشتیبانی می‌کند. به نظر می‌رسد این فایل قالب متفاوتی دارد."
-previousPage = "صفحه قبل"
-singlePageView = "نمای تک‌صفحه‌ای"
-unknownFile = "فایل ناشناخته"
-zoomIn = "بزرگ‌نمایی"
-zoomOut = "کوچک‌نمایی"
-
-[viewer.attachments]
-title = "پیوست‌ها"
-searchPlaceholder = "جستجوی پیوست‌ها"
-noSupport = "پشتیبانی از پیوست در این نمایشگر در دسترس نیست."
-noDocument = "برای مشاهدهٔ پیوست‌های آن، یک PDF باز کنید."
-loading = "در حال بارگذاری پیوست‌ها..."
-empty = "در این سند هیچ پیوستی وجود ندارد"
-noMatch = "هیچ پیوستی با جستجوی شما مطابقت ندارد"
-
-[viewer.formBar]
-title = "فیلدهای فرم"
-unsavedBadge = "ذخیره‌نشده"
-unsavedDesc = "تغییرات ذخیره‌نشده دارید"
-hasFieldsDesc = "این PDF شامل فیلدهای قابل‌پرکردن است"
-dismiss = "بستن"
-apply = "اعمال تغییرات"
-download = "دانلود PDF"
-
-[rightRail]
-closeSelected = "بستن فایل‌های انتخاب‌شده"
-selectAll = "انتخاب همه"
-deselectAll = "لغو انتخاب همه"
-selectByNumber = "انتخاب بر اساس شماره صفحات"
-deleteSelected = "حذف صفحات انتخاب‌شده"
-closePdf = "بستن PDF"
-exportAll = "برون‌بری PDF"
-downloadSelected = "دانلود فایل‌های انتخاب‌شده"
-annotations = "حاشیه‌نویسی‌ها"
-exportSelected = "برون‌بری صفحات انتخاب‌شده"
-formFill = "پر کردن فرم"
-saveChanges = "ذخیره تغییرات"
-toggleAttachments = "نمایش/پنهان‌کردن پیوست‌ها"
-toggleTheme = "تغییر تم"
-language = "زبان"
-toggleAnnotations = "تغییر وضعیت نمایش حاشیه‌نویسی‌ها"
-search = "جستجوی PDF"
-panMode = "حالت پیمایش"
-applyRedactionsFirst = "ابتدا سانسورها را اعمال کنید"
-rotateLeft = "چرخش به چپ"
-rotateRight = "چرخش به راست"
-toggleSidebar = "تغییر وضعیت نوار کناری"
-toggleBookmarks = "نمایش/پنهان‌کردن نشانک‌ها"
-print = "چاپ PDF"
-ruler = "خط‌کش / اندازه‌گیری"
-draw = "رسم"
-redact = "سانسور"
-exitRedaction = "خروج از حالت سانسور"
-save = "ذخیره"
-downloadAll = "دانلود همه"
-saveAll = "ذخیره همه"
-
-[textAlign]
-left = "چپ"
-center = "وسط"
-right = "راست"
-
 [pageExtracter]
 header = "استخراج صفحات"
 placeholder = "(مثال: 1,2,8 یا 4,7,12-16 یا 2n-1)"
@@ -4547,6 +4620,9 @@ title = "نکات"
 autoClose = "این پنجره به‌صورت خودکار بسته خواهد شد..."
 billingPeriod = "دوره صورتحساب"
 canCloseWindow = "اکنون می‌توانید این پنجره را ببندید."
+checkoutInstructions = "خرید خود را در پنجره مرورگری که همین حالا باز شد تکمیل کنید. پس از اتمام پرداخت، به اینجا برگردید و برای به‌روزرسانی اطلاعات صورتحساب روی دکمه زیر کلیک کنید."
+checkoutOpened = "فرآیند پرداخت در مرورگر باز شد"
+closeLater = "بعداً انجام می‌دهم"
 emailInvalid = "لطفاً یک آدرس ایمیل معتبر وارد کنید"
 enterpriseNote = "تعداد صندلی‌ها در مرحله پرداخت قابل تنظیم است (۱–۱۰۰۰)."
 error = "خطای پرداخت"
@@ -4568,6 +4644,7 @@ perMonth = "/ماه"
 perYear = "/سال"
 preparing = "در حال آماده‌سازی پرداخت شما..."
 redirecting = "در حال انتقال به تسویه‌حساب امن..."
+refreshBilling = "پرداخت را انجام دادم - صورتحساب را به‌روزرسانی کن"
 stripeNotConfigured = "Stripe پیکربندی نشده است"
 stripeNotConfiguredMessage = "یکپارچه‌سازی پرداخت Stripe پیکربندی نشده است. لطفاً با مدیر خود تماس بگیرید."
 success = "پرداخت با موفقیت انجام شد!"
@@ -4579,10 +4656,6 @@ upgradeCompleteMessage = "اشتراک شما با موفقیت ارتقا یا�
 upgradeSuccess = "پرداخت موفق بود! اشتراک شما ارتقا یافت. لایسنس روی سرورتان به‌روزرسانی شد. به‌زودی یک ایمیل تأیید دریافت می‌کنید."
 upgradeTitle = "ارتقا به {{planName}}"
 yearly = "سالانه"
-checkoutOpened = "فرآیند پرداخت در مرورگر باز شد"
-checkoutInstructions = "خرید خود را در پنجره مرورگری که همین حالا باز شد تکمیل کنید. پس از اتمام پرداخت، به اینجا برگردید و برای به‌روزرسانی اطلاعات صورتحساب روی دکمه زیر کلیک کنید."
-refreshBilling = "پرداخت را انجام دادم - صورتحساب را به‌روزرسانی کن"
-closeLater = "بعداً انجام می‌دهم"
 
 [payment.emailStage]
 continue = "ادامه"
@@ -4806,13 +4879,6 @@ prompt = "صفحه‌ای که می‌خواهید جدول استخراج شو�
 submit = "استخراج"
 title = "PDF به CSV"
 
-[PDFToXLSX]
-header = "تبدیل PDF به Excel"
-prompt = "صفحات برای استخراج جدول‌ها را انتخاب کنید"
-submit = "تبدیل"
-title = "تبدیل PDF به Excel (XLSX)"
-tags = "صفحه‌گسترده,excel,xlsx,جدول,استخراج,تبدیل"
-
 [PDFToHTML]
 credit = "این سرویس از pdftohtml برای تبدیل فایل استفاده می‌کند."
 header = "PDF به HTML"
@@ -4911,6 +4977,13 @@ title = "PDF به ورد"
 [PDFToWord.selectText]
 1 = "فرمت فایل خروجی"
 
+[PDFToXLSX]
+header = "تبدیل PDF به Excel"
+prompt = "صفحات برای استخراج جدول‌ها را انتخاب کنید"
+submit = "تبدیل"
+tags = "صفحه‌گسترده,excel,xlsx,جدول,استخراج,تبدیل"
+title = "تبدیل PDF به Excel (XLSX)"
+
 [PDFToXML]
 credit = "این سرویس از LibreOffice برای تبدیل فایل استفاده می‌کند."
 header = "PDF به XML"
@@ -4976,8 +5049,11 @@ manage = "مدیریت"
 perMonth = "/ماه"
 perSeat = "/صندلی"
 popular = "محبوب"
+purchase = "Purchase"
+selectCredits = "Select Credit Amount"
 selectPlan = "انتخاب پلن"
 showComparison = "مقایسه همه قابلیت‌ها"
+totalCost = "Total Cost"
 upgrade = "ارتقا"
 withServer = "+ پلن سرور"
 
@@ -4985,19 +5061,29 @@ withServer = "+ پلن سرور"
 subtitle = "جزئیات اشتراک فعلی شما"
 title = "طرح فعال"
 
+[plan.api]
+large = "5,000 Credits"
+medium = "1,000 Credits"
+small = "500 Credits"
+xsmall = "100 Credits"
+
+[plan.apiPackages]
+subtitle = "Purchase API credits for your applications"
+title = "API Credit Packages"
+
 [plan.availablePlans]
-subtitle = "طرحی را انتخاب کنید که با نیازهای شما سازگار است"
 loadError = "امکان بارگذاری قیمت طرح‌ها نیست. از مقادیر پیش‌فرض استفاده می‌شود."
+subtitle = "طرحی را انتخاب کنید که با نیازهای شما سازگار است"
 title = "طرح‌های موجود"
 
 [plan.enterprise]
-siteLicense = "مجوز سراسری"
 highlight1 = "قیمت‌گذاری سفارشی"
 highlight2 = "پشتیبانی اختصاصی"
 highlight3 = "جدیدترین قابلیت‌ها"
 name = "سازمانی"
 requiresServer = "نیازمند سرور"
 requiresServerMessage = "لطفاً پیش از ارتقا به Enterprise، ابتدا به پلن سرور ارتقا دهید."
+siteLicense = "مجوز سراسری"
 
 [plan.feature]
 api = "دسترسی API"
@@ -5069,76 +5155,19 @@ successMessage = "لایسنس شما با موفقیت فعال شد. اکنو�
 name = "تیم"
 siteLicense = "مجوز سراسری"
 
-[credits]
-enableOverageBilling = "فعال‌سازی صورت‌حساب اضافه‌مصرف"
-maybeLater = "بعداً"
-upgrade = "ارتقا"
-
-[credits.modal]
-advancedMonitoring = "پایش پیشرفته"
-allInOneWorkspace = "فضای کاری یکپارچه PDF (نمایشگر، ابزارها و عامل)"
-apiSandbox = "محیط آزمایشی API"
-contactSales = "تماس با فروش"
-creditsRemaining = "{{current}} از {{total}} باقیمانده"
-creditsThisMonth = "اعتبارهای ماهانه"
-current = "طرح فعلی"
-customPricing = "سفارشی"
-customSmartFolders = "پوشه‌های هوشمند سفارشی"
-dedicatedSupportSlas = "پشتیبانی اختصاصی و SLAها"
-enterpriseSubscription = "سازمانی"
-everythingInCredits = "همه امکانات طرح Credits، به‌علاوه:"
-everythingInFree = "همه امکانات طرح رایگان، به‌علاوه:"
-fasterThroughput = "توان عبوری ۱۰ برابری"
-forRegularWork = "برای کارهای معمول PDF:"
-freeTier = "طرح رایگان"
-fullyPrivateFiles = "فایل‌ها کاملاً خصوصی"
-largeFileProcessing = "پردازش فایل‌های بزرگ"
-managedMemberMessage = "شما از طریق تیم خود به اعتبارها دسترسی نامحدود دارید. در صورت نیاز به کمک، لطفاً با رهبر تیم خود تماس بگیرید."
-managedMemberTitle = "اعتبار نامحدود"
-meteringBillingNote = "اعتبارهای اضافه‌مصرف به‌صورت ماهانه همراه با اشتراک تیم شما صورتحساب می‌شوند. می‌توانید هر زمان در تنظیمات حساب، مصرف خود را پیگیری کنید."
-meteringExplanation = "طرح تیم شما شامل {{credits}} اعتبار در ماه است. وقتی تمام شوند، صورت‌حساب اضافه‌مصرف به‌طور خودکار اعتبارهای بیشتری فراهم می‌کند تا هرگز کارتان متوقف نشود."
-meteringIncluded = "{{credits}} اعتبار/ماه همراه با طرح تیم"
-meteringNoCommitment = "بدون تعهد، هر زمان بخواهید لغو کنید"
-meteringNeverRunOut = "هرگز اعتبارتان تمام نمی‌شود"
-meteringPayAsYouGo = "فقط به‌اندازه استفاده پرداخت کنید"
-meteringPrice = "اعتبارهای اضافی با نرخ {{price}} به‌ازای هر اعتبار"
-meteringTitle = "صورت‌حساب اضافه‌مصرف بر اساس میزان استفاده"
-monthlyCredits = "اعتبارهای ماهانه"
-orgWideAccess = "کنترل‌های دسترسی در سطح سازمان"
-overage = "اضافه‌مصرف"
-perMonth = "/ماه"
-popular = "محبوب"
-premiumAiModels = "مدل‌های هوش مصنوعی پریمیوم"
-prioritySupport = "پشتیبانی اولویت‌دار"
-privateDocCloud = "ابر اسناد خصوصی"
-ragFineTuning = "RAG + fine-tuning"
-secureApiAccess = "دسترسی امن API"
-selfHostLink = "مرور مستندات و طرح‌ها"
-selfHostPrompt = "می‌خواهید خود میزبانی کنید؟"
-standardThroughput = "توان عبوری استاندارد"
-subtitle = "ارتقا به طرح تیم برای ۱۰ برابر اعتبار و پردازش سریع‌تر."
-subtitlePro = "صورت‌حساب اضافه‌مصرف را فعال کنید تا هرگز اعتبارتان تمام نشود."
-teamLeaderOnly = "فقط رهبر تیم می‌تواند صورت‌حساب اضافه‌مصرف را فعال کند"
-teamSubscription = "تیم"
-titleExhausted = "اعتبار رایگان خود را مصرف کرده‌اید"
-titleExhaustedPro = "اعتبار شما تمام شده است"
-unlimitedApiAccess = "دسترسی نامحدود به API"
-unlimitedMonthlyCredits = "مجوز سراسری"
-unlimitedSeats = "کاربران نامحدود"
-
-[credits.modal.features]
-everythingInCredits = "همه امکانات طرح Credits، به‌علاوه:"
-everythingInFree = "همه امکانات طرح رایگان، به‌علاوه:"
-forRegularWork = "برای کارهای معمول PDF:"
-
-[credits.insufficient]
-brief = "اعتبار کافی نیست. شما به {{required}} اعتبار نیاز دارید اما {{current}} اعتبار دارید."
-freeTier = "برای ۱۰ برابر اعتبار بیشتر و صورت‌حساب اضافه‌مصرف نامحدود، به طرح تیم ارتقا دهید."
-managedMember = "لطفاً برای دریافت کمک با رهبر تیم خود تماس بگیرید."
-message = "اعتبار کافی برای اجرای {{tool}} ندارید. در حال حاضر {{current}} اعتبار دارید."
-messageWithAmount = "برای اجرای {{tool}} به {{required}} اعتبار نیاز دارید، اما فقط {{current}} اعتبار دارید."
-teamMember = "صورت‌حساب اضافه‌مصرف را فعال کنید تا هرگز اعتبارتان تمام نشود."
-title = "اعتبار کافی نیست"
+[plan.trial]
+badge = "Trial"
+continueWithFree = "Continue with Free"
+daysRemaining = "Your trial ends in {{days}} days"
+endDate = "Expires: {{date}}"
+expired = "Your Trial Has Ended"
+expiredMessage = "Your 30-day Pro trial has expired. Subscribe to Pro to continue accessing premium features, or continue with our free tier."
+freeTierLimitations = "Free tier includes basic PDF tools with usage limits."
+message = ""
+subscribe = "Subscribe to Pro"
+subscribeToPro = "Subscribe to Pro"
+subscriptionScheduled = "Subscription scheduled - starts {{date}}"
+title = "Free Trial Active"
 
 [printFile]
 header = "چاپ فایل به چاپگر"
@@ -5148,6 +5177,207 @@ title = "چاپ فایل"
 [printFile.selectText]
 1 = "انتخاب فایل برای چاپ"
 2 = "نام چاپگر را وارد کنید"
+
+[provider.googledrive]
+name = "Google Drive"
+scope = "وارد کردن فایل"
+
+[provider.googledrive.apiKey]
+description = "Google API Key برای Google Picker API از Google Cloud Console"
+label = "API Key"
+
+[provider.googledrive.appId]
+description = "Google Drive App ID از Google Cloud Console"
+label = "App ID"
+
+[provider.googledrive.clientId]
+description = "Google OAuth 2.0 Client ID از Google Cloud Console"
+label = "Client ID"
+
+[provider.googledrive.enabled]
+description = "اجازه دهید کاربران مستقیماً از Google Drive فایل وارد کنند"
+label = "فعال‌سازی انتخاب‌گر فایل Google Drive"
+
+[provider.oauth2.generic]
+name = "OAuth2 عمومی"
+scope = "SSO"
+
+[provider.oauth2.generic.autoCreateUser]
+description = "ایجاد خودکار حساب کاربری در اولین ورود با OAuth2"
+label = "ایجاد خودکار کاربران"
+
+[provider.oauth2.generic.blockRegistration]
+description = "ممانعت از ثبت‌نام کاربر جدید از طریق OAuth2"
+label = "مسدودسازی ثبت‌نام"
+
+[provider.oauth2.generic.clientId]
+description = "Client ID مربوط به OAuth2 از ارائه‌دهنده شما"
+label = "Client ID"
+
+[provider.oauth2.generic.clientSecret]
+description = "Client Secret مربوط به OAuth2 از ارائه‌دهنده شما"
+label = "Client Secret"
+
+[provider.oauth2.generic.enabled]
+description = "فعال‌سازی احراز هویت با ارائه‌دهنده سفارشی OAuth2"
+label = "فعال‌سازی OAuth2 عمومی"
+
+[provider.oauth2.generic.issuer]
+description = "ارائه‌دهنده‌ای که از OpenID Connect Discovery (/.well-known/openid-configuration) پشتیبانی می‌کند"
+label = "نشانی URL صادرکننده"
+
+[provider.oauth2.generic.provider]
+description = "نام ارائه‌دهنده OAuth2 شما (مثلاً Azure AD، Okta)"
+label = "نام ارائه‌دهنده"
+
+[provider.oauth2.generic.scopes]
+description = "Scopeهای OAuth2 جداشده با ویرگول"
+label = "Scopeها"
+
+[provider.oauth2.generic.useAsUsername]
+description = "فیلدی برای استفاده به‌عنوان نام کاربری"
+label = "استفاده به‌عنوان نام کاربری"
+
+[provider.oauth2.github]
+scope = "احراز هویت ورود"
+
+[provider.oauth2.github.clientId]
+description = "Client ID مربوط به OAuth2 از GitHub Developer Settings"
+label = "Client ID"
+
+[provider.oauth2.github.clientSecret]
+description = "Client Secret مربوط به OAuth2 از GitHub Developer Settings"
+label = "Client Secret"
+
+[provider.oauth2.github.scopes]
+description = "Scopeهای OAuth2 جداشده با ویرگول"
+label = "Scopeها"
+
+[provider.oauth2.github.useAsUsername]
+description = "فیلدی که به‌عنوان نام کاربری استفاده شود (email، login، name)"
+label = "استفاده به‌عنوان نام کاربری"
+
+[provider.oauth2.google]
+scope = "احراز هویت ورود"
+
+[provider.oauth2.google.clientId]
+description = "Client ID مربوط به OAuth2 از Google Cloud Console"
+label = "Client ID"
+
+[provider.oauth2.google.clientSecret]
+description = "Client Secret مربوط به OAuth2 از Google Cloud Console"
+label = "Client Secret"
+
+[provider.oauth2.google.scopes]
+description = "Scopeهای OAuth2 جداشده با ویرگول"
+label = "Scopeها"
+
+[provider.oauth2.google.useAsUsername]
+description = "فیلدی که به‌عنوان نام کاربری استفاده شود (email، name، given_name، family_name)"
+label = "استفاده به‌عنوان نام کاربری"
+
+[provider.oauth2.keycloak]
+scope = "SSO"
+
+[provider.oauth2.keycloak.clientId]
+description = "Client ID مربوط به OAuth2 از Keycloak"
+label = "Client ID"
+
+[provider.oauth2.keycloak.clientSecret]
+description = "Client Secret مربوط به OAuth2 از Keycloak"
+label = "Client Secret"
+
+[provider.oauth2.keycloak.issuer]
+description = "نشانی URL نقطه OpenID Connect Discovery قلمرو Keycloak"
+label = "نشانی URL صادرکننده"
+
+[provider.oauth2.keycloak.scopes]
+description = "Scopeهای OAuth2 جداشده با ویرگول"
+label = "Scopeها"
+
+[provider.oauth2.keycloak.useAsUsername]
+description = "فیلدی که به‌عنوان نام کاربری استفاده شود (email، name، given_name، family_name، preferred_username)"
+label = "استفاده به‌عنوان نام کاربری"
+
+[provider.saml2]
+name = "SAML2"
+scope = "SSO (SAML)"
+
+[provider.saml2.autoCreateUser]
+description = "ایجاد خودکار حساب‌های کاربری در اولین ورود با SAML2"
+label = "ایجاد خودکار کاربران"
+
+[provider.saml2.blockRegistration]
+description = "ممانعت از ثبت‌نام کاربر جدید از طریق SAML2"
+label = "مسدودسازی ثبت‌نام"
+
+[provider.saml2.enabled]
+description = "فعال‌سازی احراز هویت SAML2 (فقط سازمانی)"
+label = "فعال‌سازی SAML2"
+
+[provider.saml2.idpCert]
+description = "مسیر گواهی (مثلاً classpath:okta.cert)"
+label = "گواهی IDP"
+
+[provider.saml2.idpIssuer]
+description = "شناسه ارائه‌دهنده شما"
+label = "صادرکننده IDP"
+
+[provider.saml2.idpMetadataUri]
+description = "URI فراداده ارائه‌دهنده شما"
+label = "IDP Metadata URI"
+
+[provider.saml2.idpSingleLoginUrl]
+description = "URL برای آغاز SSO"
+label = "نشانی ورود تکی IDP"
+
+[provider.saml2.idpSingleLogoutUrl]
+description = "URL برای آغاز SLO"
+label = "نشانی خروج تکی IDP"
+
+[provider.saml2.privateKey]
+description = "مسیر کلید خصوصی شما"
+label = "کلید خصوصی"
+
+[provider.saml2.provider]
+description = "نام ارائه‌دهنده SAML2 شما"
+label = "نام ارائه‌دهنده"
+
+[provider.saml2.registrationId]
+description = "نام اپلیکیشن ارائه‌دهنده سرویس (SP) شما"
+label = "شناسه ثبت‌نام"
+
+[provider.saml2.spCert]
+description = "مسیر گواهی امضای شما"
+label = "گواهی SP"
+
+[provider.smtp]
+name = "ایمیل SMTP"
+scope = "اعلان‌های ایمیلی"
+
+[provider.smtp.enabled]
+description = "فعال‌سازی اعلان‌های ایمیلی و قابلیت SMTP"
+label = "فعال‌سازی ایمیل"
+
+[provider.smtp.from]
+description = "نشانی ایمیلی که به‌عنوان فرستنده استفاده می‌شود"
+label = "نشانی فرستنده"
+
+[provider.smtp.host]
+description = "نام میزبان یا نشانی IP سرور SMTP شما"
+label = "میزبان SMTP"
+
+[provider.smtp.password]
+description = "گذرواژه برای احراز هویت SMTP"
+label = "گذرواژه SMTP"
+
+[provider.smtp.port]
+description = "شماره درگاه برای اتصال SMTP (معمولاً 25، 465 یا 587)"
+label = "درگاه SMTP"
+
+[provider.smtp.username]
+description = "نام کاربری برای احراز هویت SMTP"
+label = "نام کاربری SMTP"
 
 [quickAccess]
 account = "حساب"
@@ -5204,15 +5434,15 @@ title = "کلمات برای پنهان‌سازی"
 failed = "هنگام پنهان‌سازی PDF خطایی رخ داد."
 
 [redact.manual]
+activate = "فعال‌سازی ابزار پوشاندن"
+active = "حالت پوشاندن فعال است"
 apply = "اعمال"
 applyChanges = "اعمال تغییرات"
 applyRedactions = "Apply Redactions"
 applyWarning = "⚠️ اعمال دائمی، قابل بازگشت نیست و داده‌های زیرین حذف خواهند شد"
 boxRedaction = "پنهان‌سازی با ترسیم کادر"
-colourPicker = "انتخابگر رنگ"
 colorLabel = "رنگ پوشاندن"
-active = "حالت پوشاندن فعال است"
-activate = "فعال‌سازی ابزار پوشاندن"
+colourPicker = "انتخابگر رنگ"
 controlsTitle = "کنترل‌های سانسور دستی"
 convertPDFToImageLabel = "تبدیل PDF به PDF-Image (برای حذف متن پشت کادر استفاده می‌شود)"
 export = "صادر کردن"
@@ -5608,6 +5838,39 @@ title = "کنتراست بالا"
 text = "تمام رنگ‌های PDF را کاملاً وارونه می‌کند و اثری شبیه نگاتیو ایجاد می‌کند. برای ساخت نسخه‌های حالت تاریک اسناد یا کاهش فشار چشم در نور کم مفید است."
 title = "وارونه‌سازی همه رنگ‌ها"
 
+[rightRail]
+annotations = "حاشیه‌نویسی‌ها"
+applyRedactionsFirst = "ابتدا سانسورها را اعمال کنید"
+closePdf = "بستن PDF"
+closeSelected = "بستن فایل‌های انتخاب‌شده"
+deleteSelected = "حذف صفحات انتخاب‌شده"
+deselectAll = "لغو انتخاب همه"
+downloadAll = "دانلود همه"
+downloadSelected = "دانلود فایل‌های انتخاب‌شده"
+draw = "رسم"
+exitRedaction = "خروج از حالت سانسور"
+exportAll = "برون‌بری PDF"
+exportSelected = "برون‌بری صفحات انتخاب‌شده"
+formFill = "پر کردن فرم"
+language = "زبان"
+panMode = "حالت پیمایش"
+print = "چاپ PDF"
+redact = "سانسور"
+rotateLeft = "چرخش به چپ"
+rotateRight = "چرخش به راست"
+ruler = "خط‌کش / اندازه‌گیری"
+save = "ذخیره"
+saveAll = "ذخیره همه"
+saveChanges = "ذخیره تغییرات"
+search = "جستجوی PDF"
+selectAll = "انتخاب همه"
+selectByNumber = "انتخاب بر اساس شماره صفحات"
+toggleAnnotations = "تغییر وضعیت نمایش حاشیه‌نویسی‌ها"
+toggleAttachments = "نمایش/پنهان‌کردن پیوست‌ها"
+toggleBookmarks = "نمایش/پنهان‌کردن نشانک‌ها"
+toggleSidebar = "تغییر وضعیت نوار کناری"
+toggleTheme = "تغییر تم"
+
 [rotate]
 rotateLeft = "چرخش پادساعت‌گرد"
 rotateRight = "چرخش ساعت‌گرد"
@@ -5755,6 +6018,14 @@ placeholder = "عبارت جستجو را وارد کنید..."
 searching = "در حال جستجو..."
 title = "جستجوی PDF"
 
+[selfHosted.offline]
+hideTools = "Hide unavailable tools ▴"
+messageNoFallback = "Tools are unavailable until your server comes back online."
+messageWithFallback = "Some tools require a server connection."
+showTools = "View unavailable tools ▾"
+title = "Your Stirling-PDF server is unreachable"
+toolNotAvailableLocally = "Your Stirling-PDF server is offline and \"{{endpoint}}\" is not available on the local backend."
+
 [session]
 expired = "نشست شما به پایان رسیده است. لطفاً صفحه را تازه‌سازی کرده و دوباره تلاش کنید."
 refreshPage = "تازه‌سازی صفحه"
@@ -5776,70 +6047,6 @@ user = "وارد شده با"
 [settings.connection.mode]
 saas = "Stirling Cloud"
 selfhosted = "خودمیزبان"
-
-[settings.planBilling]
-currentPlan = "طرح فعلی"
-loading = "در حال بارگذاری اطلاعات صورتحساب..."
-notAvailable = "بخش طرح و صورتحساب فقط هنگام اتصال به Stirling Cloud (حالت SaaS) در دسترس است."
-title = "طرح و صورتحساب"
-
-[settings.planBilling.billing]
-manageBilling = "مدیریت صورتحساب"
-nextBillingDate = "تاریخ صورتحساب بعدی"
-overageCost = "هزینه اضافه‌مصرف فعلی: {{amount}} ({{credits}} اعتبار)"
-
-[settings.planBilling.credits]
-estimatedCost = "هزینه تخمینی: {{amount}}"
-freeTierInfo = "طرح رایگان شامل {{freeCredits}} اعتبار در ماه است. برای {{teamCredits}} اعتبار/ماه و صورت‌حساب اضافه‌مصرفِ پرداخت به‌اندازه استفاده، به طرح تیم ارتقا دهید."
-included = "{{count}} اعتبار/ماه (شامل)"
-noOverage = "در این ماه هزینه اضافه‌مصرف ندارید. شما در حال استفاده از {{count}} اعتبارِ مشمول خود هستید."
-overage = "+ {{count}} اضافه‌مصرف"
-overageInfo = "اعتبارهای اضافه‌مصرف با نرخ {{price}} به‌ازای هر اعتبار صورتحساب می‌شوند. فقط بابت مصرف فراتر از سهمیه ماهانه خود پرداخت خواهید کرد."
-title = "مصرف اعتبار"
-
-[settings.planBilling.errors]
-fetchFailed = "امکان بازیابی داده‌های صورتحساب نیست"
-retry = "تلاش مجدد"
-
-[settings.planBilling.status]
-active = "فعال"
-canceled = "لغوشده"
-pastDue = "عقب‌افتاده"
-trial = "آزمایشی"
-
-[settings.planBilling.tier]
-enterprise = "سازمانی"
-enterpriseDescription = "ویژگی‌ها و پشتیبانی سازمانی سفارشی"
-free = "رایگان"
-freeDescription = "۵۰ اعتبار در ماه"
-team = "تیم"
-teamBadge = "تیم"
-teamDescription = "۵۰۰ اعتبار/ماه شامل، صورت‌حساب خودکار اضافه‌مصرف برای خدمت بی‌وقفه"
-teamTooltipCredits = "طرح تیم شامل {{credits}} اعتبار/ماه است."
-teamTooltipFineprint = "فقط برای مصرف فراتر از اعتبارهای مشمول پرداخت کنید."
-teamTooltipOverage = "صورت‌حساب خودکار اضافه‌مصرف با نرخ {{price}}/اعتبار، سرویس بی‌وقفه را تضمین می‌کند."
-
-[settings.planBilling.team]
-managedByTeam = "توسط تیم مدیریت می‌شود"
-memberCount = "{{count}} عضو تیم"
-
-[settings.planBilling.trial]
-daysRemaining = "{{days}} روز باقی‌مانده"
-daysRemainingFull = "دوره آزمایشی شما تا {{days}} روز دیگر به پایان می‌رسد"
-endDate = "انقضا: {{date}}"
-endsOn = "پایان دوره آزمایشی"
-title = "آزمایشی رایگان فعال است"
-
-[settings.planBilling.upgrade]
-cta = "ارتقا به طرح تیم"
-featureApi = "دسترسی API برای خودکارسازی"
-featureCredits = "{{teamCredits}} اعتبار در ماه (در مقابل {{freeCredits}} در طرح رایگان)"
-featureMembers = "اعضای تیم نامحدود"
-featureSupport = "پشتیبانی اولویت‌دار"
-featureThroughput = "توان عبوری پردازش سریع‌تر"
-opensInBrowser = "برای تکمیل ارتقا در مرورگر باز می‌شود"
-subtitle = "ارتقا به طرح تیم برای:"
-title = "ارتقا طرح شما"
 
 [settings.developer]
 apiKeys = "کلیدهای API"
@@ -5923,6 +6130,70 @@ plan = "طرح"
 title = "مجوزها و آنالیتیکس"
 usageAnalytics = "آنالیتیکس استفاده"
 
+[settings.planBilling]
+currentPlan = "طرح فعلی"
+loading = "در حال بارگذاری اطلاعات صورتحساب..."
+notAvailable = "بخش طرح و صورتحساب فقط هنگام اتصال به Stirling Cloud (حالت SaaS) در دسترس است."
+title = "طرح و صورتحساب"
+
+[settings.planBilling.billing]
+manageBilling = "مدیریت صورتحساب"
+nextBillingDate = "تاریخ صورتحساب بعدی"
+overageCost = "هزینه اضافه‌مصرف فعلی: {{amount}} ({{credits}} اعتبار)"
+
+[settings.planBilling.credits]
+estimatedCost = "هزینه تخمینی: {{amount}}"
+freeTierInfo = "طرح رایگان شامل {{freeCredits}} اعتبار در ماه است. برای {{teamCredits}} اعتبار/ماه و صورت‌حساب اضافه‌مصرفِ پرداخت به‌اندازه استفاده، به طرح تیم ارتقا دهید."
+included = "{{count}} اعتبار/ماه (شامل)"
+noOverage = "در این ماه هزینه اضافه‌مصرف ندارید. شما در حال استفاده از {{count}} اعتبارِ مشمول خود هستید."
+overage = "+ {{count}} اضافه‌مصرف"
+overageInfo = "اعتبارهای اضافه‌مصرف با نرخ {{price}} به‌ازای هر اعتبار صورتحساب می‌شوند. فقط بابت مصرف فراتر از سهمیه ماهانه خود پرداخت خواهید کرد."
+title = "مصرف اعتبار"
+
+[settings.planBilling.errors]
+fetchFailed = "امکان بازیابی داده‌های صورتحساب نیست"
+retry = "تلاش مجدد"
+
+[settings.planBilling.status]
+active = "فعال"
+canceled = "لغوشده"
+pastDue = "عقب‌افتاده"
+trial = "آزمایشی"
+
+[settings.planBilling.team]
+managedByTeam = "توسط تیم مدیریت می‌شود"
+memberCount = "{{count}} عضو تیم"
+
+[settings.planBilling.tier]
+enterprise = "سازمانی"
+enterpriseDescription = "ویژگی‌ها و پشتیبانی سازمانی سفارشی"
+free = "رایگان"
+freeDescription = "۵۰ اعتبار در ماه"
+team = "تیم"
+teamBadge = "تیم"
+teamDescription = "۵۰۰ اعتبار/ماه شامل، صورت‌حساب خودکار اضافه‌مصرف برای خدمت بی‌وقفه"
+teamTooltipCredits = "طرح تیم شامل {{credits}} اعتبار/ماه است."
+teamTooltipFineprint = "فقط برای مصرف فراتر از اعتبارهای مشمول پرداخت کنید."
+teamTooltipOverage = "صورت‌حساب خودکار اضافه‌مصرف با نرخ {{price}}/اعتبار، سرویس بی‌وقفه را تضمین می‌کند."
+
+[settings.planBilling.trial]
+daysRemaining = "{{days}} روز باقی‌مانده"
+daysRemainingFull = "دوره آزمایشی شما تا {{days}} روز دیگر به پایان می‌رسد"
+endDate = "انقضا: {{date}}"
+endsOn = "پایان دوره آزمایشی"
+title = "آزمایشی رایگان فعال است"
+
+[settings.planBilling.upgrade]
+cta = "ارتقا به طرح تیم"
+featureApi = "دسترسی API برای خودکارسازی"
+featureCredits = "{{teamCredits}} اعتبار در ماه (در مقابل {{freeCredits}} در طرح رایگان)"
+featureMembers = "اعضای تیم نامحدود"
+featureSupport = "پشتیبانی اولویت‌دار"
+featureThroughput = "توان عبوری پردازش سریع‌تر"
+opensInBrowser = "برای تکمیل ارتقا در مرورگر باز می‌شود"
+subtitle = "ارتقا به طرح تیم برای:"
+title = "ارتقا طرح شما"
+
 [settings.policiesPrivacy]
 legal = "حقوقی"
 privacy = "حریم خصوصی"
@@ -5930,6 +6201,9 @@ title = "سیاست‌ها و حریم خصوصی"
 
 [settings.preferences]
 title = "ترجیحات"
+
+[settings.search]
+placeholder = "Search settings pages..."
 
 [settings.security]
 description = "رمز عبور خود را به‌روزرسانی کنید تا حسابتان ایمن بماند."
@@ -5956,6 +6230,9 @@ security = "امنیت"
 telegram = "Telegram"
 title = "امنیت و احراز هویت"
 
+[settings.team]
+title = "تیم"
+
 [settings.tooltips]
 enableLoginFirst = "ابتدا حالت ورود را فعال کنید"
 requiresEnterprise = "به لایسنس Enterprise نیاز دارد"
@@ -5964,9 +6241,6 @@ requiresEnterprise = "به لایسنس Enterprise نیاز دارد"
 people = "افراد"
 teams = "تیم‌ها"
 title = "فضای کاری"
-
-[settings.team]
-title = "تیم"
 
 [setup]
 description = "با انتخاب نحوه استفاده از Stirling PDF شروع کنید"
@@ -6290,15 +6564,15 @@ desc = "تفکیک خودکار با برگه‌های جداکننده"
 name = "جداکننده صفحه"
 tooltip = "از برگه‌های جداکننده QR بین اسناد هنگام اسکن استفاده کنید"
 
-[split.methods.byPoster]
-name = "قطعات قابل چاپ"
-desc = "تقسیم صفحات بزرگ به اندازه‌های قابل چاپ"
-tooltip = "تقسیم صفحات بزرگ به قطعات کوچک‌تر مناسب چاپ روی کاغذ استاندارد (A4، Letter و غیره)"
-
 [split.methods.byPages]
 desc = "استخراج صفحات خاص (1,3,5-10)"
 name = "شماره صفحات"
 tooltip = "شماره صفحات را با کاما جدا کنید یا بازه‌ها را با خط تیره وارد کنید"
+
+[split.methods.byPoster]
+desc = "تقسیم صفحات بزرگ به اندازه‌های قابل چاپ"
+name = "قطعات قابل چاپ"
+tooltip = "تقسیم صفحات بزرگ به قطعات کوچک‌تر مناسب چاپ روی کاغذ استاندارد (A4، Letter و غیره)"
 
 [split.methods.bySections]
 desc = "تقسیم صفحات به بخش‌های شبکه‌ای"
@@ -6326,27 +6600,27 @@ title = "روش تفکیک خود را انتخاب کنید"
 text = "نحوه تفکیک سند PDF خود را انتخاب کنید. هر روش برای موارد استفاده و انواع سند متفاوتی بهینه شده است."
 title = "انتخاب روش تفکیک"
 
+[split.poster]
+rightToLeft = "تقسیم از راست به چپ"
+
+[split.poster.pageSize]
+description = "اندازه صفحات خروجی برای چاپ"
+label = "اندازه صفحه هدف"
+
+[split.poster.xFactor]
+description = "تعداد ستون‌ها برای تقسیم هر صفحه"
+label = "تقسیمات افقی"
+
+[split.poster.yFactor]
+description = "تعداد ردیف‌ها برای تقسیم هر صفحه"
+label = "تقسیمات عمودی"
+
 [split.settings]
 selectMethodFirst = "لطفاً ابتدا یک روش تفکیک انتخاب کنید"
 
 [split.steps]
 chooseMethod = "انتخاب روش"
 settings = "تنظیمات"
-
-[split.poster]
-rightToLeft = "تقسیم از راست به چپ"
-
-[split.poster.pageSize]
-label = "اندازه صفحه هدف"
-description = "اندازه صفحات خروجی برای چاپ"
-
-[split.poster.xFactor]
-label = "تقسیمات افقی"
-description = "تعداد ستون‌ها برای تقسیم هر صفحه"
-
-[split.poster.yFactor]
-label = "تقسیمات عمودی"
-description = "تعداد ردیف‌ها برای تقسیم هر صفحه"
 
 [split.tooltip.byChapters]
 bullet1 = "سطح نشانک: سطحی که باید در آن تفکیک شود (1=سطح بالا)"
@@ -6385,6 +6659,13 @@ bullet5 = "اگر هر دو طرف برگه‌های جداکننده را اس�
 text = "با استفاده از برگه‌های جداکننده فیزیکی دارای QR، اسناد اسکن‌شده را به‌طور خودکار تفکیک کنید. برای پردازش چند سند اسکن‌شده با هم ایده‌آل است."
 title = "تفکیک بر اساس جداکننده صفحه"
 
+[split.tooltip.byPages]
+bullet1 = "نقاط تفکیک تکی: 3,7 (بعد از صفحات 3 و 7 تفکیک می‌کند)"
+bullet2 = "نقاط تفکیک بازه: 3-8 (قبل از صفحه 3 و بعد از صفحه 8 تفکیک می‌کند)"
+bullet3 = "ترکیبی: 2,5-10,15 (بعد از صفحه 2، قبل از صفحه 5، بعد از صفحه 10 و بعد از صفحه 15 تفکیک می‌کند)"
+text = "PDF خود را در شماره صفحات مشخص تفکیک کنید. استفاده از 'n' بعد از صفحه n تفکیک می‌کند. استفاده از 'n-m' قبل از صفحه n و بعد از صفحه m تفکیک می‌کند."
+title = "تفکیک در شماره صفحات"
+
 [split.tooltip.byPoster]
 bullet1 = "اندازه صفحه هدف: اندازه کاغذ خروجی را انتخاب کنید (A4، Letter و غیره)"
 bullet2 = "تقسیمات افقی/عمودی: اندازه شبکه برای تقسیم"
@@ -6392,13 +6673,6 @@ bullet3 = "راست‌به‌چپ: معکوس کردن ترتیب ستون‌ه�
 bullet4 = "قطعات را چاپ و سرهم کنید تا پوستر خود را بسازید"
 text = "صفحات بزرگ PDF را به قطعات کوچک‌ترِ قابل چاپ تقسیم کنید که مناسب اندازه‌های استاندارد کاغذ هستند. ایده‌آل برای ساخت چاپ پوستر از صفحات بزرگ."
 title = "تقسیم برای چاپ پوستر"
-
-[split.tooltip.byPages]
-bullet1 = "نقاط تفکیک تکی: 3,7 (بعد از صفحات 3 و 7 تفکیک می‌کند)"
-bullet2 = "نقاط تفکیک بازه: 3-8 (قبل از صفحه 3 و بعد از صفحه 8 تفکیک می‌کند)"
-bullet3 = "ترکیبی: 2,5-10,15 (بعد از صفحه 2، قبل از صفحه 5، بعد از صفحه 10 و بعد از صفحه 15 تفکیک می‌کند)"
-text = "PDF خود را در شماره صفحات مشخص تفکیک کنید. استفاده از 'n' بعد از صفحه n تفکیک می‌کند. استفاده از 'n-m' قبل از صفحه n و بعد از صفحه m تفکیک می‌کند."
-title = "تفکیک در شماره صفحات"
 
 [split.tooltip.bySections]
 bullet1 = "افقی: تعداد ردیف‌های قابل ایجاد"
@@ -6541,6 +6815,82 @@ title = "مستندات API"
 [tableExtraxt]
 tags = "CSV، استخراج جدول، استخراج، تبدیل"
 
+[team]
+cancelInviteError = "لغو دعوت‌نامه ناموفق بود"
+confirmCancelInvite = "آیا از لغو این دعوت‌نامه مطمئن هستید؟"
+confirmLeave = "آیا مطمئن هستید می‌خواهید این تیم را ترک کنید؟"
+confirmLeaveLeader = "به‌عنوان رهبر تیم، با ترک کردن از تیم حذف خواهید شد. مطمئن هستید؟"
+confirmRemove = "آیا از حذف این عضو مطمئن هستید؟"
+editName = "ویرایش نام تیم"
+inviteCancelled = "دعوت‌نامه لغو شد"
+inviteError = "ارسال دعوت‌نامه ناموفق بود"
+inviteSent = "دعوت‌نامه با موفقیت ارسال شد"
+leader = "رهبر تیم"
+leaveButton = "ترک تیم"
+leaveError = "ترک تیم ناموفق بود"
+leaveSuccess = "با موفقیت از تیم خارج شدید"
+loading = "در حال بارگذاری اطلاعات تیم..."
+memberCount = "{{count}} عضو"
+memberRemoved = "عضو با موفقیت حذف شد"
+namePlaceholder = "نام تیم را وارد کنید"
+personal = "شخصی"
+removeError = "حذف عضو ناموفق بود"
+renameError = "تغییر نام تیم ناموفق بود"
+renameSuccess = "نام تیم با موفقیت تغییر کرد"
+
+[team.features]
+badge = "امکانات تیم"
+subtitle = "با تیم خود همکاری کنید"
+title = "همکاری تیمی"
+viewPlans = "مشاهده طرح‌ها"
+
+[team.features.billing]
+description = "مدیریت صورتحساب و اشتراک‌ها"
+title = "مدیریت صورتحساب"
+
+[team.features.credits]
+description = "استخر اعتبار مشترک برای همه اعضا"
+title = "اعتبارهای مشترک"
+
+[team.features.dashboard]
+description = "مشاهده فعالیت و مصرف تیم"
+title = "داشبورد تیم"
+
+[team.features.invite]
+description = "افزودن اعضا به تیم شما"
+title = "دعوت از اعضا"
+
+[team.invitationBanner]
+acceptButton = "پذیرفتن"
+message = "شما را برای پیوستن دعوت کرده است"
+rejectButton = "رد"
+
+[team.invite]
+cancelLabel = "لغو"
+invalidEmail = "آدرس ایمیل نامعتبر است"
+placeholder = "آدرس ایمیل را وارد کنید"
+sendButton = "ارسال دعوت‌نامه"
+title = "دعوت عضو تیم"
+
+[team.members]
+emailColumn = "ایمیل"
+empty = "هنوز عضوی در تیم نیست"
+nameColumn = "نام"
+pending = "در انتظار"
+remove = "حذف"
+roleColumn = "نقش"
+title = "اعضای تیم"
+
+[team.upgrade]
+button = "ارتقا به طرح تیم"
+description = "قابلیت‌های همکاری تیمی را آزاد کنید"
+title = "ارتقا به طرح تیم"
+
+[textAlign]
+center = "وسط"
+left = "چپ"
+right = "راست"
+
 [theme]
 toggle = "تغییر تم"
 
@@ -6557,6 +6907,7 @@ favorites = "علاقه‌مندی‌ها"
 heading = "همه ابزارها (نمای تمام‌صفحه)"
 noResults = "جستجوی خود را تنظیم کنید یا نمایش توضیحات را تغییر دهید تا مورد نیاز را بیابید."
 recommended = "توصیه‌شده"
+selfHostedOffline = "Requires your Stirling-PDF server (currently offline):"
 showDetails = "نمایش جزئیات"
 unavailable = "توسط مدیر سرور غیرفعال شده:"
 unavailableDependency = "در دسترس نیست - ابزار موردنیاز روی سرور موجود نیست:"
@@ -6819,6 +7170,37 @@ invalid = "گواهی در مخزن اعتماد نیست - منبع قابل ت
 fileManager = "مدیر فایل"
 pageEditor = "ویرایشگر صفحه"
 viewer = "نمایشگر"
+
+[viewer]
+cannotPreviewFile = "امکان پیش‌نمایش فایل نیست"
+dualPageView = "نمای دوصفحه‌ای"
+firstPage = "صفحه نخست"
+lastPage = "صفحه آخر"
+nextPage = "صفحه بعد"
+onlyPdfSupported = "نمایشگر فقط فایل‌های PDF را پشتیبانی می‌کند. به نظر می‌رسد این فایل قالب متفاوتی دارد."
+previousPage = "صفحه قبل"
+singlePageView = "نمای تک‌صفحه‌ای"
+unknownFile = "فایل ناشناخته"
+zoomIn = "بزرگ‌نمایی"
+zoomOut = "کوچک‌نمایی"
+
+[viewer.attachments]
+empty = "در این سند هیچ پیوستی وجود ندارد"
+loading = "در حال بارگذاری پیوست‌ها..."
+noDocument = "برای مشاهدهٔ پیوست‌های آن، یک PDF باز کنید."
+noMatch = "هیچ پیوستی با جستجوی شما مطابقت ندارد"
+noSupport = "پشتیبانی از پیوست در این نمایشگر در دسترس نیست."
+searchPlaceholder = "جستجوی پیوست‌ها"
+title = "پیوست‌ها"
+
+[viewer.formBar]
+apply = "اعمال تغییرات"
+dismiss = "بستن"
+download = "دانلود PDF"
+hasFieldsDesc = "این PDF شامل فیلدهای قابل‌پرکردن است"
+title = "فیلدهای فرم"
+unsavedBadge = "ذخیره‌نشده"
+unsavedDesc = "تغییرات ذخیره‌نشده دارید"
 
 [viewPdf]
 header = "مشاهده PDF"
@@ -7259,278 +7641,3 @@ cancel = "انصراف"
 confirm = "استخراج"
 message = "این ZIP شامل {{count}} فایل است. با این حال استخراج شود؟"
 title = "فایل ZIP بزرگ"
-
-[cloudBadge]
-tooltip = "این عملیات از اعتبارهای ابری شما استفاده می‌کند"
-
-[team]
-cancelInviteError = "لغو دعوت‌نامه ناموفق بود"
-confirmCancelInvite = "آیا از لغو این دعوت‌نامه مطمئن هستید؟"
-confirmLeave = "آیا مطمئن هستید می‌خواهید این تیم را ترک کنید؟"
-confirmLeaveLeader = "به‌عنوان رهبر تیم، با ترک کردن از تیم حذف خواهید شد. مطمئن هستید؟"
-confirmRemove = "آیا از حذف این عضو مطمئن هستید؟"
-editName = "ویرایش نام تیم"
-inviteCancelled = "دعوت‌نامه لغو شد"
-inviteError = "ارسال دعوت‌نامه ناموفق بود"
-inviteSent = "دعوت‌نامه با موفقیت ارسال شد"
-leader = "رهبر تیم"
-leaveButton = "ترک تیم"
-leaveError = "ترک تیم ناموفق بود"
-leaveSuccess = "با موفقیت از تیم خارج شدید"
-loading = "در حال بارگذاری اطلاعات تیم..."
-memberCount = "{{count}} عضو"
-memberRemoved = "عضو با موفقیت حذف شد"
-namePlaceholder = "نام تیم را وارد کنید"
-personal = "شخصی"
-removeError = "حذف عضو ناموفق بود"
-renameError = "تغییر نام تیم ناموفق بود"
-renameSuccess = "نام تیم با موفقیت تغییر کرد"
-
-[team.invitationBanner]
-message = "شما را برای پیوستن دعوت کرده است"
-acceptButton = "پذیرفتن"
-rejectButton = "رد"
-
-[team.features]
-badge = "امکانات تیم"
-subtitle = "با تیم خود همکاری کنید"
-title = "همکاری تیمی"
-viewPlans = "مشاهده طرح‌ها"
-
-[team.features.billing]
-description = "مدیریت صورتحساب و اشتراک‌ها"
-title = "مدیریت صورتحساب"
-
-[team.features.credits]
-description = "استخر اعتبار مشترک برای همه اعضا"
-title = "اعتبارهای مشترک"
-
-[team.features.dashboard]
-description = "مشاهده فعالیت و مصرف تیم"
-title = "داشبورد تیم"
-
-[team.features.invite]
-description = "افزودن اعضا به تیم شما"
-title = "دعوت از اعضا"
-
-[team.invite]
-cancelLabel = "لغو"
-invalidEmail = "آدرس ایمیل نامعتبر است"
-placeholder = "آدرس ایمیل را وارد کنید"
-sendButton = "ارسال دعوت‌نامه"
-title = "دعوت عضو تیم"
-
-[team.members]
-emailColumn = "ایمیل"
-empty = "هنوز عضوی در تیم نیست"
-nameColumn = "نام"
-pending = "در انتظار"
-remove = "حذف"
-roleColumn = "نقش"
-title = "اعضای تیم"
-
-[team.upgrade]
-button = "ارتقا به طرح تیم"
-description = "قابلیت‌های همکاری تیمی را آزاد کنید"
-title = "ارتقا به طرح تیم"
-
-[provider.oauth2.google]
-scope = "احراز هویت ورود"
-
-[provider.oauth2.google.clientId]
-label = "Client ID"
-description = "Client ID مربوط به OAuth2 از Google Cloud Console"
-
-[provider.oauth2.google.clientSecret]
-label = "Client Secret"
-description = "Client Secret مربوط به OAuth2 از Google Cloud Console"
-
-[provider.oauth2.google.scopes]
-label = "Scopeها"
-description = "Scopeهای OAuth2 جداشده با ویرگول"
-
-[provider.oauth2.google.useAsUsername]
-label = "استفاده به‌عنوان نام کاربری"
-description = "فیلدی که به‌عنوان نام کاربری استفاده شود (email، name، given_name، family_name)"
-
-[provider.oauth2.github]
-scope = "احراز هویت ورود"
-
-[provider.oauth2.github.clientId]
-label = "Client ID"
-description = "Client ID مربوط به OAuth2 از GitHub Developer Settings"
-
-[provider.oauth2.github.clientSecret]
-label = "Client Secret"
-description = "Client Secret مربوط به OAuth2 از GitHub Developer Settings"
-
-[provider.oauth2.github.scopes]
-label = "Scopeها"
-description = "Scopeهای OAuth2 جداشده با ویرگول"
-
-[provider.oauth2.github.useAsUsername]
-label = "استفاده به‌عنوان نام کاربری"
-description = "فیلدی که به‌عنوان نام کاربری استفاده شود (email، login، name)"
-
-[provider.oauth2.keycloak]
-scope = "SSO"
-
-[provider.oauth2.keycloak.issuer]
-label = "نشانی URL صادرکننده"
-description = "نشانی URL نقطه OpenID Connect Discovery قلمرو Keycloak"
-
-[provider.oauth2.keycloak.clientId]
-label = "Client ID"
-description = "Client ID مربوط به OAuth2 از Keycloak"
-
-[provider.oauth2.keycloak.clientSecret]
-label = "Client Secret"
-description = "Client Secret مربوط به OAuth2 از Keycloak"
-
-[provider.oauth2.keycloak.scopes]
-label = "Scopeها"
-description = "Scopeهای OAuth2 جداشده با ویرگول"
-
-[provider.oauth2.keycloak.useAsUsername]
-label = "استفاده به‌عنوان نام کاربری"
-description = "فیلدی که به‌عنوان نام کاربری استفاده شود (email، name، given_name، family_name، preferred_username)"
-
-[provider.oauth2.generic]
-name = "OAuth2 عمومی"
-scope = "SSO"
-
-[provider.oauth2.generic.enabled]
-label = "فعال‌سازی OAuth2 عمومی"
-description = "فعال‌سازی احراز هویت با ارائه‌دهنده سفارشی OAuth2"
-
-[provider.oauth2.generic.provider]
-label = "نام ارائه‌دهنده"
-description = "نام ارائه‌دهنده OAuth2 شما (مثلاً Azure AD، Okta)"
-
-[provider.oauth2.generic.issuer]
-label = "نشانی URL صادرکننده"
-description = "ارائه‌دهنده‌ای که از OpenID Connect Discovery (/.well-known/openid-configuration) پشتیبانی می‌کند"
-
-[provider.oauth2.generic.clientId]
-label = "Client ID"
-description = "Client ID مربوط به OAuth2 از ارائه‌دهنده شما"
-
-[provider.oauth2.generic.clientSecret]
-label = "Client Secret"
-description = "Client Secret مربوط به OAuth2 از ارائه‌دهنده شما"
-
-[provider.oauth2.generic.scopes]
-label = "Scopeها"
-description = "Scopeهای OAuth2 جداشده با ویرگول"
-
-[provider.oauth2.generic.useAsUsername]
-label = "استفاده به‌عنوان نام کاربری"
-description = "فیلدی برای استفاده به‌عنوان نام کاربری"
-
-[provider.oauth2.generic.autoCreateUser]
-label = "ایجاد خودکار کاربران"
-description = "ایجاد خودکار حساب کاربری در اولین ورود با OAuth2"
-
-[provider.oauth2.generic.blockRegistration]
-label = "مسدودسازی ثبت‌نام"
-description = "ممانعت از ثبت‌نام کاربر جدید از طریق OAuth2"
-
-[provider.smtp]
-name = "ایمیل SMTP"
-scope = "اعلان‌های ایمیلی"
-
-[provider.smtp.enabled]
-label = "فعال‌سازی ایمیل"
-description = "فعال‌سازی اعلان‌های ایمیلی و قابلیت SMTP"
-
-[provider.smtp.host]
-label = "میزبان SMTP"
-description = "نام میزبان یا نشانی IP سرور SMTP شما"
-
-[provider.smtp.port]
-label = "درگاه SMTP"
-description = "شماره درگاه برای اتصال SMTP (معمولاً 25، 465 یا 587)"
-
-[provider.smtp.username]
-label = "نام کاربری SMTP"
-description = "نام کاربری برای احراز هویت SMTP"
-
-[provider.smtp.password]
-label = "گذرواژه SMTP"
-description = "گذرواژه برای احراز هویت SMTP"
-
-[provider.smtp.from]
-label = "نشانی فرستنده"
-description = "نشانی ایمیلی که به‌عنوان فرستنده استفاده می‌شود"
-
-[provider.saml2]
-name = "SAML2"
-scope = "SSO (SAML)"
-
-[provider.saml2.enabled]
-label = "فعال‌سازی SAML2"
-description = "فعال‌سازی احراز هویت SAML2 (فقط سازمانی)"
-
-[provider.saml2.provider]
-label = "نام ارائه‌دهنده"
-description = "نام ارائه‌دهنده SAML2 شما"
-
-[provider.saml2.registrationId]
-label = "شناسه ثبت‌نام"
-description = "نام اپلیکیشن ارائه‌دهنده سرویس (SP) شما"
-
-[provider.saml2.idpMetadataUri]
-label = "IDP Metadata URI"
-description = "URI فراداده ارائه‌دهنده شما"
-
-[provider.saml2.idpSingleLoginUrl]
-label = "نشانی ورود تکی IDP"
-description = "URL برای آغاز SSO"
-
-[provider.saml2.idpSingleLogoutUrl]
-label = "نشانی خروج تکی IDP"
-description = "URL برای آغاز SLO"
-
-[provider.saml2.idpIssuer]
-label = "صادرکننده IDP"
-description = "شناسه ارائه‌دهنده شما"
-
-[provider.saml2.idpCert]
-label = "گواهی IDP"
-description = "مسیر گواهی (مثلاً classpath:okta.cert)"
-
-[provider.saml2.privateKey]
-label = "کلید خصوصی"
-description = "مسیر کلید خصوصی شما"
-
-[provider.saml2.spCert]
-label = "گواهی SP"
-description = "مسیر گواهی امضای شما"
-
-[provider.saml2.autoCreateUser]
-label = "ایجاد خودکار کاربران"
-description = "ایجاد خودکار حساب‌های کاربری در اولین ورود با SAML2"
-
-[provider.saml2.blockRegistration]
-label = "مسدودسازی ثبت‌نام"
-description = "ممانعت از ثبت‌نام کاربر جدید از طریق SAML2"
-
-[provider.googledrive]
-name = "Google Drive"
-scope = "وارد کردن فایل"
-
-[provider.googledrive.enabled]
-label = "فعال‌سازی انتخاب‌گر فایل Google Drive"
-description = "اجازه دهید کاربران مستقیماً از Google Drive فایل وارد کنند"
-
-[provider.googledrive.clientId]
-label = "Client ID"
-description = "Google OAuth 2.0 Client ID از Google Cloud Console"
-
-[provider.googledrive.apiKey]
-label = "API Key"
-description = "Google API Key برای Google Picker API از Google Cloud Console"
-
-[provider.googledrive.appId]
-label = "App ID"
-description = "Google Drive App ID از Google Cloud Console"

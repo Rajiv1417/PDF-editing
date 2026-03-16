@@ -16,13 +16,13 @@ comingSoon = "Sắp ra mắt"
 confirmClose = "Xác nhận đóng"
 confirmCloseCancel = "Hủy"
 confirmCloseConfirm = "Đóng tệp"
-confirmCloseMessage = "Bạn có chắc muốn đóng tệp này không?"
 confirmCloseDiscard = "Bỏ các thay đổi và đóng"
+confirmCloseMessage = "Bạn có chắc muốn đóng tệp này không?"
 confirmCloseSave = "Lưu và đóng"
+confirmCloseSaveFailed = "Đã lưu nhưng có lỗi. {{count}} tệp{{plural}} không thể lưu."
+confirmCloseSaveFailedTitle = "Lưu không thành công"
 confirmCloseUnsaved = "Tệp này có các thay đổi chưa được lưu."
 confirmCloseUnsavedList = "Bạn có {{count}} tệp{{plural}} có thay đổi chưa được lưu.\n\n{{fileList}}"
-confirmCloseSaveFailedTitle = "Lưu không thành công"
-confirmCloseSaveFailed = "Đã lưu nhưng có lỗi. {{count}} tệp{{plural}} không thể lưu."
 confirmPasswordErrorMessage = "Mật khẩu mới và Xác nhận mật khẩu mới phải khớp nhau."
 custom = "Tùy chỉnh..."
 customPosition = "Vị trí tùy chỉnh"
@@ -42,11 +42,12 @@ downloadComplete = "Tải xuống hoàn tất"
 downloadPdf = "Tải xuống PDF"
 downloadUnavailable = "Không thể tải xuống mục này"
 edit = "Chỉnh sửa"
+editSecret = "Chỉnh sửa giá trị này"
 editYourNewFiles = "Chỉnh sửa tệp mới của bạn"
 exportAndContinue = "Xuất và tiếp tục"
 false = "Sai"
-fileSavedToDisk = "Tệp đã được lưu vào ổ đĩa"
 fileNotSavedToDisk = "Chưa lưu vào ổ đĩa"
+fileSavedToDisk = "Tệp đã được lưu vào ổ đĩa"
 fileSelected = "Đã chọn: {{filename}}"
 filesSelected = "tệp đã chọn"
 font = "Phông chữ"
@@ -60,12 +61,15 @@ help = "Trợ giúp"
 imgPrompt = "Chọn (các) hình ảnh"
 incorrectPasswordMessage = "Mật khẩu hiện tại không chính xác."
 info = "Thông tin"
+insufficientCredits = "Insufficient credits. Required: {{requiredCredits}}, Available: {{currentBalance}}, Shortfall: {{shortfall}}"
 invalidPasswordMessage = "Mật khẩu không được để trống và không được có khoảng trắng ở đầu hoặc cuối."
 invalidUndoData = "Không thể hoàn tác: dữ liệu thao tác không hợp lệ"
 invalidUsernameMessage = "Tên người dùng không hợp lệ, tên người dùng chỉ có thể chứa chữ cái, số và các ký tự đặc biệt sau @._+- hoặc phải là một địa chỉ email hợp lệ."
 joinDiscord = "Tham gia máy chủ Discord của chúng tôi"
 keepWorking = "Tiếp tục làm việc"
 loading = "Đang tải..."
+loadingCredits = "Checking credits..."
+loadingProStatus = "Checking subscription status..."
 logOut = "Đăng xuất"
 marginTooltip = "Khoảng cách giữa số trang và mép trang."
 moreOptions = "Tùy chọn khác"
@@ -79,6 +83,7 @@ noFilesToUndo = "Không thể hoàn tác: không có tệp nào được xử l�
 noOperationToUndo = "Không có thao tác để hoàn tác"
 notAuthenticatedMessage = "Người dùng chưa được xác thực."
 nothingToUndo = "Không có gì để hoàn tác"
+noticeTopUpOrPlan = "Not enough credits, please top up or upgrade to a plan"
 noValidFiles = "Không có tệp hợp lệ để xử lý"
 oops = "Rất tiếc!"
 openInViewer = "Mở trong Trình xem"
@@ -95,9 +100,9 @@ pendingRedactionsTitle = "Bôi đen chưa áp dụng"
 pin = "Ghim tệp (giữ hoạt động sau khi chạy công cụ)"
 poweredBy = "Được hỗ trợ bởi"
 pro = "Pro"
-processTimeWarning = "Cảnh báo: Quá trình này có thể mất đến một phút tùy thuộc vào kích thước tệp"
 processingComplete = "Tệp của bạn đã sẵn sàng."
 processingCompleteMultiple = "{{count}} tệp đã sẵn sàng."
+processTimeWarning = "Cảnh báo: Quá trình này có thể mất đến một phút tùy thuộc vào kích thước tệp"
 property = "Thuộc tính"
 quickPosition = "Vị trí nhanh"
 red = "Đỏ"
@@ -107,7 +112,6 @@ save = "Lưu"
 saveToBrowser = "Lưu vào trình duyệt"
 saveUnavailable = "Không thể lưu mục này"
 seeDockerHub = "Xem Docker Hub"
-editSecret = "Chỉnh sửa giá trị này"
 selectFillter = "-- Chọn --"
 size = "Kích thước"
 sponsor = "Nhà tài trợ"
@@ -845,6 +849,14 @@ title = "Endpoint API"
 userDefaults = "Mặc định tùy chọn người dùng"
 userDefaultsDescription = "Đặt các giá trị mặc định cho tùy chọn người dùng. Người dùng có thể ghi đè chúng trong cài đặt cá nhân."
 
+[admin.settings.endpoints.defaultHideUnavailableConversions]
+description = "Loại bỏ các tùy chọn chuyển đổi bị vô hiệu hóa thay vì hiển thị chúng dưới dạng mờ"
+label = "Ẩn các chuyển đổi không khả dụng theo mặc định"
+
+[admin.settings.endpoints.defaultHideUnavailableTools]
+description = "Loại bỏ các công cụ bị vô hiệu hóa thay vì hiển thị chúng dưới dạng mờ"
+label = "Ẩn các công cụ không khả dụng theo mặc định"
+
 [admin.settings.endpoints.groupsToRemove]
 description = "Chọn các nhóm endpoint để tắt"
 label = "Nhóm endpoint đã tắt"
@@ -852,14 +864,6 @@ label = "Nhóm endpoint đã tắt"
 [admin.settings.endpoints.toRemove]
 description = "Chọn các endpoint riêng lẻ để tắt"
 label = "Endpoint đã tắt"
-
-[admin.settings.endpoints.defaultHideUnavailableTools]
-description = "Loại bỏ các công cụ bị vô hiệu hóa thay vì hiển thị chúng dưới dạng mờ"
-label = "Ẩn các công cụ không khả dụng theo mặc định"
-
-[admin.settings.endpoints.defaultHideUnavailableConversions]
-description = "Loại bỏ các tùy chọn chuyển đổi bị vô hiệu hóa thay vì hiển thị chúng dưới dạng mờ"
-label = "Ẩn các chuyển đổi không khả dụng theo mặc định"
 
 [admin.settings.enterpriseRequired]
 message = "Yêu cầu giấy phép Enterprise để truy cập {{featureName}}. Bạn đang xem dữ liệu demo để tham khảo."
@@ -968,6 +972,10 @@ label = "Ngôn ngữ mặc định"
 description = "Kích thước tải lên tối đa (ví dụ: 100MB, 1GB)"
 label = "Giới hạn tải lên tệp"
 
+[admin.settings.general.frontendUrl]
+description = "URL gốc cho frontend (vd., https://pdf.example.com). Dùng cho liên kết mời qua email và tải lên bằng mã QR trên di động. Để trống để dùng URL backend."
+label = "URL Frontend"
+
 [admin.settings.general.hideDisabledTools]
 description = "Ẩn các công cụ bị vô hiệu hóa khỏi giao diện"
 label = "Ẩn công cụ bị vô hiệu hóa"
@@ -979,10 +987,6 @@ label = "Ẩn Google Drive"
 [admin.settings.general.hideDisabledTools.mobileScanner]
 description = "Ẩn nút quét QR trên di động khi chưa bật"
 label = "Ẩn Trình quét di động"
-
-[admin.settings.general.frontendUrl]
-description = "URL gốc cho frontend (vd., https://pdf.example.com). Dùng cho liên kết mời qua email và tải lên bằng mã QR trên di động. Để trống để dùng URL backend."
-label = "URL Frontend"
 
 [admin.settings.general.homeDescription]
 description = "Văn bản mô tả hiển thị trên trang chủ"
@@ -1163,9 +1167,25 @@ description = "Cấu hình xác thực, hành vi đăng nhập và chính sách 
 title = "Bảo mật"
 
 [admin.settings.security.audit]
+hideDetails = "Ẩn chi tiết mức kiểm toán"
 label = "Ghi nhật ký kiểm toán"
 showDetails = "Hiển thị chi tiết mức kiểm toán"
-hideDetails = "Ẩn chi tiết mức kiểm toán"
+
+[admin.settings.security.audit.advancedOptions]
+description = "Các tùy chọn sau sẽ tăng thời gian xử lý và sử dụng bộ nhớ. Chỉ bật khi thực sự cần thiết."
+title = "Tùy chọn nâng cao"
+
+[admin.settings.security.audit.captureFileHash]
+description = "Trích xuất mã băm SHA-256 của các tệp PDF tải lên để xác minh tính toàn vẹn. Độc lập với mức kiểm toán."
+label = "Ghi nhận mã băm tệp (SHA-256)"
+
+[admin.settings.security.audit.captureOperationResults]
+description = "Ghi nhận giá trị trả về của phương thức. Không khuyến nghị: làm tăng đáng kể lượng log và dung lượng đĩa."
+label = "Ghi nhận kết quả thao tác"
+
+[admin.settings.security.audit.capturePdfAuthor]
+description = "Trích xuất trường tác giả từ tài liệu PDF trong quá trình xử lý. Yêu cầu phân tích PDF, tăng độ trễ. Độc lập với mức kiểm toán."
+label = "Ghi nhận metadata Tác giả PDF"
 
 [admin.settings.security.audit.enabled]
 description = "Theo dõi hành động người dùng và sự kiện hệ thống cho mục đích tuân thủ và giám sát bảo mật"
@@ -1176,30 +1196,14 @@ description = "0=TẮT, 1=CƠ BẢN, 2=TIÊU CHUẨN, 3=CHI TIẾT"
 label = "Mức kiểm toán"
 
 [admin.settings.security.audit.levelDetails]
-off = "Không ghi nhật ký kiểm toán (trừ các sự kiện bảo mật quan trọng)"
 basic = "Thao tác tệp PDF (nén, tách, gộp, v.v.) và thay đổi cài đặt. Ghi nhận: trạng thái thao tác (thành công/thất bại), tham số phương thức, thời gian. Lượng log tối thiểu."
+off = "Không ghi nhật ký kiểm toán (trừ các sự kiện bảo mật quan trọng)"
 standard = "Sự kiện BASIC cộng thêm: đăng nhập/đăng xuất người dùng, thay đổi tài khoản, yêu cầu GET chung. Loại trừ các cuộc gọi thăm dò liên tục (/auth/me, /app-config, /health, v.v.) để giảm nhiễu log. Phù hợp cho hầu hết triển khai."
 verbose = "Sự kiện STANDARD cộng thêm: các cuộc gọi thăm dò liên tục, tất cả yêu cầu GET, chi tiết thời gian. Cảnh báo: lượng log lớn và ảnh hưởng hiệu năng."
 
 [admin.settings.security.audit.retentionDays]
 description = "Số ngày lưu trữ nhật ký kiểm toán"
 label = "Giữ nhật ký (ngày)"
-
-[admin.settings.security.audit.advancedOptions]
-title = "Tùy chọn nâng cao"
-description = "Các tùy chọn sau sẽ tăng thời gian xử lý và sử dụng bộ nhớ. Chỉ bật khi thực sự cần thiết."
-
-[admin.settings.security.audit.captureFileHash]
-description = "Trích xuất mã băm SHA-256 của các tệp PDF tải lên để xác minh tính toàn vẹn. Độc lập với mức kiểm toán."
-label = "Ghi nhận mã băm tệp (SHA-256)"
-
-[admin.settings.security.audit.capturePdfAuthor]
-description = "Trích xuất trường tác giả từ tài liệu PDF trong quá trình xử lý. Yêu cầu phân tích PDF, tăng độ trễ. Độc lập với mức kiểm toán."
-label = "Ghi nhận metadata Tác giả PDF"
-
-[admin.settings.security.audit.captureOperationResults]
-description = "Ghi nhận giá trị trả về của phương thức. Không khuyến nghị: làm tăng đáng kể lượng log và dung lượng đĩa."
-label = "Ghi nhận kết quả thao tác"
 
 [admin.settings.security.csrfDisabled]
 description = "Tắt bảo vệ Cross-Site Request Forgery (không khuyến nghị)"
@@ -1268,6 +1272,14 @@ label = "Tên người dùng ban đầu"
 [admin.settings.security.jwt]
 label = "Cấu hình JWT"
 
+[admin.settings.security.jwt.allowedClockSkewSeconds]
+description = "Dung sai đối với độ lệch thời gian giữa máy khách/máy chủ trong quá trình xác thực token (mặc định: 60 giây)"
+label = "Dung sai độ lệch đồng hồ (giây)"
+
+[admin.settings.security.jwt.desktopTokenExpiryMinutes]
+description = "Thời hạn token truy cập tính theo phút cho máy khách máy tính để bàn. Ứng dụng desktop được tự động phát hiện qua User-Agent và nhận phiên lâu hơn để có UX tốt hơn (mặc định: 43200 = 30 ngày)"
+label = "Thời hạn Token Máy tính để bàn (phút)"
+
 [admin.settings.security.jwt.enableKeyCleanup]
 description = "Tự động xóa khóa JWT đã hết hạn"
 label = "Bật dọn dẹp khóa"
@@ -1276,29 +1288,21 @@ label = "Bật dọn dẹp khóa"
 description = "Tự động xoay vòng khóa ký JWT định kỳ"
 label = "Bật xoay vòng khóa"
 
-[admin.settings.security.jwt.tokenExpiryMinutes]
-description = "Thời hạn token truy cập tính theo phút cho máy khách web (mặc định: 1440 = 24 giờ)"
-label = "Thời hạn Token Web (phút)"
-
-[admin.settings.security.jwt.desktopTokenExpiryMinutes]
-description = "Thời hạn token truy cập tính theo phút cho máy khách máy tính để bàn. Ứng dụng desktop được tự động phát hiện qua User-Agent và nhận phiên lâu hơn để có UX tốt hơn (mặc định: 43200 = 30 ngày)"
-label = "Thời hạn Token Máy tính để bàn (phút)"
-
-[admin.settings.security.jwt.allowedClockSkewSeconds]
-description = "Dung sai đối với độ lệch thời gian giữa máy khách/máy chủ trong quá trình xác thực token (mặc định: 60 giây)"
-label = "Dung sai độ lệch đồng hồ (giây)"
+[admin.settings.security.jwt.persistence]
+description = "Lưu trữ khóa JWT bền vững để tồn tại qua lần khởi động lại máy chủ"
+label = "Bật lưu trữ khóa"
 
 [admin.settings.security.jwt.refreshGraceMinutes]
 description = "Cho phép làm mới token trong số phút này sau khi hết hạn (mặc định: 15 phút, tối đa 3 lần thử)"
 label = "Khoảng ân hạn làm mới (phút)"
 
-[admin.settings.security.jwt.persistence]
-description = "Lưu trữ khóa JWT bền vững để tồn tại qua lần khởi động lại máy chủ"
-label = "Bật lưu trữ khóa"
-
 [admin.settings.security.jwt.secureCookie]
 description = "Yêu cầu HTTPS cho cookie JWT (khuyến nghị cho môi trường sản xuất)"
 label = "Cookie an toàn"
+
+[admin.settings.security.jwt.tokenExpiryMinutes]
+description = "Thời hạn token truy cập tính theo phút cho máy khách web (mặc định: 1440 = 24 giờ)"
+label = "Thời hạn Token Web (phút)"
 
 [admin.settings.security.loginAttemptCount]
 description = "Số lần đăng nhập thất bại tối đa trước khi khóa tài khoản"
@@ -1586,68 +1590,6 @@ goToSettings = "Đi tới cài đặt kiểm toán"
 notAvailable = "Hệ thống kiểm toán không khả dụng"
 notAvailableMessage = "Hệ thống kiểm toán chưa được cấu hình hoặc không khả dụng."
 
-[audit.error]
-title = "Lỗi khi tải hệ thống kiểm toán"
-
-[audit.export]
-clearFilters = "Xóa"
-description = "Xuất sự kiện kiểm toán sang định dạng CSV hoặc JSON. Dùng bộ lọc để giới hạn dữ liệu xuất."
-endDate = "Ngày kết thúc"
-error = "Không thể xuất dữ liệu"
-exportButton = "Xuất dữ liệu"
-fieldAuthor = "Tác giả (từ PDF)"
-fieldDate = "Ngày"
-fieldDocumentName = "Tên tài liệu"
-fieldFileHash = "Mã băm tệp (SHA-256)"
-fieldIpAddress = "Địa chỉ IP"
-fieldOperationResults = "Kết quả thao tác"
-fieldOutcome = "Kết quả (Thành công/Thất bại)"
-fieldTool = "Công cụ"
-fieldUsername = "Tên người dùng"
-filterByType = "Lọc theo loại"
-filterByUser = "Lọc theo người dùng"
-filters = "Bộ lọc (Tùy chọn)"
-format = "Định dạng xuất"
-selectFields = "Chọn trường để bao gồm"
-startDate = "Ngày bắt đầu"
-title = "Xuất dữ liệu kiểm toán"
-verboseRequired = "Yêu cầu mức kiểm toán VERBOSE"
-
-[audit.systemStatus]
-autoRefresh = "Tự động làm mới"
-autoRefreshLabel = "Tự động làm mới mỗi 30 giây"
-captureBySettings = "Bật trong cài đặt"
-capturedFields = "Trường đã ghi nhận"
-date = "Ngày"
-days = "ngày"
-disabled = "Đã tắt"
-documentName = "Tên tài liệu"
-enabled = "Đã bật"
-fileHash = "Mã băm tệp"
-level = "Mức kiểm toán"
-pdfAuthor = "Tác giả PDF"
-retention = "Thời gian lưu trữ"
-status = "Ghi nhật ký kiểm toán"
-title = "Trạng thái hệ thống"
-tool = "Công cụ"
-totalEvents = "Tổng số sự kiện"
-username = "Tên người dùng"
-verboseOnly = "Chỉ VERBOSE"
-
-[audit.stats]
-activeUsers = "Người dùng hoạt động"
-attention = "Cần chú ý"
-avgLatency = "Độ trễ trung bình"
-error = "Lỗi tải thống kê"
-errorLoadingStats = "Không tải được thống kê"
-excellent = "Xuất sắc"
-good = "Tốt"
-noData = "N/A"
-successRate = "Tỷ lệ thành công"
-title = "Tổng quan"
-totalEvents = "Tổng số sự kiện"
-vsLastPeriod = "so với kỳ trước"
-
 [audit.charts]
 byTool = "Công cụ được dùng nhiều nhất"
 byType = "Sự kiện theo loại"
@@ -1660,6 +1602,27 @@ noData = "Không có dữ liệu cho giai đoạn này"
 overTime = "Sự kiện theo thời gian"
 title = "Bảng điều khiển kiểm toán"
 week = "Tuần"
+
+[audit.clearData]
+cancel = "Hủy"
+codeDoesNotMatch = "Mã không khớp"
+codePlaceholder = "Nhập mã tại đây"
+confirmationCode = "Mã xác nhận"
+confirmationRequired = "Xóa toàn bộ dữ liệu kiểm toán"
+confirmMessage = "Thao tác này sẽ xóa vĩnh viễn tất cả nhật ký kiểm toán. Nhập mã xác nhận bên dưới để tiếp tục."
+confirmTitle = "Vui lòng xác nhận bạn muốn xóa"
+deleteButton = "Xóa"
+enterCode = "Mã xác nhận"
+enterCodeBelow = "Nhập mã chính xác như hiển thị ở trên (phân biệt chữ hoa/thường)"
+initiateDelete = "Xóa toàn bộ dữ liệu"
+irreversible = "KHÔNG THỂ HOÀN TÁC"
+success = "Thành công"
+successMessage = "Đã xóa thành công toàn bộ dữ liệu kiểm toán"
+warning1 = "Hành động này không thể hoàn tác"
+warning2 = "Xóa dữ liệu kiểm toán sẽ loại bỏ vĩnh viễn tất cả nhật ký kiểm toán lịch sử, bao gồm sự kiện bảo mật, hoạt động người dùng và thao tác tệp khỏi cơ sở dữ liệu."
+
+[audit.error]
+title = "Lỗi khi tải hệ thống kiểm toán"
 
 [audit.events]
 actions = "Hành động"
@@ -1687,40 +1650,81 @@ type = "Loại"
 user = "Người dùng"
 viewDetails = "Xem chi tiết"
 
+[audit.export]
+clearFilters = "Xóa"
+description = "Xuất sự kiện kiểm toán sang định dạng CSV hoặc JSON. Dùng bộ lọc để giới hạn dữ liệu xuất."
+endDate = "Ngày kết thúc"
+error = "Không thể xuất dữ liệu"
+exportButton = "Xuất dữ liệu"
+fieldAuthor = "Tác giả (từ PDF)"
+fieldDate = "Ngày"
+fieldDocumentName = "Tên tài liệu"
+fieldFileHash = "Mã băm tệp (SHA-256)"
+fieldIpAddress = "Địa chỉ IP"
+fieldOperationResults = "Kết quả thao tác"
+fieldOutcome = "Kết quả (Thành công/Thất bại)"
+fieldTool = "Công cụ"
+fieldUsername = "Tên người dùng"
+filterByType = "Lọc theo loại"
+filterByUser = "Lọc theo người dùng"
+filters = "Bộ lọc (Tùy chọn)"
+format = "Định dạng xuất"
+selectFields = "Chọn trường để bao gồm"
+startDate = "Ngày bắt đầu"
+title = "Xuất dữ liệu kiểm toán"
+verboseRequired = "Yêu cầu mức kiểm toán VERBOSE"
+
 [audit.filters]
 allOutcomes = "Tất cả"
 failureOnly = "Chỉ thất bại"
-last7Days = "7 ngày qua"
 last30Days = "30 ngày qua"
+last7Days = "7 ngày qua"
 outcomeFilter = "Kết quả"
 quickPresets = "Bộ lọc nhanh"
 successOnly = "Chỉ thành công"
 thisMonth = "Tháng này"
 today = "Hôm nay"
 
+[audit.stats]
+activeUsers = "Người dùng hoạt động"
+attention = "Cần chú ý"
+avgLatency = "Độ trễ trung bình"
+error = "Lỗi tải thống kê"
+errorLoadingStats = "Không tải được thống kê"
+excellent = "Xuất sắc"
+good = "Tốt"
+noData = "N/A"
+successRate = "Tỷ lệ thành công"
+title = "Tổng quan"
+totalEvents = "Tổng số sự kiện"
+vsLastPeriod = "so với kỳ trước"
+
+[audit.systemStatus]
+autoRefresh = "Tự động làm mới"
+autoRefreshLabel = "Tự động làm mới mỗi 30 giây"
+captureBySettings = "Bật trong cài đặt"
+capturedFields = "Trường đã ghi nhận"
+date = "Ngày"
+days = "ngày"
+disabled = "Đã tắt"
+documentName = "Tên tài liệu"
+enabled = "Đã bật"
+fileHash = "Mã băm tệp"
+level = "Mức kiểm toán"
+pdfAuthor = "Tác giả PDF"
+retention = "Thời gian lưu trữ"
+status = "Ghi nhật ký kiểm toán"
+title = "Trạng thái hệ thống"
+tool = "Công cụ"
+totalEvents = "Tổng số sự kiện"
+username = "Tên người dùng"
+verboseOnly = "Chỉ VERBOSE"
+
 [audit.tabs]
 clearData = "Xóa dữ liệu"
 dashboard = "Bảng điều khiển"
 events = "Sự kiện kiểm toán"
 export = "Xuất"
-
-[audit.clearData]
-cancel = "Hủy"
-codeDoesNotMatch = "Mã không khớp"
-codePlaceholder = "Nhập mã tại đây"
-confirmationCode = "Mã xác nhận"
-confirmationRequired = "Xóa toàn bộ dữ liệu kiểm toán"
-confirmMessage = "Thao tác này sẽ xóa vĩnh viễn tất cả nhật ký kiểm toán. Nhập mã xác nhận bên dưới để tiếp tục."
-confirmTitle = "Vui lòng xác nhận bạn muốn xóa"
-deleteButton = "Xóa"
-enterCode = "Mã xác nhận"
-enterCodeBelow = "Nhập mã chính xác như hiển thị ở trên (phân biệt chữ hoa/thường)"
-initiateDelete = "Xóa toàn bộ dữ liệu"
-irreversible = "KHÔNG THỂ HOÀN TÁC"
-success = "Thành công"
-successMessage = "Đã xóa thành công toàn bộ dữ liệu kiểm toán"
-warning1 = "Hành động này không thể hoàn tác"
-warning2 = "Xóa dữ liệu kiểm toán sẽ loại bỏ vĩnh viễn tất cả nhật ký kiểm toán lịch sử, bao gồm sự kiện bảo mật, hoạt động người dùng và thao tác tệp khỏi cơ sở dữ liệu."
 
 [auth]
 accessDenied = "Từ chối truy cập"
@@ -2358,6 +2362,9 @@ title = "Thay đổi quyền"
 [changePermissions.tooltip.warning]
 text = "Để các quyền này không bị thay đổi, hãy dùng công cụ Thêm mật khẩu để đặt mật khẩu chủ sở hữu."
 
+[cloudBadge]
+tooltip = "Thao tác này sẽ sử dụng tín dụng đám mây của bạn"
+
 [colorPicker]
 title = "Chọn màu"
 
@@ -2574,10 +2581,48 @@ title = "Điều chỉnh chất lượng"
 [compressPdfs]
 tags = "ép,nhỏ,nhỏ gọn"
 
+[config]
+plan = "Plan"
+
 [config.account.overview]
+confirmDelete = "Delete My Account"
+deleteAccount = "Delete Account"
+deleteAccountTitle = "Delete Account"
+deleteFailed = "Failed to delete account."
+deleteFailedTitle = "Unable to delete account"
+deleteWarning = "This action is permanent and cannot be undone. All your data will be deleted."
+enterEmailConfirm = "To confirm deletion, please type your email address ({{email}}) below:"
 guestDescription = "Bạn đang đăng nhập với tư cách khách. Hãy cân nhắc nâng cấp tài khoản bên trên."
+label = "Overview"
 manageAccountPreferences = "Quản lý tùy chọn tài khoản của bạn"
+signedInAs = "Signed in as"
 title = "Cài đặt tài khoản"
+
+[config.account.profilePicture]
+description = "Upload an image to personalize your account."
+help = "PNG, JPG, or WebP up to 2MB."
+remove = "Remove"
+sizeError = "Please select an image smaller than 2MB."
+switchedToCustom = "Switched to custom picture. You can now upload your own."
+title = "Profile picture"
+upload = "Upload"
+useCustom = "Use custom picture"
+usingProvider = "Using {{provider}} profile picture"
+
+[config.account.profilePicture.cropper]
+cropError = "Failed to crop image. Please try again."
+invalidImage = "Invalid image file. Please select a valid PNG, JPG, or WebP file."
+processing = "Processing crop..."
+save = "Save Cropped Image"
+sizeErrorAfterCrop = "Cropped image is too large. Please zoom out or crop a smaller area."
+title = "Crop Profile Picture"
+zoom = "Zoom"
+
+[config.account.security]
+changePassword = "Change password"
+description = "Manage your password and security settings."
+title = "Passwords & Security"
+update = "Update password"
 
 [config.account.upgrade]
 description = "Liên kết tài khoản để giữ lịch sử của bạn và truy cập thêm tính năng!"
@@ -2595,6 +2640,7 @@ upgradeButton = "Nâng cấp tài khoản"
 [config.apiKeys]
 chartAriaLabel = "Sử dụng tín dụng: đã dùng {{includedUsed}} trên {{includedTotal}} đi kèm, đã dùng {{purchasedUsed}} trên {{purchasedTotal}} đã mua"
 copyKeyAriaLabel = "Sao chép khóa API"
+creditsRemaining = "Credits Remaining"
 description = "Khóa API của bạn để truy cập bộ công cụ PDF của Stirling. Sao chép vào dự án của bạn hoặc làm mới để tạo khóa mới."
 docsDescription = "Tìm hiểu thêm về tích hợp với Stirling PDF:"
 docsLink = "Tài liệu API"
@@ -2651,9 +2697,11 @@ blackwhite = "Đen & Trắng"
 cbrDpi = "DPI cho kết xuất hình ảnh"
 cbrOptions = "Tùy chọn CBR"
 cbrOutputOptions = "Tùy chọn PDF sang CBR"
+cbrToPdf = "CBR → PDF"
 cbzDpi = "DPI cho kết xuất ảnh"
 cbzOptions = "Tùy chọn CBZ sang PDF"
 cbzOutputOptions = "Tùy chọn PDF sang CBZ"
+cbzToPdf = "CBZ → PDF"
 color = "Màu sắc"
 colorType = "Loại màu"
 combineImages = "Kết hợp ảnh"
@@ -2671,13 +2719,16 @@ desc = "Chuyển đổi tệp giữa các định dạng khác nhau"
 downloadConverted = "Tải tệp đã chuyển đổi"
 downloadHtml = "Tải xuống tệp HTML trung gian thay vì PDF"
 dpi = "DPI"
+ebookToPdf = "eBook → PDF"
 emailOptions = "Tùy chọn Email sang PDF"
+emlToPdf = "Email → PDF"
 errorConversion = "Đã xảy ra lỗi khi chuyển đổi tệp."
 errorNoFiles = "Vui lòng chọn ít nhất một tệp để chuyển đổi."
 errorNoFormat = "Vui lòng chọn cả định dạng nguồn và đích."
 errorNotSupported = "Không hỗ trợ chuyển đổi từ {{from}} sang {{to}}."
 fileFormat = "Định dạng tệp"
 files = "Tệp"
+fileToPdf = "Office/Document → PDF"
 fillPage = "Lấp đầy trang"
 fitDocumentToPage = "Căn tài liệu vừa trang"
 fitOption = "Tùy chọn vừa trang"
@@ -2705,6 +2756,9 @@ pdfaFormat = "Định dạng PDF/A"
 pdfaNote = "PDF/A-1b tương thích hơn, PDF/A-2b hỗ trợ nhiều tính năng hơn."
 pdfaOptions = "Tùy chọn PDF/A"
 pdfOptions = "Tùy chọn PDF"
+pdfToCbr = "PDF → CBR"
+pdfToCbz = "PDF → CBZ"
+pdfToEpub = "PDF → EPUB"
 pdfxDescription = "PDF/X là một tập hợp con tiêu chuẩn ISO của PDF dành cho in ấn và trao đổi đồ họa đáng tin cậy."
 pdfxDigitalSignatureWarning = "PDF chứa chữ ký số. Chữ ký này sẽ bị xóa ở bước tiếp theo."
 pptExt = "PowerPoint (.pptx)"
@@ -2719,6 +2773,7 @@ sourceFormatPlaceholder = "Định dạng nguồn"
 strictMode = "Strict Mode"
 strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
 svgPdfOptions = "SVG to PDF Options"
+svgToPdf = "SVG → PDF"
 svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
 targetFormatPlaceholder = "Định dạng đích"
 textRtf = "Văn bản/RTF"
@@ -2791,6 +2846,77 @@ description = "These cookies are essential for the website to function properly.
 [cookieBanner.services]
 posthog = "PostHog Analytics"
 scarf = "Scarf Pixel"
+
+[credits]
+enableOverageBilling = "Bật tính phí vượt mức"
+maybeLater = "Để sau"
+upgrade = "Nâng cấp"
+
+[credits.insufficient]
+brief = "Tín dụng không đủ. Bạn cần {{required}} tín dụng nhưng chỉ có {{current}}."
+freeTier = "Nâng cấp lên Team để có tín dụng gấp 10 lần và tính phí vượt mức không giới hạn."
+managedMember = "Vui lòng liên hệ trưởng nhóm để được hỗ trợ."
+message = "Bạn không có đủ tín dụng để chạy {{tool}}. Hiện bạn có {{current}} tín dụng."
+messageWithAmount = "Bạn cần {{required}} tín dụng để chạy {{tool}}, nhưng bạn chỉ có {{current}}."
+teamMember = "Bật tính phí vượt mức để không bao giờ hết tín dụng."
+title = "Tín dụng không đủ"
+
+[credits.modal]
+advancedMonitoring = "Giám sát nâng cao"
+allInOneWorkspace = "Không gian làm việc PDF tất cả trong một (viewer, tools & agent)"
+apiSandbox = "API sandbox"
+contactSales = "Liên hệ bộ phận kinh doanh"
+creditsRemaining = "Còn lại {{current}} trên {{total}}"
+creditsThisMonth = "Tín dụng hàng tháng"
+current = "Gói hiện tại"
+customPricing = "Tùy chỉnh"
+customSmartFolders = "Thư mục thông minh tùy chỉnh"
+dedicatedSupportSlas = "Hỗ trợ riêng & SLA"
+enterpriseSubscription = "Enterprise"
+everythingInCredits = "Bao gồm mọi thứ trong Credits, cộng thêm:"
+everythingInFree = "Bao gồm mọi thứ trong Free, cộng thêm:"
+fasterThroughput = "Tốc độ xử lý nhanh gấp 10 lần"
+forRegularWork = "Dành cho công việc PDF thường xuyên:"
+freeTier = "Bậc Free"
+fullyPrivateFiles = "Tệp hoàn toàn riêng tư"
+largeFileProcessing = "Xử lý tệp lớn"
+managedMemberMessage = "Bạn có quyền truy cập tín dụng không giới hạn thông qua nhóm của mình. Nếu cần hỗ trợ, vui lòng liên hệ trưởng nhóm."
+managedMemberTitle = "Tín dụng không giới hạn"
+meteringBillingNote = "Tín dụng vượt mức sẽ được tính phí hàng tháng cùng với gói Team của bạn. Theo dõi mức sử dụng bất cứ lúc nào trong cài đặt tài khoản."
+meteringExplanation = "Gói Team của bạn bao gồm {{credits}} tín dụng mỗi tháng. Khi dùng hết, tính phí vượt mức sẽ tự động cung cấp thêm tín dụng để bạn không bao giờ phải dừng công việc."
+meteringIncluded = "Bao gồm {{credits}} tín dụng/tháng với Team"
+meteringNeverRunOut = "Không bao giờ hết tín dụng"
+meteringNoCommitment = "Không cam kết, có thể hủy bất cứ lúc nào"
+meteringPayAsYouGo = "Chỉ trả cho phần bạn dùng"
+meteringPrice = "Tín dụng bổ sung với giá {{price}}/tín dụng"
+meteringTitle = "Tính phí vượt mức theo mức sử dụng"
+monthlyCredits = "tín dụng hàng tháng"
+orgWideAccess = "Kiểm soát truy cập toàn tổ chức"
+overage = "vượt mức"
+perMonth = "/tháng"
+popular = "Phổ biến"
+premiumAiModels = "Mô hình AI cao cấp"
+prioritySupport = "Hỗ trợ ưu tiên"
+privateDocCloud = "Đám mây tài liệu riêng tư"
+ragFineTuning = "RAG + fine-tuning"
+secureApiAccess = "Truy cập API an toàn"
+selfHostLink = "Xem tài liệu và các gói"
+selfHostPrompt = "Muốn tự triển khai?"
+standardThroughput = "Tốc độ xử lý tiêu chuẩn"
+subtitle = "Nâng cấp lên Team để có lượng tín dụng gấp 10 lần và xử lý nhanh hơn."
+subtitlePro = "Bật tính phí vượt mức tự động để không bao giờ hết tín dụng."
+teamLeaderOnly = "Chỉ trưởng nhóm mới có thể bật tính phí vượt mức"
+teamSubscription = "Team"
+titleExhausted = "Bạn đã dùng hết tín dụng miễn phí"
+titleExhaustedPro = "Bạn đã hết tín dụng"
+unlimitedApiAccess = "Truy cập API không giới hạn"
+unlimitedMonthlyCredits = "Giấy phép theo site"
+unlimitedSeats = "Số ghế không giới hạn"
+
+[credits.modal.features]
+everythingInCredits = "Bao gồm mọi thứ trong Credits, cộng thêm:"
+everythingInFree = "Bao gồm mọi thứ trong Free, cộng thêm:"
+forRegularWork = "Dành cho công việc PDF thường xuyên:"
 
 [crop]
 autoCrop = "Tự động cắt khoảng trắng"
@@ -3469,10 +3595,6 @@ desc = "Xây dựng quy trình nhiều bước bằng cách xâu chuỗi các th
 tags = "quy trình,trình tự,tự động hóa"
 title = "Tự động hóa"
 
-[home.formFill]
-desc = "Điền các trường biểu mẫu PDF một cách tương tác bằng trình chỉnh sửa trực quan"
-title = "Điền biểu mẫu"
-
 [home.autoRename]
 desc = "Tự động đổi tên tệp PDF dựa trên tiêu đề được phát hiện"
 tags = "tự động phát hiện,dựa trên tiêu đề,tổ chức,đổi nhãn"
@@ -3567,6 +3689,10 @@ title = "Trích xuất trang"
 desc = "Xóa tất cả các phần tử tương tác và biểu mẫu từ PDF"
 tags = "làm phẳng,loại bỏ,tương tác"
 title = "Làm phẳng"
+
+[home.formFill]
+desc = "Điền các trường biểu mẫu PDF một cách tương tác bằng trình chỉnh sửa trực quan"
+title = "Điền biểu mẫu"
 
 [home.getPdfInfo]
 desc = "Lấy bất kỳ và tất cả thông tin có thể về PDF"
@@ -3854,6 +3980,7 @@ version = "Phiên bản"
 accountCreatedSuccess = "Tạo tài khoản thành công! Bạn có thể đăng nhập."
 alreadyLoggedIn = "Bạn đã đăng nhập vào"
 alreadyLoggedIn2 = "thiết bị. Vui lòng đăng xuất khỏi các thiết bị và thử lại."
+backToSignIn = "Back to sign in"
 cancel = "Hủy"
 changePasswordWarning = "Vui lòng đổi mật khẩu sau khi đăng nhập lần đầu"
 credentialsUpdated = "Thông tin xác thực của bạn đã được cập nhật. Vui lòng đăng nhập lại."
@@ -3895,13 +4022,17 @@ or = "Hoặc"
 password = "Mật khẩu"
 passwordChangedSuccess = "Đổi mật khẩu thành công! Vui lòng đăng nhập bằng mật khẩu mới."
 passwordResetSent = "Liên kết đặt lại mật khẩu đã được gửi tới {{email}}! Hãy kiểm tra email và làm theo hướng dẫn."
+passwordUpdatedSuccess = "Your password has been updated successfully."
 pleaseEnterBoth = "Vui lòng nhập cả email và mật khẩu"
 pleaseEnterEmail = "Vui lòng nhập địa chỉ email của bạn"
 relyingPartyRegistrationNotFound = "Không tìm thấy đăng ký relying party"
 rememberme = "Ghi nhớ tôi"
+resetHelp = "Enter your email to receive a secure link to reset your password. If the link has expired, please request a new one."
+resetYourPassword = "Reset your password"
 saml2RequiresLicense = "Đăng nhập SAML cần giấy phép trả phí (Server hoặc Enterprise). Vui lòng liên hệ quản trị viên để nâng cấp gói của bạn."
 sending = "Đang gửi…"
 sendMagicLink = "Gửi Magic Link"
+sendResetLink = "Send reset link"
 sessionExpired = "Phiên của bạn đã hết hạn. Vui lòng đăng nhập lại."
 signin = "Đăng nhập"
 signInAnonymously = "Đăng nhập với tư cách Khách"
@@ -3910,9 +4041,11 @@ signinTitle = "Vui lòng đăng nhập"
 signInWith = "Đăng nhập với"
 signOut = "Đăng xuất"
 ssoSignIn = "Đăng nhập qua Single Sign-on"
+subtitle = "Sign back in to Stirling PDF"
 title = "Đăng nhập"
 toManySessions = "Bạn có quá nhiều phiên hoạt động"
 unexpectedError = "Lỗi không mong muốn: {{message}}"
+updatePassword = "Update password"
 useEmailInstead = "Đăng nhập bằng email"
 useMagicLink = "Thay vào đó dùng magic link"
 userIsDisabled = "Người dùng bị vô hiệu hóa, hiện bị chặn đăng nhập với tên người dùng này. Vui lòng liên hệ quản trị viên."
@@ -4235,6 +4368,15 @@ body = "Stirling hoạt động tốt nhất như ứng dụng desktop. Bạn c�
 title = "Tải xuống"
 titleWithOs = "Tải cho {{osLabel}}"
 
+[onboarding.freeTrial]
+afterTrialWithoutPayment = "After your trial ends, you'll continue with our free tier. Add a payment method to keep Pro access."
+afterTrialWithPayment = "Your Pro subscription will start automatically when the trial ends."
+body = "You have full access to Stirling PDF Pro features during your trial. Enjoy unlimited conversions, larger file sizes, and priority processing."
+daysRemaining = "{{days}} days remaining"
+daysRemainingSingular = "{{days}} day remaining"
+title = "Your 30-Day Pro Trial"
+trialEnds = "Trial ends {{date}}"
+
 [onboarding.planOverview]
 adminBodyLoginDisabled = "Khi bật chế độ đăng nhập, bạn có thể quản lý người dùng, cấu hình cài đặt và theo dõi tình trạng server. <strong>{{freeTierLimit}}</strong> người đầu tiên trên server của bạn được dùng Stirling miễn phí."
 adminBodyLoginEnabled = "Là admin, bạn có thể quản lý người dùng, cấu hình cài đặt và theo dõi tình trạng server. <strong>{{freeTierLimit}}</strong> người đầu tiên trên server của bạn được dùng Stirling miễn phí."
@@ -4370,75 +4512,6 @@ title = "Trình chỉnh sửa trang"
 zoomIn = "Phóng to"
 zoomOut = "Thu nhỏ"
 
-[viewer]
-cannotPreviewFile = "Không thể xem trước tệp"
-dualPageView = "Chế độ xem hai trang"
-firstPage = "Trang đầu"
-lastPage = "Trang cuối"
-nextPage = "Trang tiếp"
-onlyPdfSupported = "Trình xem chỉ hỗ trợ tệp PDF. Tệp này có vẻ là định dạng khác."
-previousPage = "Trang trước"
-singlePageView = "Chế độ xem trang đơn"
-unknownFile = "Tệp không xác định"
-zoomIn = "Phóng to"
-zoomOut = "Thu nhỏ"
-
-[viewer.attachments]
-title = "Tệp đính kèm"
-searchPlaceholder = "Tìm kiếm tệp đính kèm"
-noSupport = "Trình xem này không hỗ trợ tệp đính kèm."
-noDocument = "Mở một PDF để xem các tệp đính kèm của nó."
-loading = "Đang tải tệp đính kèm..."
-empty = "Không có tệp đính kèm trong tài liệu này"
-noMatch = "Không có tệp đính kèm nào khớp với tìm kiếm của bạn"
-
-[viewer.formBar]
-title = "Trường biểu mẫu"
-unsavedBadge = "Chưa lưu"
-unsavedDesc = "Bạn có các thay đổi chưa được lưu"
-hasFieldsDesc = "PDF này chứa các trường có thể điền"
-dismiss = "Bỏ qua"
-apply = "Áp dụng thay đổi"
-download = "Tải xuống PDF"
-
-[rightRail]
-closeSelected = "Đóng các tệp đã chọn"
-selectAll = "Chọn tất cả"
-deselectAll = "Bỏ chọn tất cả"
-selectByNumber = "Chọn theo số trang"
-deleteSelected = "Xóa các trang đã chọn"
-closePdf = "Đóng PDF"
-exportAll = "Xuất PDF"
-downloadSelected = "Tải xuống các tệp đã chọn"
-annotations = "Chú thích"
-exportSelected = "Xuất các trang đã chọn"
-formFill = "Điền biểu mẫu"
-saveChanges = "Lưu thay đổi"
-toggleAttachments = "Bật/Tắt tệp đính kèm"
-toggleTheme = "Chuyển đổi chủ đề"
-language = "Ngôn ngữ"
-toggleAnnotations = "Chuyển đổi hiển thị chú thích"
-search = "Tìm kiếm PDF"
-panMode = "Chế độ kéo"
-applyRedactionsFirst = "Áp dụng bôi đen trước"
-rotateLeft = "Xoay trái"
-rotateRight = "Xoay phải"
-toggleSidebar = "Chuyển đổi thanh bên"
-toggleBookmarks = "Bật/tắt dấu trang"
-print = "In PDF"
-ruler = "Thước / Đo"
-draw = "Vẽ"
-redact = "Bôi đen"
-exitRedaction = "Thoát chế độ bôi đen"
-save = "Lưu"
-downloadAll = "Tải xuống tất cả"
-saveAll = "Lưu tất cả"
-
-[textAlign]
-left = "Trái"
-center = "Giữa"
-right = "Phải"
-
 [pageExtracter]
 header = "Trích xuất trang"
 placeholder = "(ví dụ: 1,2,8 hoặc 4,7,12-16 hoặc 2n-1)"
@@ -4547,6 +4620,9 @@ title = "Mẹo"
 autoClose = "Cửa sổ này sẽ tự động đóng..."
 billingPeriod = "Chu kỳ thanh toán"
 canCloseWindow = "Bạn có thể đóng cửa sổ này."
+checkoutInstructions = "Hoàn tất mua hàng trong cửa sổ trình duyệt vừa mở. Sau khi thanh toán xong, quay lại đây và nhấp nút bên dưới để làm mới thông tin thanh toán của bạn."
+checkoutOpened = "Trang thanh toán đã mở trong trình duyệt"
+closeLater = "Để sau"
 emailInvalid = "Vui lòng nhập địa chỉ email hợp lệ"
 enterpriseNote = "Có thể điều chỉnh số ghế khi thanh toán (1-1000)."
 error = "Lỗi thanh toán"
@@ -4568,6 +4644,7 @@ perMonth = "/tháng"
 perYear = "/năm"
 preparing = "Đang chuẩn bị thanh toán của bạn..."
 redirecting = "Đang chuyển đến trang thanh toán an toàn..."
+refreshBilling = "Tôi đã hoàn tất thanh toán - Làm mới thông tin thanh toán"
 stripeNotConfigured = "Chưa cấu hình Stripe"
 stripeNotConfiguredMessage = "Tích hợp thanh toán Stripe chưa được cấu hình. Vui lòng liên hệ quản trị viên."
 success = "Thanh toán thành công!"
@@ -4579,10 +4656,6 @@ upgradeCompleteMessage = "Gói đăng ký của bạn đã nâng cấp thành c�
 upgradeSuccess = "Thanh toán thành công! Gói của bạn đã được nâng cấp. Giấy phép trên server đã được cập nhật. Bạn sẽ sớm nhận email xác nhận."
 upgradeTitle = "Nâng cấp lên {{planName}}"
 yearly = "Theo năm"
-checkoutOpened = "Trang thanh toán đã mở trong trình duyệt"
-checkoutInstructions = "Hoàn tất mua hàng trong cửa sổ trình duyệt vừa mở. Sau khi thanh toán xong, quay lại đây và nhấp nút bên dưới để làm mới thông tin thanh toán của bạn."
-refreshBilling = "Tôi đã hoàn tất thanh toán - Làm mới thông tin thanh toán"
-closeLater = "Để sau"
 
 [payment.emailStage]
 continue = "Tiếp tục"
@@ -4806,13 +4879,6 @@ prompt = "Chọn trang để trích xuất bảng"
 submit = "Trích xuất"
 title = "PDF sang CSV"
 
-[PDFToXLSX]
-header = "PDF sang Excel"
-prompt = "Chọn trang để trích xuất bảng"
-submit = "Chuyển đổi"
-title = "PDF sang Excel (XLSX)"
-tags = "bảng tính,excel,xlsx,bảng,trích xuất,chuyển đổi"
-
 [PDFToHTML]
 credit = "Dịch vụ này sử dụng pdftohtml để chuyển đổi tệp."
 header = "PDF sang HTML"
@@ -4911,6 +4977,13 @@ title = "PDF sang Word"
 [PDFToWord.selectText]
 1 = "Định dạng tệp đầu ra"
 
+[PDFToXLSX]
+header = "PDF sang Excel"
+prompt = "Chọn trang để trích xuất bảng"
+submit = "Chuyển đổi"
+tags = "bảng tính,excel,xlsx,bảng,trích xuất,chuyển đổi"
+title = "PDF sang Excel (XLSX)"
+
 [PDFToXML]
 credit = "Dịch vụ này sử dụng LibreOffice để chuyển đổi tệp."
 header = "PDF sang XML"
@@ -4976,8 +5049,11 @@ manage = "Quản lý"
 perMonth = "/tháng"
 perSeat = "/ghế"
 popular = "Phổ biến"
+purchase = "Purchase"
+selectCredits = "Select Credit Amount"
 selectPlan = "Chọn gói"
 showComparison = "So sánh tất cả tính năng"
+totalCost = "Total Cost"
 upgrade = "Nâng cấp"
 withServer = "+ Gói Server"
 
@@ -4985,19 +5061,29 @@ withServer = "+ Gói Server"
 subtitle = "Chi tiết đăng ký hiện tại của bạn"
 title = "Gói đang hoạt động"
 
+[plan.api]
+large = "5,000 Credits"
+medium = "1,000 Credits"
+small = "500 Credits"
+xsmall = "100 Credits"
+
+[plan.apiPackages]
+subtitle = "Purchase API credits for your applications"
+title = "API Credit Packages"
+
 [plan.availablePlans]
-subtitle = "Chọn gói phù hợp với nhu cầu của bạn"
 loadError = "Không thể tải giá gói. Sử dụng giá trị mặc định."
+subtitle = "Chọn gói phù hợp với nhu cầu của bạn"
 title = "Các gói khả dụng"
 
 [plan.enterprise]
-siteLicense = "Giấy phép theo site"
 highlight1 = "Giá tùy chỉnh"
 highlight2 = "Hỗ trợ chuyên trách"
 highlight3 = "Tính năng mới nhất"
 name = "Enterprise"
 requiresServer = "Cần Server"
 requiresServerMessage = "Vui lòng nâng cấp lên gói Server trước khi nâng cấp lên Enterprise."
+siteLicense = "Giấy phép theo site"
 
 [plan.feature]
 api = "Quyền truy cập API"
@@ -5069,76 +5155,19 @@ successMessage = "Giấy phép của bạn đã được kích hoạt thành cô
 name = "Team"
 siteLicense = "Giấy phép theo site"
 
-[credits]
-enableOverageBilling = "Bật tính phí vượt mức"
-maybeLater = "Để sau"
-upgrade = "Nâng cấp"
-
-[credits.modal]
-advancedMonitoring = "Giám sát nâng cao"
-allInOneWorkspace = "Không gian làm việc PDF tất cả trong một (viewer, tools & agent)"
-apiSandbox = "API sandbox"
-contactSales = "Liên hệ bộ phận kinh doanh"
-creditsRemaining = "Còn lại {{current}} trên {{total}}"
-creditsThisMonth = "Tín dụng hàng tháng"
-current = "Gói hiện tại"
-customPricing = "Tùy chỉnh"
-customSmartFolders = "Thư mục thông minh tùy chỉnh"
-dedicatedSupportSlas = "Hỗ trợ riêng & SLA"
-enterpriseSubscription = "Enterprise"
-everythingInCredits = "Bao gồm mọi thứ trong Credits, cộng thêm:"
-everythingInFree = "Bao gồm mọi thứ trong Free, cộng thêm:"
-fasterThroughput = "Tốc độ xử lý nhanh gấp 10 lần"
-forRegularWork = "Dành cho công việc PDF thường xuyên:"
-freeTier = "Bậc Free"
-fullyPrivateFiles = "Tệp hoàn toàn riêng tư"
-largeFileProcessing = "Xử lý tệp lớn"
-managedMemberMessage = "Bạn có quyền truy cập tín dụng không giới hạn thông qua nhóm của mình. Nếu cần hỗ trợ, vui lòng liên hệ trưởng nhóm."
-managedMemberTitle = "Tín dụng không giới hạn"
-meteringBillingNote = "Tín dụng vượt mức sẽ được tính phí hàng tháng cùng với gói Team của bạn. Theo dõi mức sử dụng bất cứ lúc nào trong cài đặt tài khoản."
-meteringExplanation = "Gói Team của bạn bao gồm {{credits}} tín dụng mỗi tháng. Khi dùng hết, tính phí vượt mức sẽ tự động cung cấp thêm tín dụng để bạn không bao giờ phải dừng công việc."
-meteringIncluded = "Bao gồm {{credits}} tín dụng/tháng với Team"
-meteringNoCommitment = "Không cam kết, có thể hủy bất cứ lúc nào"
-meteringNeverRunOut = "Không bao giờ hết tín dụng"
-meteringPayAsYouGo = "Chỉ trả cho phần bạn dùng"
-meteringPrice = "Tín dụng bổ sung với giá {{price}}/tín dụng"
-meteringTitle = "Tính phí vượt mức theo mức sử dụng"
-monthlyCredits = "tín dụng hàng tháng"
-orgWideAccess = "Kiểm soát truy cập toàn tổ chức"
-overage = "vượt mức"
-perMonth = "/tháng"
-popular = "Phổ biến"
-premiumAiModels = "Mô hình AI cao cấp"
-prioritySupport = "Hỗ trợ ưu tiên"
-privateDocCloud = "Đám mây tài liệu riêng tư"
-ragFineTuning = "RAG + fine-tuning"
-secureApiAccess = "Truy cập API an toàn"
-selfHostLink = "Xem tài liệu và các gói"
-selfHostPrompt = "Muốn tự triển khai?"
-standardThroughput = "Tốc độ xử lý tiêu chuẩn"
-subtitle = "Nâng cấp lên Team để có lượng tín dụng gấp 10 lần và xử lý nhanh hơn."
-subtitlePro = "Bật tính phí vượt mức tự động để không bao giờ hết tín dụng."
-teamLeaderOnly = "Chỉ trưởng nhóm mới có thể bật tính phí vượt mức"
-teamSubscription = "Team"
-titleExhausted = "Bạn đã dùng hết tín dụng miễn phí"
-titleExhaustedPro = "Bạn đã hết tín dụng"
-unlimitedApiAccess = "Truy cập API không giới hạn"
-unlimitedMonthlyCredits = "Giấy phép theo site"
-unlimitedSeats = "Số ghế không giới hạn"
-
-[credits.modal.features]
-everythingInCredits = "Bao gồm mọi thứ trong Credits, cộng thêm:"
-everythingInFree = "Bao gồm mọi thứ trong Free, cộng thêm:"
-forRegularWork = "Dành cho công việc PDF thường xuyên:"
-
-[credits.insufficient]
-brief = "Tín dụng không đủ. Bạn cần {{required}} tín dụng nhưng chỉ có {{current}}."
-freeTier = "Nâng cấp lên Team để có tín dụng gấp 10 lần và tính phí vượt mức không giới hạn."
-managedMember = "Vui lòng liên hệ trưởng nhóm để được hỗ trợ."
-message = "Bạn không có đủ tín dụng để chạy {{tool}}. Hiện bạn có {{current}} tín dụng."
-messageWithAmount = "Bạn cần {{required}} tín dụng để chạy {{tool}}, nhưng bạn chỉ có {{current}}."
-teamMember = "Bật tính phí vượt mức để không bao giờ hết tín dụng."
-title = "Tín dụng không đủ"
+[plan.trial]
+badge = "Trial"
+continueWithFree = "Continue with Free"
+daysRemaining = "Your trial ends in {{days}} days"
+endDate = "Expires: {{date}}"
+expired = "Your Trial Has Ended"
+expiredMessage = "Your 30-day Pro trial has expired. Subscribe to Pro to continue accessing premium features, or continue with our free tier."
+freeTierLimitations = "Free tier includes basic PDF tools with usage limits."
+message = ""
+subscribe = "Subscribe to Pro"
+subscribeToPro = "Subscribe to Pro"
+subscriptionScheduled = "Subscription scheduled - starts {{date}}"
+title = "Free Trial Active"
 
 [printFile]
 header = "In tệp vào máy in"
@@ -5148,6 +5177,207 @@ title = "In tệp"
 [printFile.selectText]
 1 = "Chọn tệp để in"
 2 = "Nhập tên máy in"
+
+[provider.googledrive]
+name = "Google Drive"
+scope = "Nhập tệp"
+
+[provider.googledrive.apiKey]
+description = "Google API Key cho Google Picker API từ Google Cloud Console"
+label = "API Key"
+
+[provider.googledrive.appId]
+description = "Google Drive App ID từ Google Cloud Console"
+label = "App ID"
+
+[provider.googledrive.clientId]
+description = "Google OAuth 2.0 Client ID từ Google Cloud Console"
+label = "Client ID"
+
+[provider.googledrive.enabled]
+description = "Cho phép người dùng nhập tệp trực tiếp từ Google Drive"
+label = "Bật bộ chọn tệp Google Drive"
+
+[provider.oauth2.generic]
+name = "OAuth2 Tổng quát"
+scope = "SSO"
+
+[provider.oauth2.generic.autoCreateUser]
+description = "Tự động tạo tài khoản người dùng khi đăng nhập OAuth2 lần đầu"
+label = "Tự động tạo người dùng"
+
+[provider.oauth2.generic.blockRegistration]
+description = "Ngăn người dùng mới đăng ký qua OAuth2"
+label = "Chặn đăng ký"
+
+[provider.oauth2.generic.clientId]
+description = "OAuth2 Client ID từ nhà cung cấp của bạn"
+label = "Client ID"
+
+[provider.oauth2.generic.clientSecret]
+description = "OAuth2 client secret từ nhà cung cấp của bạn"
+label = "Client Secret"
+
+[provider.oauth2.generic.enabled]
+description = "Bật xác thực bằng nhà cung cấp OAuth2 tùy chỉnh"
+label = "Bật OAuth2 Tổng quát"
+
+[provider.oauth2.generic.issuer]
+description = "Nhà cung cấp hỗ trợ OpenID Connect Discovery (/.well-known/openid-configuration)"
+label = "Issuer URL"
+
+[provider.oauth2.generic.provider]
+description = "Tên nhà cung cấp OAuth2 của bạn (ví dụ: Azure AD, Okta)"
+label = "Tên nhà cung cấp"
+
+[provider.oauth2.generic.scopes]
+description = "Danh sách scope OAuth2, phân tách bằng dấu phẩy"
+label = "Scopes"
+
+[provider.oauth2.generic.useAsUsername]
+description = "Trường dùng làm tên người dùng"
+label = "Dùng làm Tên người dùng"
+
+[provider.oauth2.github]
+scope = "Xác thực đăng nhập"
+
+[provider.oauth2.github.clientId]
+description = "OAuth2 Client ID từ GitHub Developer Settings"
+label = "Client ID"
+
+[provider.oauth2.github.clientSecret]
+description = "OAuth2 client secret từ GitHub Developer Settings"
+label = "Client Secret"
+
+[provider.oauth2.github.scopes]
+description = "Danh sách scope OAuth2, phân tách bằng dấu phẩy"
+label = "Scopes"
+
+[provider.oauth2.github.useAsUsername]
+description = "Trường dùng làm tên người dùng (email, login, name)"
+label = "Dùng làm Tên người dùng"
+
+[provider.oauth2.google]
+scope = "Xác thực đăng nhập"
+
+[provider.oauth2.google.clientId]
+description = "OAuth2 Client ID từ Google Cloud Console"
+label = "Client ID"
+
+[provider.oauth2.google.clientSecret]
+description = "OAuth2 client secret từ Google Cloud Console"
+label = "Client Secret"
+
+[provider.oauth2.google.scopes]
+description = "Danh sách scope OAuth2, phân tách bằng dấu phẩy"
+label = "Scopes"
+
+[provider.oauth2.google.useAsUsername]
+description = "Trường dùng làm tên người dùng (email, name, given_name, family_name)"
+label = "Dùng làm Tên người dùng"
+
+[provider.oauth2.keycloak]
+scope = "SSO"
+
+[provider.oauth2.keycloak.clientId]
+description = "OAuth2 Client ID từ Keycloak"
+label = "Client ID"
+
+[provider.oauth2.keycloak.clientSecret]
+description = "OAuth2 client secret từ Keycloak"
+label = "Client Secret"
+
+[provider.oauth2.keycloak.issuer]
+description = "URL endpoint OpenID Connect Discovery của realm Keycloak"
+label = "Issuer URL"
+
+[provider.oauth2.keycloak.scopes]
+description = "Danh sách scope OAuth2, phân tách bằng dấu phẩy"
+label = "Scopes"
+
+[provider.oauth2.keycloak.useAsUsername]
+description = "Trường dùng làm tên người dùng (email, name, given_name, family_name, preferred_username)"
+label = "Dùng làm Tên người dùng"
+
+[provider.saml2]
+name = "SAML2"
+scope = "SSO (SAML)"
+
+[provider.saml2.autoCreateUser]
+description = "Tự động tạo tài khoản người dùng khi đăng nhập SAML2 lần đầu"
+label = "Tự động tạo người dùng"
+
+[provider.saml2.blockRegistration]
+description = "Ngăn người dùng mới đăng ký qua SAML2"
+label = "Chặn đăng ký"
+
+[provider.saml2.enabled]
+description = "Bật xác thực SAML2 (chỉ dành cho Enterprise)"
+label = "Bật SAML2"
+
+[provider.saml2.idpCert]
+description = "Đường dẫn chứng chỉ (ví dụ: classpath:okta.cert)"
+label = "Chứng chỉ IDP"
+
+[provider.saml2.idpIssuer]
+description = "ID của nhà cung cấp của bạn"
+label = "IDP Issuer"
+
+[provider.saml2.idpMetadataUri]
+description = "URI metadata của nhà cung cấp của bạn"
+label = "IDP Metadata URI"
+
+[provider.saml2.idpSingleLoginUrl]
+description = "URL để khởi tạo SSO"
+label = "IDP Single Login URL"
+
+[provider.saml2.idpSingleLogoutUrl]
+description = "URL để khởi tạo SLO"
+label = "IDP Single Logout URL"
+
+[provider.saml2.privateKey]
+description = "Đường dẫn khóa riêng của bạn"
+label = "Khóa riêng"
+
+[provider.saml2.provider]
+description = "Tên nhà cung cấp SAML2 của bạn"
+label = "Tên nhà cung cấp"
+
+[provider.saml2.registrationId]
+description = "Tên ứng dụng Service Provider (SP) của bạn"
+label = "Registration ID"
+
+[provider.saml2.spCert]
+description = "Đường dẫn chứng chỉ ký của bạn"
+label = "Chứng chỉ SP"
+
+[provider.smtp]
+name = "SMTP Mail"
+scope = "Thông báo email"
+
+[provider.smtp.enabled]
+description = "Bật thông báo email và chức năng SMTP"
+label = "Bật Email"
+
+[provider.smtp.from]
+description = "Địa chỉ email dùng làm người gửi"
+label = "Địa chỉ người gửi"
+
+[provider.smtp.host]
+description = "Tên máy chủ hoặc địa chỉ IP của máy chủ SMTP của bạn"
+label = "SMTP Host"
+
+[provider.smtp.password]
+description = "Mật khẩu để xác thực SMTP"
+label = "SMTP Password"
+
+[provider.smtp.port]
+description = "Cổng kết nối SMTP (thường là 25, 465 hoặc 587)"
+label = "SMTP Port"
+
+[provider.smtp.username]
+description = "Tên người dùng để xác thực SMTP"
+label = "SMTP Username"
 
 [quickAccess]
 account = "Tài khoản"
@@ -5204,15 +5434,15 @@ title = "Từ cần che"
 failed = "Đã xảy ra lỗi khi che thông tin trong PDF."
 
 [redact.manual]
+activate = "Kích hoạt công cụ che"
+active = "Chế độ che đang bật"
 apply = "Áp dụng"
 applyChanges = "Áp dụng thay đổi"
 applyRedactions = "Apply Redactions"
 applyWarning = "⚠️ Áp dụng vĩnh viễn, không thể hoàn tác và dữ liệu bên dưới sẽ bị xóa"
 boxRedaction = "Vẽ hộp để che"
-colourPicker = "Bộ chọn màu"
 colorLabel = "Màu che"
-active = "Chế độ che đang bật"
-activate = "Kích hoạt công cụ che"
+colourPicker = "Bộ chọn màu"
 controlsTitle = "Điều khiển bôi đen thủ công"
 convertPDFToImageLabel = "Chuyển PDF thành PDF-Image (Dùng để xóa văn bản phía sau hộp)"
 export = "Xuất"
@@ -5608,6 +5838,39 @@ title = "Tương phản cao"
 text = "Đảo hoàn toàn tất cả màu trong PDF, tạo hiệu ứng giống âm bản. Hữu ích để tạo phiên bản chế độ tối hoặc giảm mỏi mắt trong điều kiện thiếu sáng."
 title = "Đảo tất cả màu"
 
+[rightRail]
+annotations = "Chú thích"
+applyRedactionsFirst = "Áp dụng bôi đen trước"
+closePdf = "Đóng PDF"
+closeSelected = "Đóng các tệp đã chọn"
+deleteSelected = "Xóa các trang đã chọn"
+deselectAll = "Bỏ chọn tất cả"
+downloadAll = "Tải xuống tất cả"
+downloadSelected = "Tải xuống các tệp đã chọn"
+draw = "Vẽ"
+exitRedaction = "Thoát chế độ bôi đen"
+exportAll = "Xuất PDF"
+exportSelected = "Xuất các trang đã chọn"
+formFill = "Điền biểu mẫu"
+language = "Ngôn ngữ"
+panMode = "Chế độ kéo"
+print = "In PDF"
+redact = "Bôi đen"
+rotateLeft = "Xoay trái"
+rotateRight = "Xoay phải"
+ruler = "Thước / Đo"
+save = "Lưu"
+saveAll = "Lưu tất cả"
+saveChanges = "Lưu thay đổi"
+search = "Tìm kiếm PDF"
+selectAll = "Chọn tất cả"
+selectByNumber = "Chọn theo số trang"
+toggleAnnotations = "Chuyển đổi hiển thị chú thích"
+toggleAttachments = "Bật/Tắt tệp đính kèm"
+toggleBookmarks = "Bật/tắt dấu trang"
+toggleSidebar = "Chuyển đổi thanh bên"
+toggleTheme = "Chuyển đổi chủ đề"
+
 [rotate]
 rotateLeft = "Xoay ngược chiều kim đồng hồ"
 rotateRight = "Xoay theo chiều kim đồng hồ"
@@ -5755,6 +6018,14 @@ placeholder = "Nhập từ khóa tìm kiếm..."
 searching = "Đang tìm kiếm..."
 title = "Tìm kiếm PDF"
 
+[selfHosted.offline]
+hideTools = "Hide unavailable tools ▴"
+messageNoFallback = "Tools are unavailable until your server comes back online."
+messageWithFallback = "Some tools require a server connection."
+showTools = "View unavailable tools ▾"
+title = "Your Stirling-PDF server is unreachable"
+toolNotAvailableLocally = "Your Stirling-PDF server is offline and \"{{endpoint}}\" is not available on the local backend."
+
 [session]
 expired = "Phiên của bạn đã hết hạn. Vui lòng làm mới trang và thử lại."
 refreshPage = "Làm mới trang"
@@ -5776,70 +6047,6 @@ user = "Đăng nhập với tư cách"
 [settings.connection.mode]
 saas = "Stirling Cloud"
 selfhosted = "Tự lưu trữ"
-
-[settings.planBilling]
-currentPlan = "Gói hiện tại"
-loading = "Đang tải thông tin thanh toán..."
-notAvailable = "Gói & Thanh toán chỉ khả dụng khi kết nối với Stirling Cloud (chế độ SaaS)."
-title = "Gói & Thanh toán"
-
-[settings.planBilling.billing]
-manageBilling = "Quản lý thanh toán"
-nextBillingDate = "Ngày thanh toán tiếp theo"
-overageCost = "Chi phí vượt mức hiện tại: {{amount}} ({{credits}} tín dụng)"
-
-[settings.planBilling.credits]
-estimatedCost = "Chi phí ước tính: {{amount}}"
-freeTierInfo = "Gói Free bao gồm {{freeCredits}} tín dụng mỗi tháng. Nâng cấp lên Team để có {{teamCredits}} tín dụng/tháng và tính phí vượt mức trả theo mức dùng."
-included = "{{count}} tín dụng/tháng (đã bao gồm)"
-noOverage = "Tháng này không có phí vượt mức. Bạn đang dùng {{count}} tín dụng đã bao gồm."
-overage = "+ {{count}} vượt mức"
-overageInfo = "Tín dụng vượt mức được tính phí {{price}} mỗi tín dụng. Bạn chỉ trả cho phần vượt quá hạn mức hàng tháng."
-title = "Mức sử dụng tín dụng"
-
-[settings.planBilling.errors]
-fetchFailed = "Không thể lấy dữ liệu thanh toán"
-retry = "Thử lại"
-
-[settings.planBilling.status]
-active = "Đang hoạt động"
-canceled = "Đã hủy"
-pastDue = "Quá hạn"
-trial = "Dùng thử"
-
-[settings.planBilling.tier]
-enterprise = "Enterprise"
-enterpriseDescription = "Tính năng và hỗ trợ doanh nghiệp tùy chỉnh"
-free = "Free"
-freeDescription = "50 tín dụng mỗi tháng"
-team = "Team"
-teamBadge = "Team"
-teamDescription = "Bao gồm 500 tín dụng/tháng, tính phí vượt mức tự động để dịch vụ không gián đoạn"
-teamTooltipCredits = "Gói Team bao gồm {{credits}} tín dụng/tháng."
-teamTooltipFineprint = "Chỉ trả cho phần dùng vượt quá tín dụng bao gồm."
-teamTooltipOverage = "Tính phí vượt mức tự động {{price}}/tín dụng đảm bảo dịch vụ không gián đoạn."
-
-[settings.planBilling.team]
-managedByTeam = "Được quản lý bởi nhóm"
-memberCount = "{{count}} thành viên nhóm"
-
-[settings.planBilling.trial]
-daysRemaining = "Còn {{days}} ngày"
-daysRemainingFull = "Bản dùng thử của bạn kết thúc sau {{days}} ngày"
-endDate = "Hết hạn: {{date}}"
-endsOn = "Kết thúc dùng thử"
-title = "Đang dùng thử miễn phí"
-
-[settings.planBilling.upgrade]
-cta = "Nâng cấp lên Team"
-featureApi = "Truy cập API để tự động hóa"
-featureCredits = "{{teamCredits}} tín dụng mỗi tháng (so với {{freeCredits}} của Free)"
-featureMembers = "Thành viên nhóm không giới hạn"
-featureSupport = "Hỗ trợ ưu tiên"
-featureThroughput = "Tốc độ xử lý nhanh hơn"
-opensInBrowser = "Mở trong trình duyệt để hoàn tất nâng cấp"
-subtitle = "Nâng cấp lên Team để có:"
-title = "Nâng cấp gói của bạn"
 
 [settings.developer]
 apiKeys = "API Keys"
@@ -5923,6 +6130,70 @@ plan = "Gói"
 title = "Giấy phép & Phân tích"
 usageAnalytics = "Phân tích sử dụng"
 
+[settings.planBilling]
+currentPlan = "Gói hiện tại"
+loading = "Đang tải thông tin thanh toán..."
+notAvailable = "Gói & Thanh toán chỉ khả dụng khi kết nối với Stirling Cloud (chế độ SaaS)."
+title = "Gói & Thanh toán"
+
+[settings.planBilling.billing]
+manageBilling = "Quản lý thanh toán"
+nextBillingDate = "Ngày thanh toán tiếp theo"
+overageCost = "Chi phí vượt mức hiện tại: {{amount}} ({{credits}} tín dụng)"
+
+[settings.planBilling.credits]
+estimatedCost = "Chi phí ước tính: {{amount}}"
+freeTierInfo = "Gói Free bao gồm {{freeCredits}} tín dụng mỗi tháng. Nâng cấp lên Team để có {{teamCredits}} tín dụng/tháng và tính phí vượt mức trả theo mức dùng."
+included = "{{count}} tín dụng/tháng (đã bao gồm)"
+noOverage = "Tháng này không có phí vượt mức. Bạn đang dùng {{count}} tín dụng đã bao gồm."
+overage = "+ {{count}} vượt mức"
+overageInfo = "Tín dụng vượt mức được tính phí {{price}} mỗi tín dụng. Bạn chỉ trả cho phần vượt quá hạn mức hàng tháng."
+title = "Mức sử dụng tín dụng"
+
+[settings.planBilling.errors]
+fetchFailed = "Không thể lấy dữ liệu thanh toán"
+retry = "Thử lại"
+
+[settings.planBilling.status]
+active = "Đang hoạt động"
+canceled = "Đã hủy"
+pastDue = "Quá hạn"
+trial = "Dùng thử"
+
+[settings.planBilling.team]
+managedByTeam = "Được quản lý bởi nhóm"
+memberCount = "{{count}} thành viên nhóm"
+
+[settings.planBilling.tier]
+enterprise = "Enterprise"
+enterpriseDescription = "Tính năng và hỗ trợ doanh nghiệp tùy chỉnh"
+free = "Free"
+freeDescription = "50 tín dụng mỗi tháng"
+team = "Team"
+teamBadge = "Team"
+teamDescription = "Bao gồm 500 tín dụng/tháng, tính phí vượt mức tự động để dịch vụ không gián đoạn"
+teamTooltipCredits = "Gói Team bao gồm {{credits}} tín dụng/tháng."
+teamTooltipFineprint = "Chỉ trả cho phần dùng vượt quá tín dụng bao gồm."
+teamTooltipOverage = "Tính phí vượt mức tự động {{price}}/tín dụng đảm bảo dịch vụ không gián đoạn."
+
+[settings.planBilling.trial]
+daysRemaining = "Còn {{days}} ngày"
+daysRemainingFull = "Bản dùng thử của bạn kết thúc sau {{days}} ngày"
+endDate = "Hết hạn: {{date}}"
+endsOn = "Kết thúc dùng thử"
+title = "Đang dùng thử miễn phí"
+
+[settings.planBilling.upgrade]
+cta = "Nâng cấp lên Team"
+featureApi = "Truy cập API để tự động hóa"
+featureCredits = "{{teamCredits}} tín dụng mỗi tháng (so với {{freeCredits}} của Free)"
+featureMembers = "Thành viên nhóm không giới hạn"
+featureSupport = "Hỗ trợ ưu tiên"
+featureThroughput = "Tốc độ xử lý nhanh hơn"
+opensInBrowser = "Mở trong trình duyệt để hoàn tất nâng cấp"
+subtitle = "Nâng cấp lên Team để có:"
+title = "Nâng cấp gói của bạn"
+
 [settings.policiesPrivacy]
 legal = "Pháp lý"
 privacy = "Quyền riêng tư"
@@ -5930,6 +6201,9 @@ title = "Chính sách & Quyền riêng tư"
 
 [settings.preferences]
 title = "Tùy chọn"
+
+[settings.search]
+placeholder = "Search settings pages..."
 
 [settings.security]
 description = "Cập nhật mật khẩu để giữ an toàn cho tài khoản của bạn."
@@ -5956,6 +6230,9 @@ security = "Bảo mật"
 telegram = "Telegram"
 title = "Bảo mật & Xác thực"
 
+[settings.team]
+title = "Nhóm"
+
 [settings.tooltips]
 enableLoginFirst = "Bật chế độ đăng nhập trước"
 requiresEnterprise = "Yêu cầu giấy phép Enterprise"
@@ -5964,9 +6241,6 @@ requiresEnterprise = "Yêu cầu giấy phép Enterprise"
 people = "Thành viên"
 teams = "Nhóm"
 title = "Không gian làm việc"
-
-[settings.team]
-title = "Nhóm"
 
 [setup]
 description = "Bắt đầu bằng cách chọn cách bạn muốn sử dụng Stirling PDF"
@@ -6290,15 +6564,15 @@ desc = "Tự động chia bằng tờ phân cách"
 name = "Trang phân cách"
 tooltip = "Dùng tờ phân cách QR giữa các tài liệu khi quét"
 
-[split.methods.byPoster]
-name = "Phần in được"
-desc = "Chia các trang lớn thành kích thước có thể in"
-tooltip = "Chia các trang quá khổ thành các phần nhỏ phù hợp để in trên giấy tiêu chuẩn (A4, Letter, v.v.)"
-
 [split.methods.byPages]
 desc = "Trích xuất các trang cụ thể (1,3,5-10)"
 name = "Số trang"
 tooltip = "Nhập số trang, phân tách bằng dấu phẩy hoặc khoảng bằng dấu gạch ngang"
+
+[split.methods.byPoster]
+desc = "Chia các trang lớn thành kích thước có thể in"
+name = "Phần in được"
+tooltip = "Chia các trang quá khổ thành các phần nhỏ phù hợp để in trên giấy tiêu chuẩn (A4, Letter, v.v.)"
 
 [split.methods.bySections]
 desc = "Chia trang thành các ô lưới"
@@ -6326,27 +6600,27 @@ title = "Chọn phương thức chia của bạn"
 text = "Chọn cách bạn muốn chia tài liệu PDF. Mỗi phương thức được tối ưu cho trường hợp sử dụng và loại tài liệu khác nhau."
 title = "Chọn phương thức chia"
 
+[split.poster]
+rightToLeft = "Chia từ phải sang trái"
+
+[split.poster.pageSize]
+description = "Kích thước trang đầu ra để in"
+label = "Kích thước trang đích"
+
+[split.poster.xFactor]
+description = "Số cột để chia mỗi trang"
+label = "Số cột"
+
+[split.poster.yFactor]
+description = "Số hàng để chia mỗi trang"
+label = "Số hàng"
+
 [split.settings]
 selectMethodFirst = "Vui lòng chọn một phương thức chia trước"
 
 [split.steps]
 chooseMethod = "Chọn phương thức"
 settings = "Cài đặt"
-
-[split.poster]
-rightToLeft = "Chia từ phải sang trái"
-
-[split.poster.pageSize]
-label = "Kích thước trang đích"
-description = "Kích thước trang đầu ra để in"
-
-[split.poster.xFactor]
-label = "Số cột"
-description = "Số cột để chia mỗi trang"
-
-[split.poster.yFactor]
-label = "Số hàng"
-description = "Số hàng để chia mỗi trang"
 
 [split.tooltip.byChapters]
 bullet1 = "Cấp dấu trang: Cấp sẽ dùng để chia (1=bậc cao nhất)"
@@ -6385,6 +6659,13 @@ bullet5 = "Bật Chế độ in hai mặt nếu quét cả hai mặt của tờ 
 text = "Tự động chia tài liệu đã quét bằng các tờ phân cách vật lý có mã QR. Hoàn hảo khi xử lý nhiều tài liệu quét chung."
 title = "Chia theo trang phân cách"
 
+[split.tooltip.byPages]
+bullet1 = "Điểm chia đơn: 3,7 (chia sau trang 3 và 7)"
+bullet2 = "Điểm chia theo khoảng: 3-8 (chia trước trang 3 và sau trang 8)"
+bullet3 = "Kết hợp: 2,5-10,15 (chia sau trang 2, trước trang 5, sau trang 10 và sau trang 15)"
+text = "Chia PDF tại các số trang cụ thể. Dùng 'n' để chia sau trang n. Dùng 'n-m' để chia trước trang n và sau trang m."
+title = "Chia tại số trang"
+
 [split.tooltip.byPoster]
 bullet1 = "Kích thước trang đích: Chọn cỡ giấy đầu ra (A4, Letter, v.v.)"
 bullet2 = "Phân chia ngang/dọc: Kích thước lưới để chia"
@@ -6392,13 +6673,6 @@ bullet3 = "Phải sang Trái: Đảo thứ tự cột cho bố cục RTL"
 bullet4 = "In và ghép các mảnh để tạo poster"
 text = "Chia các trang PDF lớn thành các phần nhỏ có thể in phù hợp với cỡ giấy tiêu chuẩn. Hoàn hảo để tạo bản in poster từ các trang quá khổ."
 title = "Chia cho in poster"
-
-[split.tooltip.byPages]
-bullet1 = "Điểm chia đơn: 3,7 (chia sau trang 3 và 7)"
-bullet2 = "Điểm chia theo khoảng: 3-8 (chia trước trang 3 và sau trang 8)"
-bullet3 = "Kết hợp: 2,5-10,15 (chia sau trang 2, trước trang 5, sau trang 10 và sau trang 15)"
-text = "Chia PDF tại các số trang cụ thể. Dùng 'n' để chia sau trang n. Dùng 'n-m' để chia trước trang n và sau trang m."
-title = "Chia tại số trang"
 
 [split.tooltip.bySections]
 bullet1 = "Ngang: Số hàng cần tạo"
@@ -6541,6 +6815,82 @@ title = "Tài liệu API"
 [tableExtraxt]
 tags = "CSV,Trích xuất bảng,trích xuất,chuyển đổi"
 
+[team]
+cancelInviteError = "Không hủy được lời mời"
+confirmCancelInvite = "Bạn có chắc muốn hủy lời mời này?"
+confirmLeave = "Bạn có chắc muốn rời nhóm này?"
+confirmLeaveLeader = "Là trưởng nhóm, rời đi sẽ xóa bạn khỏi nhóm. Bạn có chắc không?"
+confirmRemove = "Bạn có chắc muốn xóa thành viên này?"
+editName = "Chỉnh sửa tên nhóm"
+inviteCancelled = "Đã hủy lời mời"
+inviteError = "Gửi lời mời không thành công"
+inviteSent = "Đã gửi lời mời thành công"
+leader = "Trưởng nhóm"
+leaveButton = "Rời nhóm"
+leaveError = "Rời nhóm không thành công"
+leaveSuccess = "Đã rời nhóm thành công"
+loading = "Đang tải thông tin nhóm..."
+memberCount = "{{count}} thành viên"
+memberRemoved = "Đã xóa thành viên thành công"
+namePlaceholder = "Nhập tên nhóm"
+personal = "Cá nhân"
+removeError = "Xóa thành viên không thành công"
+renameError = "Đổi tên nhóm không thành công"
+renameSuccess = "Đã đổi tên nhóm thành công"
+
+[team.features]
+badge = "Tính năng Team"
+subtitle = "Cộng tác với nhóm của bạn"
+title = "Cộng tác theo nhóm"
+viewPlans = "Xem các gói"
+
+[team.features.billing]
+description = "Quản lý thanh toán và đăng ký"
+title = "Quản lý thanh toán"
+
+[team.features.credits]
+description = "Kho tín dụng dùng chung cho tất cả thành viên"
+title = "Tín dụng dùng chung"
+
+[team.features.dashboard]
+description = "Xem hoạt động và mức sử dụng của nhóm"
+title = "Bảng điều khiển nhóm"
+
+[team.features.invite]
+description = "Thêm thành viên vào nhóm của bạn"
+title = "Mời thành viên"
+
+[team.invitationBanner]
+acceptButton = "Chấp nhận"
+message = "đã mời bạn tham gia"
+rejectButton = "Từ chối"
+
+[team.invite]
+cancelLabel = "Hủy"
+invalidEmail = "Địa chỉ email không hợp lệ"
+placeholder = "Nhập địa chỉ email"
+sendButton = "Gửi lời mời"
+title = "Mời thành viên nhóm"
+
+[team.members]
+emailColumn = "Email"
+empty = "Chưa có thành viên nhóm"
+nameColumn = "Tên"
+pending = "Đang chờ"
+remove = "Xóa"
+roleColumn = "Vai trò"
+title = "Thành viên nhóm"
+
+[team.upgrade]
+button = "Nâng cấp lên Team"
+description = "Mở khóa tính năng cộng tác nhóm"
+title = "Nâng cấp lên gói Team"
+
+[textAlign]
+center = "Giữa"
+left = "Trái"
+right = "Phải"
+
 [theme]
 toggle = "Chuyển đổi chủ đề"
 
@@ -6557,6 +6907,7 @@ favorites = "Mục yêu thích"
 heading = "Tất cả công cụ (chế độ toàn màn hình)"
 noResults = "Hãy thử điều chỉnh tìm kiếm hoặc chuyển đổi mô tả để tìm thứ bạn cần."
 recommended = "Đề xuất"
+selfHostedOffline = "Requires your Stirling-PDF server (currently offline):"
 showDetails = "Hiển thị chi tiết"
 unavailable = "Bị quản trị viên server vô hiệu hóa:"
 unavailableDependency = "Không khả dụng - thiếu công cụ cần thiết trên server:"
@@ -6819,6 +7170,37 @@ invalid = "Chứng chỉ không có trong kho tin cậy - không thể xác minh
 fileManager = "Trình quản lý tệp"
 pageEditor = "Trình chỉnh sửa trang"
 viewer = "Trình xem"
+
+[viewer]
+cannotPreviewFile = "Không thể xem trước tệp"
+dualPageView = "Chế độ xem hai trang"
+firstPage = "Trang đầu"
+lastPage = "Trang cuối"
+nextPage = "Trang tiếp"
+onlyPdfSupported = "Trình xem chỉ hỗ trợ tệp PDF. Tệp này có vẻ là định dạng khác."
+previousPage = "Trang trước"
+singlePageView = "Chế độ xem trang đơn"
+unknownFile = "Tệp không xác định"
+zoomIn = "Phóng to"
+zoomOut = "Thu nhỏ"
+
+[viewer.attachments]
+empty = "Không có tệp đính kèm trong tài liệu này"
+loading = "Đang tải tệp đính kèm..."
+noDocument = "Mở một PDF để xem các tệp đính kèm của nó."
+noMatch = "Không có tệp đính kèm nào khớp với tìm kiếm của bạn"
+noSupport = "Trình xem này không hỗ trợ tệp đính kèm."
+searchPlaceholder = "Tìm kiếm tệp đính kèm"
+title = "Tệp đính kèm"
+
+[viewer.formBar]
+apply = "Áp dụng thay đổi"
+dismiss = "Bỏ qua"
+download = "Tải xuống PDF"
+hasFieldsDesc = "PDF này chứa các trường có thể điền"
+title = "Trường biểu mẫu"
+unsavedBadge = "Chưa lưu"
+unsavedDesc = "Bạn có các thay đổi chưa được lưu"
 
 [viewPdf]
 header = "Xem PDF"
@@ -7259,278 +7641,3 @@ cancel = "Hủy"
 confirm = "Giải nén"
 message = "ZIP này chứa {{count}} tệp. Vẫn giải nén?"
 title = "Tệp ZIP lớn"
-
-[cloudBadge]
-tooltip = "Thao tác này sẽ sử dụng tín dụng đám mây của bạn"
-
-[team]
-cancelInviteError = "Không hủy được lời mời"
-confirmCancelInvite = "Bạn có chắc muốn hủy lời mời này?"
-confirmLeave = "Bạn có chắc muốn rời nhóm này?"
-confirmLeaveLeader = "Là trưởng nhóm, rời đi sẽ xóa bạn khỏi nhóm. Bạn có chắc không?"
-confirmRemove = "Bạn có chắc muốn xóa thành viên này?"
-editName = "Chỉnh sửa tên nhóm"
-inviteCancelled = "Đã hủy lời mời"
-inviteError = "Gửi lời mời không thành công"
-inviteSent = "Đã gửi lời mời thành công"
-leader = "Trưởng nhóm"
-leaveButton = "Rời nhóm"
-leaveError = "Rời nhóm không thành công"
-leaveSuccess = "Đã rời nhóm thành công"
-loading = "Đang tải thông tin nhóm..."
-memberCount = "{{count}} thành viên"
-memberRemoved = "Đã xóa thành viên thành công"
-namePlaceholder = "Nhập tên nhóm"
-personal = "Cá nhân"
-removeError = "Xóa thành viên không thành công"
-renameError = "Đổi tên nhóm không thành công"
-renameSuccess = "Đã đổi tên nhóm thành công"
-
-[team.invitationBanner]
-message = "đã mời bạn tham gia"
-acceptButton = "Chấp nhận"
-rejectButton = "Từ chối"
-
-[team.features]
-badge = "Tính năng Team"
-subtitle = "Cộng tác với nhóm của bạn"
-title = "Cộng tác theo nhóm"
-viewPlans = "Xem các gói"
-
-[team.features.billing]
-description = "Quản lý thanh toán và đăng ký"
-title = "Quản lý thanh toán"
-
-[team.features.credits]
-description = "Kho tín dụng dùng chung cho tất cả thành viên"
-title = "Tín dụng dùng chung"
-
-[team.features.dashboard]
-description = "Xem hoạt động và mức sử dụng của nhóm"
-title = "Bảng điều khiển nhóm"
-
-[team.features.invite]
-description = "Thêm thành viên vào nhóm của bạn"
-title = "Mời thành viên"
-
-[team.invite]
-cancelLabel = "Hủy"
-invalidEmail = "Địa chỉ email không hợp lệ"
-placeholder = "Nhập địa chỉ email"
-sendButton = "Gửi lời mời"
-title = "Mời thành viên nhóm"
-
-[team.members]
-emailColumn = "Email"
-empty = "Chưa có thành viên nhóm"
-nameColumn = "Tên"
-pending = "Đang chờ"
-remove = "Xóa"
-roleColumn = "Vai trò"
-title = "Thành viên nhóm"
-
-[team.upgrade]
-button = "Nâng cấp lên Team"
-description = "Mở khóa tính năng cộng tác nhóm"
-title = "Nâng cấp lên gói Team"
-
-[provider.oauth2.google]
-scope = "Xác thực đăng nhập"
-
-[provider.oauth2.google.clientId]
-label = "Client ID"
-description = "OAuth2 Client ID từ Google Cloud Console"
-
-[provider.oauth2.google.clientSecret]
-label = "Client Secret"
-description = "OAuth2 client secret từ Google Cloud Console"
-
-[provider.oauth2.google.scopes]
-label = "Scopes"
-description = "Danh sách scope OAuth2, phân tách bằng dấu phẩy"
-
-[provider.oauth2.google.useAsUsername]
-label = "Dùng làm Tên người dùng"
-description = "Trường dùng làm tên người dùng (email, name, given_name, family_name)"
-
-[provider.oauth2.github]
-scope = "Xác thực đăng nhập"
-
-[provider.oauth2.github.clientId]
-label = "Client ID"
-description = "OAuth2 Client ID từ GitHub Developer Settings"
-
-[provider.oauth2.github.clientSecret]
-label = "Client Secret"
-description = "OAuth2 client secret từ GitHub Developer Settings"
-
-[provider.oauth2.github.scopes]
-label = "Scopes"
-description = "Danh sách scope OAuth2, phân tách bằng dấu phẩy"
-
-[provider.oauth2.github.useAsUsername]
-label = "Dùng làm Tên người dùng"
-description = "Trường dùng làm tên người dùng (email, login, name)"
-
-[provider.oauth2.keycloak]
-scope = "SSO"
-
-[provider.oauth2.keycloak.issuer]
-label = "Issuer URL"
-description = "URL endpoint OpenID Connect Discovery của realm Keycloak"
-
-[provider.oauth2.keycloak.clientId]
-label = "Client ID"
-description = "OAuth2 Client ID từ Keycloak"
-
-[provider.oauth2.keycloak.clientSecret]
-label = "Client Secret"
-description = "OAuth2 client secret từ Keycloak"
-
-[provider.oauth2.keycloak.scopes]
-label = "Scopes"
-description = "Danh sách scope OAuth2, phân tách bằng dấu phẩy"
-
-[provider.oauth2.keycloak.useAsUsername]
-label = "Dùng làm Tên người dùng"
-description = "Trường dùng làm tên người dùng (email, name, given_name, family_name, preferred_username)"
-
-[provider.oauth2.generic]
-name = "OAuth2 Tổng quát"
-scope = "SSO"
-
-[provider.oauth2.generic.enabled]
-label = "Bật OAuth2 Tổng quát"
-description = "Bật xác thực bằng nhà cung cấp OAuth2 tùy chỉnh"
-
-[provider.oauth2.generic.provider]
-label = "Tên nhà cung cấp"
-description = "Tên nhà cung cấp OAuth2 của bạn (ví dụ: Azure AD, Okta)"
-
-[provider.oauth2.generic.issuer]
-label = "Issuer URL"
-description = "Nhà cung cấp hỗ trợ OpenID Connect Discovery (/.well-known/openid-configuration)"
-
-[provider.oauth2.generic.clientId]
-label = "Client ID"
-description = "OAuth2 Client ID từ nhà cung cấp của bạn"
-
-[provider.oauth2.generic.clientSecret]
-label = "Client Secret"
-description = "OAuth2 client secret từ nhà cung cấp của bạn"
-
-[provider.oauth2.generic.scopes]
-label = "Scopes"
-description = "Danh sách scope OAuth2, phân tách bằng dấu phẩy"
-
-[provider.oauth2.generic.useAsUsername]
-label = "Dùng làm Tên người dùng"
-description = "Trường dùng làm tên người dùng"
-
-[provider.oauth2.generic.autoCreateUser]
-label = "Tự động tạo người dùng"
-description = "Tự động tạo tài khoản người dùng khi đăng nhập OAuth2 lần đầu"
-
-[provider.oauth2.generic.blockRegistration]
-label = "Chặn đăng ký"
-description = "Ngăn người dùng mới đăng ký qua OAuth2"
-
-[provider.smtp]
-name = "SMTP Mail"
-scope = "Thông báo email"
-
-[provider.smtp.enabled]
-label = "Bật Email"
-description = "Bật thông báo email và chức năng SMTP"
-
-[provider.smtp.host]
-label = "SMTP Host"
-description = "Tên máy chủ hoặc địa chỉ IP của máy chủ SMTP của bạn"
-
-[provider.smtp.port]
-label = "SMTP Port"
-description = "Cổng kết nối SMTP (thường là 25, 465 hoặc 587)"
-
-[provider.smtp.username]
-label = "SMTP Username"
-description = "Tên người dùng để xác thực SMTP"
-
-[provider.smtp.password]
-label = "SMTP Password"
-description = "Mật khẩu để xác thực SMTP"
-
-[provider.smtp.from]
-label = "Địa chỉ người gửi"
-description = "Địa chỉ email dùng làm người gửi"
-
-[provider.saml2]
-name = "SAML2"
-scope = "SSO (SAML)"
-
-[provider.saml2.enabled]
-label = "Bật SAML2"
-description = "Bật xác thực SAML2 (chỉ dành cho Enterprise)"
-
-[provider.saml2.provider]
-label = "Tên nhà cung cấp"
-description = "Tên nhà cung cấp SAML2 của bạn"
-
-[provider.saml2.registrationId]
-label = "Registration ID"
-description = "Tên ứng dụng Service Provider (SP) của bạn"
-
-[provider.saml2.idpMetadataUri]
-label = "IDP Metadata URI"
-description = "URI metadata của nhà cung cấp của bạn"
-
-[provider.saml2.idpSingleLoginUrl]
-label = "IDP Single Login URL"
-description = "URL để khởi tạo SSO"
-
-[provider.saml2.idpSingleLogoutUrl]
-label = "IDP Single Logout URL"
-description = "URL để khởi tạo SLO"
-
-[provider.saml2.idpIssuer]
-label = "IDP Issuer"
-description = "ID của nhà cung cấp của bạn"
-
-[provider.saml2.idpCert]
-label = "Chứng chỉ IDP"
-description = "Đường dẫn chứng chỉ (ví dụ: classpath:okta.cert)"
-
-[provider.saml2.privateKey]
-label = "Khóa riêng"
-description = "Đường dẫn khóa riêng của bạn"
-
-[provider.saml2.spCert]
-label = "Chứng chỉ SP"
-description = "Đường dẫn chứng chỉ ký của bạn"
-
-[provider.saml2.autoCreateUser]
-label = "Tự động tạo người dùng"
-description = "Tự động tạo tài khoản người dùng khi đăng nhập SAML2 lần đầu"
-
-[provider.saml2.blockRegistration]
-label = "Chặn đăng ký"
-description = "Ngăn người dùng mới đăng ký qua SAML2"
-
-[provider.googledrive]
-name = "Google Drive"
-scope = "Nhập tệp"
-
-[provider.googledrive.enabled]
-label = "Bật bộ chọn tệp Google Drive"
-description = "Cho phép người dùng nhập tệp trực tiếp từ Google Drive"
-
-[provider.googledrive.clientId]
-label = "Client ID"
-description = "Google OAuth 2.0 Client ID từ Google Cloud Console"
-
-[provider.googledrive.apiKey]
-label = "API Key"
-description = "Google API Key cho Google Picker API từ Google Cloud Console"
-
-[provider.googledrive.appId]
-label = "App ID"
-description = "Google Drive App ID từ Google Cloud Console"
