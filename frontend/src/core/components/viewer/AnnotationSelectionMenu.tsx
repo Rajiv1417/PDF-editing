@@ -1,18 +1,23 @@
-import { ActionIcon, Tooltip, Group } from '@mantine/core';
+import { ActionIcon, Tooltip, Group, Popover, TextInput, Button, Stack } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import CommentIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
+import AddCommentIcon from '@mui/icons-material/AddCommentOutlined';
+import OpenInNewIcon from '@mui/icons-material/OpenInNewRounded';
 import { useAnnotation } from '@embedpdf/plugin-annotation/react';
 import type { TrackedAnnotation } from '@embedpdf/plugin-annotation';
-import type { PdfAnnotationObject } from '@embedpdf/models';
+import { PdfActionType, PdfAnnotationReplyType, PdfAnnotationSubtype, type PdfAnnotationObject } from '@embedpdf/models';
 import type { AnnotationPatch, AnnotationObject } from '@app/components/viewer/viewerTypes';
 import { useActiveDocumentId } from '@app/components/viewer/useActiveDocumentId';
+import { useViewer } from '@app/contexts/ViewerContext';
 import { OpacityControl } from '@app/components/annotation/shared/OpacityControl';
 import { WidthControl } from '@app/components/annotation/shared/WidthControl';
 import { PropertiesPopover } from '@app/components/annotation/shared/PropertiesPopover';
 import { ColorControl } from '@app/components/annotation/shared/ColorControl';
+import LocalIcon from '@app/components/shared/LocalIcon';
 
 /**
  * Props interface matching EmbedPDF's annotation selection menu pattern
@@ -48,7 +53,7 @@ export function AnnotationSelectionMenu(props: AnnotationSelectionMenuProps) {
   );
 }
 
-type AnnotationType = 'textMarkup' | 'ink' | 'inkHighlighter' | 'text' | 'note' | 'shape' | 'line' | 'stamp' | 'unknown';
+type AnnotationType = 'textMarkup' | 'ink' | 'inkHighlighter' | 'text' | 'note' | 'comment' | 'shape' | 'line' | 'stamp' | 'unknown';
 
 function AnnotationSelectionMenuInner({
   documentId,
@@ -60,8 +65,42 @@ function AnnotationSelectionMenuInner({
   const pageIndex = context?.pageIndex;
   const { t } = useTranslation();
   const { provides } = useAnnotation(documentId);
+  const { scrollActions, requestCommentFocus } = useViewer();
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [menuPosition, setMenuPosition] = useState<{ top: number; left: number } | null>(null);
+  const [linkPopoverOpen, setLinkPopoverOpen] = useState(false);
+  const [linkUrl, setLinkUrl] = useState('');
+
+  // Auto-open the comments sidebar when a comment annotation is selected so the
+  // user doesn't have to manually click the comment button in the selection menu.
+  useEffect(() => {
+    const annObj = annotation?.object as AnnotationObject | undefined;
+    const annId = annObj?.id;
+    if (!selected || !annId || pageIndex === undefined) return;
+    const toolId = annObj?.customData?.toolId;
+    const annType = annObj?.type;
+    // textComment = PdfAnnotationSubtype.TEXT (1), insertText/replaceText = PdfAnnotationSubtype.CARET (14)
+    const isComment =
+      (annType === PdfAnnotationSubtype.TEXT && toolId === 'textComment') ||
+      (annType === PdfAnnotationSubtype.CARET && (toolId === 'insertText' || toolId === 'replaceText'));
+    if (!isComment) return;
+    requestCommentFocus(documentId, pageIndex, annId, (annObj?.contents ?? '').trim().length > 0);
+  }, [selected, annotation?.object]);
+
+  // Click outside both the selection menu and the annotation to deselect
+  useEffect(() => {
+    if (!selected) return;
+    const handlePointerDown = (e: PointerEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest('[data-annotation-selection-menu]')) return;
+      if (target.closest('[data-no-interaction]')) return;
+      // Mantine popovers (color picker, link popover, etc.) render in portals outside the menu DOM
+      if (target.closest('.mantine-Popover-dropdown')) return;
+      (provides as unknown as { deselectAnnotation?: () => void }).deselectAnnotation?.();
+    };
+    document.addEventListener('pointerdown', handlePointerDown);
+    return () => document.removeEventListener('pointerdown', handlePointerDown);
+  }, [selected, provides]);
 
   // Merge refs - menuWrapperProps.ref is a callback ref
   const setRef = useCallback((node: HTMLDivElement | null) => {
@@ -70,7 +109,7 @@ function AnnotationSelectionMenuInner({
     menuWrapperProps?.ref?.(node);
   }, [menuWrapperProps]);
 
-  // Type detection
+  // Type detection - comment-like tools (Comment, Insert Text, Replace Text) get full comment toolbar
   const getAnnotationType = useCallback((): AnnotationType => {
     const type = annotation?.object?.type;
     const toolId = (annotation?.object as AnnotationObject | undefined)?.customData?.toolId;
@@ -80,8 +119,18 @@ function AnnotationSelectionMenuInner({
     if (type === 15) {
       return toolId === 'inkHighlighter' ? 'inkHighlighter' : 'ink';
     }
+    // textComment creates PdfAnnotationSubtype.TEXT (1) annotations
+    if (type === 1) {
+      if (toolId === 'textComment') return 'comment';
+    }
+    // insertText/replaceText create PdfAnnotationSubtype.CARET (14) annotations
+    if (type === 14) {
+      if (toolId === 'insertText' || toolId === 'replaceText') return 'comment';
+    }
     if (type === 3) {
-      return toolId === 'note' ? 'note' : 'text';
+      if (toolId === 'note') return 'note';
+      // Legacy or unknown FREETEXT annotations (e.g. no toolId)
+      return 'note';
     }
     if (type !== undefined && [5, 6, 7].includes(type)) return 'shape';
     if (type !== undefined && [4, 8].includes(type)) return 'line';
@@ -90,17 +139,22 @@ function AnnotationSelectionMenuInner({
     return 'unknown';
   }, [annotation]);
 
-  // Calculate menu width based on annotation type
+  // Calculate menu width based on annotation type (comment/link buttons add width)
   const calculateWidth = (annotationType: AnnotationType): number => {
     switch (annotationType) {
       case 'stamp':
         return 80;
       case 'inkHighlighter':
-        return 220;
+        return 280;
       case 'shape':
         return 200;
+      case 'comment':
+      case 'textMarkup':
+      case 'text':
+      case 'note':
+        return 280;
       default:
-        return 180;
+        return 260;
     }
   };
 
@@ -108,6 +162,25 @@ function AnnotationSelectionMenuInner({
   const obj = annotation?.object as AnnotationObject | undefined;
   const annotationType = getAnnotationType();
   const annotationId = obj?.id;
+
+  const attachedLinks = useMemo(() => {
+    if (!annotationId || !provides?.getAttachedLinks) return [];
+    try {
+      return provides.getAttachedLinks(annotationId) ?? [];
+    } catch {
+      return [];
+    }
+  }, [annotationId, provides]);
+
+  const firstLinkTarget = useMemo(() => {
+    const linkObj = attachedLinks[0]?.object as { target?: { type: string; action?: { type: number; uri?: string; destination?: { pageIndex: number } } } } | undefined;
+    if (!linkObj?.target || linkObj.target.type !== 'action') return null;
+    const act = linkObj.target.action;
+    if (act && act.type === PdfActionType.URI && act.uri) return { type: 'uri' as const, uri: act.uri };
+    if (act && (act.type === PdfActionType.Goto || act.type === PdfActionType.RemoteGoto) && act.destination)
+      return { type: 'goto' as const, pageIndex: act.destination.pageIndex };
+    return null;
+  }, [attachedLinks]);
 
   // Get current colors
   const getCurrentColor = (): string => {
@@ -247,6 +320,46 @@ function AnnotationSelectionMenuInner({
     provides.updateAnnotation(pageIndex, annotationId, patch);
   }, [provides, annotationId, pageIndex]);
 
+  const handleGoToLink = useCallback(() => {
+    if (!firstLinkTarget) return;
+    if (firstLinkTarget.type === 'uri') {
+      window.open(firstLinkTarget.uri, '_blank', 'noopener,noreferrer');
+    } else if (firstLinkTarget.type === 'goto') {
+      scrollActions.scrollToPage(firstLinkTarget.pageIndex + 1);
+    }
+  }, [firstLinkTarget, scrollActions]);
+
+  const handleAddLinkSubmit = useCallback(() => {
+    const uri = linkUrl.trim();
+    if (!uri || !provides?.createAnnotation || pageIndex === undefined || !annotationId || !obj?.rect) return;
+    const rect = obj.rect;
+    provides.createAnnotation(pageIndex, {
+      type: PdfAnnotationSubtype.LINK,
+      id: `link-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
+      pageIndex,
+      rect,
+      target: { type: 'action', action: { type: PdfActionType.URI, uri } },
+      inReplyToId: annotationId,
+      replyType: PdfAnnotationReplyType.Group,
+    });
+    setLinkUrl('');
+    setLinkPopoverOpen(false);
+  }, [linkUrl, provides, pageIndex, annotationId, obj?.rect]);
+
+  // Shared: has comment content for Add comment vs View comment label
+  const hasCommentContent = (obj?.contents ?? '').trim().length > 0;
+
+  const isInSidebar = (obj?.customData as Record<string, unknown> | undefined)?.isComment === true;
+
+  const handleAddToSidebar = useCallback(() => {
+    if (!provides?.updateAnnotation || !annotationId || pageIndex === undefined) return;
+    const existingCustomData = (obj?.customData ?? {}) as Record<string, unknown>;
+    provides.updateAnnotation(pageIndex, annotationId, {
+      customData: { ...existingCustomData, isComment: true },
+    } as AnnotationPatch);
+    requestCommentFocus(documentId, pageIndex, annotationId, false);
+  }, [provides, annotationId, pageIndex, obj, documentId, requestCommentFocus]);
+
   // Render button groups based on annotation type
   const renderButtons = () => {
     const commonButtonStyles = {
@@ -262,6 +375,70 @@ function AnnotationSelectionMenuInner({
         },
       },
     };
+
+    const AddToSidebarButton = () => (
+      <Tooltip label={isInSidebar ? t('viewer.comments.viewComment', 'View comment') : t('viewer.comments.addComment', 'Add comment')}>
+        <ActionIcon
+          variant={isInSidebar ? 'filled' : 'subtle'}
+          color={isInSidebar ? 'blue' : 'gray'}
+          size="md"
+          onClick={isInSidebar
+            ? () => requestCommentFocus(documentId, pageIndex ?? 0, annotationId ?? '', (obj?.contents ?? '').trim().length > 0)
+            : handleAddToSidebar
+          }
+          styles={isInSidebar ? undefined : commonButtonStyles}
+        >
+          <AddCommentIcon style={{ fontSize: 18 }} />
+        </ActionIcon>
+      </Tooltip>
+    );
+
+    const CommentAndLinkButtons = () => (
+      <>
+        <Tooltip label={hasCommentContent ? t('viewer.comments.viewComment', 'View comment') : t('viewer.comments.addComment', 'Add comment')}>
+          <ActionIcon
+            variant="subtle"
+            color="gray"
+            size="md"
+            onClick={() => requestCommentFocus(documentId, pageIndex ?? 0, annotationId ?? '', hasCommentContent)}
+            styles={commonButtonStyles}
+          >
+            <CommentIcon style={{ fontSize: 18 }} />
+          </ActionIcon>
+        </Tooltip>
+        {firstLinkTarget ? (
+          <Tooltip label={t('viewer.comments.goToLink', 'Go to link')}>
+            <ActionIcon variant="subtle" color="gray" size="md" onClick={handleGoToLink} styles={commonButtonStyles}>
+              <OpenInNewIcon style={{ fontSize: 18 }} />
+            </ActionIcon>
+          </Tooltip>
+        ) : (
+          <Popover opened={linkPopoverOpen} onClose={() => setLinkPopoverOpen(false)} position="top">
+            <Popover.Target>
+              <Tooltip label={t('viewer.comments.addLink', 'Add link')}>
+                <ActionIcon variant="subtle" color="gray" size="md" onClick={() => setLinkPopoverOpen((o) => !o)} styles={commonButtonStyles}>
+                  <LocalIcon icon="link" width="1.25rem" height="1.25rem" />
+                </ActionIcon>
+              </Tooltip>
+            </Popover.Target>
+            <Popover.Dropdown>
+              <Stack gap="xs">
+                <TextInput
+                  placeholder="https://..."
+                  value={linkUrl}
+                  onChange={(e) => setLinkUrl(e.currentTarget.value)}
+                  size="sm"
+                  style={{ minWidth: 220 }}
+                />
+                <Button size="xs" onClick={handleAddLinkSubmit} disabled={!linkUrl.trim()}>
+                  {t('viewer.comments.addLink', 'Add link')}
+                </Button>
+              </Stack>
+            </Popover.Dropdown>
+          </Popover>
+        )}
+      </>
+    );
 
     const EditTextButton = () => (
       <Tooltip label={t('annotation.editText', 'Edit Text')}>
@@ -304,6 +481,7 @@ function AnnotationSelectionMenuInner({
       case 'textMarkup':
         return (
           <>
+            <AddToSidebarButton />
             <ColorControl
               value={getCurrentColor()}
               onChange={(color) => handleColorChange(color, 'main')}
@@ -317,6 +495,7 @@ function AnnotationSelectionMenuInner({
       case 'ink':
         return (
           <>
+            <AddToSidebarButton />
             <ColorControl
               value={getCurrentColor()}
               onChange={(color) => handleColorChange(color, 'main')}
@@ -330,6 +509,7 @@ function AnnotationSelectionMenuInner({
       case 'inkHighlighter':
         return (
           <>
+            <AddToSidebarButton />
             <ColorControl
               value={getCurrentColor()}
               onChange={(color) => handleColorChange(color, 'main')}
@@ -345,6 +525,7 @@ function AnnotationSelectionMenuInner({
       case 'note':
         return (
           <>
+            <AddToSidebarButton />
             <ColorControl
               value={getTextColor()}
               onChange={(color) => handleColorChange(color, 'text')}
@@ -365,9 +546,70 @@ function AnnotationSelectionMenuInner({
           </>
         );
 
+      case 'comment': {
+        const hasCommentContent = (obj?.contents ?? '').trim().length > 0;
+        return (
+          <>
+            <Tooltip label={hasCommentContent ? t('viewer.comments.viewComment', 'View comment') : t('viewer.comments.addComment', 'Add comment')}>
+              <ActionIcon
+                variant="subtle"
+                color="gray"
+                size="md"
+                onClick={() => requestCommentFocus(documentId, pageIndex ?? 0, annotationId ?? '', hasCommentContent)}
+                styles={commonButtonStyles}
+              >
+                <CommentIcon style={{ fontSize: 18 }} />
+              </ActionIcon>
+            </Tooltip>
+            <EditTextButton />
+            <ColorControl
+              value={obj?.strokeColor || obj?.color || '#ffa000'}
+              onChange={(color) => {
+                if (!provides?.updateAnnotation || !annotationId || pageIndex === undefined) return;
+                provides.updateAnnotation(pageIndex, annotationId, { strokeColor: color, color });
+              }}
+              label={t('annotation.annotationStyle', 'Annotation style')}
+            />
+            {firstLinkTarget ? (
+              <Tooltip label={t('viewer.comments.goToLink', 'Go to link')}>
+                <ActionIcon variant="subtle" color="gray" size="md" onClick={handleGoToLink} styles={commonButtonStyles}>
+                  <OpenInNewIcon style={{ fontSize: 18 }} />
+                </ActionIcon>
+              </Tooltip>
+            ) : (
+              <Popover opened={linkPopoverOpen} onClose={() => setLinkPopoverOpen(false)} position="top">
+                <Popover.Target>
+                  <Tooltip label={t('viewer.comments.addLink', 'Add link')}>
+                    <ActionIcon variant="subtle" color="gray" size="md" onClick={() => setLinkPopoverOpen((o) => !o)} styles={commonButtonStyles}>
+                      <LocalIcon icon="link" width="1.25rem" height="1.25rem" />
+                    </ActionIcon>
+                  </Tooltip>
+                </Popover.Target>
+                <Popover.Dropdown>
+                  <Stack gap="xs">
+                    <TextInput
+                      placeholder="https://..."
+                      value={linkUrl}
+                      onChange={(e) => setLinkUrl(e.currentTarget.value)}
+                      size="sm"
+                      style={{ minWidth: 220 }}
+                    />
+                    <Button size="xs" onClick={handleAddLinkSubmit} disabled={!linkUrl.trim()}>
+                      {t('viewer.comments.addLink', 'Add link')}
+                    </Button>
+                  </Stack>
+                </Popover.Dropdown>
+              </Popover>
+            )}
+            <DeleteButton />
+          </>
+        );
+      }
+
       case 'shape':
         return (
           <>
+            <AddToSidebarButton />
             <ColorControl
               value={getStrokeColor()}
               onChange={(color) => handleColorChange(color, 'stroke')}
@@ -390,6 +632,7 @@ function AnnotationSelectionMenuInner({
       case 'line':
         return (
           <>
+            <AddToSidebarButton />
             <ColorControl
               value={getCurrentColor()}
               onChange={(color) => handleColorChange(color, 'main')}
@@ -401,11 +644,18 @@ function AnnotationSelectionMenuInner({
         );
 
       case 'stamp':
-        return <DeleteButton />;
+        return (
+          <>
+            <AddToSidebarButton />
+            <DeleteButton />
+          </>
+        );
 
       default:
         return (
           <>
+            <AddToSidebarButton />
+            <CommentAndLinkButtons />
             <ColorControl
               value={getCurrentColor()}
               onChange={(color) => handleColorChange(color, 'main')}
@@ -417,7 +667,10 @@ function AnnotationSelectionMenuInner({
     }
   };
 
-  // Calculate position for portal based on wrapper element
+  // Calculate position for portal based on wrapper element.
+  // Only depend on [selected] so we don't re-run when annotation reference changes during drag
+  // (plugin can hand a new object each render, causing infinite setState loop). Position updates
+  // during drag are handled by MutationObserver and scroll/resize listeners.
   useEffect(() => {
     if (!selected || !annotation || !wrapperRef.current) {
       setMenuPosition(null);
@@ -452,7 +705,7 @@ function AnnotationSelectionMenuInner({
       window.removeEventListener('scroll', updatePosition, true);
       window.removeEventListener('resize', updatePosition);
     };
-  }, [selected, annotation]);
+  }, [selected]);
 
   // Early return AFTER all hooks have been called
   if (!selected || !annotation) return null;
