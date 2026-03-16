@@ -8,9 +8,7 @@ import { useSignature } from '@app/contexts/SignatureContext';
 import { useFileState, useFileContext } from '@app/contexts/FileContext';
 import { createStirlingFilesAndStubs } from '@app/services/fileStubHelpers';
 import { useNavigationState, useNavigationGuard, useNavigationActions } from '@app/contexts/NavigationContext';
-import { useSidebarContext } from '@app/contexts/SidebarContext';
 import { useToolWorkflow } from '@app/contexts/ToolWorkflowContext';
-import { useRightRailTooltipSide } from '@app/hooks/useRightRailTooltipSide';
 import { useRedactionMode, useRedaction } from '@app/contexts/RedactionContext';
 import { defaultParameters, RedactParameters } from '@app/hooks/tools/redact/useRedactParameters';
 import { RedactionMode } from '@embedpdf/plugin-redaction';
@@ -22,9 +20,7 @@ interface ViewerAnnotationControlsProps {
 
 export default function ViewerAnnotationControls({ currentView, disabled = false }: ViewerAnnotationControlsProps) {
   const { t } = useTranslation();
-  const { sidebarRefs } = useSidebarContext();
   const { setLeftPanelView, setSidebarsVisible } = useToolWorkflow();
-  const { position: tooltipPosition, offset: tooltipOffset } = useRightRailTooltipSide(sidebarRefs);
 
   // Viewer context for PDF controls - safely handle when not available
   const viewerContext = React.useContext(ViewerContext);
@@ -149,14 +145,15 @@ export default function ViewerAnnotationControls({ currentView, disabled = false
   return (
     <>
       {/* Redaction Mode Toggle */}
-      <Tooltip content={isRedactMode ? t('rightRail.exitRedaction', 'Exit Redaction Mode') : t('rightRail.redact', 'Redact')} position={tooltipPosition} offset={tooltipOffset} arrow portalTarget={document.body}>
+      <Tooltip content={isRedactMode ? t('rightRail.exitRedaction', 'Exit Redaction Mode') : t('rightRail.redact', 'Redact')} position="bottom" offset={6} arrow portalTarget={document.body}>
         <ActionIcon
-          variant={isRedactMode ? 'filled' : 'subtle'}
-          color={isRedactMode ? 'blue' : undefined}
+          variant="subtle"
+          color={isRedactMode ? 'blue' : 'gray'}
           radius="md"
-          className="right-rail-icon"
+          className="workbench-bar-icon"
           onClick={handleRedactionToggle}
           disabled={disabled || currentView !== 'viewer'}
+          aria-pressed={isRedactMode}
         >
           <LocalIcon
             icon="scan-delete-rounded"
@@ -167,10 +164,10 @@ export default function ViewerAnnotationControls({ currentView, disabled = false
       </Tooltip>
 
       {/* Annotation Visibility Toggle */}
-      <Tooltip content={t('rightRail.toggleAnnotations', 'Toggle Annotations Visibility')} position={tooltipPosition} offset={tooltipOffset} arrow portalTarget={document.body}>
+      <Tooltip content={t('rightRail.toggleAnnotations', 'Toggle Annotations Visibility')} position="bottom" offset={6} arrow portalTarget={document.body}>
         <ActionIcon
-          variant={annotationsHidden ? "filled" : "subtle"}
-          color={annotationsHidden ? "blue" : undefined}
+          variant="subtle"
+          color={annotationsHidden ? "blue" : "gray"}
           radius="md"
           className="right-rail-icon"
           onClick={handleToggleAnnotationsVisibility}

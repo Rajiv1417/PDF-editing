@@ -2,13 +2,13 @@ import { useMemo, useState, useEffect, useCallback } from 'react';
 import { ActionIcon, Popover } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import { useViewer } from '@app/contexts/ViewerContext';
-import { useRightRailButtons, RightRailButtonWithAction } from '@app/hooks/useRightRailButtons';
+import { useWorkbenchBarButtons, WorkbenchBarButtonWithAction } from '@app/hooks/useWorkbenchBarButtons';
 import LocalIcon from '@app/components/shared/LocalIcon';
 import { Tooltip } from '@app/components/shared/Tooltip';
 import { SearchInterface } from '@app/components/viewer/SearchInterface';
-import ViewerAnnotationControls from '@app/components/shared/rightRail/ViewerAnnotationControls';
+import ViewerAnnotationControls from '@app/components/shared/workbenchBar/ViewerAnnotationControls';
 import { useSidebarContext } from '@app/contexts/SidebarContext';
-import { useRightRailTooltipSide } from '@app/hooks/useRightRailTooltipSide';
+import { useWorkbenchBarTooltipSide } from '@app/hooks/useWorkbenchBarTooltipSide';
 import { useToolWorkflow } from '@app/contexts/ToolWorkflowContext';
 import { useNavigationState, useNavigationGuard } from '@app/contexts/NavigationContext';
 import { BASE_PATH, withBasePath } from '@app/constants/app';
@@ -16,7 +16,7 @@ import { useRedaction, useRedactionMode } from '@app/contexts/RedactionContext';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
 import StraightenIcon from '@mui/icons-material/Straighten';
 
-export function useViewerRightRailButtons(
+export function useViewerWorkbenchBarButtons(
   isRulerActive?: boolean,
   setIsRulerActive?: (v: boolean) => void,
 ) {
@@ -25,7 +25,7 @@ export function useViewerRightRailButtons(
   const { isThumbnailSidebarVisible, isBookmarkSidebarVisible, isAttachmentSidebarVisible, isSearchInterfaceVisible, registerImmediatePanUpdate } = viewer;
   const [isPanning, setIsPanning] = useState<boolean>(() => viewer.getPanState()?.isPanning ?? false);
   const { sidebarRefs } = useSidebarContext();
-  const { position: tooltipPosition } = useRightRailTooltipSide(sidebarRefs, 12);
+  const { position: tooltipPosition } = useWorkbenchBarTooltipSide(sidebarRefs, 12);
   const { handleToolSelect, handleBackToTools } = useToolWorkflow();
   const { selectedTool } = useNavigationState();
   const { requestNavigation } = useNavigationGuard();
@@ -90,8 +90,8 @@ export function useViewerRightRailButtons(
 
   const rulerLabel = t('rightRail.ruler', 'Ruler / Measure');
 
-  const viewerButtons = useMemo<RightRailButtonWithAction[]>(() => {
-    const buttons: RightRailButtonWithAction[] = [
+  const viewerButtons = useMemo<WorkbenchBarButtonWithAction[]>(() => {
+    const buttons: WorkbenchBarButtonWithAction[] = [
       {
         id: 'viewer-search',
         tooltip: searchLabel,
@@ -99,9 +99,9 @@ export function useViewerRightRailButtons(
         section: 'top' as const,
         order: 10,
         render: ({ disabled }) => (
-          <Tooltip content={searchLabel} position={tooltipPosition} offset={12} arrow portalTarget={document.body}>
+          <Tooltip content={searchLabel} position="bottom" offset={6} arrow portalTarget={document.body}>
             <Popover
-              position={tooltipPosition}
+              position="bottom"
               withArrow
               shadow="md"
               offset={8}
@@ -112,8 +112,9 @@ export function useViewerRightRailButtons(
                 <div style={{ display: 'inline-flex' }}>
                   <ActionIcon
                     variant="subtle"
+                    color="gray"
                     radius="md"
-                    className="right-rail-icon"
+                    className="workbench-bar-icon"
                     disabled={disabled}
                     aria-label={searchLabel}
                     onClick={viewer.searchInterfaceActions.toggle}
@@ -240,11 +241,12 @@ export function useViewerRightRailButtons(
         order: 58,
         active: isAnnotationsActive,
         render: ({ disabled }) => (
-          <Tooltip content={annotationsLabel} position={tooltipPosition} offset={12} arrow portalTarget={document.body}>
+          <Tooltip content={annotationsLabel} position="bottom" offset={6} arrow portalTarget={document.body}>
             <ActionIcon
-              variant={isAnnotationsActive ? 'filled' : 'subtle'}
+              variant="subtle"
+              color={isAnnotationsActive ? 'blue' : 'gray'}
               radius="md"
-              className="right-rail-icon"
+              className="workbench-bar-icon"
               onClick={() => {
                 if (disabled || isAnnotationsActive) return;
 
@@ -268,7 +270,6 @@ export function useViewerRightRailButtons(
               }}
               disabled={disabled}
               aria-pressed={isAnnotationsActive}
-              color={isAnnotationsActive ? 'blue' : undefined}
             >
               <LocalIcon icon="edit" width="1.5rem" height="1.5rem" />
             </ActionIcon>
@@ -290,11 +291,12 @@ export function useViewerRightRailButtons(
         section: 'top' as const,
         order: 62,
         render: ({ disabled }) => (
-          <Tooltip content={formFillLabel} position={tooltipPosition} offset={12} arrow portalTarget={document.body}>
+          <Tooltip content={formFillLabel} position="bottom" offset={6} arrow portalTarget={document.body}>
             <ActionIcon
-              variant={isFormFillActive ? 'filled' : 'subtle'}
+              variant="subtle"
+              color={isFormFillActive ? 'blue' : 'gray'}
               radius="md"
-              className="right-rail-icon"
+              className="workbench-bar-icon"
               onClick={() => {
                 if (disabled) return;
                 if (isFormFillActive) {
@@ -305,7 +307,6 @@ export function useViewerRightRailButtons(
               }}
               disabled={disabled}
               aria-pressed={isFormFillActive}
-              color={isFormFillActive ? 'blue' : undefined}
             >
               <TextFieldsIcon sx={{ fontSize: '1.5rem' }} />
             </ActionIcon>
@@ -348,5 +349,5 @@ export function useViewerRightRailButtons(
     setIsRulerActive,
   ]);
 
-  useRightRailButtons(viewerButtons);
+  useWorkbenchBarButtons(viewerButtons);
 }

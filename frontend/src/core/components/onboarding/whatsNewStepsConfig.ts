@@ -127,8 +127,8 @@ export function createWhatsNewStepsConfig({ t, actions }: CreateWhatsNewStepsCon
       },
     },
     [WhatsNewTourStep.RIGHT_RAIL]: {
-      selector: '[data-tour="right-rail-controls"]',
-      highlightedSelectors: ['[data-tour="right-rail-controls"]', '[data-tour="right-rail-settings"]'],
+      selector: '[data-tour="workbench-bar-controls"]',
+      highlightedSelectors: ['[data-tour="workbench-bar-controls"]', '[data-tour="workbench-bar-settings"]'],
       content: t(
         'onboarding.whatsNew.rightRail',
         'The <strong>Right Rail</strong> holds quick actions to select files, change theme or language, and download results.'
@@ -136,7 +136,7 @@ export function createWhatsNewStepsConfig({ t, actions }: CreateWhatsNewStepsCon
       position: 'left',
       padding: 10,
       action: async () => {
-        await waitForElement('[data-tour="right-rail-controls"]', 7000, 100);
+        await waitForElement('[data-tour="workbench-bar-controls"]', 7000, 100);
         selectFirstFile();
       },
     },

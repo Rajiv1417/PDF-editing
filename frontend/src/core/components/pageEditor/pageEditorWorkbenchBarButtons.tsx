@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRightRailButtons, RightRailButtonWithAction } from '@app/hooks/useRightRailButtons';
+import { useWorkbenchBarButtons, WorkbenchBarButtonWithAction } from '@app/hooks/useWorkbenchBarButtons';
 import LocalIcon from '@app/components/shared/LocalIcon';
 import PageSelectByNumberButton from '@app/components/pageEditor/PageSelectByNumberButton';
 
-interface PageEditorRightRailButtonsParams {
+interface PageEditorWorkbenchBarButtonsParams {
   totalPages: number;
   selectedPageCount: number;
   csvInput: string;
@@ -22,7 +22,7 @@ interface PageEditorRightRailButtonsParams {
   closePdf: () => void;
 }
 
-export function usePageEditorRightRailButtons(params: PageEditorRightRailButtonsParams) {
+export function usePageEditorWorkbenchBarButtons(params: PageEditorWorkbenchBarButtonsParams) {
   const {
     totalPages,
     selectedPageCount,
@@ -52,7 +52,7 @@ export function usePageEditorRightRailButtons(params: PageEditorRightRailButtons
   const saveChangesLabel = t('rightRail.saveChanges', 'Save Changes');
   const closePdfLabel = t('rightRail.closePdf', 'Close PDF');
 
-  const buttons = useMemo<RightRailButtonWithAction[]>(() => {
+  const buttons = useMemo<WorkbenchBarButtonWithAction[]>(() => {
     return [
       {
         id: 'page-select-all',
@@ -169,5 +169,5 @@ export function usePageEditorRightRailButtons(params: PageEditorRightRailButtons
     closePdf,
   ]);
 
-  useRightRailButtons(buttons);
+  useWorkbenchBarButtons(buttons);
 }

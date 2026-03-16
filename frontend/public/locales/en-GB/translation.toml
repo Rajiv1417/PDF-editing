@@ -54,6 +54,7 @@ fontSizeTooltip = "Size of the page number text in points. Larger numbers create
 fontTypeTooltip = "Font family for the page numbers. Choose based on your document style."
 genericSubmit = "Submit"
 goHomepage = "Go to Homepage"
+toolFlow.tooManyFiles = "This tool only takes a max of {{max}} files"
 goToPage = "Go"
 green = "Green"
 help = "Help"
@@ -1552,6 +1553,44 @@ width = "Width"
 
 [app]
 description = "The Free Adobe Acrobat alternative (10M+ Downloads)"
+
+[rightRail]
+activeFiles = "Active files"
+delete = "Remove from workbench"
+download = "Download"
+file = "file"
+files = "files"
+nextPage = "Next page"
+pages = "pages"
+prevPage = "Previous page"
+removeFile = "Remove file"
+viewZoomSlider = "View and zoom control"
+zoomIn = "Zoom in"
+zoomOut = "Zoom out"
+
+[leftSidebar]
+backToFiles = "Back to files"
+dropbox = "Dropbox"
+files = "Files"
+googleDrive = "Google Drive"
+menu = "Menu"
+mobileUpload = "Mobile Upload"
+noFiles = "No recent files"
+oneDrive = "OneDrive"
+openFromComputer = "Open from computer"
+search = "Search"
+viewAllFiles = "View all {{count}} files →"
+watchFolders = "Watch Folders"
+workInFolder = "Work in a folder"
+
+[rightPanel]
+agents = "Agents"
+allTools = "All Tools"
+back = "Back"
+searchTools = "Search tools..."
+tools = "Tools"
+viewAllAgents = "View All Agents →"
+viewAllTools = "View All Tools →"
 
 [attachments]
 add = "Add Attachment"
@@ -3869,6 +3908,11 @@ addFiles = "Add Files"
 mobileUpload = "Upload from Mobile"
 openFromComputer = "Open from computer"
 uploadFromComputer = "Upload from computer"
+dropAnywhere = "Drop a PDF anywhere"
+descriptionLine = "Drop in a file to get started, or create a file from scratch with our"
+descriptionLine2 = ""
+stirlingAgent = "Stirling agent"
+browseFiles = "Browse Files"
 
 [language]
 direction = "ltr"
@@ -4427,6 +4471,7 @@ zoomIn = "Zoom In"
 zoomOut = "Zoom Out"
 
 [viewer]
+backToActiveFiles = "Back to active files"
 cannotPreviewFile = "Cannot Preview File"
 dualPageView = "Dual Page View"
 firstPage = "First Page"
@@ -5922,6 +5967,13 @@ apiKeys = "API Keys"
 title = "Developer"
 
 [settings.general]
+language = "Language"
+languageDescription = "Choose your preferred display language"
+theme = "Theme"
+themeDark = "Dark"
+themeDescription = "Choose your preferred color theme"
+themeLight = "Light"
+themeMidnight = "Midnight"
 autoUnzip = "Auto-unzip API responses"
 autoUnzipDescription = "Automatically extract files from ZIP responses"
 autoUnzipFileLimit = "Auto-unzip file limit"
