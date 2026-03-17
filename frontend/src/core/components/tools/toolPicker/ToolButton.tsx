@@ -26,9 +26,11 @@ interface ToolButtonProps {
   disableNavigation?: boolean;
   matchedSynonym?: string;
   hasStars?: boolean;
+  /** Called when an unavailable tool is clicked; if provided, overrides the default no-op */
+  onUnavailableClick?: () => void;
 }
 
-const ToolButton: React.FC<ToolButtonProps> = ({ id, tool, isSelected, onSelect, disableNavigation = false, matchedSynonym, hasStars = false }) => {
+const ToolButton: React.FC<ToolButtonProps> = ({ id, tool, isSelected, onSelect, disableNavigation = false, matchedSynonym, hasStars = false, onUnavailableClick }) => {
   const { t } = useTranslation();
   const { config } = useAppConfig();
   const premiumEnabled = config?.premiumEnabled;
@@ -46,7 +48,10 @@ const ToolButton: React.FC<ToolButtonProps> = ({ id, tool, isSelected, onSelect,
   const usesCloud = useWillUseCloud(endpointString);
 
   const handleClick = (id: ToolId) => {
-    if (isUnavailable) return;
+    if (isUnavailable) {
+      onUnavailableClick?.();
+      return;
+    }
     if (tool.link) {
       // Open external link in new tab
       window.open(tool.link, '_blank', 'noopener,noreferrer');
